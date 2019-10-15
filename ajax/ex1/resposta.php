@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 <?php
-    $value = $_GET["name"];
+    $strSearch = $_GET["name"];
     $number = $_GET["number"];
-    if ($value == null){
-        echo "Sem argumentos";
+    if ($strSearch == null){
+        echo "Não existem argumentos para serem procurados";
         exit();
     }
         
@@ -27,7 +27,7 @@
     $find = false;
     foreach($names as $name) {
         $substr = substr($name, 0, $number);
-        if (strtoupper($substr) == strtoupper($value)){
+        if (strtoupper($substr) == strtoupper($strSearch)){
             $results[] = $name;
             $find = true;
         }

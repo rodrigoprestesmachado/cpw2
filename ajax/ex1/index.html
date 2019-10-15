@@ -19,16 +19,16 @@ limitations under the License.
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Exercício 1</title>
     <script>
         var counter = 1;
         var objAjax = '';
-        function executa(){
+        function ajaxRequest(){
 
             var inputText = document.getElementById("inputText");
-            var search = inputText.value;
+            var strSearch = inputText.value;
 
-            var searchString = "resposta.php?name="+search+"&number="+counter;
+            var searchString = "resposta.php?name="+strSearch+"&number="+counter;
 
             objAjax = new XMLHttpRequest();
             objAjax.onreadystatechange = fnResponse;
@@ -41,13 +41,13 @@ limitations under the License.
         function fnResponse(){
             if(objAjax.readyState === 4 && objAjax.status === 200){
 
-                var element = document.getElementById("resposta");
+                var divResponse = document.getElementById("response");
                 var strJson = objAjax.responseText;
                 var json = JSON.parse(strJson);
 
                 for (x in json) {
-                    var text = json[x].name;
-                    element.innerHTML += text;
+                    var foundName = json[x].name;
+                    divResponse.innerHTML += foundName;
                 }
                 
             }
@@ -56,9 +56,9 @@ limitations under the License.
 </head>
 <body>
     
-    <input type="text" onkeyup="executa()" id="inputText"/>
+    <input type="text" onkeyup="ajaxRequest()" id="inputText"/>
     <br/>
     Sugestões:
-    <div id="resposta"></div>
+    <div id="response"></div>
 </body>
 </html>
