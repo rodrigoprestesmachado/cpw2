@@ -1,0 +1,64 @@
+<!--
+Copyright 2019 Rodrigo Prestes Machado
+ 
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+ 
+http://www.apache.org/licenses/LICENSE-2.0
+ 
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var counter = 1;
+        var objAjax = '';
+        function executa(){
+
+            var inputText = document.getElementById("inputText");
+            var search = inputText.value;
+
+            var searchString = "resposta.php?name="+search+"&number="+counter;
+
+            objAjax = new XMLHttpRequest();
+            objAjax.onreadystatechange = fnResponse;
+            objAjax.open("GET",searchString, true);
+            objAjax.send();
+            
+            counter++;
+        }
+
+        function fnResponse(){
+            if(objAjax.readyState === 4 && objAjax.status === 200){
+
+                var element = document.getElementById("resposta");
+                var strJson = objAjax.responseText;
+                var json = JSON.parse(strJson);
+
+                for (x in json) {
+                    var text = json[x].name;
+                    element.innerHTML += text;
+                }
+                
+            }
+        }
+    </script>
+</head>
+<body>
+    
+    <input type="text" onkeyup="executa()" id="inputText"/>
+    <br/>
+    Sugestões:
+    <div id="resposta"></div>
+</body>
+</html>
