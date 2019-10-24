@@ -25,16 +25,16 @@
 
     <?php
         // Abre a conexão com o banco de dados 
-       $connection = mysql_connect("localhost", "cpw2", "cpw2", MYSQL_CLIENT_COMPRESS);
+       $connection = mysqli_connect("localhost", "cpw2", "cpw2");
 
-       mysql_select_db("cpw2", $connection);
+       mysqli_select_db($connection, "cpw2");
        $query = "SELECT * FROM CLIENTE";
    
-       $result = mysql_query($query);
+       $result = mysqli_query($connection, $query);
    
        /* Mostrando os resultados em HTML */
        echo "<table>\n";
-       while ($line = mysql_fetch_array($result, MYSQL_ASSOC)){
+       while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)){
            echo "\t<tr>\n";
            foreach ($line as $column => $value){
                echo "\t\t<td>$column $value</td>\n";
@@ -44,9 +44,9 @@
        echo "</table>\n";
        
        /* Libera o conjunto de resultados */
-       mysql_free_result($result);
+       mysqli_free_result($result);
        /* Fechando a conexão */
-       mysql_close($connection);
+       mysqli_close($connection);
     ?>
 
 

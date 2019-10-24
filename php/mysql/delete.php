@@ -23,13 +23,13 @@
 </head>
 <body>
     <?php
-        $connection = mysql_connect("localhost", "cpw2", "cpw2");
-        mysql_select_db("cpw2", $connection);
+        $connection = mysqli_connect("localhost", "cpw2", "cpw2");
+        mysqli_select_db($connection, "cpw2");
 
         $query = "delete from cliente where id = " . 2;
-        echo mysql_query($query);
+        echo mysqli_query($connection, $query);
 
-        mysql_close($connection);
+        mysqli_close($connection);
     ?>
 </body>
 </html>
