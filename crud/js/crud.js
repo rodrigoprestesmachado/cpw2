@@ -56,6 +56,54 @@ function readCallback() {
   }
 }
 
+function enableUpdate(id) {
+  var tr = document.getElementById(id);
+  var trChildNodes = tr.childNodes;
+
+  for (var index = 0; index <= 1; index++) {
+    // Get the table value
+    var text = trChildNodes[index].innerText;
+    trChildNodes[index].innerText = "";
+
+    //Creating the input element
+    var input = document.createElement("input");
+    input.setAttribute("onblur", "fnUpdate(" + id + ");");
+    // seting the old value
+    input.value = text;
+    // append to the column
+    trChildNodes[index].appendChild(input);
+  }
+}
+
+function fnUpdate(id) {
+  var tr = document.getElementById(id);
+  var trChildNodes = tr.childNodes;
+  var textName = trChildNodes[0].firstChild.value;
+  var textEmail = trChildNodes[1].firstChild.value;
+
+  var url =
+    "server.php?op=update&id=" +
+    id +
+    "&name=" +
+    textName +
+    "&email=" +
+    textEmail;
+
+  xmlHttp.onreadystatechange = updateCallback;
+  xmlHttp.open("GET", url, true);
+  xmlHttp.send();
+}
+
+function updateCallback() {
+  if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
+    var json = JSON.parse(xmlHttp.responseText);
+    var tr = document.getElementById(json.id);
+    var trChildNodes = tr.childNodes;
+    trChildNodes[0].innerText = json.name;
+    trChildNodes[1].innerText = json.email;
+  }
+}
+
 function fnDelete(id) {
   xmlHttp.onreadystatechange = deleteCallback;
   xmlHttp.open("GET", "server.php?op=delete&&id=" + id, true);
@@ -87,6 +135,7 @@ function createRow(table, json) {
   var tdName = document.createElement("td");
   var tdEmail = document.createElement("td");
   var tdDelete = document.createElement("td");
+  var tdUpdate = document.createElement("td");
 
   // adding data in the columns
   tdName.innerText = json.name;
@@ -98,10 +147,17 @@ function createRow(table, json) {
   imgDelete.setAttribute("onclick", "fnDelete(" + json.id + ");");
   tdDelete.appendChild(imgDelete);
 
+  // adding the update image to the column
+  var imgUpdate = document.createElement("img");
+  imgUpdate.setAttribute("src", "img/update.png");
+  imgUpdate.setAttribute("onclick", "enableUpdate(" + json.id + ");");
+  tdUpdate.appendChild(imgUpdate);
+
   // adding the columns in the row
   tr.appendChild(tdName);
   tr.appendChild(tdEmail);
   tr.appendChild(tdDelete);
+  tr.appendChild(tdUpdate);
 
   // adding the row in the table
   table.appendChild(tr);

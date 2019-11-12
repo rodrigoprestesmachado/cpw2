@@ -25,6 +25,9 @@
         case 'read':
             echo fnRead();    
             break;
+         case 'update':
+            echo fnUpdate();    
+            break;
          case 'delete':
             echo fnDelete();    
             break;
@@ -55,6 +58,19 @@
         $json = generateJson($result);
         disconnect($connection);
         return $json;
+    }
+
+    function fnUpdate(){
+        $id = $_GET["id"];
+        $name = $_GET["name"];
+        $email = $_GET["email"];
+        if ($name != ""  && $email != "" && $id != ""){
+            $connection = connet();
+            $sql = "UPDATE CLIENT SET NAME='$name', EMAIL='$email' WHERE id=$id";
+            $result = mysqli_query($connection, $sql);
+            disconnect($connection);
+        }
+        return  ($result == true ?  "{\"id\":\"".$id."\",\"name\":\"".$name."\", \"email\":\"".$email."\"}" : "{\"result\":\"false\"}");
     }
 
     function fnDelete(){
