@@ -1,3 +1,3 @@
-# Construção de Páginas Web II
+# CPW2
 
 [Slide Base](slides/slide-base/index.html)

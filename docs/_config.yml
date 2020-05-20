@@ -1,3 +1,4 @@
-remote_theme: pmarsceill/just-the-docs
-color_scheme: "dark"
-footer_content: "Copyright &copy; 2020 Rodrigo Prestes Machado, distributed under Apache 2.0 license."
+title: CPW2
+description: Disciplina de Construção de Páginas Web II
+show_downloads: false
+theme: jekyll-theme-hacker
