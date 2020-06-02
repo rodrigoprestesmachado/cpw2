@@ -1,3 +1,3 @@
 # CPW2
 
-[teste slides](slides/slide-base/index.html)
+[test](slides/slide-base/index.html)
