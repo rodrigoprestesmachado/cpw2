@@ -2,8 +2,7 @@
 
 ## Apresentações
 
-[test](slides/slide-base/index.html)
+[introdução](slides/javascript/index.html)
+## Discord
 
-## Moodle
-
-* Moodle da [disciplina](https://moodle.poa.ifrs.edu.br/course/view.php?id=5778)
+Existe uma comunidade em torno desse conteúdo, se você deseja trocar ideias sobre Javascript utilize o canal `#cpw2` no [Discord](https://discord.com/invite/C29cqvm).
