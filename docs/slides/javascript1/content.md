@@ -1,4 +1,4 @@
-# JavaScript
+# JavaScript - 1
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Unofficial_JavaScript_logo_2.svg" width="20%" height="20%">
 
@@ -25,6 +25,8 @@ Versão em PDF? [aqui](?print-pdf)
 <!-- .element: style="margin-bottom:40px; font-size: 24px;" -->
 * Operadores
 <!-- .element: style="margin-bottom:40px; font-size: 24px;" -->
+* Referências
+<!-- .element: style="margin-bottom:50px; font-size: 24px;" -->
 
 
 
@@ -467,7 +469,7 @@ function notANumber(){
 
 
 <!-- .slide: data-background="#F1F1F1" -->
-# Referências
+## Referências
 
 * Tutorial de [JavaScript](http://www.w3schools.com/js) do W3C
 <!-- .element: style="margin-bottom:50px; font-size: 24px;" -->
