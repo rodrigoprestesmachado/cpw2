@@ -1,14 +1,30 @@
-# CPW2
+# Trilha de aprendizagem
 
-## Trilha de aprendizagem
+[Introdução](topics/introducao.md)
 
-[Introdução](introducao.md)
+[Variáveis](topics/variáveis.md)
 
-[JS - parte 1](slides/javascript1/index.html)
+[Tipos de dados primitivos](topics/tipos.md)
 
-[JS - parte 2](slides/javascript2/index.html)
+[Operadores](topics/controle.md)
 
+[Estruturas de controle](topics/controle.md)
 
-## Comunidade de apoio
+[Funções](topics/funcoes.md)
 
-Existe uma comunidade no Discord em torno desse conteúdo, se você deseja trocar conversar sobre Javascript utilize o canal `#cpw2` no [Discord](https://discord.com/invite/C29cqvm).
+[Eventos](topics/eventos.md)
+
+[Objetos](topics/objetos.md)
+
+[Document Object Model](topics/dom.md)
+
+[Ajax](ajax.md)
+
+[Promisses](promisses.md)
+
+[Crud JS e PHP](crud.md)
+
+# Comunidade de aprendizagem
+
+Existe uma comunidade no Discord em torno desse conteúdo, 
+se você deseja conversar sobre Javascript utilize o canal `#cpw2` no [Discord](https://discord.com/invite/C29cqvm).
