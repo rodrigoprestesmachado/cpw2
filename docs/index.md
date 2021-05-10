@@ -2,7 +2,7 @@
 
 ## Trilha de aprendizagem
 
-[Introdução](docs/introducao.md)
+[Introdução](introducao.md)
 
 [JS - parte 1](slides/javascript1/index.html)
 
@@ -11,4 +11,4 @@
 
 ## Comunidade de apoio
 
-Existe uma comunidade no Discord em torno desse conteúdo, se você deseja trocar ideias sobre Javascript utilize o canal `#cpw2` no [Discord](https://discord.com/invite/C29cqvm).
+Existe uma comunidade no Discord em torno desse conteúdo, se você deseja trocar conversar sobre Javascript utilize o canal `#cpw2` no [Discord](https://discord.com/invite/C29cqvm).
