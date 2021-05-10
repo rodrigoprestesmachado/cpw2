@@ -1,14 +1,14 @@
 
 <?php
     /**
-     * Copyright 2019 Rodrigo Prestes Machado
-     * 
+     * Copyright 2021 Rodrigo Prestes Machado
+     *
      * Licensed under the Apache License, Version 2.0 (the "License");
      * you may not use this file except in compliance with the License.
      * You may obtain a copy of the License at
-     * 
+     *
      * http://www.apache.org/licenses/LICENSE-2.0
-     * 
+     *
      * Unless required by applicable law or agreed to in writing, software
      * distributed under the License is distributed on an "AS IS" BASIS,
      * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -20,16 +20,16 @@
     $op = $_GET["op"];
     switch ($op) {
         case 'create':
-            echo fnCreate();    
+            echo fnCreate();
             break;
         case 'read':
-            echo fnRead();    
+            echo fnRead();
             break;
          case 'update':
-            echo fnUpdate();    
+            echo fnUpdate();
             break;
          case 'delete':
-            echo fnDelete();    
+            echo fnDelete();
             break;
         default:
             break;
@@ -92,8 +92,12 @@
      */
     function generateJson($result){
         $json = "";
-        while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC))
-            $json .= "{\"id\":\"".$line["id"]."\",\"name\":\"".$line["name"]."\", \"email\":\"".$line["email"]."\"},";
+        while ($line = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+            $id = isset($line["id"]) ? $line["id"] : null;
+            $name = isset($line["name"]) ? $line["name"] : null;
+            $email = isset($line["email"]) ? $line["email"] : null;
+            $json .= "{\"id\":\"".$id."\",\"name\":\"".$name."\", \"email\":\"".$email."\"},";
+        }
         $json = substr($json, 0, strlen($json) - 1);
         $json = "[" . $json. "]";
         return $json;
@@ -103,8 +107,8 @@
      * Connects in MySql data base
      */
     function connet(){
-        $connection = mysqli_connect("localhost", "cpw2", "cpw2");
-        mysqli_select_db($connection, "cpw2");
+        $connection = mysqli_connect("db", "crud", "crud");
+        mysqli_select_db($connection, "crud");
         return $connection;
     }
 
