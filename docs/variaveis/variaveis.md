@@ -1,13 +1,11 @@
 # Variáveis
 <center>
-<iframe src="https://rodrigoprestesmachado.github.io/cpw2/slides/index.html#/" title="Variáveis em JavaScript" width="90%" height="500" style="border:none;"></iframe>
+<iframe src="https://rodrigoprestesmachado.github.io/cpw2/variaveis/slides/index.html#/" title="Variáveis em JavaScript" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
 ## Exercícios do Freecodecamp
 
 * [Declarando variáveis](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables)
-
-* [Explore as diferenças entre var e let](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/explore-differences-between-the-var-and-let-keywords)
 
 * [Armazenando valores com o operador de atribuição](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/storing-values-with-the-assignment-operator)
 
@@ -18,6 +16,8 @@
 * [Compreendendo variáveis não inicializadas](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables)
 
 * [Entendendo variáveis case sensitivity](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-case-sensitivity-in-variables)
+
+* [Explore as diferenças entre var e let](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/explore-differences-between-the-var-and-let-keywords)
 
 
 # Referências

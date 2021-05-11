@@ -7,7 +7,7 @@
 
 ## Hello World em JavaScript
 <center>
-<iframe src="https://rodrigoprestesmachado.github.io/cpw2/introducao/intro/index.html#/" title="Hello World" width="90%" height="500" style="border:none;"></iframe>
+<iframe src="https://rodrigoprestesmachado.github.io/cpw2/introducao/hello/index.html#/" title="Hello World" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
 # Referências

@@ -135,6 +135,11 @@ function notANumber(){
 ```
 
 
+<!-- .slide: data-transition="convex" -->
+ ## Symbol
+ <iframe width="100%" height="300" src="//jsfiddle.net/prestesmachado/qp5ongj1/41/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+
+
 # Referências
 
 * Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
