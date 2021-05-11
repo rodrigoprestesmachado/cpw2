@@ -18,11 +18,11 @@
 
 [Document Object Model](topics/dom.md)
 
-[Ajax](ajax.md)
+[Ajax](topics/ajax.md)
 
-[Promisses](promisses.md)
+[Promisses](topics/promisses.md)
 
-[Crud JS e PHP](crud.md)
+[Crud JS e PHP](topics/crud.md)
 
 # Comunidade de aprendizagem
 
