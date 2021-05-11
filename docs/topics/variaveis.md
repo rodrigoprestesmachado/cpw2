@@ -1,6 +1,6 @@
 # Variáveis
 <center>
-<iframe src="https://rodrigoprestesmachado.github.io/cpw2/slides/javascript1/index.html#/3" title="Introdução" width="80%" height="400" style="border:none;"></iframe>
+<iframe src="https://rodrigoprestesmachado.github.io/cpw2/slides/javascript1/index.html#/3" title="Variáveis" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
 ## Exercícios do Freecodecamp
@@ -12,3 +12,5 @@
 * [Inicializando Variáveis com o Operador de Atribuição](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/initializing-variables-with-the-assignment-operator)
 * [Compreendendo variáveis não inicializadas](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-uninitialized-variables)
 * [Entendendo variáveis case sensitivity](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-case-sensitivity-in-variables)
+
+<center><img src="../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%" height="3%"></img></center>
