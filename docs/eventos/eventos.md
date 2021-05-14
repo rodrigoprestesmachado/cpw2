@@ -3,7 +3,7 @@
 <iframe src="https://rodrigoprestesmachado.github.io/cpw2/eventos/slides/index.html#/" title="Eventos" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
-<# Referências
+# Referências
 
 * Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
 

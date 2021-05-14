@@ -26,8 +26,7 @@
 
 # Comunidade de aprendizagem
 
-Existe uma comunidade no Discord em torno desse conteúdo, 
-se você deseja conversar sobre Javascript utilize o canal `#cpw2` no [Discord](https://discord.com/invite/C29cqvm).
+Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
 
 # Referências
 
