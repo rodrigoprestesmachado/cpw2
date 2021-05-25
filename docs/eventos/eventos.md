@@ -1,6 +1,6 @@
 # Eventos
 <center>
-<iframe src="https://rodrigoprestesmachado.github.io/cpw2/eventos/slides/index.html#/" title="Eventos" width="90%" height="500" style="border:none;"></iframe>
+<iframe src="https://cpw2.rpmhub.dev/eventos/slides/index.html#/" title="Eventos" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
 # Referências

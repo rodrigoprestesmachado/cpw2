@@ -5,7 +5,7 @@
 Os slides abaixo discutem sobre o que é JavaScript e os seus usos:
 
 <center>
-<iframe src="https://rodrigoprestesmachado.github.io/cpw2/introducao/intro/index.html#/" title="Introdução" width="90%" height="500" style="border:none;"></iframe>
+<iframe src="https://cpw2.rpmhub.dev/introducao/intro/index.html#/" title="Introdução" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
 ## Hello World em JavaScript
@@ -13,7 +13,7 @@ Os slides abaixo discutem sobre o que é JavaScript e os seus usos:
 Os slides abaixo mostram maneiras distintas de escrever os primeiros códigos em JavaScript:
 
 <center>
-<iframe src="https://rodrigoprestesmachado.github.io/cpw2/introducao/hello/index.html#/" title="Hello World" width="90%" height="500" style="border:none;"></iframe>
+<iframe src="https://cpw2.rpmhub.dev/introducao/hello/index.html#/" title="Hello World" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
 ## Depuração com VSCode e Chrome

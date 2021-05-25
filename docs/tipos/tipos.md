@@ -1,6 +1,6 @@
 # Tipo de dados primitivos
 <center>
-<iframe src="https://rodrigoprestesmachado.github.io/cpw2/tipos/slides/index.html#/" title="Tipos" width="90%" height="500" style="border:none;"></iframe>
+<iframe src="https://cpw2.rpmhub.dev/tipos/slides/index.html#/" title="Tipos" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
 ## Exercícios do Freecodecamp

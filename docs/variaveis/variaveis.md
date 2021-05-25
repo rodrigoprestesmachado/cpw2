@@ -1,6 +1,6 @@
 # Variáveis
 <center>
-<iframe src="https://rodrigoprestesmachado.github.io/cpw2/variaveis/slides/index.html#/" title="Variáveis em JavaScript" width="90%" height="500" style="border:none;"></iframe>
+<iframe src="https://cpw2.rpmhub.dev/variaveis/slides/index.html#/" title="Variáveis em JavaScript" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
 ## Exercícios do Freecodecamp
