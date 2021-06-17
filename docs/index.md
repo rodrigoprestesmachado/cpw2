@@ -14,7 +14,7 @@
 
 [Eventos](eventos/eventos.md)
 
-[Objetos](topics/objetos.md)
+[Objetos](objetos/objeto.md)
 
 [Document Object Model](topics/dom.md)
 

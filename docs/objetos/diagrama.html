@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>
+            <title>Diagrama de classes</title>
+        </title>
+    </head>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>
+            mermaid.initialize({
+                startOnLoad: true
+            });
+        </script>
+
+        <div class="mermaid">
+            classDiagram
+            
+            User "1" --> "0..*" Message
+            User "*" -- "*" Channel
+            Channel "1" --> "*" Message
+            
+            class User{
+                Long id
+                String name;
+            }
+
+            class Channel{
+                Long id
+                String hash;
+            }
+
+            class Message{
+                Long id
+                String text;
+            }
+        </div>
+    </body>
+</html>
