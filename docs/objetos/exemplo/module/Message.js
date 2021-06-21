@@ -8,23 +8,23 @@ export class Message {
     constructor(id, text) {
         this.#id = id;
         this.#text = text;
-      }
+    }
 
     // Get and Set
-    getId(){
+    getId() {
         return this.#id;
     }
-    
-    setId(id){
+
+    setId(id) {
         this.#id = id;
     }
 
-    getText(){
+    getText() {
         return this.#text;
     }
-    
-    setText(text){
+
+    setText(text) {
         this.#text = text;
     }
 
-  }
+}

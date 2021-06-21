@@ -6,34 +6,34 @@ export class User {
 
     // Construtor
     constructor(id, name) {
-      this.#id = id;
-      this.#name = name;
-      this.#messages = [];
+        this.#id = id;
+        this.#name = name;
+        this.#messages = [];
     }
 
     // Get and Set
-    getId(){
+    getId() {
         return this.#id;
     }
-    
-    setId(id){
+
+    setId(id) {
         this.#id = id;
     }
 
-    getName(){
+    getName() {
         return this.#name;
     }
-    
-    setName(name){
+
+    setName(name) {
         this.#name = name;
     }
 
-    getMessages(){
+    getMessages() {
         return this.#messages;
     }
-    
-    setMessage(message){
+
+    setMessage(message) {
         this.#messages.push(message);
     }
 
-  }
+}

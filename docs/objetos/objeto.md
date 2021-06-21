@@ -2,21 +2,21 @@
 
 ## Conceitos básicos de orientação a objetos
 
-* Objeto - a melhor forma de compreenter o que são os objetos é associar com uma abstração do mundo real. No mundo real, os objetos possuem caracteríscas e comportamentos. Por exemplo, um carro possui caracteríscas como cor, tamanho, peso, etc. e comportamentos como ligar, andar para frente e para trás.  Emum sistema, as caracteríscas são chamados de **atributos** ("variáveis") e os comportamentos, que conferem uma ação para os objetos, são chamado de **métodos** ("funções/procedimentos"). A figura abaixo ilustra um objeto:
+* Objeto - a melhor forma de compreender o que são os objetos é associar com uma abstração do mundo real. No mundo real, os objetos possuem características e comportamentos. Por exemplo, um carro possui características como cor, tamanho, peso, etc. e comportamentos como ligar, andar para frente e para trás.  Em um sistema, as características são chamados de **atributos** ("variáveis") e os comportamentos, que conferem uma ação para os objetos, são chamado de **métodos** ("funções/procedimentos"). A figura abaixo ilustra um objeto:
 
 <center>
 <img src="img/objeto.png" width="250" height="250"><br/>
 Figura 1 - Objeto
 </center>
 
-* Classes - Definem o formato de um objeto (molde ou template) e são utilizadas para intanciar (criar) os objetos
+* Classes - Definem o formato de um objeto (molde ou template) e são utilizadas para instânciar (criar) os objetos
 
 <center>
 <img src="img/classes.png" width="250" height="250"><br/>
 Figura 2 - Classe
 </center>
 
-* Encapsulamento - Encapsulamento consiste em isolar aspectos internos de um objeto. Observe que na Figura 1, não conseguimos acesso direto aos atributos, ou seja, necessitamos passar/executar um método para obter o valor de um abrituto. O encapsulamento é um conceito fundamental pois diminui a quandidade de variaveis globais em um sistema.
+* Encapsulamento - Encapsulamento consiste em isolar aspectos internos de um objeto. Observe que na Figura 1, não conseguimos acesso direto aos atributos, ou seja, necessitamos passar/executar um método para obter o valor de um atributo. O encapsulamento é um conceito fundamental pois diminui a quantidade de variáveis globais em um sistema.
 
 ## Orientação a objetos em JavaScript: ECMAScript 2015
 
@@ -25,7 +25,7 @@ Primeiro, observe o diagrama de classes abaixo:
 <iframe src="https://cpw2.rpmhub.dev/objetos/diagrama.html" title="Diagrama de" width="90%" height="400" style="border:none;"></iframe>
 </center>
 
-Para implementar o diagrama de classes acima podemos iniciar implementando a classe, os atributos (privados) e o construtor da seguinte maneira:
+Para implementar o [diagrama](https://cpw2.rpmhub.dev/objetos/diagrama.html) de classes acima podemos iniciar implementando a classe, os atributos (privados) e o construtor da seguinte maneira:
 
 ```javascript
 class User {
@@ -41,11 +41,16 @@ class User {
   }
   ```
 
-  Como os atributos são privados, devido a presença do sustenido (#), então o próximo passo é criar os métodos `get` e `set` para cada atributo:
+---
+**Nota:** A síntaxe (#) para definir atributos privados ainda é nova no JavaScript. Por essa razão, ferramentas de análise estática de código como o [Jslint](https://www.jslint.com) podem ainda não estar adaptadas para essa nova forma de escrita de código e reclamarem sobre o seu uso.
+
+---
+
+Como os atributos são privados, devido a presença do sustenido (#), então o próximo passo é criar os métodos `get` e `set` para cada atributo:
 
   ```javascript
   class User {
-    // Atributos privados (#)
+    // Atributos privados (símbolo - #)
     #id;
     #name;
 
@@ -59,7 +64,7 @@ class User {
     getId(){
         return this.#id;
     }
-    
+
     setId(id){
         this.#id = id;
     }
@@ -67,14 +72,14 @@ class User {
     getName(){
         return this.#name;
     }
-    
+
     setName(name){
         this.#name = name;
     }
   }
   ```
 
-O proóximo passo é implementar a classe `Message`da seguinte maneira:
+O próximo passo é implementar a classe `Message`da seguinte maneira:
 
 ```javascript
 class Message {
@@ -93,7 +98,7 @@ class Message {
     getId(){
         return this.#id;
     }
-    
+
     setId(id){
         this.#id = id;
     }
@@ -101,7 +106,7 @@ class Message {
     getText(){
         return this.#text;
     }
-    
+
     setText(text){
         this.#text = text;
     }
@@ -109,7 +114,7 @@ class Message {
 
 ```
 
-Existe um relacionamento entre as classes `User` e `Message` indicando que, um ususário pode escrever uma ou mais mensagens e a mensagem pode ser apenas de um ususário. Note que o diagrama mostra uma seta de `User` para `Message`, ou seja, deve ser implementado apenas o relacionamento da classe `User` para `Message` e não vice-versa. Assim, a classe `User` deve ser modificada da seguinte forma:
+Existe um relacionamento entre as classes `User` e `Message` indicando que, um usuário pode escrever uma ou mais mensagens e a mensagem pode ser apenas de um usuário. Note que o diagrama mostra uma seta de `User` para `Message`, ou seja, deve ser implementado apenas o relacionamento da classe `User` para `Message` e não vice-versa. Assim, a classe `User` deve ser modificada da seguinte forma:
 
 ```javascript
 class User {
@@ -129,7 +134,7 @@ class User {
     getId(){
         return this.#id;
     }
-    
+
     setId(id){
         this.#id = id;
     }
@@ -137,7 +142,7 @@ class User {
     getName(){
         return this.#name;
     }
-    
+
     setName(name){
         this.#name = name;
     }
@@ -145,14 +150,14 @@ class User {
     getMessages(){
         return this.#messages;
     }
-    
+
     setMessage(message){
         this.#messages.push(message);
     }
   }
   ```
 
-Como um usuário pode escrever muitas mensagens, então note que o atributo `#messages` foi implementado no construtor como um `Array`. Observe também que o método `setMessage` irá receber um objeto da classe `Message` que, posteriormente, será adicionado no array de mensagens. 
+Como um usuário pode escrever muitas mensagens, então note que o atributo `#messages` foi implementado no construtor como um `Array`. Observe também que o método `setMessage` irá receber um objeto da classe `Message` que, posteriormente, será adicionado no array de mensagens.
 
 Para criar objetos dessas duas classes podemos criar terceiro arquivo `index.js` por exemplo:
 
@@ -175,9 +180,9 @@ console.log(user.getId());
 console.log(user.getMessages()[0].getText());
 ```
 
-Se tentarmos executar o `index.js` com o [Node](https://nodejs.org/en/) (`node index.js`), receberemos um erro parecido com esse: 
+Se tentarmos executar o `index.js` com o [Node](https://nodejs.org/en/) (`node index.js`), receberemos um erro parecido com esse:
 
-```
+```shell
 node index.js
 index.js:5
 import {User} from "./User.js"
@@ -195,11 +200,11 @@ export class User {
 export class Message {
 ```
 
-Quando utilizamos a directiva `export` no fundo estamos criando um [Módulo em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Modules). Neste sentido, temos que declarar para o [Node](https://nodejs.org/en/) que estamos trabalhando com um módulo criando um arquivo chamado `package.json` com o seguinte conteúdo:
+Quando utilizamos a diretiva `export` no fundo estamos criando um [Módulo em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Modules). Neste sentido, temos que declarar para o [Node](https://nodejs.org/en/) que estamos trabalhando com um módulo criando um arquivo chamado `package.json` com o seguinte conteúdo:
 
 ```json
-{  
-    "type": "module"   
+{
+    "type": "module"
 }
 ```
 
@@ -209,7 +214,7 @@ Finalmente, podemos agora executar os nossos objetos escritos no arquivo `index.
 node index.js
 ```
 
-Da mesma forma, agora podemos exeutar o nosso `index.js` dentro de uma página HTML, mas, temos que indicar que estamos trabalhando com um módulo `<script src="index.js" type="module"></script>`, veja o exemplo:
+Da mesma forma, agora podemos executar o nosso `index.js` dentro de uma página HTML, mas, temos que indicar que estamos trabalhando com um módulo `<script src="index.js" type="module"></script>`, veja o exemplo:
 
 ```html
 <!DOCTYPE html>
@@ -227,11 +232,27 @@ Da mesma forma, agora podemos exeutar o nosso `index.js` dentro de uma página H
 </html>
 ```
 
-Os códigos desse exemplo podem ser obtidos e analisados nesse [repositório]((https://cpw2.rpmhub.dev/objetos/exemplo)).
+Os códigos desse exemplo podem ser obtidos e analisados nesse [repositório](https://github.com/rodrigoprestesmachado/cpw2/tree/master/docs/objetos/exemplo).
 
-# JavaScript Object Notation - JSON
+## Babel
 
-* JavaScript Object Notation (JSON) é uma notação que nos permite escrever objetos em JavaScript muito utilizada para troca de dados entre sistemas, um exemplo de objetos JavaScript escrito na notação JSON pode ser:
+O [Babel](https://babeljs.io) é um conjunto de ferramentas usado para converter o código ECMAScript 2015 (ou superior) em uma versão compatível com versões anteriores de JavaScript. O Babel é capaz de realizar uma transformação da sintaxe do JavaScript e preencher os recursos que estão faltando em seu ambiente de destino (Polyfill), como por exemplo:
+
+```javascript
+// Babel Input: ES2015 arrow function
+[1, 2, 3].map(n => n + 1);
+
+// Babel Output: ES5 equivalent
+[1, 2, 3].map(function(n) {
+  return n + 1;
+});
+```
+
+Nesse sentido, podemos utilizar a sintaxe atual do JavaScript e fazer com o que o Babel traduza o nosso código para sintaxe mais antigas.
+
+## JavaScript Object Notation - JSON
+
+* JavaScript Object Notation ([JSON](https://www.json.org)) é uma notação que nos permite escrever objetos em JavaScript muito utilizada para troca de dados entre sistemas, um exemplo de objetos JavaScript escrito na notação JSON pode ser:
 
 ```json
 {"estudantes ":[
@@ -239,16 +260,11 @@ Os códigos desse exemplo podem ser obtidos e analisados nesse [repositório]((h
      { "nome": "Maria", "notas": [ 8, 10, 7 ] },
 ]}
 ```
+
 No exemplo acima temos um objeto JavaScript que possui um atributo chamado `estudantes` que, por sua vez, possui um array contendo dois objetos. Note que o parênteses `{}` definem o objeto, os colchetes `[]` definem um array (que podem ser de objetos ou não) e os dois pontos `:` separa o atributo do seu valor.
 
-# Referências 
+## Referências
 
 [MDN: Classes](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Classes)
 
 [MDN: Membros privados](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
-
-[JSON](https://www.json.org)
-
-
-
-
