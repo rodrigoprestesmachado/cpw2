@@ -157,7 +157,7 @@ class User {
   }
   ```
 
-Como um usuário pode escrever muitas mensagens, então note que o atributo `#messages` foi implementado no construtor como um `Array`. Observe também que o método `setMessage` irá receber um objeto da classe `Message` que, posteriormente, será adicionado no array de mensagens.
+Como um usuário pode escrever muitas mensagens, então note que o atributo `#messages` deve ser implementado no construtor como um `Array`. Observe também que o método `setMessage` irá receber um objeto da classe `Message` que, posteriormente, será adicionado no array de objetos mensagens.
 
 Para criar objetos dessas duas classes podemos criar terceiro arquivo `index.js` por exemplo:
 
@@ -166,8 +166,8 @@ Para criar objetos dessas duas classes podemos criar terceiro arquivo `index.js`
 "use strict";
 
 // Importando as duas classes
-import {User} from "./module/User.js"
-import {Message} from "./module/Message.js"
+import {User} from "./src/User.js"
+import {Message} from "./src/Message.js"
 
 // Instanciando os objetos
 let user = new User(1, "Rodrigo");
@@ -190,14 +190,18 @@ import {User} from "./User.js"
 SyntaxError: The requested module './User.js' does not provide an export named 'User'
 ```
 
-Isso aconteceu pois devemos exportar (`export`) as classes/tipos `User` e também `Message` da seguinte maneira:
+Isso aconteceu pois devemos exportar as classes/tipos `User` e também `Message` adicionando a palavra chave `export` no início das classes:
 
 ```javascript
 export class User {
+  //code
+}
 ```
 
 ```javascript
 export class Message {
+  //code
+}
 ```
 
 Quando utilizamos a diretiva `export` no fundo estamos criando um [Módulo em JavaScript](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Modules). Neste sentido, temos que declarar para o [Node](https://nodejs.org/en/) que estamos trabalhando com um módulo criando um arquivo chamado `package.json` com o seguinte conteúdo:

@@ -11,28 +11,29 @@
                 startOnLoad: true
             });
         </script>
+        <center>
+            <div class="mermaid">
+                classDiagram
 
-        <div class="mermaid">
-            classDiagram
+                User "1" --> "0..*" Message
+                User "*" -- "*" Channel
+                Channel "1" --> "*" Message
 
-            User "1" --> "0..*" Message
-            User "*" -- "*" Channel
-            Channel "1" --> "*" Message
+                class User{
+                    Number id
+                    String name;
+                }
 
-            class User{
-                Number id
-                String name;
-            }
+                class Channel{
+                    Number id
+                    String hash;
+                }
 
-            class Channel{
-                Number id
-                String hash;
-            }
-
-            class Message{
-                Number id
-                String text;
-            }
-        </div>
+                class Message{
+                    Number id
+                    String text;
+                }
+            </div>
+        </center>
     </body>
 </html>
