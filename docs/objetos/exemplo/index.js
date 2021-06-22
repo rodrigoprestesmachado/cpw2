@@ -2,8 +2,8 @@
 "use strict";
 
 // Importando as duas classes
-import {User} from "./module/User.js"
-import {Message} from "./module/Message.js"
+import { User } from "./src/User.js"
+import { Message } from "./src/Message.js"
 
 // Instanciando os objetos
 let user = new User(1, "Rodrigo");

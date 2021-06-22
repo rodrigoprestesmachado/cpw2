@@ -14,23 +14,23 @@
 
         <div class="mermaid">
             classDiagram
-            
+
             User "1" --> "0..*" Message
             User "*" -- "*" Channel
             Channel "1" --> "*" Message
-            
+
             class User{
-                Long id
+                Number id
                 String name;
             }
 
             class Channel{
-                Long id
+                Number id
                 String hash;
             }
 
             class Message{
-                Long id
+                Number id
                 String text;
             }
         </div>
