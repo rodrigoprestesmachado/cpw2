@@ -236,8 +236,86 @@ Da mesma forma, agora podemos executar o nosso `index.js` dentro de uma página 
 </html>
 ```
 
-Os códigos desse exemplo podem ser obtidos e analisados nesse [repositório](https://github.com/rodrigoprestesmachado/cpw2/tree/master/docs/objetos/exemplo).
+## Herança 
 
+Herança é um princípio de orientação a objetos, que permite que classes compartilhem atributos e métodos com a intenção de reaproveitar trechos de código.
+
+Observe agora uma modificação no diagrama de classes anterior:
+<center>
+<iframe src="https://cpw2.rpmhub.dev/objetos/herança.html" title="Diagrama de" width="90%" height="400" style="border:none;"></iframe>
+</center>
+
+Note que no diagrama acima foi adicionado duas novas classe chamadas `TextMessage` e `VoiceMessage` que herdam trechos de código da classe `Message`. Nesse caso, dizemos que `TextMessage` e `VoiceMessage` são especializações (ou sub classes) da classe `Message`, pois, possuem atributos/códigos específicos sobre mensagem no formado de texto e áudio. Por sua vez, dizemos que a classe `Message` é uma generalização (ou super classe) das classes `TextMessage` e `VoiceMessage`, pois possuem trechos de código que são comuns a essas duas sub classes. Para se implementar, por exemplo, uma herança entre na classe `TextMessage` utilizamos a palavra chave `extends`, veja a implementação das classes `Message` e `TextMessage`:
+
+```javascript 
+export class Message {
+
+    // Atributos privados
+    #id;
+
+    // Construtor
+    constructor(id) {
+        this.#id = id;
+    }
+
+    // Get and Set
+    getId() {
+        return this.#id;
+    }
+
+    setId(id) {
+        this.#id = id;
+    }
+}
+```
+
+```javascript
+import { Message } from "./Message.js";
+
+export class TextMessage extends Message {
+
+    // Atributos privados
+    #text;
+
+    // Construtor
+    constructor(id, text) {
+        super(id);
+        this.#text = text;
+    }
+
+    getText() {
+        return this.#text;
+    }
+
+    setText(text) {
+        this.#text = text;
+    }
+
+}
+```
+
+Observe que `TextMessage` está herdando código da classe `Message` por meio do `extends`. Assim, a classe `TextMessage` possui, por exemplo, todo o código relacionado com o atributo `#id` que foi implementado na super classe `Message`. Outro ponto que vale ressaltar é o a palavra `super` onde, nesse caso, está realizando uma chamada para o construtor da super classe (`Message`) a fim de realizar a inicialização do atributo `#id`. A chamada de um construtor da super classe possui uma única regra, ser a primeira linha de código a ser escrita no construtor da subclasse (`TextMessage`). Finalmente, veja a alteração que foi realizada no arquivo `index.js`:
+
+```javascript
+//https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Reference/Strict_mode
+"use strict";
+
+// Importando as duas classes
+import { User } from "./src/User.js"
+import { TextMessage } from "./src/TextMessage.js";
+
+// Instanciando os objetos
+let user = new User(1, "Rodrigo");
+let textMessage = new TextMessage(1, "mensagem de texto");
+// associando uma mensagem ao usuário Rodrigo
+user.setMessage(textMessage);
+
+// Mostrando no console
+console.log(user.getId());
+console.log(user.getMessages()[0].getText());
+```
+
+Os trechos de códigos desse exemplo pode ser obtido e analisados neste [repositório](https://github.com/rodrigoprestesmachado/cpw2/tree/master/docs/objetos/exemplo).
 ## Babel
 
 O [Babel](https://babeljs.io) é um conjunto de ferramentas usado para converter o código ECMAScript 2015 (ou superior) em uma versão compatível com versões anteriores de JavaScript. O Babel é capaz de realizar uma transformação da sintaxe do JavaScript e preencher os recursos que estão faltando em seu ambiente de destino (Polyfill), como por exemplo:

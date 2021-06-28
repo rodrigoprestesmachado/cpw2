@@ -2,12 +2,10 @@ export class Message {
 
     // Atributos privados
     #id;
-    #text;
 
     // Construtor
-    constructor(id, text) {
+    constructor(id) {
         this.#id = id;
-        this.#text = text;
     }
 
     // Get and Set
@@ -17,14 +15,6 @@ export class Message {
 
     setId(id) {
         this.#id = id;
-    }
-
-    getText() {
-        return this.#text;
-    }
-
-    setText(text) {
-        this.#text = text;
     }
 
 }
