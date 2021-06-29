@@ -22,10 +22,10 @@ Figura 2 - Classe
 
 Primeiro, observe o diagrama de classes abaixo:
 <center>
-<iframe src="https://cpw2.rpmhub.dev/objetos/diagrama.html" title="Diagrama de" width="90%" height="400" style="border:none;"></iframe>
+<iframe src="http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/rodrigoprestesmachado/cpw2/master/docs/objetos/diagrama.pu" title="Diagrama de classes" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
-Para implementar o [diagrama](https://cpw2.rpmhub.dev/objetos/diagrama.html) de classes acima podemos iniciar implementando a classe, os atributos (privados) e o construtor da seguinte maneira:
+Para implementar o [diagrama](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/rodrigoprestesmachado/cpw2/master/docs/objetos/diagrama.pu) de classes acima podemos iniciar implementando a classe, os atributos (privados) e o construtor da seguinte maneira:
 
 ```javascript
 class User {
@@ -242,10 +242,10 @@ Herança é um princípio de orientação a objetos, que permite que classes com
 
 Observe agora uma modificação no diagrama de classes anterior:
 <center>
-![diagrama de classes](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rodrigoprestesmachado/cpw2/master/docs/objetos/diagrama.pu)
+<iframe src="http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/rodrigoprestesmachado/cpw2/master/docs/objetos/heranca.pu" title="Diagrama de classes" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
-Note que no diagrama acima foi adicionado duas novas classe chamadas `TextMessage` e `VoiceMessage` que herdam trechos de código da classe `Message`. Nesse caso, dizemos que `TextMessage` e `VoiceMessage` são especializações (ou sub classes) da classe `Message`, pois, possuem atributos/códigos específicos sobre mensagem no formado de texto e áudio. Por sua vez, dizemos que a classe `Message` é uma generalização (ou super classe) das classes `TextMessage` e `VoiceMessage`, pois possuem trechos de código que são comuns a essas duas sub classes. Para se implementar, por exemplo, uma herança entre na classe `TextMessage` utilizamos a palavra chave `extends`, veja a implementação das classes `Message` e `TextMessage`:
+Note que no [diagrama](http://www.plantuml.com/plantuml/proxy?src=https://raw.githubusercontent.com/rodrigoprestesmachado/cpw2/master/docs/objetos/heranca.pu) acima foi adicionado duas novas classe chamadas `TextMessage` e `VoiceMessage` que herdam trechos de código da classe `Message`. Nesse caso, dizemos que `TextMessage` e `VoiceMessage` são especializações (ou sub classes) da classe `Message`, pois, possuem atributos/códigos específicos sobre mensagem no formado de texto e áudio. Por sua vez, dizemos que a classe `Message` é uma generalização (ou super classe) das classes `TextMessage` e `VoiceMessage`, pois possuem trechos de código que são comuns a essas duas sub classes. Para se implementar, por exemplo, uma herança entre na classe `TextMessage` utilizamos a palavra chave `extends`, veja a implementação das classes `Message` e `TextMessage`:
 
 ```javascript 
 export class Message {
