@@ -22,7 +22,7 @@ Figura 2 - Classe
 
 Primeiro, observe o diagrama de classes abaixo:
 <center>
-<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rodrigoprestesmachado/cpw2/master/docs/objetos/diagrama.puml" alt="Diagrama de classes" width="90%" height="90%">
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rodrigoprestesmachado/cpw2/master/docs/objetos/diagrama.puml" alt="Diagrama de classes" width="40%" height="40%">
 </center>
 
 Para implementar o [diagrama](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rodrigoprestesmachado/cpw2/master/docs/objetos/diagrama.puml) de classes acima podemos iniciar implementando a classe, os atributos (privados) e o construtor da seguinte maneira:
@@ -242,7 +242,7 @@ Herança é um princípio de orientação a objetos, que permite que classes com
 
 Observe agora uma modificação no diagrama de classes anterior:
 <center>
-<img src="ihttp://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rodrigoprestesmachado/cpw2/master/docs/objetos/heranca.puml" alt="Herança" width="90%" height="90%">
+<img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rodrigoprestesmachado/cpw2/master/docs/objetos/heranca.puml" alt="Herança" width="40%" height="40%">
 </center>
 
 Note que no [diagrama](http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rodrigoprestesmachado/cpw2/master/docs/objetos/heranca.puml) acima foi adicionado duas novas classe chamadas `TextMessage` e `VoiceMessage` que herdam trechos de código da classe `Message`. Nesse caso, dizemos que `TextMessage` e `VoiceMessage` são especializações (ou sub classes) da classe `Message`, pois, possuem atributos/códigos específicos sobre mensagem no formado de texto e áudio. Por sua vez, dizemos que a classe `Message` é uma generalização (ou super classe) das classes `TextMessage` e `VoiceMessage`, pois possuem trechos de código que são comuns a essas duas sub classes. Para se implementar, por exemplo, uma herança entre na classe `TextMessage` utilizamos a palavra chave `extends`, veja a implementação das classes `Message` e `TextMessage`:
