@@ -1,0 +1,37 @@
+@startuml
+
+Message <|-- TextMessage
+Message <|-- VoiceMessage
+
+User "1" --> "0..*" Message : send
+User "0..*" -- "0..*" Channel : join
+Channel "1" --> "0..*" Message : contains
+
+class User {
+ - Number id
+ - String name
+}
+
+class Channel {
+ -Number id
+ - String name
+}
+
+class Message {
+ -Number id
+ - String hash
+}
+
+
+class TextMessage {
+ - String id
+}
+
+class VoiceMessage {
+ - Stream audio
+ - Time duration
+}
+
+
+
+@enduml
