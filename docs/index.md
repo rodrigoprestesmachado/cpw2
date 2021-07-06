@@ -16,7 +16,7 @@
 
 [Objetos](objetos/objeto.md)
 
-[Document Object Model](topics/dom.md)
+[Document Object Model](dom/dom.md)
 
 [Ajax](topics/ajax.md)
 

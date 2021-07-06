@@ -1,0 +1,14 @@
+@startmindmap
+* HTML
+** HEAD
+*** TITLE
+**** TextNode
+***** "DOM Tutorial"
+** BODY
+*** H1
+**** TextNode
+***** "DOM Lesson"
+*** P
+**** TextNode
+***** "Hello World"
+@endmindmap
