@@ -1,4 +1,5 @@
 # Document Object Model
+<!-- .element: style="margin-bottom:50px; font-size: 50px; font-family: Marker Felt;" -->
 
 Pressione 'F' para tela cheia
 <!-- .element: style="font-size: small; font-family: arial; color:#EDEEEC" -->
@@ -7,9 +8,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="font-size: small; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+<!-- .slide: data-background="#5F7A64" data-transition="convex"  -->
 # Document Object Model
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * O Document Object Model (DOM) é um padrão W3C (World Wide Web Consortium)
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -33,7 +34,7 @@ Pressione 'F' para tela cheia
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # Document Object Model
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -56,7 +57,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # HTML DOM Nodes
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -78,7 +79,7 @@ Pressione 'F' para tela cheia
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # Node Exemplo
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -93,10 +94,10 @@ Pressione 'F' para tela cheia
   </body>
 </html>
 ```
-<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # Node Exemplo
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -113,7 +114,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # Text Nodes
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -130,7 +131,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # Representação Gráfica do Exemplo
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -139,7 +140,7 @@ Pressione 'F' para tela cheia
 </center>
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # HTML Node Tree
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -153,7 +154,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # Parents, Children e Siblings
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -167,14 +168,14 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # Parents, Children e Siblings
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
-<img width="70%" src="imgs/parent.png"/>
+<img width="60%" src="imgs/parent.png"/>
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # HTML Node Tree
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -194,7 +195,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # Interface de Programação
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -208,7 +209,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # Exemplos de Propriedades
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -234,27 +235,27 @@ Pressione 'F' para tela cheia
     <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # Métodos
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
 * Dado que x é um nó da árvore:
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * x.getElementById ( id ) - obtém o elemento com um id específico
+  * x.getElementById("id") - obtém o elemento com um id específico
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * x.getElementsByTagName ( nome ) - obter todos os elementos de uma determinada tag
+  * x.getElementsByTagName("name") - obter todos os elementos de uma determinada tag
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * x.appendChild ( nó ) - inserir um filho para x
+  * x.appendChild(node) - inserir um filho para x
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * x.removeChild ( nó ) - remove um filho de x
+  * x.removeChild(node) - remove um filho de x
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # A propriedade innerHTML
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -268,32 +269,30 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # A propriedade innerHTML
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
 ```html
 <html>
     <body>
-
         <p id="intro">Hello World!</p>
 
         <script type="text/javascript">
             var txt = document.getElementById("intro").innerHTML;
             document.write("<p>O texto do parágrafo é: " + txt + "</p>");
         </script>
-
     </body>
 </html>
 ```
-<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # childNodes e nodeValue
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
-* Podemos também recuperar o valor do parágrafo por meio das propriedades `childNodes` e `nodeValue`
+* Podemos também recuperar o valor do parágrafo por meio das propriedades childNodes e nodeValue
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 ```html
@@ -308,10 +307,10 @@ Pressione 'F' para tela cheia
     </body>
 </html>
 ```
-<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # HTML DOM Access Nodes
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -328,7 +327,7 @@ Pressione 'F' para tela cheia
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # O Método getElementById()
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -338,7 +337,6 @@ Pressione 'F' para tela cheia
 ```html
 <html>
     <body>
-
         <p id="intro">Hello World!</p>
 
         <script type="text/javascript">
@@ -346,14 +344,13 @@ Pressione 'F' para tela cheia
             var x = document.getElementById("intro");
             document.write("<p>" + x.innerHTML + "</p>");
         </script>
-
     </body>
 </html>
 ```
-<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # O Método getElementsByTagName()
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -363,23 +360,21 @@ Pressione 'F' para tela cheia
 ```html
 <html>
     <body>
-
         <p>Hello</p>
         <p>World!</p>
 
         <script type="text/javascript">
             x=document.getElementsByTagName("p");
-            // Atencao: x é um node list
+            // Atenção: x é um node list
             document.write("Texto do segundo parágrafo: " + x[1].innerHTML);
         </script>
-
     </body>
 </html>
 ```
-<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # Navegando na Árvore
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -389,28 +384,29 @@ Pressione 'F' para tela cheia
 ```html
 <html>
     <body>
-
-         <p id="intro">Hello World!</p>
+        <p id="intro">Hello World!</p>
 
         <script type="text/javascript">
             x = document.getElementById("intro");
             document.write(x.firstChild.nodeValue);
         </script>
-
     </body>
 </html>
 ```
-<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
 # Referências
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 45px; font-family: Marker Felt; color:#EDEEEC" -->
 
-* [DOM Tutorial](https://www.w3schools.com/js/js_htmldom.asp)
+* W3schools: [DOM Tutorial](https://www.w3schools.com/js/js_htmldom.asp)
+<!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 * MILETTO, Evandro Manara. [Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php](https://biblioteca.ifrs.edu.br/pergamum_ifrs/biblioteca_s/acesso_login.php?cod_acervo_acessibilidade=5020682&acesso=aHR0cHM6Ly9pbnRlZ3JhZGEubWluaGFiaWJsaW90ZWNhLmNvbS5ici9ib29rcy85Nzg4NTgyNjAxOTY5&label=acesso%20restrito). Porto Alegre Bookman 2014 1 recurso online ISBN 9788582601969.
+<!-- .element: style="margin-bottom:70px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 <center>
 <a href="https://github.com/rodrigoprestesmachado" target="blanck"><img src="../../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%" height="3%" border=0 style="border:0; text-decoration:none; outline:none"></a><br/>
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Atribuição 4.0 Internacional</a>
+<!-- .element: style="margin-bottom:50px; font-size: 14px; font-family: arial; color:#EDEEEC" -->

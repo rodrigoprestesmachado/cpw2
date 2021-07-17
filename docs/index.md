@@ -1,28 +1,28 @@
 # Trilha de aprendizagem
 
-[Introdução](introducao/introducao.md)
+* [Introdução](introducao/introducao.md)
 
-[Variáveis](variaveis/variaveis.md)
+* [Variáveis](variaveis/variaveis.md)
 
-[Tipos de dados primitivos](tipos/tipos.md)
+* [Tipos de dados primitivos](tipos/tipos.md)
 
-[Operadores](operadores/operadores.md)
+* [Operadores](operadores/operadores.md)
 
-[Estruturas de controle](controle/controle.md)
+* [Estruturas de controle](controle/controle.md)
 
-[Funções](funcoes/funcoes.md)
+* [Funções](funcoes/funcoes.md)
 
-[Eventos](eventos/eventos.md)
+* [Eventos](eventos/eventos.md)
 
-[Objetos](objetos/objeto.md)
+* [Objetos](objetos/objeto.md)
 
-[Document Object Model](dom/dom.md)
+* [Document Object Model (DOM)](dom/dom.md)
 
-[Ajax](topics/ajax.md)
+* [Asynchronous Javascript and XML (AJAX)](ajax/ajax.md)
 
-[Promisses](topics/promisses.md)
+* [Promisses](topics/promisses.md)
 
-[Crud JS e PHP](topics/crud.md)
+* [Crud JS e PHP](topics/crud.md)
 
 # Comunidade de aprendizagem
 

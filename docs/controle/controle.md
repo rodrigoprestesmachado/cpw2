@@ -1,6 +1,6 @@
 # Estruturas de controle
 <center>
-<iframe src="https://cpw2.rpmhub.dev/controle/slides/index.html#/" title="Esttuturas de Controle" width="90%" height="500" style="border:none;"></iframe>
+<iframe src="https://cpw2.rpmhub.dev/controle/slides/index.html#/" title="Estruturas de Controle" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
 ## Exercícios do Freecodecamp
