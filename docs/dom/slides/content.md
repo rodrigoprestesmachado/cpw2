@@ -1,3 +1,5 @@
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://img.olhardigital.com.br/wp-content/uploads/2019/03/20190322051919-1254x450.jpg" 
+data-transition="convex"  -->
 # Document Object Model
 <!-- .element: style="margin-bottom:50px; font-size: 50px; font-family: Marker Felt;" -->
 
@@ -8,7 +10,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="font-size: small; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="convex"  -->
+<!-- .slide: data-background="#505F53" data-transition="convex"  -->
 # Document Object Model
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
@@ -34,7 +36,7 @@ Pressione 'F' para tela cheia
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # Document Object Model
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -57,7 +59,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # HTML DOM Nodes
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -79,7 +81,7 @@ Pressione 'F' para tela cheia
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # Node Exemplo
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -97,7 +99,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # Node Exemplo
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -114,7 +116,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # Text Nodes
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -131,7 +133,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # Representação Gráfica do Exemplo
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -140,7 +142,7 @@ Pressione 'F' para tela cheia
 </center>
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # HTML Node Tree
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -154,7 +156,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # Parents, Children e Siblings
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -168,14 +170,14 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # Parents, Children e Siblings
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
 <img width="60%" src="imgs/parent.png"/>
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # HTML Node Tree
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -195,7 +197,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # Interface de Programação
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -209,7 +211,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # Exemplos de Propriedades
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -235,7 +237,7 @@ Pressione 'F' para tela cheia
     <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # Métodos
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -255,7 +257,7 @@ Pressione 'F' para tela cheia
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # A propriedade innerHTML
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -269,7 +271,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # A propriedade innerHTML
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -288,7 +290,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # childNodes e nodeValue
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -310,7 +312,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # HTML DOM Access Nodes
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -327,7 +329,7 @@ Pressione 'F' para tela cheia
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # O Método getElementById()
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -350,7 +352,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # O Método getElementsByTagName()
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -374,7 +376,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # Navegando na Árvore
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
 
@@ -396,7 +398,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#5F7A64" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
 # Referências
 <!-- .element: style="margin-bottom:50px; font-size: 45px; font-family: Marker Felt; color:#EDEEEC" -->
 

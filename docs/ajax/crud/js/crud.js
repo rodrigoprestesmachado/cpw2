@@ -11,6 +11,9 @@
 // Global XMLHttpRequest
 var xmlHttp;
 
+/*
+  Creates a client in the system
+*/
 function fnCreate() {
   var name = document.getElementById("name").value;
   var email = document.getElementById("email").value;
@@ -23,7 +26,9 @@ function fnCreate() {
   xmlHttp.send();
 }
 
-/* */
+/*
+  Callback to handle the response of the fnCreate function
+*/
 function createCallback() {
   if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
     var json = JSON.parse(xmlHttp.responseText);
@@ -32,6 +37,9 @@ function createCallback() {
   }
 }
 
+/*
+Reads all clients from data base
+*/
 function fnRead() {
   xmlHttp = new XMLHttpRequest();
   xmlHttp.onreadystatechange = readCallback;
@@ -39,6 +47,9 @@ function fnRead() {
   xmlHttp.send();
 }
 
+/*
+Callback to handle the response of the fnRead function
+*/
 function readCallback() {
   if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
     // get json from the server
@@ -50,6 +61,9 @@ function readCallback() {
   }
 }
 
+/*
+Enables the form update
+*/
 function enableUpdate(id) {
   var tr = document.getElementById(id);
   var trChildNodes = tr.childNodes;
@@ -69,6 +83,9 @@ function enableUpdate(id) {
   }
 }
 
+/*
+Updates a client in the data base
+*/
 function fnUpdate(id) {
   var tr = document.getElementById(id);
   var trChildNodes = tr.childNodes;
@@ -88,6 +105,9 @@ function fnUpdate(id) {
   xmlHttp.send();
 }
 
+/*
+Callback to handle the response of the fnUpdate function
+*/
 function updateCallback() {
   if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
     var json = JSON.parse(xmlHttp.responseText);
@@ -98,12 +118,18 @@ function updateCallback() {
   }
 }
 
+/*
+Deletes a client 
+*/
 function fnDelete(id) {
   xmlHttp.onreadystatechange = deleteCallback;
   xmlHttp.open("GET", "server.php?op=delete&&id=" + id, true);
   xmlHttp.send();
 }
 
+/*
+  Callback to handle the response of the fnDelete function
+*/
 function deleteCallback() {
   if (xmlHttp.readyState === 4 && xmlHttp.status === 200) {
     var json = JSON.parse(xmlHttp.responseText);
@@ -119,7 +145,9 @@ function deleteCallback() {
   }
 }
 
-/* DOM do create a table row */
+/*
+  DOM do create a table row
+*/
 function createRow(table, json) {
   // Creating table row with the data base id
   var tr = document.createElement("tr");

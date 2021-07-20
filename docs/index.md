@@ -22,8 +22,6 @@
 
 * [Promisses](topics/promisses.md)
 
-* [Crud JS e PHP](topics/crud.md)
-
 # Comunidade de aprendizagem
 
 Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
