@@ -6,12 +6,13 @@
 
 ## Create Read Update Delete (CRUD)
 
-Criação (_Create_), Leitura (_Read_), atualização (_Update_) e exclusão (_Delete_) estão entre as operações mais comuns em um sistema. Assim, essa seção irá ilustrar como implementar um CRUD em um banco de dados relacional MySQL por meio de um _front end_ escrito em JS/AJAX e _back end_ em PHP. 
+Criação (_Create_), leitura (_Read_), atualização (_Update_) e exclusão (_Delete_) estão entre as operações mais comuns em um sistema. Assim, essa seção irá ilustrar como implementar um CRUD em um banco de dados relacional MySQL por meio de um _front end_ escrito em JS/AJAX e _back end_ em PHP. 
 
 Para baixar e entrar no diretório do projeto:
 
     git clone https://github.com/rodrigoprestesmachado/cpw2
     cd cpw2/docs/ajax/crud
+    code .
 
 ### Docker e Docker-Compose
 

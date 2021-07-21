@@ -1,7 +1,7 @@
-<!-- .slide:  data-background-opacity="0.1" data-background-image="https://img.olhardigital.com.br/wp-content/uploads/2019/03/20190322051919-1254x450.jpg" 
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" 
 data-transition="convex"  -->
 # Document Object Model
-<!-- .element: style="margin-bottom:50px; font-size: 50px; font-family: Marker Felt;" -->
+<!-- .element: style="margin-bottom:100px; font-size: 60px; color:F5F5F5; font-family: Marker Felt;" -->
 
 Pressione 'F' para tela cheia
 <!-- .element: style="font-size: small; font-family: arial; color:#EDEEEC" -->
@@ -10,7 +10,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="font-size: small; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="convex"  -->
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
 # Document Object Model
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
@@ -36,9 +36,9 @@ Pressione 'F' para tela cheia
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # Document Object Model
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * O HTML DOM define:
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -59,9 +59,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # HTML DOM Nodes
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * No DOM, tudo em um documento HTML é um node
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -81,9 +81,9 @@ Pressione 'F' para tela cheia
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # Node Exemplo
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 ```html
 <html>
@@ -99,9 +99,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # Node Exemplo
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * A raiz do documento no HTML é `<html>`. Todos os outros nós do documento estão contidos dentro de `<html>`.
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -116,9 +116,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # Text Nodes
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * O texto sempre é armazenado em text nodes (nós de texto)
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -133,18 +133,18 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # Representação Gráfica do Exemplo
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 <center>
 <img src="http://www.plantuml.com/plantuml/proxy?cache=no&src=https://raw.githubusercontent.com/rodrigoprestesmachado/cpw2/master/docs/dom/tree.puml" alt="Diagrama de classes" width="40%" height="40%">
 </center>
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # HTML Node Tree
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * Um documento em HTML possui uma estrutura no formato de uma árvore. Esta estrutura é chamada de node-tree
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -156,9 +156,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # Parents, Children e Siblings
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * Os nós na árvore possuem uma relação hierárquica
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -170,16 +170,16 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # Parents, Children e Siblings
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 <img width="60%" src="imgs/parent.png"/>
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # HTML Node Tree
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * Numa árvore, o nó superior é chamado de root (raiz)
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -197,9 +197,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # Interface de Programação
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * A interface de programação do DOM é definida pelas propriedades e métodos
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -211,9 +211,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # Exemplos de Propriedades
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * Dado que x é um nó da árvore:
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -237,9 +237,9 @@ Pressione 'F' para tela cheia
     <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # Métodos
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * Dado que x é um nó da árvore:
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -257,9 +257,9 @@ Pressione 'F' para tela cheia
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # A propriedade innerHTML
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * A maneira mais fácil de obter ou modificar o conteúdo de um elemento é usando a propriedade innerHTML
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -271,9 +271,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # A propriedade innerHTML
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 ```html
 <html>
@@ -290,9 +290,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # childNodes e nodeValue
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * Podemos também recuperar o valor do parágrafo por meio das propriedades childNodes e nodeValue
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -312,9 +312,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # HTML DOM Access Nodes
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * Você pode acessar um nó de três maneiras:
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -329,9 +329,9 @@ Pressione 'F' para tela cheia
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # O Método getElementById()
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * O método getElementById() retorna o elemento com o ID especificado
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -352,9 +352,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # O Método getElementsByTagName()
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * O método getElementsByTagName() retorna todas as tags de mesmo nome (node-list)
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -376,9 +376,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # Navegando na Árvore
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 * As propriedades; parentNode, firstChild e lastChild, permitem viagens de curta distância em um documento
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
@@ -398,9 +398,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#505F53" data-transition="zoom" color:#EDEEEC" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # Referências
-<!-- .element: style="margin-bottom:50px; font-size: 45px; font-family: Marker Felt; color:#EDEEEC" -->
+<!-- .element: style="margin-bottom:50px; font-size: 45px; font-family: Marker Felt;" -->
 
 * W3schools: [DOM Tutorial](https://www.w3schools.com/js/js_htmldom.asp)
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->

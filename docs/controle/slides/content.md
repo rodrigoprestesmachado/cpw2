@@ -1,4 +1,7 @@
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" 
+data-transition="convex"  -->
 # Estruturas de Controle
+<!-- .element: style="margin-bottom:100px; font-size: 60px; color:F5F5F5; font-family: Marker Felt;" -->
 
 Pressione 'F' para tela cheia
 <!-- .element: style="font-size: small;" -->
@@ -7,8 +10,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="font-size: small;" -->
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="zoom" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## If, else e else if
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
 
 ```html
 <html>
@@ -30,10 +34,12 @@ Pressione 'F' para tela cheia
 </body>
 </html>
 ```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="zoom" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## Switch
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
 
 ```html
 <body>
@@ -59,10 +65,12 @@ Pressione 'F' para tela cheia
 </body>
 </html>
 ```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="zoom" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## While
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
 
 ```html
 <html>
@@ -78,10 +86,12 @@ Pressione 'F' para tela cheia
 </body>
 </html>
 ```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="zoom" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## For
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
 
 ```html
 <html>
@@ -96,10 +106,12 @@ Pressione 'F' para tela cheia
 </body>
 </html>
 ```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="zoom" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## For .. in
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
 
 ```html
 <html>
@@ -119,10 +131,12 @@ Pressione 'F' para tela cheia
 </body>
 </html>
 ```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="zoom" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## [ES6](https://www.w3schools.com/js/js_es6.asp#mark_forof): For/Of
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
 
 ```html
 </body>
@@ -138,10 +152,12 @@ Pressione 'F' para tela cheia
 </body>
 </html>
 ```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="zoom" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## Break
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
 
 ```html
 <html>
@@ -159,10 +175,12 @@ Pressione 'F' para tela cheia
 </body>
 </html>
 ```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="zoom" -->
+<!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## Continue
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
 
 ```html
 <html>
@@ -180,17 +198,21 @@ Pressione 'F' para tela cheia
 </body>
 </html>
 ```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-# Referências
-
-* Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
+<!-- .slide: data-background="#4AA791" data-transition="zoom" -->
+# Referências 📚
+<!-- .element: style="margin-bottom:50px; font-size: 45px; color:2B2625; font-family: Marker Felt; color:#F5F5F5" -->
 
 * MDN [JavaScript basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+<!-- .element: style="margin-bottom:40px; font-size: 20px; color:white; font-family: arial;" -->
 
 * Tutorial de [JavaScript](http://www.w3schools.com/js) do W3C
+<!-- .element: style="margin-bottom:40px; font-size: 20px; color:white; font-family: arial;" -->
 
 * MILETTO, Evandro Manara. [Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php](https://biblioteca.ifrs.edu.br/pergamum_ifrs/biblioteca_s/acesso_login.php?cod_acervo_acessibilidade=5020682&acesso=aHR0cHM6Ly9pbnRlZ3JhZGEubWluaGFiaWJsaW90ZWNhLmNvbS5ici9ib29rcy85Nzg4NTgyNjAxOTY5&label=acesso%20restrito). Porto Alegre Bookman 2014 1 recurso online ISBN 9788582601969.
+<!-- .element: style="margin-bottom:40px; font-size: 20px; color:white; font-family: arial;" -->
 
 <center>
 <a href="https://github.com/rodrigoprestesmachado" target="blanck"><img src="../../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%" height="3%" border=0 style="border:0; text-decoration:none; outline:none"></a><br/>

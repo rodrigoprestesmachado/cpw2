@@ -1,7 +1,10 @@
-# Variáveis em JavaScript
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" 
+data-transition="convex"  -->
+# Variáveis
+<!-- .element: style="margin-bottom:100px; font-size: 50px; color:white; font-family: Marker Felt;" -->
 
 Pressione 'F' para tela cheia
-<!-- .element: style="font-size: small;" -->
+<!-- .element: style="font-size: small; color:white;" -->
 
 [versão em pdf](?print-pdf)
 <!-- .element: style="font-size: small;" -->
