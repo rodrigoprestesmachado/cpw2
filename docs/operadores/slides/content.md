@@ -9,51 +9,61 @@ Pressione 'F' para tela cheia
 [versão em pdf](?print-pdf)
 <!-- .element: style="font-size: small;" -->
 
-<!-- .slide: data-background="#F1F1F1" data-transition="concave" -->
+
+<!-- .slide: data-background="#4AA791" data-transition="concave"  -->
 ## Operadores: Aritiméticos
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank"><img src="imgs/op1.png"  width="90%" height="90%"></img></a>
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="concave" -->
+<!-- .slide: data-background="#4AA791" data-transition="concave"  -->
 ## Operadores: Atribuição
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank"><img src="imgs/op2.png"  width="90%" height="90%"></img></a>
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="concave" -->
+<!-- .slide: data-background="#4AA791" data-transition="concave"  -->
 ## Operadores: Comparação
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank"><img src="imgs/op3.png"  width="90%" height="90%"></img></a>
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="concave" -->
+<!-- .slide: data-background="#4AA791" data-transition="concave"  -->
 ## Operadores: Lógicos
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank"><img src="imgs/op4.png"  width="90%" height="90%"></img></a>
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="concave" -->
+<!-- .slide: data-background="#4AA791" data-transition="concave"  -->
 ## Operadores: Tipo
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank"><img src="imgs/op5.png"  width="90%" height="90%"></img></a>
 
 
-<!-- .slide: data-background="#F1F1F1" data-transition="concave" -->
+<!-- .slide: data-background="#4AA791" data-transition="concave"  -->
 ## Operadores: Bitwise
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank"><img src="imgs/op6.png"  width="80%" height="80%"></img></a>
 
 
-# Referências
-
-* Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
+<!-- .slide: data-background="#4AA791" data-transition="concave"  -->
+# Referências 📚
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 * MDN [JavaScript basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+<!-- .element: style="margin-bottom:60px; font-size: 25px; font-family: arial; color:#F5F5F5" -->
 
 * Tutorial de [JavaScript](http://www.w3schools.com/js) do W3C
+<!-- .element: style="margin-bottom:60px; font-size: 25px; font-family: arial; color:#F5F5F5" -->
 
 * MILETTO, Evandro Manara. [Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php](https://biblioteca.ifrs.edu.br/pergamum_ifrs/biblioteca_s/acesso_login.php?cod_acervo_acessibilidade=5020682&acesso=aHR0cHM6Ly9pbnRlZ3JhZGEubWluaGFiaWJsaW90ZWNhLmNvbS5ici9ib29rcy85Nzg4NTgyNjAxOTY5&label=acesso%20restrito). Porto Alegre Bookman 2014 1 recurso online ISBN 9788582601969.
+<!-- .element: style="margin-bottom:60px; font-size: 25px; font-family: arial; color:#F5F5F5" -->
 
 <center>
 <a href="https://github.com/rodrigoprestesmachado" target="blanck"><img src="../../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%" height="3%" border=0 style="border:0; text-decoration:none; outline:none"></a><br/>

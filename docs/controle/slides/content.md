@@ -12,7 +12,7 @@ Pressione 'F' para tela cheia
 
 <!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## If, else e else if
-<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 ```html
 <html>
@@ -39,7 +39,7 @@ Pressione 'F' para tela cheia
 
 <!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## Switch
-<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 ```html
 <body>
@@ -70,7 +70,7 @@ Pressione 'F' para tela cheia
 
 <!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## While
-<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 ```html
 <html>
@@ -91,7 +91,7 @@ Pressione 'F' para tela cheia
 
 <!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## For
-<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 ```html
 <html>
@@ -111,7 +111,7 @@ Pressione 'F' para tela cheia
 
 <!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## For .. in
-<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 ```html
 <html>
@@ -136,7 +136,7 @@ Pressione 'F' para tela cheia
 
 <!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## [ES6](https://www.w3schools.com/js/js_es6.asp#mark_forof): For/Of
-<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 ```html
 </body>
@@ -157,7 +157,7 @@ Pressione 'F' para tela cheia
 
 <!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## Break
-<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 ```html
 <html>
@@ -180,7 +180,7 @@ Pressione 'F' para tela cheia
 
 <!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 ## Continue
-<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 ```html
 <html>
@@ -203,7 +203,7 @@ Pressione 'F' para tela cheia
 
 <!-- .slide: data-background="#4AA791" data-transition="zoom" -->
 # Referências 📚
-<!-- .element: style="margin-bottom:50px; font-size: 45px; color:2B2625; font-family: Marker Felt; color:#F5F5F5" -->
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 * MDN [JavaScript basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
 <!-- .element: style="margin-bottom:40px; font-size: 20px; color:white; font-family: arial;" -->
