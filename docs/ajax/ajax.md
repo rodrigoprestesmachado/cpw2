@@ -4,15 +4,28 @@
 <iframe src="https://cpw2.rpmhub.dev/ajax/slides/index.html#/" title="Asynchronous Javascript and XML" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
-## Create Read Update Delete (CRUD)
+## Exemplo Ajax, JSON e DOM
 
-Criação (_Create_), leitura (_Read_), atualização (_Update_) e exclusão (_Delete_) estão entre as operações mais comuns em um sistema. Assim, essa seção irá ilustrar como implementar um CRUD em um banco de dados relacional MySQL por meio de um _front end_ escrito em JS/AJAX e _back end_ em PHP. 
+O código abaixo apresenta um exemplo completo de código escrito em Ajax e que utiliza JSON (*JavaScript Object Notation*) como formato de troca de dados e DOM (*Document Object Model*) como ferramenta de manipulação de uma página Web.
+
+```sh
+git clone https://github.com/rodrigoprestesmachado/cpw2
+cd cpw2/exemplos/ajax
+code .
+```
+
+
+## Create Read Update Delete (CRUD) com Ajax
+
+Criação (_Create_), leitura (_Read_), atualização (_Update_) e exclusão (_Delete_) estão entre as operações mais comuns em um sistema. Assim, essa seção irá ilustrar como implementar um CRUD em um banco de dados relacional MySQL por meio de um _front end_ escrito em JS/AJAX e _back end_ em PHP.
 
 Para baixar e entrar no diretório do projeto:
 
-    git clone https://github.com/rodrigoprestesmachado/cpw2
-    cd cpw2/docs/ajax/crud
-    code .
+```sh
+git clone https://github.com/rodrigoprestesmachado/cpw2
+cd cpw2/exemplos/ajax-crud
+code .
+```
 
 ### Docker e Docker-Compose
 

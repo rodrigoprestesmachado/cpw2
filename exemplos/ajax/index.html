@@ -1,0 +1,51 @@
+<!--
+CPW2 by Rodrigo Prestes Machado
+
+CPW2 is licensed under a
+Creative Commons Attribution 4.0 International License.
+
+You should have received a copy of the license along with this
+work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exemplo simples de Ajax</title>
+  </head>
+  <body>
+    <div id="result"></div>
+    <script>
+      let xhr;
+      // 1 - Inicialmente, temos que instanciar um objeto XMLHttpRequest
+      if (window.XMLHttpRequest) {
+        xhr = new XMLHttpRequest();
+      } else {
+        // código para navegadores Internet Explorer antigos 🤮
+        xhr = new ActiveXObject("Microsoft.XMLHTTP");
+      }
+      // 2 - Depois, criamos uma função para tratar o retorno
+      xhr.onreadystatechange = () => {
+        // 3 - O número 4 significa que o retorno está pronto
+        if (xhr.readyState == 4) {
+          // 4 - Transformando de texto para JSON
+          let users = JSON.parse(xhr.responseText);
+
+          // 5 - Colocando os dados na página por meio de DOM
+          let result = document.getElementById("result");
+          users.forEach((user) => {
+            let p = document.createElement("p");
+            p.textContent = user.name + " - " + user.age;
+            result.appendChild(p);
+          });
+        }
+      };
+      // 6 - Configurando para fazer uma requisição assíncrona
+      xhr.open("GET", "data.txt", true);
+      // 7 - Disparando a requisição
+      xhr.send();
+    </script>
+  </body>
+</html>
