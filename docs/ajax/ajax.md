@@ -9,7 +9,7 @@
 O código abaixo apresenta um exemplo completo de código escrito em Ajax e que utiliza JSON (*JavaScript Object Notation*) como formato de troca de dados e DOM (*Document Object Model*) como ferramenta de manipulação de uma página Web.
 
 ```sh
-git clone https://github.com/rodrigoprestesmachado/cpw2
+git clone -b dev https://github.com/rodrigoprestesmachado/cpw2
 cd cpw2/exemplos/ajax
 code .
 ```
@@ -19,10 +19,10 @@ code .
 
 Criação (_Create_), leitura (_Read_), atualização (_Update_) e exclusão (_Delete_) estão entre as operações mais comuns em um sistema. Assim, essa seção irá ilustrar como implementar um CRUD em um banco de dados relacional MySQL por meio de um _front end_ escrito em JS/AJAX e _back end_ em PHP.
 
-Para baixar e entrar no diretório do projeto:
+Para baixar a última versão desse tutorial digite em um terminal:
 
 ```sh
-git clone https://github.com/rodrigoprestesmachado/cpw2
+git clone -b dev https://github.com/rodrigoprestesmachado/cpw2
 cd cpw2/exemplos/ajax-crud
 code .
 ```
