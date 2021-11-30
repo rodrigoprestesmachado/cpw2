@@ -20,7 +20,7 @@
 
 * [Asynchronous Javascript and XML (AJAX)](ajax/ajax.md)
 
-* [Promisses](topics/promisses.md)
+* [Promisses](promisses/promisses.md)
 
 # Comunidade de aprendizagem
 

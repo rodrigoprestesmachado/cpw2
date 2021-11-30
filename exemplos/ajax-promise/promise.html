@@ -1,0 +1,53 @@
+<!--
+CPW2 by Rodrigo Prestes Machado
+
+CPW2 is licensed under a
+Creative Commons Attribution 4.0 International License.
+
+You should have received a copy of the license along with this
+work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <script>
+      function promiseExample(value) {
+        // 1 - Criando a promise
+        return new Promise(function (resolve, reject) {
+          if (value) {
+            // 2 - usando resolve no caso de sucesso
+            resolve("value true");
+          } else {
+            // 3 - usando reject no caso de erro
+            reject(Error("value false"));
+          }
+        });
+      }
+
+      // 4 - Chamando a função promiseExample
+      promiseExample(false).then(
+        function (response) {
+          console.log(response);
+        },
+        function (error) {
+          console.log(error.toString());
+        }
+      );
+
+      // 5 - Usando o .catch para tratar os erros
+      promiseExample(true)
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(response.toString());
+        });
+    </script>
+  </body>
+</html>

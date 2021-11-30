@@ -1,0 +1,64 @@
+<!--
+CPW2 by Rodrigo Prestes Machado
+
+CPW2 is licensed under a
+Creative Commons Attribution 4.0 International License.
+
+You should have received a copy of the license along with this
+work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ajax com Promise</title>
+  </head>
+  <body>
+    <script>
+      function ajax(method, url) {
+        //  1 - A função ajax permite que você indique o método do HTTP e a URL que você deseja
+        // realizar uma requisição e retorna uma promise
+        return new Promise(function (resolve, reject) {
+          let xhr;
+          // 2 - Instanciando um objeto XMLHttpRequest
+          if (window.XMLHttpRequest) {
+            xhr = new XMLHttpRequest();
+          } else {
+            // 2.1 - código para navegadores Internet Explorer antigos 🤮
+            xhr = new ActiveXObject("Microsoft.XMLHTTP");
+          }
+
+          // 3 - Ciando uma função para tratar o retorno
+          xhr.onreadystatechange = () => {
+            // 4 - No caso de sucesso, iremos resolver a promise com resolve
+            if (xhr.readyState === 4 && xhr.status === 200) {
+              resolve(xhr.responseText);
+            }
+          };
+
+          // 5 - Configurando o objeto XMLHttpRequest para fazer uma requisição assíncrona
+          xhr.open(method, url, true);
+
+          // 6 - Caso ocorra um erro de rede, iremos resolver a promise com um reject
+          xhr.onerror = function () {
+            reject(Error("Houve um problema com a rede."));
+          };
+
+          // 7 - Disparando a requisição
+          xhr.send();
+        });
+      }
+
+      // 8 - Usando função ajax
+      ajax("GET", "data.json")
+        .then(function (response) {
+          console.log(response);
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+    </script>
+  </body>
+</html>
