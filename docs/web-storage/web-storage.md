@@ -1,16 +1,8 @@
 # Web Storage
 
 <center>
-<iframe src="https://cpw2.rpmhub.dev/ajax/slides/index.html#/" title="Web Storage" width="90%" height="500" style="border:none;"></iframe>
+<iframe src="https://cpw2.rpmhub.dev/web-storage/slides/index.html#/" title="Web Storage" width="90%" height="500" style="border:none;"></iframe>
 </center>
-
-## Exemplo
-
-```sh
-git clone -b dev https://github.com/rodrigoprestesmachado/cpw2
-cd cpw2/exemplos/ajax
-code .
-```
 
 # Referências 📚
 
