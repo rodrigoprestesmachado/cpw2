@@ -1,5 +1,4 @@
-<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" 
-data-transition="convex"  -->
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Asynchronous Javascript and XML (AJAX)
 <!-- .element: style="margin-bottom:100px; font-size: 50px; color:white; font-family: Marker Felt;" -->
 
@@ -241,7 +240,7 @@ document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
 </center>
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" -->
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Referências 📚
 <!-- .element: style="margin-bottom:50px; font-size: 50px; color:2B2625; font-family: Marker Felt;" -->
 

@@ -1,5 +1,4 @@
-<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png"
-data-transition="convex"  -->
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Promise
 <!-- .element: style="margin-bottom:100px; font-size: 50px; color:white; font-family: Marker Felt;" -->
 
@@ -105,7 +104,77 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:70px; font-size: 25px; font-family: arial; color:#F5F5F5" -->
 
 
-<!-- .slide: data-background="black" data-transition="zoom" -->
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# Async e Await
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+* Existe uma sintaxe especial para trabalhar com Promises de uma forma mais confortável chamada `async`/` await`
+<!-- .element: style="margin-bottom:70px; font-size: 25px; font-family: arial; color:#F5F5F5" -->
+
+* A palavra `async` antes de uma função significa que uma função irá retornar uma Promise
+<!-- .element: style="margin-bottom:70px; font-size: 25px; font-family: arial; color:#F5F5F5" -->
+
+* A expressão `await` pausa a execução da função assíncrona e espera pela resolução da Promise
+<!-- .element: style="margin-bottom:70px; font-size: 25px; font-family: arial; color:#F5F5F5" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# Async e Await
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+A palavra chave Async necessita ser utiliza em uma função que retorna uma Promise e em um [módulo](https://javascript.info/modules-intro) JS
+<!-- .element: style="margin-bottom:30px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+```js
+export async function promiseExample(value){
+    // 1 - Criando a promise
+    return new Promise(function (resolve, reject) {
+        if (value) {
+        // 2 - usando resolve no caso de sucesso
+        resolve("value true");
+        } else {
+        // 3 - usando reject no caso de erro
+        reject(Error("value false!"));
+        }
+    });
+}
+```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# Async e Await
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+```html
+<script type="module">
+    import { promiseExample } from "./async.js";
+    try {
+        let result = await promiseExample(true);
+        console.log(result);
+    } catch (error) {
+        console.error(error);
+    }
+</script>
+```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
+
+Observe o código sem o uso de async/await
+<!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#F5F5F5" -->
+
+```js
+promiseExample(true)
+    .then(function (response) {
+        console.log(response);
+    })
+    .catch(function (error) {
+        console.log(response.toString());
+    });
+```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
+
+
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Referências 📚
 <!-- .element: style="margin-bottom:50px; font-size: 50px; color:2B2625; font-family: Marker Felt;" -->
 
@@ -113,6 +182,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:40px; font-size: 20px; color:white; font-family: arial;" -->
 
 * [Usando promises](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Using_promises) no MDN Web Docs
+<!-- .element: style="margin-bottom:40px; font-size: 20px; color:white; font-family: arial;" -->
+
+* [Async/Await](https://javascript.info/async-await) no Javascript.info
 <!-- .element: style="margin-bottom:40px; font-size: 20px; color:white; font-family: arial;" -->
 
 <center>

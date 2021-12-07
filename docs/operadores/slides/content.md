@@ -1,5 +1,4 @@
-<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" 
-data-transition="convex"  -->
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Operadores
 <!-- .element: style="margin-bottom:100px; font-size: 50px; color:white; font-family: Marker Felt;" -->
 
@@ -52,7 +51,7 @@ Pressione 'F' para tela cheia
 <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank"><img src="imgs/op6.png"  width="80%" height="80%"></img></a>
 
 
-<!-- .slide: data-background="#4AA791" data-transition="concave"  -->
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Referências 📚
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 

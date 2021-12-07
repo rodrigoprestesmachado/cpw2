@@ -1,5 +1,4 @@
-<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" 
-data-transition="convex"  -->
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Eventos
 <!-- .element: style="margin-bottom:100px; font-size: 60px; color:F5F5F5; font-family: Marker Felt;" -->
 
@@ -116,14 +115,14 @@ Pressione 'F' para tela cheia
 
 ```html
 <a href="http://www.w3schools.com" onmouseover="alert('onMouseOver'); return false">
-    <img src="w3s.gif" 
+    <img src="w3s.gif"
     alt="W3Schools" />
 </a>
 ```
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" -->
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Referências 📚
 <!-- .element: style="margin-bottom:50px; font-size: 50px; color:2B2625; font-family: Marker Felt;" -->
 

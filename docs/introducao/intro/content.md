@@ -1,5 +1,4 @@
-<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png"
-data-transition="convex"  -->
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # O que é JavaScript?
 <!-- .element: style="margin-bottom:100px; font-size: 50px; color:white; font-family: Marker Felt;" -->
 
@@ -123,7 +122,7 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:55px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Referências 📚
 <!-- .element: style="margin-bottom:55px; font-size: 40px; font-family: Marker Felt;" -->
 

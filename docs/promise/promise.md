@@ -6,7 +6,7 @@
 
 ## Exemplo Ajax com Promise
 
-O código abaixo apresenta um exemplo completo de código escrito de Ajax implementado por meio de uma Promise.
+O código abaixo apresenta um exemplo completo de código escrito de Ajax escrito por meio de uma Promise. Neste diretório, você também encontrará exemplos mais simples do uso de Promise e async/await.
 
 ```sh
 git clone -b dev https://github.com/rodrigoprestesmachado/cpw2

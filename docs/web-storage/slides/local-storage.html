@@ -1,0 +1,44 @@
+<!--
+CPW2 by Rodrigo Prestes Machado
+
+CPW2 is licensed under a
+Creative Commons Attribution 4.0 International License.
+
+You should have received a copy of the license along with this
+work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CPW2: Local Storage</title>
+  </head>
+  <body onload="load()">
+    <p id="text">Web storage</p>
+    <label for="color">Cor do fundo: </label>
+    <input type="color" id="color" onblur="changeColor()" />
+
+    <script>
+      /**
+       * Troca a cor do fundo da página
+       */
+      function changeColor() {
+        let inputColor = document.getElementById("color");
+        document.body.style.backgroundColor = inputColor.value;
+
+        // Armazena no localStorage
+        localStorage.setItem("color", inputColor.value);
+      }
+
+      /**
+       * Inicializa o localStorage
+       */
+      function load() {
+        document.body.style.backgroundColor = localStorage.getItem("color");
+      }
+    </script>
+  </body>
+</html>

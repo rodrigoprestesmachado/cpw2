@@ -1,5 +1,4 @@
-<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" 
-data-transition="convex"  -->
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Document Object Model
 <!-- .element: style="margin-bottom:100px; font-size: 60px; color:F5F5F5; font-family: Marker Felt;" -->
 
@@ -398,8 +397,8 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
-<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
-# Referências
+<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
+# Referências 📚
 <!-- .element: style="margin-bottom:50px; font-size: 45px; font-family: Marker Felt;" -->
 
 * W3schools: [DOM Tutorial](https://www.w3schools.com/js/js_htmldom.asp)

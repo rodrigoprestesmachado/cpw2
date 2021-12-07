@@ -22,11 +22,13 @@
 
 * [Promise](promise/promise.md)
 
+* [Web Storage](web-storage/web-storage.md)
+
 # Comunidade de aprendizagem
 
 Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
 
-# Referências
+# Referências 📚
 
 * MDN [JavaScript basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
 

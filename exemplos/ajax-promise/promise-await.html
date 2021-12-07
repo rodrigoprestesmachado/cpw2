@@ -1,0 +1,30 @@
+<!--
+CPW2 by Rodrigo Prestes Machado
+
+CPW2 is licensed under a
+Creative Commons Attribution 4.0 International License.
+
+You should have received a copy of the license along with this
+work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promise</title>
+  </head>
+  <body>
+    <script type="module">
+      import { promiseExample } from "./async.js";
+
+      try {
+        let result = await promiseExample(true);
+        console.log(result);
+      } catch (error) {
+        console.error(error);
+      }
+    </script>
+  </body>
+</html>
