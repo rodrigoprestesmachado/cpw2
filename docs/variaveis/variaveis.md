@@ -17,7 +17,7 @@
 
 * [Entendendo variáveis case sensitivity](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-case-sensitivity-in-variables)
 
-* [Explore as diferenças entre var e let](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/es6/explore-differences-between-the-var-and-let-keywords)
+* [Explore as diferenças entre var e let](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords)
 
 
 # Referências
