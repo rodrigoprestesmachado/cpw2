@@ -24,6 +24,8 @@
 
 * [Web Storage](web-storage/web-storage.md)
 
+* [Node e npm](node/node.md)
+
 # Comunidade de aprendizagem
 
 Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
