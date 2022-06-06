@@ -51,6 +51,31 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
 
 
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# Módulos 
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+* Módulos no node são um conjunto de funções que você pode incluir na sua aplicação
+<!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+* Para incluir um módulo, você deve utilizar a função `require()` juntamente com o nome de um módulo, por exemplo: `var http = require('http');` 
+<!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+* Esse formato que utiliza a função `require()` é chamado de CommonJS
+<!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# Módulos 
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+* O JS repeita o formato EMCAScript modules (ES Module), que utiliza os comandos export e import
+<!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+* Porém, a partir do node 13 o ES Modules é suportado no node
+<!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+
 <!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Referências 📚
 <!-- .element: style="margin-bottom:50px; font-size: 50px; color:2B2625; font-family: Marker Felt;" -->
