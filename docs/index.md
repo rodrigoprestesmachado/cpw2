@@ -24,6 +24,8 @@
 
 * [Web Storage](web-storage/web-storage.md)
 
+* [Vue.js](vuejs/vuejs.md)
+
 * [Node e npm](node/node.md)
 
 # Comunidade de aprendizagem
