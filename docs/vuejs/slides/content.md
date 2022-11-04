@@ -166,6 +166,96 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: Courier New; background-color: white" -->
 
 
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# v-on
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+* A diretiva v-on permite que você possa reagir aos eventos
+<!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
+  <title>v-on</title>
+</head>
+
+<body>
+
+  <div id="app">
+    <button v-on:click="execute">Try</button>
+  </div>
+
+  <script>
+    app = new Vue({
+      el: '#app',
+
+      data: {
+      },
+
+      methods: {
+        execute: function (event) {
+          alert(event.target.tagName)
+        }
+      }
+
+    });
+  </script>
+</body>
+</html>
+```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: Courier New; background-color: white" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# Integração com o Axios
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <title>Axios</title>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="getData">load data</button>
+    <ul>
+      <li v-for="x in tasks">
+        {{ x.text }}
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    app = new Vue({
+      el: '#app',
+
+      data() {
+        return {
+          tasks: null
+        }
+      },
+
+      methods: {
+        getData: function (event) {
+          axios.get("data.json")
+          .then(response => (this.tasks = response.data))
+        }
+      }
+
+    });
+  </script>
+</body>
+</html>
+```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: Courier New; background-color: white" -->
+
+
 <!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Referências 📚
 <!-- .element: style="margin-bottom:50px; font-size: 50px; color:2B2625; font-family: Marker Felt;" -->
@@ -174,6 +264,9 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:40px; font-size: 25px; color:white; font-family: arial;" -->
 
 * [Vue.js](https://vuejs.org) - The Progressive JavaScript Framework
+<!-- .element: style="margin-bottom:40px; font-size: 25px; color:white; font-family: arial;" -->
+
+* [Axios](https://axios-http.com/docs/intro) - Promise based HTTP client for the browser and node.js
 <!-- .element: style="margin-bottom:40px; font-size: 25px; color:white; font-family: arial;" -->
 
 <center>
