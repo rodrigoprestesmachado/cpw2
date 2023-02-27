@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<!--
+CPW2 by Rodrigo Prestes Machado
+
+CPW2 is licensed under a
+Creative Commons Attribution 4.0 International License.
+
+You should have received a copy of the license along with this
+work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.13/dist/vue.js"></script>
+    <title>Hello Vue</title>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ message }}</h1>
+    </div>
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {message: 'Hello Vue in CPW2!'}
+        })
+    </script>
+</body>
+</html>

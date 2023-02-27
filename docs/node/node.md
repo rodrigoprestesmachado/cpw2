@@ -1,7 +1,7 @@
 # Node e Npm
 
 <center>
-<iframe src="https://cpw2.rpmhub.dev/node/slides/index.html#/" title="Promise" width="90%" height="500" style="border:none;"></iframe>
+<iframe src="https://cpw2.rpmhub.dev/node/slides/index.html#/" title="Node e Npm" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
 # Referências 📚
