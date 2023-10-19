@@ -19,7 +19,8 @@ Pressione 'F' para tela cheia
 * Um Promise (uma "promessa") representa um valor que não é necessariamente conhecido quando a promessa é criada
 <!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
 
-* Isto permite que métodos assíncronos retornem valores como métodos síncronos: ao invés do valor final, o método assíncrono retorna uma promessa de um valor em algum momento no futuro.
+* Permite que você associe tratadores que serão associado ao valor de sucesso
+ou erro em uma ação assíncrona no futuro.
 <!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
 
 
@@ -47,8 +48,16 @@ Pressione 'F' para tela cheia
 * O método `then` da Promise é chamado sempre que houver uma mudança de estado
 <!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
 
-* Posteriormente, o método `then` irá chama o método de tratamento associado ao estado (*rejected* ou *resolved*)
+* Posteriormente, o método `then` irá chamar o método de tratamento associado ao estado (*rejected* ou *resolved*)
 <!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# Estados de uma Promise ⌛
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+<img src="https://warcontent.com/wp-content/uploads/2022/04/promise-javascript-6-1-1024x576.png"/>
+<!-- .element: style="width: 600px; margin-bottom:40px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
 
 
 <!-- .slide: data-background="#4AA791" data-transition="convex"  -->
