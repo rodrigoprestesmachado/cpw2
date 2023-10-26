@@ -38,7 +38,7 @@ Pressione 'F' para tela cheia
 # Vue 🤓
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
-* [Vue.js](https://vuejs.org) permite estender HTML com atributos HTML chamados diretivas
+* [Vue.js](https://vuejs.org) permite estender HTML com atributos chamados diretivas
 <!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
 
 * As diretivas [Vue.js](https://vuejs.org) oferecem funcionalidade para aplicativos HTML

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--
+    CPW2 by Rodrigo Prestes Machado
+
+    CPW2 is licensed under a
+    Creative Commons Attribution 4.0 International License.
+
+    You should have received a copy of the license along with this
+    work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest major version -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js">
+    </script>
+</head>
+<body>
+    <div id="app">
+        <p v-if="show">Show</p>
+        <button @click="show = !show">Toggle</button>
+        <button @click="execute">execute</button>
+    </div>
+    <script>
+        // Vue 3
+        const app = Vue.createApp({
+            data() {
+                return {
+                    show: true
+                }
+            },
+            methods: {
+                execute() {
+                    alert('Executed!')
+                }
+            },
+            created() {
+                console.log('Created!')
+            },
+            mounted() {
+                console.log('Mounted!')
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
