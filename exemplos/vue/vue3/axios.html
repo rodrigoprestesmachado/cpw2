@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<!--
+    CPW2 by Rodrigo Prestes Machado
+
+    CPW2 is licensed under a
+    Creative Commons Attribution 4.0 International License.
+
+    You should have received a copy of the license along with this
+    work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest major version -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+<!--
+This HTML file contains a Vue.js application that retrieves information about a
+GitHub repository's license using the Axios library. The user inputs the owner
+and repository name, and the application makes a GET request to the GitHub API
+to retrieve the repository information. If the repository has a license, the
+license name is displayed. If the repository does not have a license, a message
+is displayed indicating that there is no license. If an error occurs during the
+GET request, an error message is displayed.
+-->
+    <div id="app">
+        <h1>Recuperar informação sobre a licença:</h1>
+        <input type="text" v-model="owner" placeholder="Owner">
+        <input type="text" v-model="repo" placeholder="Repo">
+        <br/>
+        <button v-on:click="main">Carregar</button>
+        <template v-if="response.status == 200">
+            <div v-if="response.data.license">
+                <h2 >{{ response.data.license.name }}</h2>
+            </div>
+            <div v-else>
+                <h2>Sem licença</h2>
+            <div>
+        </template>
+        <template v-if="error">
+            <h2>{{ error.message }}</h2>
+        </template>
+    </div>
+    <script>
+        // Vue 3
+        const app = Vue.createApp({
+            data() {
+                return {
+                    response: '',
+                    owner: '',
+                    repo: '',
+                    error: null
+                }
+            },
+            methods: {
+                async main() {
+                    this.error = null
+                    let url = "https://api.github.com/repos/" + this.owner + "/" + this.repo
+                    try {
+                        this.response = await axios.get(url)
+                    } catch (error) {
+                        this.response = ''
+                        this.error = error
+                    }
+                }
+            }
+        })
+        app.mount('#app')
+    </script>
+</body>
+</html>
