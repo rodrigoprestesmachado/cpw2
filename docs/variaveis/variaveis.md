@@ -1,7 +1,63 @@
 # Variáveis
-<center>
-<iframe src="https://cpw2.rpmhub.dev/variaveis/slides/index.html#/" title="Variáveis em JavaScript" width="90%" height="500" style="border:none;"></iframe>
-</center>
+
+Em JavaScript, as variáveis são elementos fundamentais para armazenar e manipular dados dentro de um programa. Elas servem como contêineres nomeados para armazenar valores, como números, _strings_, objetos e muito mais. As variáveis fornecem flexibilidade e dinamismo ao código, permitindo que os desenvolvedores aloquem memória e atribuam valores a nomes específicos.
+
+## Declaração de Variáveis
+
+Em JavaScript, as variáveis podem ser declaradas usando as palavras-chave `var`, `let` ou `const`.
+
+- `var`: Constitui a forma tradicional de declarar variáveis em JavaScript, mas foi suplantada pelo `let` e `const`. Variáveis declaradas com `var` têm escopo de função ou escopo global, o que pode levar a comportamentos inesperados.
+
+- `let`: Introduzido no ECMAScript 6 (ES6), o `let` permite que as variáveis tenham escopo de bloco, o que significa que elas só são acessíveis dentro do bloco em que são declaradas.
+
+- `const`: Também introduzido no ES6, o `const` declara uma variável com um valor constante, que não pode ser reatribuído. No entanto, para objetos e arrays, o `const` não impede a modificação de suas propriedades ou elementos.
+
+## Exemplos de Uso
+
+```javascript
+// Declarando variáveis usando var
+var idade = 30;
+
+// Declarando variáveis usando let
+let nome = "João";
+
+// Declarando constantes usando const
+const PI = 3.14159;
+```
+
+Uma curiosidade sobre variáveis em JavaScript é que a palavra-chave `var` tem um comportamento peculiar em relação ao escopo. Ao contrário de `let` e `const`, que têm escopo de bloco, as variáveis declaradas com `var` têm escopo de função ou escopo global, o que pode levar a alguns comportamentos inesperados.
+
+Por exemplo, ao declarar uma variável com `var` dentro de um bloco condicional (`if`, `for`, `while`, etc.), a variável é visível em todo o escopo da função mais próxima, em vez de estar restrita ao bloco em que foi declarada. Isso pode causar confusão e _bugs_ difíceis de rastrear, especialmente em programas grandes e complexos.
+
+```javascript
+function exemplo() {
+  if (true) {
+    var x = 10;
+  }
+  console.log(x); // Isso vai imprimir 10, mesmo que x tenha sido declarado dentro do bloco if
+}
+exemplo();
+```
+
+Essa peculiaridade do `var` levou muitos desenvolvedores a preferir o uso de `let` e `const`, que têm um escopo mais previsível e geralmente são mais seguros de usar. No entanto, é importante estar ciente desse comportamento do `var` ao trabalhar com código legado ou ao encontrar exemplos mais antigos de JavaScript.
+
+## Boas Práticas
+
+- Escolha nomes descritivos para suas variáveis que reflitam seu propósito e conteúdo.
+- Prefira `let` e `const` em vez de `var`, pois eles oferecem um escopo mais previsível.
+- Use `const` para valores que não devem ser modificados e `let` para valores que precisam ser reatribuídos.
+- Evite poluir o escopo global com muitas variáveis, pois isso pode levar a conflitos e bugs difíceis de depurar.
+
+## Exercícios Práticos
+
+1. [Troca de Valores](https://jsfiddle.net/prestesmachado/9nspe3u1/7/)
+
+    Escreva um programa que troque os valores de duas variáveis (a e b) e, em seguida, retorne o valor de b.
+
+2. [Concatenação de Strings](https://jsfiddle.net/prestesmachado/nz20mpge/4/)
+
+    Crie um programa que concatene duas strings e retorne uma única frase na função _main_.
+
 
 ## Exercícios do Freecodecamp
 
@@ -20,7 +76,13 @@
 * [Explore as diferenças entre var e let](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords)
 
 
-# Referências
+## _Slides_ de aula
+
+<center>
+<iframe src="https://cpw2.rpmhub.dev/variaveis/slides/index.html#/" title="Variáveis em JavaScript" width="90%" height="500" style="border:none;"></iframe>
+</center>
+
+## Referências
 
 * Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
 

@@ -1,8 +1,24 @@
 # Introdução
 
-## O que é JavaScript?
+## JavaScript
 
-Os slides abaixo discutem sobre o que é JavaScript e os seus usos:
+JavaScript é uma linguagem de programação versátil e dinâmica amplamente utilizada para criar interatividade em páginas da web. Desenvolvida originalmente por Brendan Eich enquanto trabalhava na Netscape Communications Corporation em 1995, JavaScript é uma das pedras angulares da internet moderna, permitindo aos desenvolvedores criar experiências interativas e dinâmicas para os usuários.
+
+Uma das características mais distintivas do JavaScript é sua capacidade de poder ser executado diretamente no navegador do usuário, o que significa que não é necessário nenhum software adicional para interpretar o código. Isso torna o JavaScript uma ferramenta poderosa para adicionar comportamentos dinâmicos às páginas da web, como animações, validação de formulários, manipulação do DOM (Modelo de Objeto de Documento) e muito mais.
+
+Além de sua presença no lado do cliente, o JavaScript também é amplamente utilizado no desenvolvimento do lado do servidor, graças a tecnologias como o Node.js. Isso permite que os desenvolvedores usem JavaScript em todo o stack de desenvolvimento web, simplificando muitas vezes o fluxo de trabalho e facilitando a criação de aplicativos web escaláveis e eficientes.
+
+Ao longo dos anos, o ecossistema JavaScript cresceu significativamente, com o surgimento de uma vasta gama de bibliotecas e frameworks, como React, Angular e Vue.js, que simplificam o processo de desenvolvimento e permitem a criação de aplicativos web mais complexos e poderosos.
+
+JavaScript é padronizado pela ECMA International. A primeira versão padronizada foi o ECMAScript 1 em 1997. Desde então, a linguagem tem evoluído com novas funcionalidades e atualizações regulares, como o ECMAScript 6 (também conhecido como ES6 ou ES2015), lançado em 2015.
+
+Uma das características mais poderosas do JavaScript é sua capacidade de executar operações de forma assíncrona, permitindo que o código continue a ser executado enquanto aguarda operações de I/O, como solicitações de rede ou leitura de arquivos. Isso é fundamental para a criação de aplicativos web rápidos e responsivos, e é uma das razões pelas quais o JavaScript é tão amplamente utilizado.
+
+JavaScript influenciou o design de muitas outras linguagens de programação modernas, incluindo Python, Ruby e Swift. Por exemplo, a sintaxe de blocos de código condicional "if-else" em Python foi inspirada em JavaScript.
+
+JavaScript é uma das linguagens de programação mais populares do mundo. É amplamente utilizado tanto por grandes empresas quanto por desenvolvedores independentes, e possui uma comunidade muito ativa que contribui com bibliotecas, frameworks e recursos educacionais.
+
+Os _slides_ abaixo ilustram, na forma de apresentação, algumas outras considerações sobre JavaScript e os seus usos:
 
 <center>
 <iframe src="https://cpw2.rpmhub.dev/introducao/intro/index.html#/" title="Introdução" width="90%" height="500" style="border:none;"></iframe>
@@ -10,7 +26,7 @@ Os slides abaixo discutem sobre o que é JavaScript e os seus usos:
 
 ## Hello World em JavaScript
 
-Os slides abaixo mostram maneiras distintas de escrever os primeiros códigos em JavaScript:
+Os _slides_ abaixo mostram maneiras distintas de escrever os primeiros códigos em JavaScript:
 
 <center>
 <iframe src="https://cpw2.rpmhub.dev/introducao/hello/index.html#/" title="Hello World" width="90%" height="500" style="border:none;"></iframe>
@@ -21,6 +37,18 @@ Os slides abaixo mostram maneiras distintas de escrever os primeiros códigos em
 <center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/HLyR2PNLnRA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 </center>
+
+## Exercício
+
+1. [Hello, World! em JavaScript](https://jsfiddle.net/prestesmachado/g1s0df9r/2/)
+
+    Utilizando o ambiente do [JSFidle](https://jsfiddle.net), escreva um pequeno programa em JavaScript que retorne a mensagem "Hello, World" na função _main_.
+
+    **Dicas:**
+    * O código deve ser implementado no editor de código JavaScript do JSFifle e o resultado dos testes (correção automática) pode ser visualizado na janela do navegador. Caso o código esteja correto, uma mensagem em verde aparecerá no navegador informando que o teste foi bem sucedido.
+
+    * Você pode fazer um _fork_ (no menu superior) para que o exemplo fique salvo na sua conta do JSFiddle.
+
 
 # Referências
 
