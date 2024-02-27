@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Asynchronous Javascript and XML (AJAX)
-nav_order: 9
+nav_order: 10
 ---
 
 # Asynchronous Javascript and XML (AJAX)

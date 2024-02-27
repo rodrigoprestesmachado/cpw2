@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Vue.js
-nav_order: 10
+nav_order: 11
 ---
 
 # Vue.js
