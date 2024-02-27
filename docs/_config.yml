@@ -1,4 +1,8 @@
-title: CPW2
-description: Disciplina de Construção de Páginas Web II
-show_downloads: false
-theme: jekyll-theme-hacker
+remote_theme: pmarsceill/just-the-docs
+color_scheme: dark
+aux_links:
+  "Construção de Páginas Web II":
+    - "https://cpw2.rpmhub.dev"
+
+# Footer content appears at the bottom of every page's main content
+footer_content: "Copyright &copy; 2024 RPM Hub. Distributed by Apache 2.0 license."
