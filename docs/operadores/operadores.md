@@ -1,3 +1,9 @@
+---
+layout: default
+title: Operadores
+nav_order: 4
+---
+
 # Operadores
 <center>
 <iframe src="https://cpw2.rpmhub.dev/operadores/slides/index.html#/" title="Operadores" width="90%" height="500" style="border:none;"></iframe>

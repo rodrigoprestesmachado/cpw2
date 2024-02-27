@@ -1,3 +1,9 @@
+---
+layout: default
+title: Vue.js
+nav_order: 10
+---
+
 # Vue.js
 
 <center>

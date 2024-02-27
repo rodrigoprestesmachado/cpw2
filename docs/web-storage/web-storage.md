@@ -1,3 +1,9 @@
+---
+layout: default
+title: Web Storage
+nav_order: 12
+---
+
 # Web Storage
 
 <center>

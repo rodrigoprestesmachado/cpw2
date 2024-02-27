@@ -1,3 +1,9 @@
+---
+layout: default
+title: Promise
+nav_order: 11
+---
+
 # Promise
 
 <center>

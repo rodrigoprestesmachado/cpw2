@@ -1,3 +1,9 @@
+---
+layout: default
+title: Estruturas de Controle
+nav_order: 5
+---
+
 # Estruturas de controle
 <center>
 <iframe src="https://cpw2.rpmhub.dev/controle/slides/index.html#/" title="Estruturas de Controle" width="90%" height="500" style="border:none;"></iframe>

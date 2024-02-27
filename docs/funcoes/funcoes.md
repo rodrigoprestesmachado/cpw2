@@ -1,3 +1,9 @@
+---
+layout: default
+title: Funções
+nav_order: 6
+---
+
 # Funções
 <center>
 <iframe src="https://cpw2.rpmhub.dev/funcoes/slides/index.html#/" title="Funções" width="90%" height="500" style="border:none;"></iframe>

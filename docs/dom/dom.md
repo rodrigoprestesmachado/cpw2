@@ -1,3 +1,9 @@
+---
+layout: default
+title: Document Object Model (DOM)
+nav_order: 8
+---
+
 # Document Object Model (DOM)
 
 <center>

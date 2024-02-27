@@ -1,3 +1,9 @@
+---
+layout: minimal
+title: Orientação a Objetos
+nav_order: 13
+---
+
 # Orientação a Objetos
 
 ## Conceitos básicos de orientação a objetos

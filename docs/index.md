@@ -14,17 +14,17 @@
 
 * [Eventos](eventos/eventos.md)
 
-* [Objetos](objetos/objeto.md)
-
 * [Document Object Model (DOM)](dom/dom.md)
 
 * [Asynchronous Javascript and XML (AJAX)](ajax/ajax.md)
+
+* [Vue.js](vuejs/vuejs.md)
 
 * [Promise](promise/promise.md)
 
 * [Web Storage](web-storage/web-storage.md)
 
-* [Vue.js](vuejs/vuejs.md)
+* [Objetos](objetos/objeto.md)
 
 * [Node e npm](node/node.md)
 

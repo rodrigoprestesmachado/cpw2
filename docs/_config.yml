@@ -1,5 +1,4 @@
 remote_theme: pmarsceill/just-the-docs
-color_scheme: dark
 aux_links:
   "Construção de Páginas Web II":
     - "https://cpw2.rpmhub.dev"

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Variáveis
+nav_order: 2
+---
+
 # Variáveis
 
 <center>

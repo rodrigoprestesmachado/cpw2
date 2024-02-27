@@ -1,3 +1,9 @@
+---
+layout: default
+title: Tipos
+nav_order: 3
+---
+
 # Tipo de dados primitivos
 <center>
 <iframe src="https://cpw2.rpmhub.dev/tipos/slides/index.html#/" title="Tipos" width="90%" height="500" style="border:none;"></iframe>

@@ -1,3 +1,9 @@
+---
+layout: default
+title: Asynchronous Javascript and XML (AJAX)
+nav_order: 9
+---
+
 # Asynchronous Javascript and XML (AJAX)
 
 <center>

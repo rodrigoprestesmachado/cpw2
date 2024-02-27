@@ -1,3 +1,9 @@
+---
+layout: default
+title: Eventos
+nav_order: 7
+---
+
 # Eventos
 <center>
 <iframe src="https://cpw2.rpmhub.dev/eventos/slides/index.html#/" title="Eventos" width="90%" height="500" style="border:none;"></iframe>
