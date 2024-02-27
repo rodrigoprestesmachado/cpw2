@@ -34,9 +34,10 @@ nav_order: 1
 
 * [Node e npm](node/node.md)
 
-# Comunidade de aprendizagem
+# Comunidade da disciplina
 
-Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
+Comunidade da disciplina no [Discord](https://discord.com/invite/C29cqvm):
+canal `#cpw2`
 
 # Referências 📚
 
