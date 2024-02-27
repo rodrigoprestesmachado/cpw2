@@ -1,5 +1,5 @@
 ---
-layout: minimal
+layout: default
 title: Orientação a Objetos
 nav_order: 13
 ---

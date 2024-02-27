@@ -1,3 +1,9 @@
+---
+layout: default
+title: Crud com Ajax
+nav_order: 15
+---
+
 # Asynchronous Javascript and XML (AJAX)
 
 <center>
