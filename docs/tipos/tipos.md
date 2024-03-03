@@ -83,11 +83,11 @@ Tipos de objetos que representam datas e horários.
 
 ## Exercícios Práticos 🛠
 
-1. [Trabalhando com Arrays](https://jsfiddle.net/prestesmachado/75zfLcxn/)
+1. [Trabalhando com Arrays](https://jsfiddle.net/prestesmachado/8Lkbcjre/)
     Escreva uma função em JavaScript que receba um array de números como entrada
     e retorne a média aritmética dos números presentes no array.
 
-2. [Manipulação de Strings](https://jsfiddle.net/prestesmachado/0khw2r6m/13/)
+2. [Manipulação de Strings](https://jsfiddle.net/prestesmachado/75zfLcxn/5/)
     Escreva uma função em JavaScript que receba uma string como entrada e
     retorne o número de vogais presentes na string.
 
