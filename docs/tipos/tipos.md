@@ -87,11 +87,11 @@ Tipos de objetos que representam datas e horários.
     Escreva uma função em JavaScript que receba um array de números como entrada
     e retorne a média aritmética dos números presentes no array.
 
-2. [Manipulação de Strings](https://jsfiddle.net/prestesmachado/0khw2r6m/)
+2. [Manipulação de Strings](https://jsfiddle.net/prestesmachado/0khw2r6m/13/)
     Escreva uma função em JavaScript que receba uma string como entrada e
     retorne o número de vogais presentes na string.
 
-3. [Contagem de Letras Únicas](https://jsfiddle.net/prestesmachado/8Lkbcjre/)
+3. [Contagem de Letras Únicas](https://jsfiddle.net/prestesmachado/8Lkbcjre/4/)
     Escreva uma função em JavaScript que conte quantas letras únicas estão
     presentes em uma string. Por exemplo, a string "banana" contém 3 letras
     ou a string "paralelepípedo" contém 7 letras únicas.
