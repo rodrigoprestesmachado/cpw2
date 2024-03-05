@@ -29,9 +29,13 @@ como ES6 ou ES2015), lançado em 2015.
 Uma das características mais poderosas do JavaScript é sua capacidade de
 executar operações de forma assíncrona, permitindo que o código continue a ser
 executado enquanto aguarda operações de I/O, como solicitações de rede ou
-leitura de arquivos. Isso é fundamental para a criação de aplicativos Web
+acesso a um banco de dados. Isso é fundamental para a criação de aplicativos Web
 rápidos e responsivos, e é uma das razões pelas quais o JavaScript é tão
 amplamente utilizado.
+
+⚡ **Importante**: Uma operação assíncrona não bloqueia a execução do código,
+assim, ela é executada em segundo plano, sem interromper o fluxo de execução
+de outras operações.
 
 Outra característica de JavaScript é sua capacidade de poder
 ser executado diretamente no navegador do usuário, o que significa que não é
@@ -81,6 +85,57 @@ em JavaScript:
     </iframe>
 </center>
 
+## Executando JavaScript no VSCode com Live Server
+
+### Pré-requisitos
+
+1. Certifique-se de ter o Visual Studio Code instalado em seu computador.
+Você pode baixá-lo e instalá-lo a partir do
+[site oficial](https://code.visualstudio.com/).
+
+2. Tenha o Node.js instalado em seu sistema. Você pode baixá-lo e instalá-lo
+a partir do [site oficial](https://nodejs.org/).
+
+3. Instale a extensão Live Server no Visual Studio Code. Você pode fazer isso
+indo para a barra lateral do VSCode, clicando no ícone de extensões
+(quatro quadrados empilhados) e pesquisando por "Live Server". Clique em
+"Instalar" ao lado da extensão.
+
+### Passos para Executar JavaScript usando o VSCode e Live Server
+
+1. **Crie um novo arquivo JavaScript**:
+
+* Abra o VSCode.
+
+* Crie um novo arquivo clicando em "File" > "New File" ou pressionando
+`Ctrl + N`.
+* Salve o arquivo com uma extensão `.js`, por exemplo, `script.js`. Você
+pode escolher qualquer nome que desejar.
+
+1. **Escreva seu código JavaScript**:
+   * No arquivo `script.js`, escreva o código JavaScript que deseja executar.
+   Por exemplo:
+
+    ```javascript
+    console.log("Olá, mundo!");
+    ```
+
+2. **Abra o arquivo com o Live Server**:
+   * Clique com o botão direito do mouse no arquivo `script.js`.
+   * Selecione "Open with Live Server" no menu suspenso.
+   * Uma nova guia do navegador será aberta automaticamente, exibindo o
+   resultado da execução do seu script JavaScript.
+
+3. **Visualize o console do navegador**:
+   * Se você tiver o console do desenvolvedor aberto no navegador, poderá ver a
+   saída do console do seu script JavaScript.
+   * No Chrome, você pode abrir o console clicando com o botão direito do mouse
+   na página e selecionando "Inspecionar" e depois procure na aba "Console".
+
+4. **Edite e atualize seu código**:
+   * Se fizer alterações no seu arquivo JavaScript, o Live Server atualizará
+   automaticamente a página do navegador para refletir essas alterações.
+
 ## Depuração com VSCode e Chrome
 
 <center>
@@ -108,8 +163,7 @@ em JavaScript:
     * Você pode fazer um "_fork_" (no menu superior) para que o exemplo fique
     salvo na sua conta do JSFiddle.
 
-
-# Referências
+## Referências 📚
 
 * Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
 

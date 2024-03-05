@@ -117,7 +117,7 @@ conflitos e bugs difíceis de depurar.
     Crie um programa que concatene duas strings e retorne uma única frase na
     função _main_.
 
-# Referências 📚
+## Referências 📚
 
 * Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
 

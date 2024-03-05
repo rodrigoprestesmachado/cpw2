@@ -4,13 +4,13 @@ title: Tipos
 nav_order: 4
 ---
 
-# Tipo de dados primitivos 
+# Tipos
 
 <center>
 <iframe src="https://cpw2.rpmhub.dev/tipos/slides/index.html#/" title="Tipos" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
-## Resumo 📝
+## Resumo sobre Tipos Primitivos 📝
 
 JavaScript é uma linguagem de programação dinâmica e tipada fracamente, o que
 significa que as variáveis podem armazenar diferentes tipos de dados. Aqui estão
@@ -96,7 +96,7 @@ Tipos de objetos que representam datas e horários.
     presentes em uma string. Por exemplo, a string "banana" contém 3 letras
     ou a string "paralelepípedo" contém 7 letras únicas.
 
-# Referências 📚
+## Referências 📚
 
 * Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
 
