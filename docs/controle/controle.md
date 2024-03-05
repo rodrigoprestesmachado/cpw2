@@ -103,7 +103,7 @@ for (elemento of array/objeto) {
 }
 ```
 
-🚨 **Atenção:** Note que o `for ... of` itera sobre um elemento,
+⚡ **Importante**: Note que o `for ... of` itera sobre um elemento,
 enquanto o `for ... in` itera sobre as chaves.
 
 ### Outras Estruturas

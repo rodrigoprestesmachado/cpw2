@@ -9,7 +9,7 @@ nav_order: 5
 <iframe src="https://cpw2.rpmhub.dev/operadores/slides/index.html#/" title="Operadores" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
-## Resumo sobre Operadores em JavaScript 📝
+## Resumo 📝
 
 Os operadores em JavaScript são símbolos que realizam operações em operandos
 (variáveis, valores, etc.). Existem vários tipos de operadores em JavaScript,
