@@ -18,7 +18,17 @@ os principais tipos de dados em JavaScript:
 
 ### 1. Números (Numbers)
 
-Representam valores numéricos. Podem ser inteiros ou de ponto flutuante.
+Representam valores numéricos. Podem ser inteiros ou de ponto flutuante. Os
+números também podem ser escritos em base hexadecimal (base 16), octal (base 8)
+e binária (base 2). Por exemplo:
+
+* 10 (decimal)
+* 0x10 (hexadecimal)
+* 010 (octal)
+* 0b10 (binário)
+
+Os números em ponto flutuante podem ser escritos com notação exponencial. Por
+exemplo: 1.5e2, ou seja, 1.5 x 10^2 = 150.
 
 ### 2. Strings
 
@@ -45,23 +55,72 @@ propriedade de um objeto.
 
 ## Tipos de Referência
 
-### 1. Objetos (Objects)
+### 1. Arrays
+
+Objetos especiais usados para armazenar múltiplos valores em uma única variável,
+acessados por um índice. Por exemplo:
+
+```javascript
+let frutas = ['Maçã', 'Banana', 'Laranja'];
+```
+
+Os arrays são objetos, assim, porem ser instanciados com a palavra-chave `new`.
+
+```javascript
+let frutas = new Array('Maçã', 'Banana', 'Laranja');
+```
+
+Para acessar um elemento do array, usamos a notação de colchetes `[]`:
+
+```javascript
+console.log(frutas[0]); // Maçã
+```
+
+Algumas propriedades e métodos de arrays:
+
+* `length`: retorna o número de elementos no array.
+* `push()`: adiciona um ou mais elementos ao final do array.
+* `pop()`: remove o último elemento do array.
+* `shift()`: remove o primeiro elemento do array.
+
+Para utilizar uma  propriedade ou método de um array, usamos a notação de ponto:
+
+```javascript
+console.log(frutas.length); // 3
+```
+
+```javascript
+frutas.push('Uva');
+console.log(frutas); // ['Maçã', 'Banana', 'Laranja', 'Uva']
+```
+
+### 2. Data
+
+Tipos de objetos que representam datas e horários. Alguns exemplos:
+
+* `Date()`: cria um objeto Date com a data e hora atuais.
+* `Date(0)`: cria um objeto Date com a data e hora 0 (1 de janeiro de 1970).
+* `Date('2021-09-01')`: cria um objeto Date com a data 1 de setembro de 2021.
+
+```javascript
+let hoje = new Date();
+console.log(hoje); // data e hora atuais
+```
+
+```javascript
+let nascimento = new Date('1990-01-01');
+console.log(nascimento); // 1 de janeiro de 1990
+```
+
+### 3. Objetos (Objects)
 
 Representam coleções de pares chave-valor, onde as chaves são strings e os
 valores podem ser de qualquer tipo de dado, incluindo outros objetos.
 
-### 2. Arrays
-
-Objetos especiais usados para armazenar múltiplos valores em uma única variável,
-acessados por um índice.
-
-### 3. Funções
+### 4. Funções
 
 São objetos que incluem um bloco de código executável e podem ser invocados.
 
-### 4. Data
-
-Tipos de objetos que representam datas e horários.
 
 ## Exercícios do Freecodecamp 🎯
 
