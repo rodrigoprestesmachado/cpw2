@@ -9,6 +9,92 @@ nav_order: 7
 <iframe src="https://cpw2.rpmhub.dev/funcoes/slides/index.html#/" title="Funções" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
+## Resumo
+
+As funções em JavaScript são blocos de código que executam uma tarefa específica
+quando chamados. Elas são fundamentais para organizar e reutilizar o código,
+além de permitirem a criação de funcionalidades mais complexas. Aqui está um
+resumo das principais características das funções em JavaScript:
+
+### Declaração de Funções
+
+- As funções podem ser declaradas usando a palavra-chave `function`.
+
+- Exemplo de declaração de função:
+
+```javascript
+function minhaFuncao(parametro1, parametro2) {
+    // corpo da função
+}
+```
+
+### Chamada de Funções
+
+- As funções são chamadas pelo seu nome, seguido por parênteses `()`.
+
+- Exemplo de chamada de função:
+
+```javascript
+minhaFuncao(valor1, valor2);
+```
+
+### Parâmetros e Argumentos
+
+- Parâmetros são variáveis listadas na declaração da função.
+
+- Argumentos são valores passados para a função quando ela é chamada.
+
+- Exemplo de uso de parâmetros:
+
+```javascript
+    function somar(a, b) {
+        return a + b;
+    }
+    let resultado = somar(3, 5); // resultado é 8
+```
+
+### Retorno de Valores
+
+- As funções podem retornar valores usando a palavra-chave `return`.
+
+- Exemplo de retorno de valor:
+
+```javascript
+    function quadrado(numero) {
+        return numero * numero;
+    }
+    let resultado = quadrado(4); // resultado é 16
+```
+
+### Funções Anônimas e Arrow Functions:
+
+- Funções anônimas não têm um nome definido e são frequentemente usadas como
+argumentos de outras funções.
+
+- Arrow functions são uma sintaxe mais curta e moderna para declarar funções.
+
+- Exemplos:
+
+```javascript
+    // Função anônima
+    let soma = function(a, b) {
+        return a + b;
+    };
+
+    // Arrow function
+    let quadrado = (numero) => {
+        return numero * numero;
+    };
+```
+
+### Escopo de Funções
+
+- As variáveis declaradas dentro de uma função têm escopo local, ou seja, só
+podem ser acessadas dentro da própria função.
+
+- Variáveis declaradas fora de uma função têm escopo global e podem ser
+acessadas de qualquer lugar do código.
+
 ## Exercícios do Freecodecamp
 
 * [Atribuindo valores para uma função](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/passing-values-to-functions-with-arguments)
