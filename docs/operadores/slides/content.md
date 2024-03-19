@@ -1,4 +1,4 @@
-<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
+<!-- .slide:  data-background-opacity="0.1" data-background-image="imgs/title.jpg" data-transition="convex"  -->
 # Operadores
 <!-- .element: style="margin-bottom:100px; font-size: 50px; color:white; font-family: Marker Felt;" -->
 
@@ -10,7 +10,7 @@ Pressione 'F' para tela cheia
 
 
 <!-- .slide: data-background="#4AA791" data-transition="concave"  -->
-## Operadores: Aritiméticos
+## Operadores: Aritméticos
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank"><img src="imgs/op1.png"  width="90%" height="90%"></img></a>
