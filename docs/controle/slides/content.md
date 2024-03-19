@@ -3,7 +3,7 @@
 <!-- .element: style="margin-bottom:100px; font-size: 60px; color:F5F5F5; font-family: Marker Felt;" -->
 
 Pressione 'F' para tela cheia
-<!-- .element: style="font-size: small;" -->
+<!-- .element: style="font-size: small; color: white" -->
 
 [versão em pdf](?print-pdf)
 <!-- .element: style="font-size: small;" -->
