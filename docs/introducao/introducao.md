@@ -181,6 +181,6 @@ pode escolher qualquer nome que desejar.
     </a>
     <br/>
     <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
-        Creative Commons Atribuição 4.0 Internacional
+        CC BY 4.0 DEED
     </a>
 </center>
