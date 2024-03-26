@@ -15,7 +15,11 @@
  */
 
 /**
- * Este exemplo foi criado por meio do módulo readline do Node.js. Disponível em:
+ * Este exemplo foi criado por meio do módulo readline do Node.js. Para rodar o
+ * exemplo é necessário ter o Node.js instalado na máquina e executar o comando
+ * `node exercício1.js` no terminal.
+ *
+ * Sobre o módulo readline:
  * https://nodejs.org/en/learn/command-line/accept-input-from-the-command-line-in-nodejs
  */
 const readline = require('node:readline');

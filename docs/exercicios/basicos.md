@@ -9,7 +9,7 @@ nav_order: 16
 Abaixo estão listados alguns exercícios básicos para praticar a linguagem de
 programação JavaScript. Os exercícios são simples e têm como objetivo
 familiarizar o estudante com a sintaxe da linguagem e com a manipulação de
-variáveis, funções e estruturas de controle.
+variáveis, estruturas de controle, funções e eventos.
 
 ---
 **Antes de iniciar:** Os exercícios de 1 até 4 podem ser implementados no
@@ -71,7 +71,7 @@ console do navegador ou em um arquivo `.html` com um `<script>`.
 
 As respostas para 1 e 5, ou seja, exemplos para a resolução de cada bloco de
 exercícios, podem ser encontradas no repositório do
-[GitHub](https://github.com/rodrigoprestesmachado/cpw2/tree/main/exemplos/exercicios/basicos).
+[GitHub](https://github.com/rodrigoprestesmachado/cpw2/tree/dev/exemplos/exercicios/basicos/src).
 
 ---
 
