@@ -4,48 +4,21 @@ title: Home
 nav_order: 1
 ---
 
-# Construção de Páginas Web II
+# Construção de Páginas Web II 🌐
 
-## JavaScript Básico
+Conteúdo da disciplina de Construção de Páginas Web II do curso de Sistemas
+para Internet do [IFRS/Porto Alegre](https://poa.ifrs.edu.br/). A disciplina
+aborda conceitos de programação Web com JavaScript que vão desde elementos
+básicos da linguagem, passando por DOM(_Document Object Model_) e requisições
+assíncronas com AJAX (_Asynchronous JavaScript and _XML)/_Promises_, até o uso de
+_frameworks_ como Vue.js.
 
-* [Introdução](introducao/introducao.md)
-
-* [Variáveis](variaveis/variaveis.md)
-
-* [Tipos de dados primitivos](tipos/tipos.md)
-
-* [Operadores](operadores/operadores.md)
-
-* [Estruturas de controle](controle/controle.md)
-
-* [Funções](funcoes/funcoes.md)
-
-* [Eventos](eventos/eventos.md)
-
-## DOM e AJAX
-
-* [Document Object Model (DOM)](dom/dom.md)
-
-* [Asynchronous Javascript and XML (AJAX)](ajax/ajax.md)
-
-## Vue e Promise
-
-* [Vue.js](vuejs/vuejs.md)
-
-* [Promise](promise/promise.md)
-
-* [Web Storage](web-storage/web-storage.md)
-
-* [Objetos](objetos/objeto.md)
-
-* [Node e npm](node/node.md)
-
-# Comunidade da disciplina
+## Comunidade da disciplina 🤝
 
 Comunidade da disciplina no [Discord](https://discord.com/invite/C29cqvm):
 canal `#cpw2`
 
-# Referências 📚
+## Referências Bibliográficas 📚
 
 * MDN [JavaScript basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
 
