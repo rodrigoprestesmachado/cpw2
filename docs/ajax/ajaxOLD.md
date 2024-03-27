@@ -1,7 +1,8 @@
 ---
 layout: default
 title: CRUD com Ajax
-nav_order: 16
+nav_order: 23
+nav_exclude: true
 ---
 
 # Asynchronous Javascript and XML (AJAX)
