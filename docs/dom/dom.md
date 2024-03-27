@@ -11,7 +11,10 @@ nav_order: 21
 <iframe src="https://cpw2.rpmhub.dev/dom/slides/index.html#/" title="Document Object Model" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
-# Referências
+Resumo em breve...
+{: .label .label-yellow }
+
+## Referências
 
 * [DOM Tutorial](https://www.w3schools.com/js/js_htmldom.asp)
 

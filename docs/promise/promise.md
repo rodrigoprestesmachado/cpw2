@@ -11,6 +11,10 @@ nav_order: 32
 <iframe src="https://cpw2.rpmhub.dev/promise/slides/index.html#/" title="Promise" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
+
+Resumo em breve...
+{: .label .label-yellow }
+
 ## Exemplo AJaX com Promise
 
 O código abaixo apresenta um exemplo completo de código escrito de AJaX escrito por meio de uma Promise. Neste diretório, você também encontrará exemplos mais simples do uso de Promise e async/await.

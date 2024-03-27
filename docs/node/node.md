@@ -7,6 +7,9 @@ nav_order: 36
 
 # Node e Npm
 
+Deprecated
+{: .label .label-red }
+
 <center>
 <iframe src="https://cpw2.rpmhub.dev/node/slides/index.html#/" title="Node e Npm" width="90%" height="500" style="border:none;"></iframe>
 </center>

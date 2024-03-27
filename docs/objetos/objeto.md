@@ -7,6 +7,9 @@ nav_order: 35
 
 # Orientação a Objetos
 
+Deprecated
+{: .label .label-red }
+
 ## Conceitos básicos de orientação a objetos
 
 * Objeto - a melhor forma de compreender o que são os objetos é associar com uma abstração do mundo real. No mundo real, os objetos possuem características e comportamentos. Por exemplo, um carro possui características como cor, tamanho, peso, etc. e comportamentos como ligar, andar para frente e para trás.  Em um sistema, as características são chamados de **atributos** ("variáveis") e os comportamentos, que conferem uma ação para os objetos, são chamado de **métodos** ("funções/procedimentos"). A figura abaixo ilustra um objeto:
