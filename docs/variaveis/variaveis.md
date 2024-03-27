@@ -14,8 +14,6 @@ nav_order: 12
     </iframe>
 </center>
 
-## Resumo
-
 Em JavaScript, as variáveis são elementos fundamentais para armazenar e
 manipular dados dentro de um programa. Elas servem como contêineres nomeados
 para armazenar valores, como números, _strings_, objetos e muito mais. As
@@ -130,7 +128,7 @@ conflitos e bugs difíceis de depurar.
 ISBN 9788582601969.
 
 <center>
-    <a href="https://github.com/rodrigoprestesmachado" target="blanck">
+    <a href="https://rpmhub.dev" target="blanck">
         <img src="../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%"
         height="3%" border=0 style="border:0; text-decoration:none;
         outline:none">

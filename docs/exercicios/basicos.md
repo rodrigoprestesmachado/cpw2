@@ -87,7 +87,7 @@ As respostas para os exercícios estão disponíveis no repositório do
 ISBN 9788582601969.
 
 <center>
-    <a href="https://github.com/rodrigoprestesmachado" target="blanck">
+    <a href="https://rpmhub.dev" target="blanck">
         <img src="../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%"
         height="3%" border=0 style="border:0; text-decoration:none;
         outline:none">
