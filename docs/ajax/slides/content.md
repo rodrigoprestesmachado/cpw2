@@ -252,7 +252,7 @@ document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
 
 <center>
     <a href="https://rpmhub.dev" target="blanck">
-        <img src="../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%"
+        <img src="../../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%"
         height="3%" border=0 style="border:0; text-decoration:none;
         outline:none">
     </a>
@@ -261,3 +261,4 @@ document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
         CC BY 4.0 DEED
     </a>
 </center>
+<!-- .element: style="margin-bottom:50px; font-size: 14px; font-family: arial; color:#EDEEEC" -->
