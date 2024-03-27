@@ -1,36 +1,36 @@
 ---
 layout: default
-title: CRUD com Ajax
+title: CRUD com AJaX
 nav_order: 23
 nav_exclude: true
 ---
 
-# Asynchronous Javascript and XML (AJAX)
+# Asynchronous Javascript and XML (AJaX)
 
 <center>
-<iframe src="https://cpw2.rpmhub.dev/ajax/slides/index.html#/" title="Asynchronous Javascript and XML" width="90%" height="500" style="border:none;"></iframe>
+<iframe src="https://cpw2.rpmhub.dev/AJaX/slides/index.html#/" title="Asynchronous Javascript and XML" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
-## Exemplo Ajax, JSON e DOM
+## Exemplo AJaX, JSON e DOM
 
-O código abaixo apresenta um exemplo completo de código escrito em Ajax e que utiliza JSON (*JavaScript Object Notation*) como formato de troca de dados e DOM (*Document Object Model*) como ferramenta de manipulação de uma página Web.
+O código abaixo apresenta um exemplo completo de código escrito em AJaX e que utiliza JSON (*JavaScript Object Notation*) como formato de troca de dados e DOM (*Document Object Model*) como ferramenta de manipulação de uma página Web.
 
 ```sh
 git clone -b dev https://github.com/rodrigoprestesmachado/cpw2
-cd cpw2/exemplos/ajax
+cd cpw2/exemplos/AJaX
 code .
 ```
 
 
-## Create Read Update Delete (CRUD) com Ajax
+## Create Read Update Delete (CRUD) com AJaX
 
-Criação (_Create_), leitura (_Read_), atualização (_Update_) e exclusão (_Delete_) estão entre as operações mais comuns em um sistema. Assim, essa seção irá ilustrar como implementar um CRUD em um banco de dados relacional MySQL por meio de um _front end_ escrito em JS/AJAX e _back end_ em PHP.
+Criação (_Create_), leitura (_Read_), atualização (_Update_) e exclusão (_Delete_) estão entre as operações mais comuns em um sistema. Assim, essa seção irá ilustrar como implementar um CRUD em um banco de dados relacional MySQL por meio de um _front end_ escrito em JS/AJaX e _back end_ em PHP.
 
 Para baixar a última versão desse tutorial digite em um terminal:
 
 ```sh
 git clone -b dev https://github.com/rodrigoprestesmachado/cpw2
-cd cpw2/exemplos/ajax-crud
+cd cpw2/exemplos/AJaX-crud
 code .
 ```
 
@@ -109,7 +109,7 @@ Para rodar os três containers e, consequentemente, subir o exemplo do CRUD, é 
 
 # Referências
 
-* [AJAX Introduction](https://www.w3schools.com/js/js_ajax_intro.asp) no W3C Schools
+* [AJaX Introduction](https://www.w3schools.com/js/js_AJaX_intro.asp) no W3C Schools
 
 * MILETTO, Evandro Manara. [Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php](https://biblioteca.ifrs.edu.br/pergamum_ifrs/biblioteca_s/acesso_login.php?cod_acervo_acessibilidade=5020682&acesso=aHR0cHM6Ly9pbnRlZ3JhZGEubWluaGFiaWJsaW90ZWNhLmNvbS5ici9ib29rcy85Nzg4NTgyNjAxOTY5&label=acesso%20restrito). Porto Alegre Bookman 2014 1 recurso online ISBN 9788582601969.
 

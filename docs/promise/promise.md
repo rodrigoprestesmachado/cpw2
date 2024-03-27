@@ -11,13 +11,13 @@ nav_order: 32
 <iframe src="https://cpw2.rpmhub.dev/promise/slides/index.html#/" title="Promise" width="90%" height="500" style="border:none;"></iframe>
 </center>
 
-## Exemplo Ajax com Promise
+## Exemplo AJaX com Promise
 
-O código abaixo apresenta um exemplo completo de código escrito de Ajax escrito por meio de uma Promise. Neste diretório, você também encontrará exemplos mais simples do uso de Promise e async/await.
+O código abaixo apresenta um exemplo completo de código escrito de AJaX escrito por meio de uma Promise. Neste diretório, você também encontrará exemplos mais simples do uso de Promise e async/await.
 
 ```sh
 git clone -b dev https://github.com/rodrigoprestesmachado/cpw2
-cd cpw2/exemplos/ajax-promise
+cd cpw2/exemplos/AJaX-promise
 code .
 ```
 

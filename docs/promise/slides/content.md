@@ -106,7 +106,7 @@ ou erro em uma ação assíncrona no futuro.
 # Principais vantagens 👍
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
-* Callbacks nunca serão chamadas antes da conclusão da execução atual de um eventos. No caso do Ajax, uma *callback* só é chamada depois que o servidor retornar
+* Callbacks nunca serão chamadas antes da conclusão da execução atual de um eventos. No caso do AJaX, uma *callback* só é chamada depois que o servidor retornar
 <!-- .element: style="margin-bottom:70px; font-size: 25px; font-family: arial; color:#F5F5F5" -->
 
 * Uma Promise permite a construção de uma sequencia de [encadeamento](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Using_promises#encadeamento). Por exemplo, onde cada operação subsequente começa quando a operação anterior é bem sucedida

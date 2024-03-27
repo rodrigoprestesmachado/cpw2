@@ -39,7 +39,7 @@ Pressione 'F' para tela cheia
 * JavaScript pode ser utilizado para validar dados de formulários Web antes do envio para o servidor (*back-end*)
 <!-- .element: style="margin-bottom:55px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
 
-* JavaScript é a base para o desenvolvimento de interfaces interativas na Web com AJAX (Asynchronous JavaScript And XML) e/ou Websockets 💪
+* JavaScript é a base para o desenvolvimento de interfaces interativas na Web com AJaX (Asynchronous JavaScript And XML) e/ou Websockets 💪
 <!-- .element: style="margin-bottom:55px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
 
 

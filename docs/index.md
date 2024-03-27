@@ -10,7 +10,7 @@ Conteúdo da disciplina de Construção de Páginas Web II do curso de Sistemas
 para Internet do [IFRS/Porto Alegre](https://poa.ifrs.edu.br/). A disciplina
 aborda conceitos de programação Web com JavaScript que vão desde elementos
 básicos da linguagem, passando por DOM(_Document Object Model_) e requisições
-assíncronas com AJAX (_Asynchronous JavaScript and _XML)/_Promises_, até o uso de
+assíncronas com AJaX (_Asynchronous JavaScript and_ XML)/_Promises_, até o uso de
 _frameworks_ como Vue.js.
 
 ## Comunidade da disciplina 🤝
