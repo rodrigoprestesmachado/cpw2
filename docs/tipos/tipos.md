@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Tipos
+parent: JavaScript Básico
 nav_order: 4
 ---
 

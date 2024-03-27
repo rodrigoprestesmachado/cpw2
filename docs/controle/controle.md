@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Estruturas de Controle
+parent: JavaScript Básico
 nav_order: 6
 ---
 

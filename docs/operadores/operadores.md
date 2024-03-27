@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Operadores
+parent: JavaScript Básico
 nav_order: 5
 ---
 

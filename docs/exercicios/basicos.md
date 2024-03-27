@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Exercícios Básicos
+title: Exercícios
+parent: JavaScript Básico
 nav_order: 16
 ---
 
