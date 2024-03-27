@@ -6,6 +6,7 @@ nav_order: 1
 
 # Construção de Páginas Web II
 
+## JavaScript Básico
 
 * [Introdução](introducao/introducao.md)
 
@@ -21,9 +22,13 @@ nav_order: 1
 
 * [Eventos](eventos/eventos.md)
 
+## DOM e AJAX
+
 * [Document Object Model (DOM)](dom/dom.md)
 
 * [Asynchronous Javascript and XML (AJAX)](ajax/ajax.md)
+
+## Vue e Promise
 
 * [Vue.js](vuejs/vuejs.md)
 
