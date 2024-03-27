@@ -5,7 +5,7 @@ parent: JavaScript Básico
 nav_order: 18
 ---
 
-# Exercícios Básicos de JavaScript
+# Exercícios de JavaScript Básico
 
 Abaixo estão listados alguns exercícios básicos para praticar a linguagem de
 programação JavaScript. Os exercícios são simples e têm como objetivo
@@ -24,9 +24,9 @@ console do navegador ou em um arquivo `.html` com um `<script>`.
 1. Crie um programa que solicite ao usuário o valor de um produto e a quantidade
    que ele deseja comprar. Em seguida, exiba o valor total da compra.
 
-1. Crie uma função chamada `contagemRegressiva` que captura um valor de 
-   de uma função `prompt` (ou campo de texto HTML). A função deve exibir uma 
-   contagem regressiva a partir do número recebido até zero. o atingir 0 na 
+1. Crie uma função chamada `contagemRegressiva` que captura um valor de
+   de uma função `prompt` (ou campo de texto HTML). A função deve exibir uma
+   contagem regressiva a partir do número recebido até zero. o atingir 0 na
    contagem regressiva, a função deve imprimir "Lançamento!".
 
 1. Crie um programa que solicite ao usuário um número e exiba a tabuada desse
@@ -70,8 +70,7 @@ console do navegador ou em um arquivo `.html` com um `<script>`.
 
 ---
 
-As respostas para 1 e 5, ou seja, exemplos para a resolução de cada bloco de
-exercícios, podem ser encontradas no repositório do
+As respostas para os exercícios estão disponíveis no repositório do
 [GitHub](https://github.com/rodrigoprestesmachado/cpw2/tree/dev/exemplos/exercicios/basicos/src).
 
 ---
