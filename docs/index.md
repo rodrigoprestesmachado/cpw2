@@ -6,6 +6,7 @@ nav_order: 1
 
 # Construção de Páginas Web II
 
+
 * [Introdução](introducao/introducao.md)
 
 * [Variáveis](variaveis/variaveis.md)
