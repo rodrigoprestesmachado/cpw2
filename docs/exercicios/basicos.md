@@ -2,7 +2,7 @@
 layout: default
 title: Exercícios
 parent: JavaScript Básico
-nav_order: 17
+nav_order: 18
 ---
 
 # Exercícios Básicos de JavaScript
