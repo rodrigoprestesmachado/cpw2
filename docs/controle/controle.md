@@ -2,7 +2,7 @@
 layout: default
 title: Estruturas de Controle
 parent: JavaScript Básico
-nav_order: 6
+nav_order: 15
 ---
 
 # Estruturas de controle

@@ -2,7 +2,7 @@
 layout: default
 title: Operadores
 parent: JavaScript Básico
-nav_order: 5
+nav_order: 14
 ---
 
 # Operadores

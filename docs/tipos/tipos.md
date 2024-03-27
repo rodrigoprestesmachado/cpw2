@@ -2,7 +2,7 @@
 layout: default
 title: Tipos
 parent: JavaScript Básico
-nav_order: 4
+nav_order: 13
 ---
 
 # Tipos

@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Vue.js
-nav_order: 11
+parent: Vue e Promisse
+nav_order: 31
 ---
 
 # Vue.js

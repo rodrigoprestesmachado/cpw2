@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Asynchronous Javascript and XML (AJAX)
-nav_order: 10
+parent: Dom e Ajax
+nav_order: 22
 ---
 
 # Asynchronous Javascript and XML (AJAX)

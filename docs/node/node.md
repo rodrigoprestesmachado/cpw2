@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Node e Npm
-nav_order: 15
+parent: Vue e Promisse
+nav_order: 36
 ---
 
 # Node e Npm

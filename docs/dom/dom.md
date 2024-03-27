@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Document Object Model (DOM)
-nav_order: 9
+parent: Dom e Ajax
+nav_order: 21
 ---
 
 # Document Object Model (DOM)

@@ -1,7 +1,8 @@
 ---
 layout: default
 title: Web Storage
-nav_order: 13
+parent: Vue e Promisse
+nav_order: 34
 ---
 
 # Web Storage
