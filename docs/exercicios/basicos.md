@@ -2,7 +2,7 @@
 layout: default
 title: Exercícios
 parent: JavaScript Básico
-nav_order: 16
+nav_order: 17
 ---
 
 # Exercícios Básicos de JavaScript
@@ -24,10 +24,10 @@ console do navegador ou em um arquivo `.html` com um `<script>`.
 1. Crie um programa que solicite ao usuário o valor de um produto e a quantidade
    que ele deseja comprar. Em seguida, exiba o valor total da compra.
 
-1. Crie uma função chamada `contagemRegressiva` que recebe um número como
-   parâmetro. A função deve exibir uma contagem regressiva a partir do número
-   recebido até zero. o atingir 0 na contagem regressiva, a função deve imprimir
-   "Lançamento!".
+1. Crie uma função chamada `contagemRegressiva` que captura um valor de 
+   de uma função `prompt` (ou campo de texto HTML). A função deve exibir uma 
+   contagem regressiva a partir do número recebido até zero. o atingir 0 na 
+   contagem regressiva, a função deve imprimir "Lançamento!".
 
 1. Crie um programa que solicite ao usuário um número e exiba a tabuada desse
    número de 1 a 10.

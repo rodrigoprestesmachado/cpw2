@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Orientação a Objetos
-parent: Vue e Promisse
+parent: Vue e Promise
 nav_order: 35
 ---
 
