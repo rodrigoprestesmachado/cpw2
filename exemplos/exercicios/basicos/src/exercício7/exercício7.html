@@ -1,0 +1,43 @@
+<!--
+    CPW2 by Rodrigo Prestes Machado
+
+    CPW2 is licensed under a
+    Creative Commons Attribution 4.0 International License.
+    You should have received a copy of the license along with this
+    work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora de Fatorial</title>
+</head>
+<body>
+    <h1>Calculadora de Fatorial</h1>
+    <label for="numero">Digite um número:</label>
+    <input type="number" id="numero" placeholder="Digite um número"><br>
+    <button onclick="calcularFatorial()">Calcular Fatorial</button><br>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularFatorial() {
+            let message = "";
+            var numero = parseInt(document.getElementById('numero').value);
+
+            if (!isNaN(numero) && numero >= 0) {
+                var fatorial = 1;
+                for (var i = 1; i <= numero; i++) {
+                    fatorial *= i;
+                }
+                message = `O fatorial de ${numero} é ${fatorial}`;
+                document.getElementById('resultado').textContent = message;
+            } else {
+                message = "Por favor, digite um número válido maior ou igual a zero.";
+                document.getElementById('resultado').textContent = message;
+            }
+        }
+    </script>
+</body>
+</html>
+

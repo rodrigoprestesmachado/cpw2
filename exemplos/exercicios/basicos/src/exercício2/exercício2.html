@@ -1,0 +1,87 @@
+<!--
+    CPW2 by Rodrigo Prestes Machado
+
+    CPW2 is licensed under a
+    Creative Commons Attribution 4.0 International License.
+    You should have received a copy of the license along with this
+    work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compras</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        input {
+            margin: 10px 0;
+        }
+
+        button {
+            margin: 10px 0;
+        }
+
+        #resultado {
+            color: rgb(16, 16, 134);
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        </style>
+</head>
+
+<body>
+    <body>
+        <h1>Calculadora de Compras</h1>
+        <label for="valorProduto">Valor do Produto:</label>
+        <input type="number" id="valorProduto" placeholder="Digite o valor do produto"><br>
+
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" id="quantidade" placeholder="Digite a quantidade desejada"><br>
+
+        <button onclick="calcularTotal()">Calcular Total</button><br>
+
+        <p id="resultado"></p>
+
+        <script>
+            function calcularTotal() {
+                // Recupera os valores digitados pelo usuário
+                let valorProduto = parseFloat(document.getElementById('valorProduto').value);
+                let quantidade = parseInt(document.getElementById('quantidade').value);
+
+                // Verifica se os valores são válidos
+                if (!isNaN(valorProduto) && !isNaN(quantidade) &&
+                    valorProduto > 0 && quantidade > 0) {
+
+                    let total = valorProduto * quantidade;
+                    let message = `Valor Total da Compra: R$ ${total.toFixed(2)}`;
+                    document.getElementById('resultado').textContent = message;
+                } else {
+                    let message = "Por favor, digite valores válidos";
+                    document.getElementById('resultado').textContent = message;
+                }
+            }
+        </script>
+    </body>
+</body>
+
+</html>
