@@ -8,37 +8,31 @@ nav_order: 18
 # Exercícios de JavaScript Básico
 
 Abaixo estão listados alguns exercícios básicos para praticar a linguagem de
-programação JavaScript. Os exercícios são simples e têm como objetivo
-familiarizar o estudante com a sintaxe da linguagem e com a manipulação de
-variáveis, estruturas de controle, funções e eventos.
-
----
-**Antes de iniciar:** Os exercícios de 1 até 4 podem ser implementados no
-console do navegador ou em um arquivo `.html` com um `<script>`.
-
----
+programação JavaScript. Os exercícios têm como objetivo familiarizar o estudante
+com a sintaxe da linguagem e com a manipulação de variáveis, estruturas de
+controle, funções e eventos.
 
 1. Crie um programa que solicite ao usuário seu nome, idade e profissão.
    Em seguida, exiba uma mensagem de boas-vindas contendo essas informações.
 
-1. Crie um programa que solicite ao usuário o valor de um produto e a quantidade
+2. Crie um programa que solicite ao usuário o valor de um produto e a quantidade
    que ele deseja comprar. Em seguida, exiba o valor total da compra.
 
-1. Crie uma função chamada `contagemRegressiva` que captura um valor de
+3. Crie uma função chamada `contagemRegressiva` que captura um valor de
    de uma função `prompt` (ou campo de texto HTML). A função deve exibir uma
    contagem regressiva a partir do número recebido até zero. o atingir 0 na
    contagem regressiva, a função deve imprimir "Lançamento!".
 
-1. Crie um programa que solicite ao usuário um número e exiba a tabuada desse
+4. Crie um programa que solicite ao usuário um número e exiba a tabuada desse
    número de 1 a 10.
 
-1. Crie uma página HTML com um botão e um contador de cliques. No JavaScript
+5. Crie uma página HTML com um botão e um contador de cliques. No JavaScript
    associado à página, adicione um evento ao botão para incrementar o contador
    de cliques em 1 cada vez que o botão for clicado, e atualize o valor do
    contador na página. Além disso, utilize um estilo CSS para estilizar o botão
    e o contador, tornando a interface mais amigável e visualmente atraente.
 
-1. Crie uma página HTML com um formulário de cadastro contendo campos para nome,
+6. Crie uma página HTML com um formulário de cadastro contendo campos para nome,
    e-mail e senha, juntamente com um botão de envio. No arquivo
    JavaScript associado à página, adicione um evento ao botão de envio para
    validar os campos do formulário antes de serem enviados. A validação deve
@@ -50,14 +44,14 @@ console do navegador ou em um arquivo `.html` com um `<script>`.
    praticar o uso de eventos de formulário em JavaScript para validar dados e
    fornecer feedback ao usuário durante a interação com a página web.
 
-1. Crie uma página HTML com um campo de texto e um botão. No arquivo JavaScript
+7. Crie uma página HTML com um campo de texto e um botão. No arquivo JavaScript
    associado à página, adicione um evento ao botão para calcular o fatorial do
    número digitado no campo de texto. O fatorial de um número é o produto de
    todos os números inteiros positivos de 1 até o próprio número. Por exemplo,
    o fatorial de5 é 5 x 4 x 3 x 2 x 1 = 120. Logo, exiba o resultado do cálculo
    na página.
 
-1. Crie um programa que gerencie uma lista de tarefas utilizando um array em
+8. Crie um programa que gerencie uma lista de tarefas utilizando um array em
    JavaScript. O programa deve ter as seguintes funcionalidades: a função
    `adicionarTarefa`, que recebe uma string representando uma nova tarefa e a
    adiciona à lista de tarefas; a função `removerTarefa`, que recebe um índice
@@ -69,9 +63,18 @@ console do navegador ou em um arquivo `.html` com um `<script>`.
 
 
 ---
-
 As respostas para os exercícios estão disponíveis no repositório do
 [GitHub](https://github.com/rodrigoprestesmachado/cpw2/tree/dev/exemplos/exercicios/basicos/src).
+
+Algumas observações sobre as respostas:
+
+* A resposta do exercício 1, mostra como utilizar o Node.js para capturar os
+dados de entrada dos usuários. Porém, esse exercício poderia ser resolvido com
+o uso de um formulário HTML.
+
+* Já na resposta do exercício 3, foi utilizado as funções
+`setInterval` e `clearInterval` para realizar a contagem regressiva, porém, o
+exercício poderia ser resolvido de outras maneiras.
 
 ---
 
@@ -96,4 +99,4 @@ ISBN 9788582601969.
     <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
         CC BY 4.0 DEED
     </a>
-</center>
+</center>   
