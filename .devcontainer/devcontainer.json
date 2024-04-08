@@ -6,7 +6,8 @@
 		"vscode": {
 			"extensions": [
 				"Equinusocio.vsc-material-theme-icons",
-				"amodio.amethyst-theme",	
+				"ybaumes.highlight-trailing-white-spaces",
+				"amodio.amethyst-theme",
 				"ritwickdey.LiveServer",
 				"GitHub.copilot",
 				"GitHub.copilot-chat",
