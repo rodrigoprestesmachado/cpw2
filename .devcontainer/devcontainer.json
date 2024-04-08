@@ -6,6 +6,7 @@
 		"vscode": {
 			"extensions": [
 				"Equinusocio.vsc-material-theme-icons",
+				"amodio.amethyst-theme",	
 				"ritwickdey.LiveServer",
 				"GitHub.copilot",
 				"GitHub.copilot-chat",
@@ -15,7 +16,7 @@
 				"streetsidesoftware.code-spell-checker-portuguese-brazilian"
 			],
 			"settings": {
-				"workbench.colorTheme": "GitHub Light Default",
+				"workbench.colorTheme": "Default Light Modern",
 				"workbench.iconTheme": "eq-material-theme-icons-light",
 				"editor.rulers": [80,120],
 				"workbench.colorCustomizations": {
