@@ -56,3 +56,16 @@ autocompletar para sugestões. Assim, siga os passos abaixo:
     designada na página.
     6. Adicione estilos CSS para melhorar a aparência e usabilidade da interface
     da lista de compras e do autocompletar.
+
+## Exercícios sobre AJaX
+
+- **1**: Requisição de Dados de um Servidor. O objetivo deste exercício é fazer
+uma requisição Ajax para recuperar dados de um servidor e exibir na página.
+Assim, Crie um arquivo HTML com uma estrutura básica, incluindo um botão para
+iniciar a requisição e uma área para exibir os dados recebidos. No JavaScript,
+selecione a área de exibição usando `document.getElementById()` ou
+`document.querySelector()`. Implemente uma função que seja chamada quando o
+botão for clicado. Dentro dessa função, crie um objeto `XMLHttpRequest` e faça
+uma requisição GET para uma URL que retorne dados (por exemplo, um arquivo JSON)
+usando o método `open()` e `send()`. Quando a resposta for recebida, verifique
+o status da resposta e exiba os dados na área designada na página.
