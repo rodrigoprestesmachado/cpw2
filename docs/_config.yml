@@ -6,4 +6,4 @@ aux_links:
     - "https://github.com/rodrigoprestesmachado/cpw2"
 
 # Footer content appears at the bottom of every page's main content
-footer_content: "Copyright &copy; 2024 [RPM Hub](https://rpmhub.dev). Distributed by CC-BY-4.0 license."
+footer_content: "Copyright &copy; 2024 <a href='https://rpmhub.dev'>RPM Hub</a>. Distributed by CC-BY-4.0 license."
