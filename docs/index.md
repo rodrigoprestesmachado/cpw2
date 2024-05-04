@@ -4,7 +4,9 @@ title: Home
 nav_order: 1
 ---
 
-# Construção de Páginas Web II 🌐
+# Construção de Páginas Web II
+
+[![Discord](https://img.shields.io/discord/717400933075648574?style=flat&label=Discord%20%23cpw2&color=%235F86AF)](https://discord.gg/4meCsgkgpp)
 
 Conteúdo da disciplina de Construção de Páginas Web II do curso de Sistemas
 para Internet do [IFRS/Porto Alegre](https://poa.ifrs.edu.br/). A disciplina
@@ -14,13 +16,13 @@ assíncronas com AJaX (_Asynchronous JavaScript and_ XML)/_Promises_, até o uso
 _frameworks_ como Vue.js.
 {: .fs-3 }
 
-## Comunidade 🤝
+## Comunidade
 
 Comunidade da disciplina no [Discord](https://discord.com/invite/C29cqvm):
 canal `#cpw2`
 {: .fs-3 }
 
-## Referências 📚
+## Referências
 
 * MDN [JavaScript basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
 {: .fs-3 }
