@@ -78,6 +78,15 @@ associados a uma instância Vue são alterados, a interface do usuário é
 automaticamente atualizada para refletir essas alterações. Isso torna o Vue.js
 uma ferramenta poderosa para a criação de interfaces de usuário dinâmicas.
 
+## Exercício 1: Lista de Tarefas
+
+Objetivo: Criar uma lista de tarefas simples em Vue.
+
+Criar uma lista de tarefas em Vue que:
+	1.	Renderize uma lista a partir de um array.
+	2.	Mostre cada item dinamicamente com v-for.
+
+
 ## Nuxt.js 🚀
 
 O Nuxt.js é um framework Vue.js para a criação de aplicações Web universais. Ele
