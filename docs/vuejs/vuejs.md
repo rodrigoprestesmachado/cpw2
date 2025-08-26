@@ -83,8 +83,8 @@ uma ferramenta poderosa para a criação de interfaces de usuário dinâmicas.
 Objetivo: Criar uma lista de tarefas simples em Vue.
 
 Criar uma lista de tarefas em Vue que:
-	1.	Renderize uma lista a partir de um array.
-	2.	Mostre cada item dinamicamente com v-for.
+1.	Renderize uma lista a partir de um array.
+2.	Mostre cada item dinamicamente com v-for.
 
 
 ## Nuxt.js 🚀
