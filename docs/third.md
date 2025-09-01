@@ -7,6 +7,6 @@ has_children: true
 
 # DOM e AJaX
 
-Na segunda parte do curso da disciplina de Construção de Páginas Web II, iremos
+Na última parte do curso da disciplina de Construção de Páginas Web II, iremos
 abordar os conceitos de DOM (_Document Object Model_) e uma introdução sobre
 requisições assíncronas com AJaX (_Asynchronous JavaScript and_ XML).
