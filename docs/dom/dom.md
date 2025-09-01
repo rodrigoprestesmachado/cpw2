@@ -2,7 +2,7 @@
 layout: default
 title: Document Object Model (DOM)
 parent: Dom e AJaX
-nav_order: 21
+nav_order: 31
 ---
 
 # Document Object Model (DOM)

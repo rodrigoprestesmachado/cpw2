@@ -2,7 +2,7 @@
 layout: default
 title: Asynchronous Javascript and XML (AJaX)
 parent: Dom e AJaX
-nav_order: 22
+nav_order: 32
 ---
 
 # Asynchronous Javascript and XML (AJaX)
