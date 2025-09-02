@@ -94,7 +94,7 @@ export default {
 
 No exemplo acima, são definidas duas propriedades, link e description do tipo
 String sendo que apenas a primeira é obrigatória. Um exemplo mais realista do
-componente MyImage poderia ser:
+componente MyImage poderia ser escrito da seguinte maneira:
 
 ```javascript
 export default {
