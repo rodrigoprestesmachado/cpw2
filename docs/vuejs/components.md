@@ -26,7 +26,7 @@ console.log(soma(2, 3));
 
 Para obter mais informações, acesse:
 
-https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules
+[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules)
 
 ## Componentes
 
@@ -138,17 +138,17 @@ v-bind é uma diretiva que serve para ligar (bind) atributos de elementos HTML o
 props de componentes a valores dinâmicos do Vue (variáveis, expressões ou
 funções).
 
-Em um componente, se você escrever `<img src=“link">` o navegador irá entender que
-a palavra link como um texto. Porém, escrevendo `<img v-bind:src=“link”>` Vue
-avalia a variável link do componente e coloca o valor correto no atributo src.
-Note que você pode utilizar : como um atalho para v-bind, por exemplo:
+Em um componente, se você escrever `<img src=“link">` o navegador irá entender
+que a palavra link como um texto. Porém, escrevendo `<img v-bind:src=“link”>`  o
+Vue avalia a variável link do componente e coloca o valor correto no atributo
+`src`. Note que você pode utilizar : como um atalho para v-bind, por exemplo:
 `<img :src=“link”>`.
 
 ## Exemplo
 
 Para obter um exemplo funcional acesse o endereço:
 
-https://github.com/rodrigoprestesmachado/cpw2/tree/main/exemplos/vue-components
+[https://github.com/rodrigoprestesmachado/cpw2/tree/main/exemplos/vue-components](https://github.com/rodrigoprestesmachado/cpw2/tree/main/exemplos/vue-components)
 
 ## Referências 📚
 
