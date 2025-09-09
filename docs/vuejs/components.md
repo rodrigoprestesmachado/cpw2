@@ -144,6 +144,45 @@ Vue avalia a variável link do componente e coloca o valor correto no atributo
 `src`. Note que você pode utilizar : como um atalho para v-bind, por exemplo:
 `<img :src=“link”>`.
 
+## Emmissão de eventos
+
+Em Vue.js, a emissão de eventos é uma forma de comunicação entre componentes.
+Um componente filho pode emitir um evento para notificar o componente pai sobre
+uma ação ou mudança de estado. Isso é feito usando o método `$emit`.
+
+```javascript
+@click="$emit('image-clicked', description)"
+```
+
+No exemplo acima, quando o elemento é de um componente é clicado ele emite um
+evento chamado `image-clicked`, passando a descrição da imagem como argumento.
+
+No componente pai, você pode ouvir esse evento usando a diretiva `v-on` ou o
+atalho `@`. Por exemplo:
+
+```html
+<my-image
+  link="https://vuejs.org/images/logo.png"
+  description="Vue.js Logo"
+  @image-clicked="showDescription"
+></my-image>
+```
+
+O método `showDescription` no componente pai é usado para lidar com o evento
+emitido do componente `<my-image>`:
+
+```javascript
+methods: {
+  showDescription(description) {
+    alert(description);
+  }
+}
+````
+
+Assim, quando a imagem é clicada, o evento `image-clicked` é emitido pelo
+componente filho, e o método `showDescription` no componente pai é chamado,
+exibindo um alerta com a descrição da imagem.
+
 ## Exemplo
 
 Para obter um exemplo funcional acesse o endereço:

@@ -18,6 +18,7 @@ export default {
           <img
             :src="link"
             alt="description"
+            @click="$emit('image-clicked', description)"
           />
         </figure>
       </div>

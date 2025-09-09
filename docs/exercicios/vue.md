@@ -14,6 +14,11 @@ nav_order: 27
 - **Exercício 2**: Utilizando a ideia de componentes, crie um componente de item
 de tarefa que receba as propriedades necessárias e seja que reutilizável.
 
-- **Exercício 3**: Crie um componente de formulário que permita adicionar novas
-tarefas à lista. O componente deve emitir um evento quando uma nova tarefa for
-adicionada.
+- **Exercício 3**: Crie um componente de formulário que permita implementar um
+CRUD completo de objetos tarefas, incluindo:
+    1. **Create**: Adicionar novas tarefas à lista
+    2. **Read**: Exibir todas as tarefas existentes
+    3. **Update**: Editar tarefas existentes
+    4. **Delete**: Remover tarefas da lista
+
+**Nota:** Use como base o exemplo disponível em [Vue components](./components.md).

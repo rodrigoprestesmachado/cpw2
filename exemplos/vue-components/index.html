@@ -17,6 +17,7 @@
         <my-image
           :link="image.link"
           :description="image.description"
+          @image-clicked="showDescription"
         ></my-image>
       </div>
     </div>
@@ -26,6 +27,7 @@
       const app = Vue.createApp({
         data() {
           return {
+            showAlert: false,
             images: [
               {
                 link: "https://static.gettyimages.com/display-sets/creative-landing/images/GettyImages-2195074919.jpg",
@@ -33,16 +35,19 @@
               },
               {
                 link: "https://static.gettyimages.com/display-sets/creative-landing/images/GettyImages-2195074919.jpg",
-                description: "Image 1",
+                description: "Image 2",
               },
             ],
           };
         },
+        methods:{
+          showDescription(value){
+            alert(value)
+          }
+        }
       });
       app.component("my-image", MyImage);
       app.mount("#app");
     </script>
-    <style>
-    </style>
   </body>
 </html>
