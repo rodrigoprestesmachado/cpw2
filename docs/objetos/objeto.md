@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Orientação a Objetos
-parent: Vue.js
-nav_order: 25
+parent: Conceitos Finais
+nav_order: 44
 ---
 
 # Orientação a Objetos

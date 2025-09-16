@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Node e Npm
-parent: Vue.js
-nav_order: 26
+parent: Conceitos Finais
+nav_order: 43
 ---
 
 # Node e Npm

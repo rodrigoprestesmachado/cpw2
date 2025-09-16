@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Web Storage
-parent: Vue.js
-nav_order: 24
+parent: Conceitos Finais
+nav_order: 42
 ---
 
 # Web Storage
