@@ -1,21 +1,31 @@
 ---
 layout: default
-title: Vue components
+title: Slots
 parent: Vue.js
-nav_order: 22
+nav_order: 23
 ---
 
-## Slots
+# Slots
 
-Os Slots no Vue.js são uma funcionalidade que permite criar componentes reutilizáveis e ainda mais flexíveis. Eles funcionam como "buracos" ou "espaços reservados" nos componentes onde você pode inserir conteúdo dinâmico.
+Os Slots no Vue.js são uma funcionalidade que permite criar componentes
+reutilizáveis e ainda mais flexíveis. Eles funcionam como "espaços reservados"
+nos componentes onde você pode inserir conteúdo dinâmico.
 
-### 🔍 Tipos de Slots
+## 🔍 Tipos de Slots
 
-Existem 
+Existem três tipos principais de slots no Vue.js:
 
-#### Slot Padrão (Default Slot)
+1. **Slot Padrão**: O slot padrão é o mais simples e permite que você insira
+conteúdo em um componente.
+2. **Slots Nomeados**: Permitem que você defina múltiplos slots em um
+componente, cada um com um nome específico.
+3. **Slots com Escopo**: Permitem que um componente filho passe dados para o
+componente pai através do slot.
 
-O slot padrão é a forma mais simples de usar slots. Todo conteúdo passado para o componente será renderizado no local do <slot>.
+### Slot Padrão (Default Slot)
+
+O slot padrão é a forma mais simples de usar slots. Todo conteúdo passado para
+o componente será renderizado no local do <slot>.
 
 ```html
 <card-component>
@@ -37,9 +47,10 @@ const CardComponent = {
 };
 ```
 
-#### Slots Nomeados (Named Slots)
+### Slots Nomeados (Named Slots)
 
-Os slots nomeados permitem definir múltiplos pontos de inserção de conteúdo em um componente, cada um com um nome específico.
+Os slots nomeados permitem definir múltiplos pontos de inserção de conteúdo em
+um componente, cada um com um nome específico.
 
 ```html
 <!-- Uso do componente -->
@@ -82,9 +93,10 @@ const CardComponent = {
 };
 ```
 
-#### Slots com Escopo (Scoped Slots)
+### Slots com Escopo (Scoped Slots)
 
-Os slots com escopo permitem que o componente filho passe dados para o componente pai através do slot.
+Os slots com escopo permitem que o componente filho passe dados para o 
+componente pai através do slot.
 
 ```html
 <user-card v-for="user in users" :key="user.id" :user="user">
@@ -107,7 +119,7 @@ Os slots com escopo permitem que o componente filho passe dados para o component
 </user-card>
 ```
 
-No exemplo acima, existe uma interpolação de dados `user` e `isOnline`. O usuário 
+No exemplo acima, existe uma interpolação de dados `user` e `isOnline`.
 
 
 ```javascript
@@ -134,18 +146,29 @@ export default {
 };
 ```
 
-Neste exemplo, o componente UserCard passa o valor de `isOnline` para o componente pai através do slot.
+Neste exemplo, o componente UserCard passa o valor de `isOnline` para o 
+componente pai através do slot.
 
-### 💡 Vantagens dos Slots
+## 💡 Vantagens dos Slots
 
 * Flexibilidade: Permite personalizar componentes sem modificar sua estrutura
 * Reutilização: Um componente pode ser usado em diferentes contextos
 * Separação de Responsabilidades: O componente cuida da estrutura, o pai do conteúdo
 * Composição: Facilita a criação de layouts complexos
 
-### 📝 Resumo
-Os slots no Vue.js são fundamentais para criar componentes flexíveis e reutilizáveis. Eles permitem:
+## 💡 Exemplo
 
-* Slots Padrão: Inserção simples de conteúdo
-* Slots Nomeados: Múltiplos pontos de inserção organizados
-* Slots com Escopo: Compartilhamento de dados do filho para o pai
+Acesse o exemplo completo no repositório:
+[https://github.com/rodrigoprestesmachado/cpw2/tree/dev/exemplos/vue-slots](https://github.com/rodrigoprestesmachado/cpw2/tree/dev/exemplos/vue-slots)
+
+## Referências 📚
+
+* [Slots no Vue.js](https://vuejs.org/guide/components/slots) - Vue.js Official Documentation
+<!-- .element: style="margin-bottom:40px; font-size: 25px; color:white; font-family: arial;" -->
+
+* [Vue.js](https://vuejs.org) - The Progressive JavaScript Framework
+<!-- .element: style="margin-bottom:40px; font-size: 25px; color:white; font-family: arial;" -->
+
+<center>
+<a href="https://rpmhub.dev" target="blanck"><img src="../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%" height="3%" border=0 style="border:0; text-decoration:none; outline:none"></a><br/>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 DEED</a>
