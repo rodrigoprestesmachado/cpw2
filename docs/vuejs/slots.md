@@ -7,9 +7,9 @@ nav_order: 23
 
 # Slots
 
-Os Slots no Vue.js são uma funcionalidade que permite criar componentes
-reutilizáveis e ainda mais flexíveis. Eles funcionam como "espaços reservados"
-nos componentes onde você pode inserir conteúdo dinâmico.
+Slots é uma funcionalidade no Vue.js que permite criar componentes ainda mais
+flexíveis. Eles funcionam como "espaços reservados" nos componentes onde você
+pode inserir conteúdo dinâmico.
 
 ## 🔍 Tipos de Slots
 
@@ -22,10 +22,15 @@ componente, cada um com um nome específico.
 3. **Slots com Escopo**: Permitem que um componente filho passe dados para o
 componente pai através do slot.
 
-### Slot Padrão (Default Slot)
+### Slot Padrão (Default)
 
 O slot padrão é a forma mais simples de usar slots. Todo conteúdo passado para
-o componente será renderizado no local do <slot>.
+o componente será renderizado no local do `<slot>`.
+
+Imagine que temos um componente chamado `CardComponent`, que representa um cartão
+básico. Podemos definir um slot padrão dentro do componente para permitir que
+o usuário insira qualquer conteúdo que desejar dentro do cartão. No exemplo, as
+tags `<h3>` e `<p>` são passadas como conteúdo do slot padrão.
 
 ```html
 <card-component>
@@ -33,6 +38,9 @@ o componente será renderizado no local do <slot>.
   <p>Este conteúdo está sendo passado através do slot padrão.</p>
 </card-component>
 ```
+
+Observe que o conteúdo dentro do componente `CardComponent` será renderizado
+no local onde o `<slot>` está definido. Veja o exemplo abaixo:
 
 ```javascript
 // Definição do componente
@@ -47,10 +55,15 @@ const CardComponent = {
 };
 ```
 
-### Slots Nomeados (Named Slots)
+### Slots Nomeados (Named)
 
 Os slots nomeados permitem definir múltiplos pontos de inserção de conteúdo em
 um componente, cada um com um nome específico.
+
+No exemplo abaixo, o componente `CardComponent` possui três slots nomeados: `header`,
+`default` (padrão) e `footer`. O conteúdo passado para cada slot será renderizado
+no local correspondente dentro do componente. Caso algum slot não receba conteúdo,
+ele será ignorado.
 
 ```html
 <!-- Uso do componente -->
@@ -69,6 +82,10 @@ um componente, cada um com um nome específico.
   </template>
 </card-component>
 ````
+
+Observe que para ignorar um slot, basta não passar nenhum conteúdo para ele, se
+faz necessário incluir a diretiva `v-if` para evitar que o elemento seja
+renderizado como vazio. Observe o exemplo abaixo para o slot `header` e `footer`.
 
 ```javascript
 // Definição do componente
@@ -93,9 +110,9 @@ const CardComponent = {
 };
 ```
 
-### Slots com Escopo (Scoped Slots)
+### Slots com Escopo (Scoped)
 
-Os slots com escopo permitem que o componente filho passe dados para o 
+Os slots com escopo permitem que o componente filho passe dados para o
 componente pai através do slot.
 
 ```html
@@ -119,8 +136,11 @@ componente pai através do slot.
 </user-card>
 ```
 
-No exemplo acima, existe uma interpolação de dados `user` e `isOnline`.
-
+No exemplo acima, existe uma interpolação de dados `user` e `isOnline`. O `user` é
+passado como uma prop para o componente `UserCard`, enquanto `isOnline` é uma
+propriedade computada dentro do componente `UserCard` que simula o status
+online/offline do usuário. O exemplo mostra que os dados podem ser passados do
+componente pai para o filho e vice-versa.
 
 ```javascript
 export default {
@@ -145,9 +165,6 @@ export default {
   },
 };
 ```
-
-Neste exemplo, o componente UserCard passa o valor de `isOnline` para o 
-componente pai através do slot.
 
 ## 💡 Vantagens dos Slots
 

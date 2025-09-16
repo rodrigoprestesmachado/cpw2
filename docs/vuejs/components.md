@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Vue components
+title: Componentes
 parent: Vue.js
 nav_order: 22
 ---

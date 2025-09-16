@@ -24,7 +24,10 @@ CRUD completo de objetos tarefas, incluindo:
 **Nota:** Use como [base](https://github.com/rodrigoprestesmachado/cpw2/tree/dev/exemplos/vue-components-tasks)
 o código de exemplo para a realização desse exercício.
 
-- **Exercício 4**: Crie um componente de lista que permita customizar:
-    1. Como cada item é exibido (slot com escopo)
-    2. Cabeçalho da lista (slot nomeado)
-    3. Mensagem quando vazia (slot condicional)
+- **Exercício 4**: Crie um componente Vue que simule um cartão de lista de
+produtos que permita customizar:
+    1. O HTML de como cada item é exibido.
+    2. Cabeçalho do cartão.
+    3. Se o cartão estiver vazio, ou seja, sem um produto, exibir uma mensagem padrão.
+    padrão.
+    4. Um botão de ação que mostre mais detalhes do produto quando clicado.
