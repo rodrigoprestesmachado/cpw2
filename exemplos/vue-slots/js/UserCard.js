@@ -9,6 +9,7 @@ export default {
   template: `
     <div class="card mb-4">
         <div class="card-content">
+            {{user}}
             <slot :user="user" :isOnline="isUserOnline"></slot>
         </div>
     </div>

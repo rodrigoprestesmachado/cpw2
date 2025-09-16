@@ -11,23 +11,25 @@
 
 <body>
   <div id="app" class="container mt-4">
-    <h1 class="title">Exemplo de Vue Slots</h1>
+    <h1 class="title">Exemplos de Slots</h1>
 
-    <!-- Card básico com slot padrão -->
+    <!-- Slot padrão -->
     <card-component>
-      <h3 class="title is-4">Conteúdo no Slot Padrão</h3>
+      <h3 class="title is-4">Slot padrão</h3>
       <p>Este conteúdo está sendo passado através do slot padrão.</p>
     </card-component>
 
-    <!-- Card com slots nomeados -->
+    <!-- Slots nomeados -->
     <card-component>
       <template #header>
-        <h2 class="title is-3">Título no Header</h2>
+        <h2 class="title is-3">Slots nomeados</h2>
       </template>
 
       <template #default>
-        <p>Este é o conteúdo principal do card.</p>
-        <button class="button is-primary" @click="showMessage">Clique aqui</button>
+        <p>Este é o conteúdo padrão do card.</p>
+        <button class="button is-primary" @click="showMessage">
+          Clique aqui
+        </button>
       </template>
 
       <template #footer>
@@ -35,7 +37,7 @@
       </template>
     </card-component>
 
-    <!-- Card com slot com escopo -->
+    <!-- Slot com escopo -->
     <user-card v-for="user in users" :key="user.id" :user="user">
       <template #default="{ user, isOnline }">
         <div class="media">
