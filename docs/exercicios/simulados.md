@@ -75,10 +75,10 @@ if (x > 3) {
 * D) Erro de sintaxe
 
 8. Em JavaScript, qual operador “lógico E” (AND) seria usado para combinar duas condições?
-* A) ||
-* B) &&
-* C) &
-* D) AND
+* A) `||`
+* B) `&&`
+* C) `&`
+* D) `AND`
 
 9. Qual afirmativa sobre funções em JavaScript é verdadeira?
 * A) Toda função deve retornar algo (returns) obrigatoriamente
