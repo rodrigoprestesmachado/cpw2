@@ -30,11 +30,11 @@ o código de exemplo para a realização desse exercício.
 - **Exercício 5:** Primeiro, abra o projeto `cpw2-todo` por meio do Codespace e
 realize as seguintes modificações:
 
-  1. Utilize o Bulma.io para ajustar o CSS do componente Task.vue, garantindo
+  1. Utilize o Bulma.io para ajustar o CSS do componente `Task.vue`, garantindo
     uma organização visual adequada.
 
-  2. No componente TaskApp.vue, modifique a função beforeMount para implementar
-  as diretivas async/await.
+  2. No componente `TaskApp.vue`, modifique a função `beforeMount` para implementar
+  as diretivas `async/await`.
 
 [![Open in Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&repo=rpmhubdev/cpw2-todo)
 
