@@ -25,3 +25,12 @@ CRUD completo de objetos tarefas, incluindo:
 o código de exemplo para a realização desse exercício.
 
 - **Exercício 4:** Baseie-se no [tutorial](https://www.w3schools.com/vue/vue_scale-up.php) para realizar o exercício 3 novamente, porém, agora no formato de projeto do Vue.
+
+
+- **Exercício 5:** Abra o projeto TODO por meio do Codespace:
+
+[![Open in Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&repo=rpmhubdev/cpw2-todo)
+
+    5.1 Utilize o Bulma.io para ajustar o CSS do componente Task.vue, garantindo uma organização visual adequada.
+
+    5.2 No componente TaskApp.vue, modifique a função beforeMount para implementar as diretivas async/await.
