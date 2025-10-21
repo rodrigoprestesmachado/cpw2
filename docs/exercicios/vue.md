@@ -10,9 +10,11 @@ nav_order: 27
 - **Exercício 1:** Crie uma lista de tarefas simples em Vue onde:
     1. Renderize uma lista a partir de um array.
     2. Mostre cada item dinamicamente com v-for.
+{: .fs-3 }
 
 - **Exercício 2:** Utilizando a ideia de componentes, crie um componente de item
 de tarefa que receba as propriedades necessárias e seja que reutilizável.
+{: .fs-3 }
 
 - **Exercício 3:** Crie um componente de formulário que permita implementar um
 CRUD completo de objetos tarefas, incluindo:
@@ -20,31 +22,38 @@ CRUD completo de objetos tarefas, incluindo:
     2. **Read**: Exibir todas as tarefas existentes
     3. **Update**: Editar tarefas existentes
     4. **Delete**: Remover tarefas da lista
+{: .fs-3 }
 
 **Nota:** Use como [base](https://github.com/rodrigoprestesmachado/cpw2/tree/dev/exemplos/vue-components-tasks)
 o código de exemplo para a realização desse exercício.
+{: .fs-3 }
 
 - **Exercício 4:** Baseie-se no [tutorial](https://www.w3schools.com/vue/vue_scale-up.php) para realizar o exercício 3 novamente, porém, agora no formato de projeto do Vue.
-
+{: .fs-3 }
 
 - **Exercício 5:** Primeiro, abra o projeto `cpw2-todo` por meio do Codespace e
 realize as seguintes modificações:
+{: .fs-3 }
 
   1. Utilize o Bulma.io para ajustar o CSS do componente `Task.vue`, garantindo
     uma organização visual adequada.
+{: .fs-3 }
 
   2. No componente `TaskApp.vue`, modifique a função `beforeMount` para implementar
   as diretivas `async/await`.
+{: .fs-3 }
 
 [![Open in Codespaces](https://github.com/codespaces/badge.svg)](https://github.com/codespaces/new?hide_repo_select=true&repo=rpmhubdev/cpw2-todo)
 
 **Nota:** Para rodar o projeto é necessário que você execute os seguintes
 comandos na linha de comando:
+{: .fs-3 }
 
 ```bash
 npm install
 npm run dev
 ```
+{: .fs-3 }
 
 - **Exercício 6:**
 
@@ -58,17 +67,16 @@ npm install -g json-server
 ```
 {: .fs-3 }
 
-
 Para rodar o servidor:
+{: .fs-3 }
+
 ```bash
 json-server --watch data.json --port 3000
 ```
 {: .fs-3 }
 
-
 O json-server irá observer arquivo data.json (abaixo) na porta 3000 do HTTP:
 {: .fs-3 }
-
 
 ```json
 {
@@ -81,14 +89,12 @@ O json-server irá observer arquivo data.json (abaixo) na porta 3000 do HTTP:
 ```
 {: .fs-3 }
 
-
 A saìda do JSON Server irá criar o seguinte endpoint:
 {: .fs-3 }
 
 Endpoints:
 http://localhost:3000/tasks
 {: .fs-3 }
-
 
 Se por exemplo você necessitar realizar operaçoes na tarefa 2, voce pode utilizar
 o seguinte endpoint:
@@ -98,7 +104,6 @@ http://localhost:3000/tasks/2
 Depois de instalado, atualize o seu sistema para poder criar novas tarefas no
 arquivo data.json
 {: .fs-3 }
-
 
 Exemplo de requisição PUT para o servidor implementada com o método fetch
 {: .fs-3 }
@@ -122,9 +127,11 @@ async updateTask(task) {
   }
 }
 ```
+{: .fs-3 }
 
 Nota: JSON.stringify() transforma um objeto JavaScript em uma string no formato
 JSON. Por exemplo:
+{: .fs-3 }
 
 ```javascript
 const tarefa = {
@@ -132,12 +139,12 @@ const tarefa = {
   concluida: false
 }
 ```
+{: .fs-3 }
 
-Será transformada para: 
+Será transformada para:
+{: .fs-3 }
 
 ```txt
 {"titulo":"Estudar Vue","concluida":false}
 ```
-
-
-
+{: .fs-3 }
