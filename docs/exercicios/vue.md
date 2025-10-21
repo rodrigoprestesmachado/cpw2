@@ -45,3 +45,99 @@ comandos na linha de comando:
 npm install
 npm run dev
 ```
+
+- **Exercício 6:**
+
+Para implementar esse exercício primeiro instale o JSON server no seu Code Space.
+O JSON Server é uma ferramenta que permite criar uma API RESTful falsa
+rapidamente, utilizando um arquivo JSON como banco de dados.
+{: .fs-3 }
+
+```bash
+npm install -g json-server
+```
+{: .fs-3 }
+
+
+Para rodar o servidor:
+```bash
+json-server --watch data.json --port 3000
+```
+{: .fs-3 }
+
+
+O json-server irá observer arquivo data.json (abaixo) na porta 3000 do HTTP:
+{: .fs-3 }
+
+
+```json
+{
+    "tasks":[
+    { "id": "1", "name": "Task 1", "description": "Description for Task 1", "done": false },
+    { "id": "2", "name": "Task 2", "description": "Description for Task 2", "done": false },
+    { "id": "3", "name": "Task 1", "description": "Description for Task 3", "done": false }
+  ]
+}
+```
+{: .fs-3 }
+
+
+A saìda do JSON Server irá criar o seguinte endpoint:
+{: .fs-3 }
+
+Endpoints:
+http://localhost:3000/tasks
+{: .fs-3 }
+
+
+Se por exemplo você necessitar realizar operaçoes na tarefa 2, voce pode utilizar
+o seguinte endpoint:
+http://localhost:3000/tasks/2
+{: .fs-3 }
+
+Depois de instalado, atualize o seu sistema para poder criar novas tarefas no
+arquivo data.json
+{: .fs-3 }
+
+
+Exemplo de requisição PUT para o servidor implementada com o método fetch
+{: .fs-3 }
+
+```javascript
+async updateTask(task) {
+  try {
+    const response = await fetch(`http://localhost/tasks/${task.id}`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(updatedTask)
+  });
+  if (response.ok) {
+    alert('Task updated successfully!');
+  }
+  }
+  catch (error) {
+    console.error('Error updating task:', error);
+  }
+}
+```
+
+Nota: JSON.stringify() transforma um objeto JavaScript em uma string no formato
+JSON. Por exemplo:
+
+```javascript
+const tarefa = {
+  titulo: "Estudar Vue",
+  concluida: false
+}
+```
+
+Será transformada para: 
+
+```txt
+{"titulo":"Estudar Vue","concluida":false}
+```
+
+
+
