@@ -31,8 +31,9 @@ o código de exemplo para a realização desse exercício.
 - **Exercício 4:** Baseie-se no [tutorial](https://www.w3schools.com/vue/vue_scale-up.php) para realizar o exercício 3 novamente, porém, agora no formato de projeto do Vue.
 {: .fs-3 }
 
-- **Exercício 5:** Primeiro, abra o projeto `cpw2-todo` por meio do Codespace e
-realize as seguintes modificações:
+## 🧾 Exercício 5
+
+Primeiro, abra o projeto `cpw2-todo` por meio do Codespace e realize as seguintes modificações:
 {: .fs-3 }
 
   1. Utilize o Bulma.io para ajustar o CSS do componente `Task.vue`, garantindo
@@ -55,7 +56,7 @@ npm run dev
 ```
 {: .fs-3 }
 
-- **Exercício 6:**
+## 🧾 Exercício 6
 
 Para implementar esse exercício primeiro instale o JSON server no seu Code Space.
 O JSON Server é uma ferramenta que permite criar uma API RESTful falsa
@@ -148,3 +149,44 @@ Será transformada para:
 {"titulo":"Estudar Vue","concluida":false}
 ```
 {: .fs-3 }
+
+## 🧾 Exercício 7 — Aplicativo de Despesas Pessoais 💰
+
+Crie uma aplicação Vue.js para **controlar despesas pessoais**.
+{: .fs-3 }
+
+### 🧠 Requisitos
+
+1. **Listagem de despesas**
+{: .fs-3 }
+
+   * Cada despesa deve ter:
+     * `id`,
+     * `descricao`,
+     * `categoria` (ex: Alimentação, Transporte, Lazer, etc.),
+     * `valor`,
+     * `data`.
+   * Os dados vêm de uma API fake (JSON Server).
+  {: .fs-3 }
+
+1. **Adicionar e remover despesas**
+{: .fs-3 }
+
+   * Crie um formulário para adicionar novas despesas.
+   * Permita excluir despesas individuais.
+   * Atualize a lista dinamicamente após cada ação.
+{: .fs-3 }
+
+1. **Resumo**
+{: .fs-3 }
+
+   * Mostre o **total gasto**.
+  {: .fs-3 }
+
+### 💡 Ideia de compoenentes:
+{: .fs-3 }
+
+  * `<ExpenseList />` — lista de despesas, com filtros
+  * `<ExpenseForm />` — formulário de criação
+  * `<SummaryCard />` — total de gastos
+  {: .fs-3 }
