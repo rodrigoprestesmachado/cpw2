@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Orientação a Objetos
-parent: Conceitos Finais
-nav_order: 44
+parent: Conceitos Transversais
+nav_order: 41
 ---
 
 # Orientação a Objetos

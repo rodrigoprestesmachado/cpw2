@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Exercícios Dom e AJaX
-parent: Dom e AJaX
+parent: JavaScript Básico
 nav_order: 33
 ---
 

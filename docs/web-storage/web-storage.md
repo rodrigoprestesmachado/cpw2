@@ -1,15 +1,11 @@
 ---
 layout: default
 title: Web Storage
-parent: Conceitos Finais
-nav_order: 42
+parent: Conceitos Transversais
+nav_order: 43
 ---
 
 # Web Storage
-
-Deprecated
-{: .label .label-red }
-
 
 <center>
 <iframe src="https://cpw2.rpmhub.dev/web-storage/slides/index.html#/" title="Web Storage" width="90%" height="500" style="border:none;"></iframe>

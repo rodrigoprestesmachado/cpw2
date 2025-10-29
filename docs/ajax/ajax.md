@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Asynchronous Javascript and XML (AJaX)
-parent: Dom e AJaX
+parent: JavaScript Básico
 nav_order: 32
 ---
 

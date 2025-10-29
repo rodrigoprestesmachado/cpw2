@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Exercícios Vue.js
+title: Exercícios
 parent: Vue.js
-nav_order: 27
+nav_order: 25
 ---
 
 # Exercícios sobre Vue.js

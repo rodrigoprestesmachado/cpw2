@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Promise
-parent: Conceitos Finais
-nav_order: 41
+parent: Vue.js
+nav_order: 24
 ---
 
 # Promise

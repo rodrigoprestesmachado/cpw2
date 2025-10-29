@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Node e Npm
-parent: Conceitos Finais
-nav_order: 43
+parent: Conceitos Transversais
+nav_order: 42
 ---
 
 # Node e Npm
