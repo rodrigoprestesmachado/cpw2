@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Document Object Model (DOM)
+title: Document Object Model
 parent: JavaScript Básico
 nav_order: 31
 ---
@@ -8,51 +8,61 @@ nav_order: 31
 # Document Object Model (DOM)
 
 <center>
-    <iframe src="https://cpw2.rpmhub.dev/dom/slides/index.html#/" 
-        title="Document Object Model" width="90%" height="500" 
+    <iframe src="https://cpw2.rpmhub.dev/dom/slides/index.html#/"
+        title="Document Object Model" width="90%" height="500"
         style="border:none;">
     </iframe>
 </center>
 
-O Document Object Model (DOM) é uma interface de programação que representa a 
+O Document Object Model (DOM) é uma interface de programação que representa a
 estrutura de um documento HTML ou XML como uma árvore de objetos. Essa estrutura
-hierárquica permite que os programas acessem e manipulem dinamicamente o 
+hierárquica permite que os programas acessem e manipulem dinamicamente o
 conteúdo, a estrutura e o estilo de uma página Web ou de um documento XML.
+{: .fs-3 }
 
 ---
 **Nota:** XML, ou _Extensible Markup Language_ (Linguagem de Marcação Extensível),
 trata-se de uma linguagem de marcação utilizada para representar dados de forma
-estruturada. O XML é projetado para ser autoexplicativa e flexível, permitindo 
+estruturada. O XML é projetado para ser autoexplicativa e flexível, permitindo
 a definição de diferentes tipos de documentos e dados.
+{: .fs-3 }
 
 --
 
-Em termos simples, o DOM converte a estrutura do documento em um conjunto de 
-objetos que os programas podem interagir. Cada elemento, atributo e texto no 
-documento é representado por um nó na árvore DOM, o que facilita a 
+Em termos simples, o DOM converte a estrutura do documento em um conjunto de
+objetos que os programas podem interagir. Cada elemento, atributo e texto no
+documento é representado por um nó na árvore DOM, o que facilita a
 manipulação desses elementos por meio de JavaScript.
+{: .fs-3 }
 
 Principais características e funcionalidades do DOM incluem:
+{: .fs-3 }
 
-1. **Representação Hierárquica:** Os elementos HTML/XML são organizados em uma 
+1. **Representação Hierárquica:** Os elementos HTML/XML são organizados em uma
 estrutura de árvore, onde cada elemento é representado por um nó.
+{: .fs-3 }
 
-2. **Acesso aos Elementos:** O DOM permite que os programas acessem elementos 
+2. **Acesso aos Elementos:** O DOM permite que os programas acessem elementos
 individuais do documento, seja pelo seu ID, classe, tipo ou outros atributos.
+{: .fs-3 }
 
 3. **Manipulação Dinâmica:** É possível adicionar, remover e modificar elementos
 e conteúdo da página usando métodos do DOM.
+{: .fs-3 }
 
-4. **Manipulação de Estilo:** O DOM também permite modificar o estilo dos 
+4. **Manipulação de Estilo:** O DOM também permite modificar o estilo dos
 elementos, alterando propriedades como cor, tamanho, posicionamento, etc.
+{: .fs-3 }
 
-5. **Eventos e Interação:** O DOM suporta a vinculação de eventos a elementos, 
-como cliques, _mouseovers_, teclas pressionadas, entre outros, permitindo 
+5. **Eventos e Interação:** O DOM suporta a vinculação de eventos a elementos,
+como cliques, _mouseovers_, teclas pressionadas, entre outros, permitindo
 interações dinâmicas com a página.
+{: .fs-3 }
 
-Assim, o DOM é uma representação programática da estrutura de um documento 
+Assim, o DOM é uma representação programática da estrutura de um documento
 HTML/XML, permitindo que os desenvolvedores manipulem e interajam dinamicamente
 com os elementos da página Web ou do documento XML.
+{: .fs-3 }
 
 ## Métodos de seleção
 
@@ -60,24 +70,30 @@ Os métodos de seleção de elementos do DOM permitem que os desenvolvedores
 selecionem elementos específicos de um documento HTML com base em diferentes
 critérios, como ID, classe, tag, etc. Alguns dos métodos de seleção mais
 comuns incluem:
+{: .fs-3 }
 
 1. **[getElementById()](https://www.w3schools.com/jsref/met_document_getelementbyid.asp):**
 Seleciona um elemento pelo seu ID único.
+{: .fs-3 }
 
 2. **[getElementsByClassName()](https://www.w3schools.com/jsref/met_document_getelementsbyclassname.asp):**
 Seleciona elementos por sua classe.
+{: .fs-3 }
 
 3. **[getElementsByTagName()](https://www.w3schools.com/jsref/met_document_getelementsbytagname.asp):**
 Seleciona elementos por sua tag.
+{: .fs-3 }
 
 4. **[querySelector()](https://www.w3schools.com/jsref/met_document_queryselector.asp):**
 Seleciona o primeiro elemento que corresponde a um seletor CSS.
+{: .fs-3 }
 
 Sobre o método `querySelector()`, ele permite selecionar elementos com base em
 qualquer seletor CSS, como ID, classe, tag, atributo, etc. Por exemplo, para
 selecionar um elemento com um ID específico, você pode usar o seletor `#id`,
 enquanto para selecionar um elemento com uma classe específica, você pode usar
 o seletor `.classe`. Observe alguns exemplos:
+{: .fs-3 }
 
 ```javascript
 // Seleciona o elemento com o ID "titulo"
@@ -92,11 +108,13 @@ var paragrafo = document.querySelector(".conteudo p");
 // Seleciona o primeiro elemento com o atributo "data-id" igual a "123"
 var elemento = document.querySelector("[data-id='123']");
 ```
+{: .fs-3 }
 
 ## Manipulação da Estrutura do HTML
 
 Abaixo estão alguns exemplos de como manipular a estrutura de um documento HTML
 usando JavaScript e o DOM.
+{: .fs-3 }
 
 ### Adicionar Elemento ao Documento HTML:
 
@@ -125,8 +143,11 @@ usando JavaScript e o DOM.
 </body>
 </html>
 ```
+{: .fs-3 }
+
 Neste exemplo, quando o botão "Adicionar Parágrafo" é clicado, um novo parágrafo
 é adicionado ao final do corpo da página.
+{: .fs-3 }
 
 ### Remover Elemento do Documento HTML:
 
@@ -153,11 +174,13 @@ Neste exemplo, quando o botão "Adicionar Parágrafo" é clicado, um novo parág
 </body>
 </html>
 ```
+{: .fs-3 }
 
-Neste exemplo, quando o botão "Remover Parágrafo" é clicado, o parágrafo com o 
-ID "paragrafo" é removido do documento. O método 
+Neste exemplo, quando o botão "Remover Parágrafo" é clicado, o parágrafo com o
+ID "paragrafo" é removido do documento. O método
 `[remove()]`(https://www.w3schools.com/jsref/met_element_remove.asp) elimina
 um elemento (ou nó) do documento.
+{: .fs-3 }
 
 ### Atualizar Conteúdo de um Elemento do Documento HTML:
 
@@ -183,14 +206,17 @@ um elemento (ou nó) do documento.
 </body>
 </html>
 ```
+{: .fs-3 }
 
 Neste exemplo, quando o botão "Atualizar Título" é clicado, o texto do elemento 
 de título é atualizado dinamicamente para "Novo Título Atualizado".
+{: .fs-3 }
 
 ## Manipulação do Estilo do HTML
 
 Abaixo estão alguns exemplos de como manipular o estilo de um documento HTML
 usando JavaScript e o DOM.
+{: .fs-3 }
 
 ### Alterar Cor de Fundo de um Elemento:
 
@@ -225,11 +251,13 @@ usando JavaScript e o DOM.
 </body>
 </html>
 ```
+{: .fs-3 }
 
-Neste exemplo, quando o botão "Alterar Cor de Fundo" é clicado, a cor de fundo 
+Neste exemplo, quando o botão "Alterar Cor de Fundo" é clicado, a cor de fundo
 do elemento com a classe "elemento" é alterada para azul. Note que o estilo
-de um elemento pode ser acessado e modificado por meio do atributo 
+de um elemento pode ser acessado e modificado por meio do atributo
 `[style](https://www.w3schools.com/TAGS/att_style.asp)`.
+{: .fs-3 }
 
 ### Alterar Tamanho de Fonte de um Elemento:
 
@@ -262,9 +290,11 @@ de um elemento pode ser acessado e modificado por meio do atributo
 </body>
 </html>
 ```
+{: .fs-3 }
 
 Neste exemplo, quando o botão "Alterar Tamanho da Fonte" é clicado, o tamanho da
 fonte do elemento com a classe "elemento" é alterado para 20px.
+{: .fs-3 }
 
 ## Referências
 

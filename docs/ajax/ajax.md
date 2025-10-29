@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Asynchronous Javascript and XML (AJaX)
+title: Asynchronous Javascript and XML
 parent: JavaScript Básico
 nav_order: 32
 ---
@@ -55,6 +55,7 @@ xhr.onload = function() {
 // Enviando a requisição
 xhr.send();
 ```
+{: .fs-3 }
 
 Neste exemplo, usamos o método GET para recuperar dados da URL especificada de
 forma assíncrona. Quando a resposta é recebida, verificamos o status da resposta
