@@ -1,11 +1,12 @@
 ---
 layout: default
-title:  Conceitos Transversais
+title:  Simulados
 nav_order: 40
 has_children: true
 ---
 
-# Conceitos Transversais
+# Simulados
 
-Nesta seção do curso da disciplina de Construção de Páginas Web II, iremos
-abordar conceitos transversais importantes para o desenvolvimento Web.
+Nesta seção do curso da disciplina de Construção de Páginas Web II, você
+encontrará simulados de avaliações para praticar e testar seus conhecimentos
+sobre os conceitos abordados ao longo do curso.

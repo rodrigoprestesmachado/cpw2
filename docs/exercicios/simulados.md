@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Simulados
-parent:
-nav_order: 50
+title:  Simulados
+nav_order: 41
+has_children: true
 ---
 
 # Simulado Primeira Parte
