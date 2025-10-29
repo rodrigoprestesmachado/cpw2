@@ -3,10 +3,10 @@ remote_theme: pmarsceill/just-the-docs
 favicon_ico: "/imgs/favicon.png"
 
 aux_links:
-  "Moodle":
-    - "https://moodle.poa.ifrs.edu.br/course/view.php?id=5778"
   "Github":
     - "https://github.com/rodrigoprestesmachado/cpw2"
+  "Moodle":
+    - "https://moodle.poa.ifrs.edu.br/"
 
 # Footer content appears at the bottom of every page's main content
 footer_content: "Copyright &copy; 2024 <a href='https://rpmhub.dev'>RPM Hub</a>. Distributed by CC-BY-4.0 license."
