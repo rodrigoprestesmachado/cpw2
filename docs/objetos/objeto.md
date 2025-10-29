@@ -7,9 +7,6 @@ nav_order: 31
 
 # Orientação a Objetos
 
-Deprecated
-{: .label .label-red }
-
 ## Conceitos básicos de orientação a objetos
 
 A melhor forma de compreender o que são os objetos é associar com uma
