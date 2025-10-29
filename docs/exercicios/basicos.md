@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Exercícios
-parent: JavaScript Básico
+parent: JavaScript
 nav_exclude: true
 nav_order: 18
 ---

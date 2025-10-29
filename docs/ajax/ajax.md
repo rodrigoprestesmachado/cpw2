@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Asynchronous Javascript and XML
-parent: JavaScript Básico
+parent: JavaScript
 nav_order: 32
 ---
 

@@ -1,11 +1,11 @@
 ---
 layout: default
-title:  JavaScript Básico
+title:  JavaScript
 nav_order: 10
 has_children: true
 ---
 
-# JavaScript Básico
+# JavaScript
 
 Na primeira parte do curso da disciplina de Construção de Páginas Web II, iremos
 abordar os conceitos básicos da linguagem. Vamos aprender sobre variáveis, tipos

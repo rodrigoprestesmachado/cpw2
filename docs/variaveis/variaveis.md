@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Variáveis
-parent: JavaScript Básico
+parent: JavaScript
 nav_order: 12
 ---
 
