@@ -1,0 +1,7 @@
+{
+    "despesas":[
+    { "id": "1", "descricao": "Academia", "categoria": "Lazer", "valor": "100", "data": "2023-10-01" },
+    { "id": "2", "descricao": "Supermercado", "categoria": "Alimentação", "valor": "200", "data": "2023-10-02" },
+    { "id": "3", "descricao": "Transporte", "categoria": "Transporte", "valor": "50", "data": "2023-10-03" }
+  ]
+}
