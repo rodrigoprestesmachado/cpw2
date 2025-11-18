@@ -144,3 +144,7 @@ os diferentes pares chave-valor?
 * C) Acessando o componente pai via $parent e chamando um de seus métodos diretamente.
 * D) Modificando diretamente o valor de uma prop recebida do pai.
 {: .fs-3 }
+
+
+
+
