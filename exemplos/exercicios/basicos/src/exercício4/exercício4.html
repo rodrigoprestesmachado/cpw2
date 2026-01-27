@@ -1,0 +1,89 @@
+<!--
+    CPW2 by Rodrigo Prestes Machado
+
+    CPW2 is licensed under a
+    Creative Commons Attribution 4.0 International License.
+    You should have received a copy of the license along with this
+    work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        p {
+            margin: 0;
+        }
+
+        input {
+            margin: 10px 0;
+        }
+
+        button {
+            margin: 10px 0;
+        }
+
+        #tabuada {
+            color: rgb(16, 16, 134);
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        </style>
+</head>
+
+<body>
+    <h1>Tabuada</h1>
+    <p>Pressione o botão abaixo para exibir a tabuada de um número:</p>
+    <input type="number" id="numero" value="1">
+    <button onclick="exibirTabuada()">Exibir Tabuada</button>
+    <div id="tabuada"></div>
+
+    <script>
+        function exibirTabuada() {
+            // Obtém o valor digitado pelo usuário
+            let numero = parseInt(document.getElementById("numero").value);
+
+            // Limpa o conteúdo da div tabuada
+            document.getElementById("tabuada").textContent = "";
+
+            // Verifica se o valor digitado é um número
+            if (!isNaN(numero)) {
+                for (var i = 1; i <= 10; i++) {
+                    /**
+                     * O operador ${} é utilizado para interpolar (inserir) o
+                     * valor das variáveis dentro de strings em JS
+                     *
+                     * O operador += é utilizado para concatenar strings
+                     *
+                     * Foi utilizado innerHTML para inserir propositalmente uma
+                     * quebra de linha <br> ao final de cada resultado
+                     */
+                    let resultado = `${numero} x ${i} = ${numero * i}`;
+                    document.getElementById("tabuada").innerHTML += resultado + "<br>";
+                }
+            } else {
+                document.getElementById("tabuada").textContent = "Por favor, digite um número válido.";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

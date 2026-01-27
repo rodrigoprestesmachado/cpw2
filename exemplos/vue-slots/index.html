@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vue Slots Example</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css" />
+</head>
+
+<body>
+  <div id="app" class="container mt-4">
+    <h1 class="title">Exemplos de Slots</h1>
+
+    <!-- Slot padrão -->
+    <card-component>
+      <h3 class="title is-4">Slot padrão</h3>
+      <p>Este conteúdo está sendo passado através do slot padrão.</p>
+    </card-component>
+
+    <!-- Slots nomeados -->
+    <card-component>
+      <template #header>
+        <h2 class="title is-3">Slots nomeados</h2>
+      </template>
+
+      <template #default>
+        <p>Este é o conteúdo padrão do card.</p>
+        <button class="button is-primary" @click="showMessage">
+          Clique aqui
+        </button>
+      </template>
+
+      <template #footer>
+        <p class="has-text-grey">Footer personalizado</p>
+      </template>
+    </card-component>
+
+    <!-- Slot com escopo -->
+    <user-card v-for="user in users" :key="user.id" :user="user">
+      <template #default="{ user, isOnline }">
+        <div class="media">
+          <div class="media-left">
+            <figure class="image is-64x64">
+              <img class="is-rounded" :src="user.avatar" :alt="user.name">
+            </figure>
+          </div>
+          <div class="media-content">
+            <p class="title is-5">{{ user.name }}</p>
+            <p class="subtitle is-6">{{ user.email }}</p>
+            <span class="tag" :class="isOnline ? 'is-success' : 'is-danger'">
+              {{ isOnline ? 'Online' : 'Offline' }}
+            </span>
+          </div>
+        </div>
+      </template>
+    </user-card>
+  </div>
+
+  <script type="module">
+    import CardComponent from "./js/CardComponent.js";
+    import UserCard from "./js/UserCard.js";
+
+    const app = Vue.createApp({
+      data() {
+        return {
+          users: [
+            {
+              id: 1,
+              name: "João Silva",
+              email: "joao@email.com",
+              avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=64&h=64&fit=crop&crop=face&auto=format"
+            },
+            {
+              id: 2,
+              name: "Maria Santos",
+              email: "maria@email.com",
+              avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=64&h=64&fit=crop&crop=face&auto=format"
+            },
+            {
+              id: 3,
+              name: "Pedro Costa",
+              email: "pedro@email.com",
+              avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=64&h=64&fit=crop&crop=face&auto=format"
+            }
+          ]
+        };
+      },
+      methods: {
+        showMessage() {
+          alert('Botão clicado!');
+        }
+      }
+    });
+
+    app.component('card-component', CardComponent);
+    app.component('user-card', UserCard);
+    app.mount('#app');
+  </script>
+</body>
+
+</html>

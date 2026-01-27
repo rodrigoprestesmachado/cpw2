@@ -1,4 +1,4 @@
-<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
+<!-- .slide:  data-background-opacity="0.4" data-background-image="imgs/title.jpg" data-transition="convex"  -->
 # O que é JavaScript?
 <!-- .element: style="margin-bottom:100px; font-size: 50px; color:white; font-family: Marker Felt;" -->
 
@@ -39,7 +39,7 @@ Pressione 'F' para tela cheia
 * JavaScript pode ser utilizado para validar dados de formulários Web antes do envio para o servidor (*back-end*)
 <!-- .element: style="margin-bottom:55px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
 
-* JavaScript é a base para o desenvolvimento de interfaces interativas na Web com AJAX (Asynchronous JavaScript And XML) e/ou Websockets 💪
+* JavaScript é a base para o desenvolvimento de interfaces interativas na Web com AJaX (Asynchronous JavaScript And XML) e/ou Websockets 💪
 <!-- .element: style="margin-bottom:55px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
 
 
@@ -139,6 +139,6 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:55px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
 
 <center>
-<a href="https://github.com/rodrigoprestesmachado" target="blanck"><img src="../../imgs/logo.png" alt="Rodrigo Prestes Machado" width="4%" height="4%" border=0 style="border:0; text-decoration:none; outline:none"></a><br/>
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Atribuição 4.0 Internacional</a>
+<a href="https://rpmhub.dev" target="blanck"><img src="../../imgs/logo.png" alt="Rodrigo Prestes Machado" width="4%" height="4%" border=0 style="border:0; text-decoration:none; outline:none"></a><br/>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 DEED</a>
 </center>

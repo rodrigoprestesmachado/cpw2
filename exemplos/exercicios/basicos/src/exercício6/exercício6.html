@@ -1,0 +1,57 @@
+<!--
+    CPW2 by Rodrigo Prestes Machado
+
+    CPW2 is licensed under a
+    Creative Commons Attribution 4.0 International License.
+    You should have received a copy of the license along with this
+    work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Cadastro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <label for="nome">Nome:</label>
+    <input type="text" id="nome" name="nome" required>
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="senha">Senha:</label>
+    <input type="password" id="senha" name="senha" required minlength="8">
+    <button onclick="validade()">Enviar</button>
+    <div id="mensagem" class="message"></div>
+    </div>
+
+    <script>
+        function validade() {
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const senha = document.getElementById('senha').value;
+            const mensagem = document.getElementById('mensagem');
+
+            if (nome === '' || nome.length < 8) {
+                mensagem.className = 'message error';
+                mensagem.innerHTML = 'O nome deve ser preenchido e ter no mínimo 8 caracteres';
+            }
+            else if (email === '' || email.length < 8) {
+                mensagem.className = 'message error';
+                mensagem.innerHTML = 'O e-mail deve ser preenchido e ter no mínimo 8 caracteres';
+            }
+            else if (senha === '' || senha.length < 8) {
+                mensagem.className = 'message error';
+                mensagem.innerHTML = 'A senha deve ser preenchida e ter no mínimo 8 caracteres';
+            }
+            else {
+                mensagem.className = 'message success';
+                mensagem.innerHTML = 'Cadastro realizado com sucesso';
+            }
+        }
+    </script>
+</body>
+
+</html>

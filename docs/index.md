@@ -1,46 +1,46 @@
-# Trilha de aprendizagem
+---
+layout: default
+title: Home
+nav_order: 1
+---
 
-* [Introdução](introducao/introducao.md)
+# Construção de Páginas Web II (2026/1)
 
-* [Variáveis](variaveis/variaveis.md)
+[![Static Badge](https://img.shields.io/badge/Discord%20-%20%23cpw2%20-%20%237792C8)](https://discord.gg/4meCsgkgpp)
 
-* [Tipos de dados primitivos](tipos/tipos.md)
+Conteúdo da disciplina de Construção de Páginas Web II do curso de Sistemas
+para Internet do [IFRS/Porto Alegre](https://poa.ifrs.edu.br/). A disciplina
+aborda conceitos de programação Web com JavaScript que vão desde elementos
+básicos da linguagem, passando por DOM(_Document Object Model_) e requisições
+assíncronas com AJaX (_Asynchronous JavaScript and_ XML)/_Promises_, até o uso de
+_frameworks_ como Vue.js.
+{: .fs-3 }
 
-* [Operadores](operadores/operadores.md)
+## Comunidade
 
-* [Estruturas de controle](controle/controle.md)
+Comunidade da disciplina no [Discord](https://discord.com/invite/C29cqvm):
+canal `#cpw2`
+{: .fs-3 }
 
-* [Funções](funcoes/funcoes.md)
-
-* [Eventos](eventos/eventos.md)
-
-* [Objetos](objetos/objeto.md)
-
-* [Document Object Model (DOM)](dom/dom.md)
-
-* [Asynchronous Javascript and XML (AJAX)](ajax/ajax.md)
-
-* [Promise](promise/promise.md)
-
-* [Web Storage](web-storage/web-storage.md)
-
-* [Vue.js](vuejs/vuejs.md)
-
-* [Node e npm](node/node.md)
-
-# Comunidade de aprendizagem
-
-Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
-
-# Referências 📚
+## Referências
 
 * MDN [JavaScript basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics)
+{: .fs-3 }
 
 * Tutorial de [JavaScript](http://www.w3schools.com/js) do W3C
+{: .fs-3 }
 
 * MILETTO, Evandro Manara. [Desenvolvimento de software II: introdução ao desenvolvimento web com html, css, javascript e php](https://biblioteca.ifrs.edu.br/pergamum_ifrs/biblioteca_s/acesso_login.php?cod_acervo_acessibilidade=5020682&acesso=aHR0cHM6Ly9pbnRlZ3JhZGEubWluaGFiaWJsaW90ZWNhLmNvbS5ici9ib29rcy85Nzg4NTgyNjAxOTY5&label=acesso%20restrito). Porto Alegre Bookman 2014 1 recurso online ISBN 9788582601969.
+{: .fs-3 }
 
 <center>
-<a href="https://github.com/rodrigoprestesmachado" target="blanck"><img src="imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%" height="3%" border=0 style="border:0; text-decoration:none; outline:none"></a><br/>
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Atribuição 4.0 Internacional</a>
+    <a href="https://rpmhub.dev" target="blanck">
+        <img src="imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%"
+        height="3%" border=0 style="border:0; text-decoration:none;
+        outline:none">
+    </a>
+    <br/>
+    <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">
+        CC BY 4.0 DEED
+    </a>
 </center>

@@ -1,0 +1,32 @@
+{
+	"name": "Node.js",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node:1-20-bullseye",
+
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"Equinusocio.vsc-material-theme-icons",
+				"ybaumes.highlight-trailing-white-spaces",
+				"amodio.amethyst-theme",
+				"ritwickdey.LiveServer",
+				"GitHub.copilot",
+				"GitHub.copilot-chat",
+				"redhat.vscode-microprofile-pack",
+				"eamodio.gitlens",
+				"rangav.vscode-thunder-client",
+				"streetsidesoftware.code-spell-checker-portuguese-brazilian"
+			],
+			"settings": {
+				"workbench.colorTheme": "Default Light Modern",
+				"workbench.iconTheme": "eq-material-theme-icons-light",
+				"editor.rulers": [80,120],
+				"workbench.colorCustomizations": {
+					"editorRuler.foreground": "#F3F7FF"
+				},
+				"cSpell.enabled": true,
+				"cSpell.language": "pt_BR, en, pt"
+			}
+		}
+	}
+
+}

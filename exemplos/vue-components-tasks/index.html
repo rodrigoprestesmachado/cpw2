@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <div id="app">
+      <div v-for="(task, index) in tasks" :key="index">
+        <cpw2-task
+          :status="task.status"
+          :description="task.description"
+          @update-task-status="task.status = $event"
+        ></cpw2-task>
+      </div>
+      {{tasks}}
+    </div>
+    <script type="module">
+      import Task from "./Task.js";
+
+      const app = Vue.createApp({
+        data() {
+          return {
+            tasks: [
+              {
+                status: false,
+                description: "My First Task",
+              },
+              {
+                status: false,
+                description: "My Second Task",
+              },
+            ],
+          };
+        },
+        methods:{
+        }
+      });
+      app.component("cpw2-task", Task);
+      app.mount("#app");
+    </script>
+  </body>
+</html>

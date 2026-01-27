@@ -1,0 +1,81 @@
+<!--
+    CPW2 by Rodrigo Prestes Machado
+
+    CPW2 is licensed under a
+    Creative Commons Attribution 4.0 International License.
+    You should have received a copy of the license along with this
+    work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contagem Regressiva</title>
+    <style>
+        h1 {
+            color: #3004aa;
+        }
+        button {
+            background-color: #3004aa;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+        }
+        .contagem {
+            font-size: 32px;
+            font-weight: bold;
+            color: #3004aa;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contagem Regressiva</h1>
+    Valor inicial da contagem: <input type="number" id="valorInicial" value="10">
+    <p>Pressione o botão abaixo para iniciar a contagem regressiva:</p>
+    <button onclick="contagemRegressiva()">Iniciar</button>
+    <p id="contagem" class="contagem"></p>
+
+    <script>
+        /**
+         * Este exercício foi resolvido utilizando a função setInterval e
+         * clearInterval. No entanto, a função poderia ser resolvido de uma
+         * forma muito mais simples utilizando apenas um loop.
+         *
+         * Por favor, analisem o código e tentem entender o seu funcionamento.
+         * Caso tenham dúvidas, não hesitem em entrar em contato.
+         */
+        function contagemRegressiva() {
+            //Recupera o valor inicial da contagem
+            var numero = parseInt(document.getElementById('valorInicial').value);
+
+            if (!isNaN(numero) && numero >= 0) {
+                // setInterval é uma função que executa um bloco de código
+                // repetidamente neste caso a cada 1000 milissegundos (1 segundo)
+                // como resultado, não é necessário utilizar um loop
+                // para parrar a contagem, utilizamos a função clearInterval
+                let intervalId = setInterval(function () {
+                    if (numero === 0) {
+                        // intervalId é o identificador do intervalo que foi criado
+                        // com a função setInterval
+                        clearInterval(intervalId); // Para a contagem quando atingir 0
+                        document.getElementById('contagem').textContent = "Lançamento!";
+                    } else {
+                        document.getElementById('contagem').textContent = numero;
+                        numero--;
+                    }
+                }, 1000); // Intervalo de 1 segundo
+            } else {
+                let message = "Por favor, digite um número válido maior ou igual a zero.";
+                document.getElementById('contagem').textContent = message;
+            }
+        }
+    </script>
+</body>
+
+</html>

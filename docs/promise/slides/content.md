@@ -1,4 +1,4 @@
-<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
+<!-- .slide:  data-background-opacity="0.3" data-background-image="img/title.jpg" data-transition="convex"  -->
 # Promise
 <!-- .element: style="margin-bottom:100px; font-size: 50px; color:white; font-family: Marker Felt;" -->
 
@@ -106,7 +106,7 @@ ou erro em uma ação assíncrona no futuro.
 # Principais vantagens 👍
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
-* Callbacks nunca serão chamadas antes da conclusão da execução atual de um eventos. No caso do Ajax, uma *callback* só é chamada depois que o servidor retornar
+* Callbacks nunca serão chamadas antes da conclusão da execução atual de um eventos. No caso do AJaX, uma *callback* só é chamada depois que o servidor retornar
 <!-- .element: style="margin-bottom:70px; font-size: 25px; font-family: arial; color:#F5F5F5" -->
 
 * Uma Promise permite a construção de uma sequencia de [encadeamento](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript/Guide/Using_promises#encadeamento). Por exemplo, onde cada operação subsequente começa quando a operação anterior é bem sucedida
@@ -198,5 +198,5 @@ promiseExample(true)
 
 <center>
 <a href="https://rpmhub.dev" target="blanck"><img src="../../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%" height="3%" border=0 style="border:0; text-decoration:none; outline:none"></a><br/>
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Atribuição 4.0 Internacional</a>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 DEED</a>
 <!-- .element: style="margin-bottom:40px; font-size: 14px; color:white; font-family: arial;" -->

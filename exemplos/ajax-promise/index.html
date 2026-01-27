@@ -13,12 +13,12 @@ work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ajax com Promise</title>
+    <title>AJaX com Promise</title>
   </head>
   <body>
     <script>
-      function ajax(method, url) {
-        //  1 - A função ajax permite que você indique o método do HTTP e a URL que você deseja
+      function AJaX(method, url) {
+        //  1 - A função AJaX permite que você indique o método do HTTP e a URL que você deseja
         // realizar uma requisição e retorna uma promise
         return new Promise(function (resolve, reject) {
           let xhr;
@@ -51,8 +51,8 @@ work. If not, see <http://creativecommons.org/licenses/by/4.0/>.
         });
       }
 
-      // 8 - Usando função ajax
-      ajax("GET", "data.json")
+      // 8 - Usando função AJaX
+      AJaX("GET", "data.json")
         .then(function (response) {
           console.log(response);
         })

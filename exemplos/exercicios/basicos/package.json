@@ -1,0 +1,25 @@
+{
+  "name": "basicos",
+  "version": "1.0.0",
+  "description": "Exercícios Básicos de JavaScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigoprestesmachado/cpw2.git"
+  },
+  "keywords": [
+    "JavaScript"
+  ],
+  "author": "Rodrigo Prestes Machado",
+  "license": "CC-BY-4.0",
+  "bugs": {
+    "url": "https://github.com/rodrigoprestesmachado/cpw2/issues"
+  },
+  "homepage": "https://github.com/rodrigoprestesmachado/cpw2#readme",
+  "dependencies": {
+    "mocha": "^10.3.0"
+  }
+}

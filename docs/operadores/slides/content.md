@@ -1,4 +1,4 @@
-<!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
+<!-- .slide:  data-background-opacity="0.3" data-background-image="imgs/title.jpg" data-transition="convex"  -->
 # Operadores
 <!-- .element: style="margin-bottom:100px; font-size: 50px; color:white; font-family: Marker Felt;" -->
 
@@ -10,7 +10,7 @@ Pressione 'F' para tela cheia
 
 
 <!-- .slide: data-background="#4AA791" data-transition="concave"  -->
-## Operadores: Aritiméticos
+## Operadores: Aritméticos
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 <a href="https://www.w3schools.com/js/js_operators.asp" target="_blank"><img src="imgs/op1.png"  width="90%" height="90%"></img></a>
@@ -65,6 +65,6 @@ Pressione 'F' para tela cheia
 <!-- .element: style="margin-bottom:60px; font-size: 25px; font-family: arial; color:#F5F5F5" -->
 
 <center>
-<a href="https://github.com/rodrigoprestesmachado" target="blanck"><img src="../../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%" height="3%" border=0 style="border:0; text-decoration:none; outline:none"></a><br/>
-<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">Creative Commons Atribuição 4.0 Internacional</a>
+<a href="https://rpmhub.dev" target="blanck"><img src="../../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%" height="3%" border=0 style="border:0; text-decoration:none; outline:none"></a><br/>
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 DEED</a>
 </center>
