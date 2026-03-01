@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/rodrigoprestesmachado/cpw2#readme",
   "dependencies": {
-    "mocha": "^10.3.0"
+    "mocha": "^10.8.2"
   }
 }
