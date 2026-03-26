@@ -8,8 +8,8 @@ nav_order: 34
 # Simulador de HTTP
 
 <center>
-    <a href="https://cpw2.rpmhub.dev/http" title="Simulador de HTTP" >
-        Simulador de HTTP
+    <a href="https://cpw2.rpmhub.dev/http" title="Simulador de HTTP">
+        <img src="banner.png" alt="Simulador de HTTP" width="90%" height="500" style="border:none;"/>
     </a>
 </center>
 
