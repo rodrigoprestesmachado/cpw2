@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aprenda o Protocolo HTTP</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --surface2: #22263a;
+      --border: #2e3347;
+      --accent: #4f8ef7;
+      --accent2: #7c4dff;
+      --green: #2ecc71;
+      --red: #e74c3c;
+      --yellow: #f39c12;
+      --cyan: #00bcd4;
+      --text: #e8eaf0;
+      --text-dim: #8892aa;
+      --method-get: #2ecc71;
+      --method-post: #4f8ef7;
+      --method-put: #f39c12;
+      --method-delete: #e74c3c;
+      --method-patch: #9b59b6;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #1a1d27 0%, #12152a 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 20px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    header .logo {
+      font-size: 1.5rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    header .logo span { color: var(--accent); }
+    header p {
+      color: var(--text-dim);
+      font-size: 0.85rem;
+    }
+
+    /* ── Tabs ── */
+    .tabs {
+      display: flex;
+      gap: 4px;
+      padding: 16px 32px 0;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .tab-btn {
+      padding: 10px 20px;
+      background: none;
+      border: none;
+      border-radius: 8px 8px 0 0;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-bottom: 2px solid transparent;
+    }
+    .tab-btn:hover { color: var(--text); background: var(--surface2); }
+    .tab-btn.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+      background: var(--surface2);
+    }
+
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+
+    /* ── Main layout ── */
+    .container { padding: 32px; max-width: 1400px; margin: 0 auto; }
+
+    /* ── Section title ── */
+    .section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-dim);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    /* ────────────────────────────────
+       TAB 1 — ANATOMY
+    ──────────────────────────────── */
+    .anatomy-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .http-block {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .http-block-header {
+      padding: 12px 20px;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .req-header { background: linear-gradient(90deg, #1a2a4a, #1a1d27); border-bottom: 1px solid #2a4070; color: #4f8ef7; }
+    .res-header { background: linear-gradient(90deg, #1a3a2a, #1a1d27); border-bottom: 1px solid #2a6040; color: #2ecc71; }
+
+    .http-raw {
+      font-family: 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 0.82rem;
+      line-height: 1.7;
+      padding: 20px;
+    }
+
+    .line-group { margin-bottom: 4px; }
+
+    .label-badge {
+      display: inline-block;
+      font-size: 0.65rem;
+      padding: 1px 6px;
+      border-radius: 4px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-right: 6px;
+      vertical-align: middle;
+      letter-spacing: 0.5px;
+    }
+
+    .part-requestline { color: #fff; }
+    .part-statusline  { color: #fff; }
+    .part-header-key  { color: var(--cyan); }
+    .part-header-val  { color: var(--text); }
+    .part-body        { color: var(--yellow); }
+    .part-sep         { color: var(--text-dim); font-style: italic; }
+
+    .badge-method    { background: #1a3a6a; color: var(--accent); }
+    .badge-url       { background: #2a1a4a; color: #c792ea; }
+    .badge-version   { background: #1a3a2a; color: var(--green); }
+    .badge-status    { background: #1a3a2a; color: var(--green); }
+    .badge-statusmsg { background: #2a2a1a; color: var(--yellow); }
+    .badge-headerkey { background: #1a3a3a; color: var(--cyan); }
+    .badge-headerval { background: #1a1d27; color: var(--text-dim); }
+    .badge-body      { background: #3a2a1a; color: var(--yellow); }
+    .badge-sep       { background: #2a2a2a; color: var(--text-dim); }
+
+    /* Legend */
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 16px 20px;
+      border-top: 1px solid var(--border);
+      background: var(--surface2);
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      cursor: pointer;
+      padding: 4px 8px;
+      border-radius: 6px;
+      transition: background 0.2s;
+    }
+    .legend-item:hover { background: var(--border); color: var(--text); }
+    .legend-dot {
+      width: 10px; height: 10px;
+      border-radius: 3px;
+    }
+
+    /* Tooltip */
+    .tooltip-area {
+      padding: 16px 20px;
+      background: #12152a;
+      border-top: 1px solid var(--border);
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      min-height: 54px;
+      transition: all 0.2s;
+    }
+    .tooltip-area strong { color: var(--text); }
+    .tooltip-area .tip-title {
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    /* Highlight hover on annotated spans */
+    .annotated {
+      cursor: pointer;
+      border-radius: 3px;
+      padding: 0 2px;
+      transition: background 0.15s;
+    }
+    .annotated:hover { background: rgba(255,255,255,0.1); }
+
+    /* ────────────────────────────────
+       TAB 2 — SIMULATOR
+    ──────────────────────────────── */
+    .sim-layout {
+      display: grid;
+      grid-template-columns: 380px 1fr;
+      gap: 24px;
+    }
+
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.88rem;
+      padding: 10px 14px;
+      outline: none;
+      transition: border-color 0.2s;
+      font-family: inherit;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus { border-color: var(--accent); }
+
+    .method-select { display: flex; gap: 6px; flex-wrap: wrap; }
+    .method-btn {
+      padding: 7px 14px;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .method-btn:hover { color: var(--text); }
+    .method-btn.active-GET    { background: #0d2a1d; border-color: var(--method-get);    color: var(--method-get); }
+    .method-btn.active-POST   { background: #0d1a3a; border-color: var(--method-post);   color: var(--method-post); }
+    .method-btn.active-PUT    { background: #2a1d0d; border-color: var(--method-put);    color: var(--method-put); }
+    .method-btn.active-DELETE { background: #2a0d0d; border-color: var(--method-delete); color: var(--method-delete); }
+    .method-btn.active-PATCH  { background: #1a0d2a; border-color: var(--method-patch);  color: var(--method-patch); }
+
+    .headers-list { display: flex; flex-direction: column; gap: 6px; }
+    .header-row { display: flex; gap: 6px; }
+    .header-row input { flex: 1; }
+    .header-row .remove-btn {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--red);
+      cursor: pointer;
+      padding: 0 10px;
+      font-size: 1rem;
+      transition: background 0.2s;
+    }
+    .header-row .remove-btn:hover { background: rgba(231,76,60,0.15); }
+
+    .add-header-btn {
+      background: none;
+      border: 1px dashed var(--border);
+      border-radius: 6px;
+      color: var(--text-dim);
+      cursor: pointer;
+      padding: 7px;
+      font-size: 0.8rem;
+      width: 100%;
+      transition: all 0.2s;
+      margin-top: 6px;
+    }
+    .add-header-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Header picker modal */
+    .hpicker-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+      z-index: 200;
+      align-items: center;
+      justify-content: center;
+    }
+    .hpicker-overlay.open { display: flex; }
+
+    .hpicker-modal {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      width: 520px;
+      max-width: 95vw;
+      max-height: 80vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0,0,0,0.5);
+    }
+    .hpicker-head {
+      padding: 16px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hpicker-head h3 { font-size: 0.9rem; font-weight: 700; }
+    .hpicker-close {
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      font-size: 1.2rem;
+      cursor: pointer;
+      line-height: 1;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: background 0.15s;
+    }
+    .hpicker-close:hover { background: var(--border); color: var(--text); }
+
+    .hpicker-search {
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hpicker-search input {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.85rem;
+      padding: 8px 12px;
+      outline: none;
+    }
+    .hpicker-search input:focus { border-color: var(--accent); }
+
+    .hpicker-list {
+      overflow-y: auto;
+      flex: 1;
+    }
+    .hpicker-item {
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border);
+      cursor: pointer;
+      transition: background 0.15s;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .hpicker-item:last-child { border-bottom: none; }
+    .hpicker-item:hover { background: var(--surface2); }
+
+    .hpicker-name {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--cyan);
+      min-width: 175px;
+      padding-top: 1px;
+    }
+    .hpicker-info { flex: 1; }
+    .hpicker-example {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.72rem;
+      color: var(--text-dim);
+      margin-bottom: 3px;
+    }
+    .hpicker-desc { font-size: 0.75rem; color: var(--text-dim); line-height: 1.5; }
+
+    .hpicker-custom {
+      padding: 12px 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      gap: 8px;
+    }
+    .hpicker-custom input {
+      flex: 1;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: var(--text);
+      font-size: 0.82rem;
+      padding: 7px 10px;
+      outline: none;
+      font-family: monospace;
+    }
+    .hpicker-custom input:focus { border-color: var(--accent); }
+    .hpicker-custom button {
+      padding: 7px 14px;
+      background: var(--accent);
+      border: none;
+      border-radius: 6px;
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+    .hpicker-custom button:hover { opacity: 0.85; }
+
+    .send-btn {
+      width: 100%;
+      padding: 13px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+      letter-spacing: 0.5px;
+    }
+    .send-btn:hover { opacity: 0.9; }
+    .send-btn:active { transform: scale(0.98); }
+
+    /* Visualization area */
+    .viz-area {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Network diagram */
+    .network-diagram {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+      position: relative;
+      height: 160px;
+      overflow: hidden;
+    }
+    .nd-client, .nd-server {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      text-align: center;
+      width: 90px;
+    }
+    .nd-client { left: 20px; }
+    .nd-server { right: 20px; }
+    .nd-icon {
+      font-size: 2.2rem;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .nd-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-dim);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .nd-line {
+      position: absolute;
+      top: 50%;
+      left: 110px;
+      right: 110px;
+      height: 2px;
+      background: var(--border);
+      transform: translateY(-50%);
+    }
+
+    .packet {
+      position: absolute;
+      top: calc(50% - 14px);
+      width: 44px;
+      height: 28px;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.7rem;
+      font-weight: 700;
+      opacity: 0;
+      z-index: 10;
+      pointer-events: none;
+    }
+    .packet.req-packet {
+      background: linear-gradient(135deg, #1a3a6a, #2a4a8a);
+      border: 1px solid #4f8ef7;
+      color: #4f8ef7;
+    }
+    .packet.res-packet {
+      background: linear-gradient(135deg, #0d2a1d, #1a4a30);
+      border: 1px solid #2ecc71;
+      color: #2ecc71;
+    }
+
+    /* Raw message panels */
+    .messages-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .msg-panel {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .msg-panel-header {
+      padding: 10px 16px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .msg-panel-header.req { background: #0d1a3a; color: #4f8ef7; border-bottom: 1px solid #2a4070; }
+    .msg-panel-header.res { background: #0d2a1a; color: #2ecc71; border-bottom: 1px solid #2a6040; }
+
+    .status-badge {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 20px;
+      font-weight: 700;
+    }
+    .status-2xx { background: rgba(46,204,113,0.2); color: var(--green); border: 1px solid var(--green); }
+    .status-3xx { background: rgba(243,156,18,0.2); color: var(--yellow); border: 1px solid var(--yellow); }
+    .status-4xx { background: rgba(231,76,60,0.2); color: var(--red); border: 1px solid var(--red); }
+    .status-5xx { background: rgba(231,76,60,0.2); color: var(--red); border: 1px solid var(--red); }
+
+    .msg-body {
+      font-family: 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 0.78rem;
+      line-height: 1.8;
+      padding: 16px;
+      white-space: pre-wrap;
+      word-break: break-all;
+      min-height: 160px;
+      color: var(--text-dim);
+    }
+    .msg-body .line-method  { color: #fff; }
+    .msg-body .line-status  { color: #fff; }
+    .msg-body .line-key     { color: var(--cyan); }
+    .msg-body .line-val     { color: var(--text); }
+    .msg-body .line-body    { color: var(--yellow); }
+    .msg-body .line-empty   { color: var(--border); }
+    .msg-body .placeholder  { color: var(--border); font-style: italic; }
+
+    /* ────────────────────────────────
+       TAB 3 — STATUS CODES
+    ──────────────────────────────── */
+    .status-filter {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 6px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text-dim);
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .filter-btn:hover { color: var(--text); }
+    .filter-btn.active { border-color: var(--accent); color: var(--accent); background: rgba(79,142,247,0.1); }
+
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 12px;
+    }
+
+    .status-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      transition: border-color 0.2s, transform 0.2s;
+      cursor: default;
+    }
+    .status-card:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+    .status-num {
+      font-size: 1.5rem;
+      font-weight: 800;
+      font-family: monospace;
+      min-width: 56px;
+      text-align: center;
+      line-height: 1;
+      padding-top: 2px;
+    }
+    .s1xx { color: #8892aa; }
+    .s2xx { color: var(--green); }
+    .s3xx { color: var(--yellow); }
+    .s4xx { color: #e67e22; }
+    .s5xx { color: var(--red); }
+
+    .status-info { flex: 1; }
+    .status-name {
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 4px;
+    }
+    .status-desc { font-size: 0.78rem; color: var(--text-dim); line-height: 1.5; }
+
+    /* ────────────────────────────────
+       TAB 4 — HTTP METHODS
+    ──────────────────────────────── */
+    .methods-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+      gap: 16px;
+    }
+
+    .method-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .method-card:hover { transform: translateY(-3px); }
+
+    .method-card-header {
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+    .method-name-big {
+      font-size: 1.3rem;
+      font-weight: 800;
+      font-family: monospace;
+      letter-spacing: 1px;
+    }
+    .method-card-body { padding: 0 20px 20px; }
+    .method-desc { font-size: 0.85rem; color: var(--text-dim); line-height: 1.6; margin-bottom: 12px; }
+
+    .method-props {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .prop-tag {
+      font-size: 0.72rem;
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+    .prop-yes { background: rgba(46,204,113,0.15); color: var(--green); border: 1px solid rgba(46,204,113,0.3); }
+    .prop-no  { background: rgba(231,76,60,0.15);  color: var(--red);   border: 1px solid rgba(231,76,60,0.3); }
+
+    .method-example {
+      background: var(--surface2);
+      border-radius: 6px;
+      padding: 12px;
+      font-family: monospace;
+      font-size: 0.78rem;
+      color: var(--text-dim);
+      margin-top: 12px;
+      line-height: 1.6;
+    }
+    .method-example .hl-method { font-weight: 800; }
+
+    /* ────────────────────────────────
+       Scrollbar
+    ──────────────────────────────── */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3e4460; }
+
+    /* ────────────────────────────────
+       Saiba Mais
+    ──────────────────────────────── */
+    .sm-hero {
+      background: linear-gradient(135deg, #12152a 0%, #1a1d27 50%, #12152a 100%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 36px 40px;
+      margin-bottom: 32px;
+      text-align: center;
+    }
+    .sm-hero h2 {
+      font-size: 1.6rem;
+      font-weight: 800;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .sm-hero p { color: var(--text-dim); font-size: 0.88rem; line-height: 1.75; max-width: 580px; margin: 0 auto; }
+
+    .sm-section-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-dim);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sm-section-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+    .sm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .sm-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 20px;
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.2s, transform 0.2s, background 0.2s;
+      cursor: pointer;
+    }
+    .sm-card:hover {
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      background: #1e2235;
+    }
+    .sm-card-icon {
+      font-size: 1.6rem;
+      min-width: 36px;
+      text-align: center;
+      padding-top: 2px;
+    }
+    .sm-card-body { flex: 1; min-width: 0; }
+    .sm-card-title {
+      font-weight: 700;
+      font-size: 0.88rem;
+      margin-bottom: 4px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .sm-card-sub {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      line-height: 1.55;
+    }
+    .sm-tag {
+      font-size: 0.65rem;
+      padding: 2px 7px;
+      border-radius: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    .tag-free    { background: rgba(46,204,113,0.15); color: var(--green);  border: 1px solid rgba(46,204,113,0.3); }
+    .tag-doc     { background: rgba(79,142,247,0.15); color: var(--accent); border: 1px solid rgba(79,142,247,0.3); }
+    .tag-video   { background: rgba(231,76,60,0.15);  color: var(--red);    border: 1px solid rgba(231,76,60,0.3); }
+    .tag-book    { background: rgba(243,156,18,0.15); color: var(--yellow); border: 1px solid rgba(243,156,18,0.3); }
+    .tag-tool    { background: rgba(0,188,212,0.15);  color: var(--cyan);   border: 1px solid rgba(0,188,212,0.3); }
+    .tag-rfc     { background: rgba(155,89,182,0.15); color: #9b59b6;       border: 1px solid rgba(155,89,182,0.3); }
+    .tag-ptbr    { background: rgba(243,156,18,0.12); color: #e67e22;       border: 1px solid rgba(243,156,18,0.3); }
+
+    .sm-roadmap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 36px;
+    }
+    .sm-roadmap-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .sm-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      position: relative;
+    }
+    .sm-step-left {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 32px;
+    }
+    .sm-step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: 800;
+      flex-shrink: 0;
+    }
+    .sm-step-line {
+      width: 2px;
+      flex: 1;
+      min-height: 24px;
+      background: var(--border);
+      margin: 4px 0;
+    }
+    .sm-step:last-child .sm-step-line { display: none; }
+    .sm-step-content { padding-bottom: 20px; padding-top: 4px; }
+    .sm-step-title { font-weight: 700; font-size: 0.88rem; margin-bottom: 4px; }
+    .sm-step-desc  { font-size: 0.78rem; color: var(--text-dim); line-height: 1.6; }
+
+    /* ── Responsive ── */
+    @media (max-width: 900px) {
+      .anatomy-grid { grid-template-columns: 1fr; }
+      .sim-layout { grid-template-columns: 1fr; }
+      .messages-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="logo">HTTP</div>
+    <p>Simulador interativo do protocolo HTTP</p>
+  </div>
+</header>
+
+<!-- TABS -->
+<div class="tabs">
+  <button class="tab-btn active" onclick="showTab('anatomy')">Anatomia</button>
+  <button class="tab-btn" onclick="showTab('simulator')">Simulador</button>
+  <button class="tab-btn" onclick="showTab('statuscodes')">Códigos de Status</button>
+  <button class="tab-btn" onclick="showTab('methods')">Métodos HTTP</button>
+  <button class="tab-btn" onclick="showTab('saibamais')">✦ Saiba Mais</button>
+</div>
+
+<!-- ════════════════════════════════
+     TAB 1 — ANATOMY
+════════════════════════════════ -->
+<div id="tab-anatomy" class="tab-content active">
+  <div class="container">
+    <p style="color:var(--text-dim);font-size:0.88rem;margin-bottom:24px;line-height:1.7;">
+      O protocolo HTTP é baseado em <strong style="color:var(--text)">texto puro</strong>. Passe o mouse sobre cada parte para entender o que ela significa.
+    </p>
+    <div class="anatomy-grid">
+
+      <!-- REQUEST -->
+      <div class="http-block">
+        <div class="http-block-header req-header">
+          <span>→</span> Requisição HTTP
+        </div>
+        <div class="http-raw" id="req-raw">
+          <div class="line-group">
+            <span class="annotated part-requestline"
+              data-title="Linha de Requisição (Request Line)"
+              data-desc="A primeira linha de toda requisição. Contém o &lt;strong&gt;método&lt;/strong&gt;, o &lt;strong&gt;caminho&lt;/strong&gt; (URI) e a &lt;strong&gt;versão do protocolo&lt;/strong&gt;.">
+              <span class="label-badge badge-method annotated" data-title="Método HTTP" data-desc="Define a &lt;strong&gt;ação&lt;/strong&gt; que o cliente quer realizar. GET para buscar, POST para criar, PUT para substituir, DELETE para remover, etc.">GET</span><span class="label-badge badge-url annotated" data-title="URI / Caminho" data-desc="O &lt;strong&gt;endereço do recurso&lt;/strong&gt; no servidor. Pode incluir &lt;strong&gt;query strings&lt;/strong&gt; após o '?', como &lt;code&gt;/usuarios?pagina=2&lt;/code&gt;">/api/usuarios/42</span><span class="label-badge badge-version annotated" data-title="Versão do Protocolo" data-desc="Indica qual versão do HTTP está sendo usada. HTTP/1.1 é a mais comum. HTTP/2 e HTTP/3 existem mas têm diferente representação interna.">HTTP/1.1</span>
+            </span>
+          </div>
+          <div class="line-group" style="margin-top:8px;">
+            <div><span class="part-header-key annotated" data-title="Header: Host" data-desc="&lt;strong&gt;Obrigatório no HTTP/1.1.&lt;/strong&gt; Identifica qual servidor está sendo acessado. Essencial para servidores que hospedam múltiplos domínios (virtual hosting).">Host:</span> <span class="part-header-val">api.exemplo.com</span></div>
+            <div><span class="part-header-key annotated" data-title="Header: Accept" data-desc="Diz ao servidor quais &lt;strong&gt;formatos de resposta&lt;/strong&gt; o cliente aceita. O servidor deve responder em um desses formatos se possível.">Accept:</span> <span class="part-header-val">application/json</span></div>
+            <div><span class="part-header-key annotated" data-title="Header: Authorization" data-desc="Envia &lt;strong&gt;credenciais de autenticação&lt;/strong&gt;. O esquema &lt;code&gt;Bearer&lt;/code&gt; é usado com tokens JWT. Outros esquemas: Basic, Digest, OAuth.">Authorization:</span> <span class="part-header-val">Bearer eyJhbGciOiJIUzI1NiJ9...</span></div>
+            <div><span class="part-header-key annotated" data-title="Header: User-Agent" data-desc="Identifica o &lt;strong&gt;cliente&lt;/strong&gt; que fez a requisição: browser, app mobile, ferramenta CLI, etc. O servidor pode usar isso para adaptar a resposta.">User-Agent:</span> <span class="part-header-val">Mozilla/5.0 (Chrome/120)</span></div>
+          </div>
+          <div class="line-group" style="margin-top:8px;">
+            <span class="part-sep annotated" data-title="Linha em Branco (CRLF)" data-desc="Uma linha vazia &lt;strong&gt;obrigatória&lt;/strong&gt; que separa os headers do corpo. O servidor sabe que os headers acabaram quando encontra esta linha (CRLF + CRLF).">— linha vazia (CRLF) —</span>
+          </div>
+          <div class="line-group" style="margin-top:8px;">
+            <span class="part-sep" style="font-style:italic;font-size:0.78rem;">(GET não tem corpo — body ausente)</span>
+          </div>
+        </div>
+
+        <!-- Second example with POST body -->
+        <div style="border-top:1px solid var(--border);padding:12px 20px 4px;">
+          <div style="font-size:0.72rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-dim);margin-bottom:10px;">Exemplo com corpo (POST)</div>
+        </div>
+        <div class="http-raw" style="padding-top:4px;">
+          <div><span class="label-badge badge-method" style="background:#0d1a3a;color:#4f8ef7;">POST</span><span class="label-badge badge-url">/api/books</span><span class="label-badge badge-version">HTTP/1.1</span></div>
+          <div style="margin-top:8px;">
+            <div><span class="part-header-key">Host:</span> <span class="part-header-val">api.exemplo.com</span></div>
+            <div><span class="part-header-key annotated" data-title="Header: Content-Type" data-desc="Diz ao servidor &lt;strong&gt;como interpretar o corpo&lt;/strong&gt; da requisição. &lt;code&gt;application/json&lt;/code&gt; para JSON, &lt;code&gt;multipart/form-data&lt;/code&gt; para uploads.">Content-Type:</span> <span class="part-header-val">application/json</span></div>
+            <div><span class="part-header-key annotated" data-title="Header: Content-Length" data-desc="Indica o &lt;strong&gt;tamanho em bytes&lt;/strong&gt; do corpo da requisição. Permite ao servidor saber quando termina de ler o body.">Content-Length:</span> <span class="part-header-val">47</span></div>
+          </div>
+          <div style="margin-top:8px;"><span class="part-sep">— linha vazia (CRLF) —</span></div>
+          <div style="margin-top:8px;"><span class="part-body annotated" data-title="Corpo da Requisição (Body)" data-desc="Os &lt;strong&gt;dados enviados&lt;/strong&gt; pelo cliente ao servidor. Em POST/PUT, carrega o recurso a ser criado ou atualizado. Em GET e DELETE, geralmente é vazio.">{&quot;titulo&quot;: &quot;Dom Casmurro&quot;, &quot;autor&quot;: &quot;Machado de Assis&quot;, &quot;isbn&quot;: &quot;978-8535902778&quot;}</span></div>
+        </div>
+
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#fff;"></div>Linha de requisição</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--cyan);"></div>Headers</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--yellow);"></div>Corpo (body)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--text-dim);"></div>Separador CRLF</div>
+        </div>
+        <div class="tooltip-area" id="tooltip-req">
+          <div style="color:var(--text-dim);font-style:italic;">Passe o mouse sobre qualquer parte destacada para ver a explicação.</div>
+        </div>
+      </div>
+
+      <!-- RESPONSE -->
+      <div class="http-block">
+        <div class="http-block-header res-header">
+          <span>←</span> Resposta HTTP
+        </div>
+        <div class="http-raw">
+          <div class="line-group">
+            <span class="annotated part-statusline"
+              data-title="Linha de Status (Status Line)"
+              data-desc="A primeira linha da resposta. Informa a &lt;strong&gt;versão do protocolo&lt;/strong&gt;, o &lt;strong&gt;código de status&lt;/strong&gt; e uma &lt;strong&gt;mensagem textual&lt;/strong&gt; (reason phrase).">
+              <span class="label-badge badge-version annotated" data-title="Versão do Protocolo" data-desc="Mesma versão do protocolo informada na requisição.">HTTP/1.1</span><span class="label-badge badge-status annotated" data-title="Código de Status" data-desc="&lt;strong&gt;Número de 3 dígitos&lt;/strong&gt; que indica o resultado da operação. 2xx = sucesso, 3xx = redirecionamento, 4xx = erro do cliente, 5xx = erro do servidor.">200</span><span class="label-badge badge-statusmsg annotated" data-title="Reason Phrase" data-desc="Descrição textual do código de status. É &lt;strong&gt;informativa&lt;/strong&gt; — o código numérico é o que vale. Em HTTP/2 esta parte foi removida.">OK</span>
+            </span>
+          </div>
+          <div class="line-group" style="margin-top:8px;">
+            <div><span class="part-header-key annotated" data-title="Header: Content-Type" data-desc="Informa ao cliente &lt;strong&gt;como interpretar o corpo&lt;/strong&gt; da resposta. O charset define a codificação do texto.">Content-Type:</span> <span class="part-header-val">application/json; charset=utf-8</span></div>
+            <div><span class="part-header-key annotated" data-title="Header: Content-Length" data-desc="Tamanho em bytes do corpo da resposta. O cliente usa isso para saber &lt;strong&gt;quando o download terminou&lt;/strong&gt;.">Content-Length:</span> <span class="part-header-val">89</span></div>
+            <div><span class="part-header-key annotated" data-title="Header: Date" data-desc="Data e hora em que a resposta foi &lt;strong&gt;gerada pelo servidor&lt;/strong&gt;, no formato HTTP-date (RFC 7231).">Date:</span> <span class="part-header-val">Thu, 26 Mar 2026 12:00:00 GMT</span></div>
+            <div><span class="part-header-key annotated" data-title="Header: Cache-Control" data-desc="Instrui clientes e proxies sobre &lt;strong&gt;como e por quanto tempo cachear&lt;/strong&gt; a resposta. &lt;code&gt;max-age=3600&lt;/code&gt; = pode cachear por 1 hora.">Cache-Control:</span> <span class="part-header-val">max-age=3600</span></div>
+            <div><span class="part-header-key annotated" data-title="Header: X-Request-Id" data-desc="Header &lt;strong&gt;customizado&lt;/strong&gt; (prefixo X-). Usado para rastreabilidade — cada requisição recebe um ID único para facilitar o debug em logs distribuídos.">X-Request-Id:</span> <span class="part-header-val">a1b2c3d4-e5f6-7890</span></div>
+          </div>
+          <div class="line-group" style="margin-top:8px;">
+            <span class="part-sep annotated" data-title="Linha em Branco (CRLF)" data-desc="Igual à requisição: &lt;strong&gt;separa headers do corpo&lt;/strong&gt;. Obrigatória mesmo quando não há corpo na resposta.">— linha vazia (CRLF) —</span>
+          </div>
+          <div class="line-group" style="margin-top:8px;">
+            <span class="part-body annotated" data-title="Corpo da Resposta (Body)" data-desc="Os &lt;strong&gt;dados retornados&lt;/strong&gt; pelo servidor. Pode ser JSON, HTML, XML, imagem, binário, etc. O Content-Type diz ao cliente como interpretá-lo.">{<br>&nbsp;&nbsp;&quot;id&quot;: 42,<br>&nbsp;&nbsp;&quot;titulo&quot;: &quot;Dom Casmurro&quot;,<br>&nbsp;&nbsp;&quot;autor&quot;: &quot;Machado de Assis&quot;,<br>&nbsp;&nbsp;&quot;isbn&quot;: &quot;978-8535902778&quot;,<br>&nbsp;&nbsp;&quot;disponivel&quot;: true<br>}</span>
+          </div>
+        </div>
+
+        <div class="legend">
+          <div class="legend-item"><div class="legend-dot" style="background:#fff;"></div>Linha de status</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--cyan);"></div>Headers</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--yellow);"></div>Corpo (body)</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--text-dim);"></div>Separador CRLF</div>
+        </div>
+        <div class="tooltip-area" id="tooltip-res">
+          <div style="color:var(--text-dim);font-style:italic;">Passe o mouse sobre qualquer parte destacada para ver a explicação.</div>
+        </div>
+      </div>
+
+    </div><!-- /anatomy-grid -->
+
+    <!-- Flow diagram -->
+    <div style="margin-top:32px;">
+      <div class="section-title">Fluxo Completo</div>
+      <div class="card" style="padding:28px 32px;">
+        <div style="display:flex;align-items:center;gap:0;flex-wrap:wrap;">
+          <div style="text-align:center;padding:0 16px;">
+            <div style="font-size:2rem;">💻</div>
+            <div style="font-size:0.75rem;color:var(--text-dim);margin-top:4px;font-weight:700;">CLIENTE</div>
+          </div>
+          <div style="flex:1;min-width:200px;padding:0 8px;">
+            <div style="background:linear-gradient(90deg,var(--accent),transparent);height:2px;margin-bottom:6px;"></div>
+            <div style="text-align:center;font-size:0.75rem;color:var(--accent);font-weight:600;">① TCP Handshake (SYN → SYN-ACK → ACK)</div>
+          </div>
+          <div style="flex:1;min-width:200px;padding:0 8px;">
+            <div style="background:linear-gradient(90deg,var(--accent),transparent);height:2px;margin-bottom:6px;"></div>
+            <div style="text-align:center;font-size:0.75rem;color:var(--accent);font-weight:600;">② Cliente envia a Requisição HTTP</div>
+          </div>
+          <div style="flex:1;min-width:200px;padding:0 8px;">
+            <div style="background:linear-gradient(90deg,transparent,var(--green));height:2px;margin-bottom:6px;"></div>
+            <div style="text-align:center;font-size:0.75rem;color:var(--green);font-weight:600;">③ Servidor processa e envia Resposta HTTP</div>
+          </div>
+          <div style="text-align:center;padding:0 16px;">
+            <div style="font-size:2rem;">🖥️</div>
+            <div style="font-size:0.75rem;color:var(--text-dim);margin-top:4px;font-weight:700;">SERVIDOR</div>
+          </div>
+        </div>
+        <div style="margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;">
+          <div style="background:var(--surface2);border-radius:8px;padding:12px;border-left:3px solid var(--accent);">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--accent);margin-bottom:4px;">SEM ESTADO (Stateless)</div>
+            <div style="font-size:0.78rem;color:var(--text-dim);">Cada requisição é independente. O servidor não guarda contexto entre requisições.</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:12px;border-left:3px solid var(--green);">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--green);margin-bottom:4px;">TEXTO PURO</div>
+            <div style="font-size:0.78rem;color:var(--text-dim);">Mensagens HTTP são legíveis por humanos (ASCII/UTF-8). Diferente de protocolos binários.</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:12px;border-left:3px solid var(--yellow);">
+            <div style="font-size:0.72rem;font-weight:700;color:var(--yellow);margin-bottom:4px;">CAMADA DE APLICAÇÃO</div>
+            <div style="font-size:0.78rem;color:var(--text-dim);">HTTP roda sobre TCP/IP. HTTPS adiciona TLS entre HTTP e TCP para criptografia.</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:12px;border-left:3px solid #9b59b6;">
+            <div style="font-size:0.72rem;font-weight:700;color:#9b59b6;margin-bottom:4px;">PORTA PADRÃO</div>
+            <div style="font-size:0.78rem;color:var(--text-dim);">HTTP: porta <strong style="color:var(--text)">80</strong>. HTTPS: porta <strong style="color:var(--text)">443</strong>. Podem ser alteradas na URL.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Compression note -->
+    <div style="margin-top:24px;">
+      <div class="section-title">Texto Puro… mas Compactado</div>
+      <div class="card" style="padding:24px 28px;">
+        <p style="font-size:0.85rem;color:var(--text-dim);line-height:1.75;margin-bottom:18px;">
+          Embora as mensagens HTTP sejam <strong style="color:var(--text)">texto legível por humanos</strong>, na prática o corpo (<em>body</em>) quase sempre trafega <strong style="color:var(--text)">comprimido</strong> na rede. Os headers negociam isso automaticamente entre cliente e servidor.
+        </p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-bottom:18px;">
+          <div style="background:var(--surface2);border-radius:8px;padding:14px;">
+            <div style="font-family:monospace;font-size:0.8rem;color:var(--cyan);margin-bottom:6px;">Accept-Encoding: gzip, deflate, br</div>
+            <div style="font-size:0.78rem;color:var(--text-dim);line-height:1.6;">Header enviado pelo <strong style="color:var(--text)">cliente</strong> na requisição. Lista os algoritmos de compressão que ele sabe descompactar.</div>
+          </div>
+          <div style="background:var(--surface2);border-radius:8px;padding:14px;">
+            <div style="font-family:monospace;font-size:0.8rem;color:var(--green);margin-bottom:6px;">Content-Encoding: gzip</div>
+            <div style="font-size:0.78rem;color:var(--text-dim);line-height:1.6;">Header devolvido pelo <strong style="color:var(--text)">servidor</strong> na resposta. Indica o algoritmo usado para comprimir o body.</div>
+          </div>
+        </div>
+        <div style="display:flex;align-items:stretch;gap:0;background:var(--surface2);border-radius:10px;overflow:hidden;font-size:0.78rem;">
+          <div style="flex:1;padding:14px 16px;border-right:1px solid var(--border);">
+            <div style="font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-size:0.68rem;margin-bottom:8px;">Algoritmos comuns</div>
+            <div style="display:flex;flex-direction:column;gap:6px;">
+              <div><span style="font-family:monospace;color:var(--yellow);font-weight:700;">gzip</span> <span style="color:var(--text-dim);">— mais universal, suportado em todos os browsers</span></div>
+              <div><span style="font-family:monospace;color:var(--yellow);font-weight:700;">deflate</span> <span style="color:var(--text-dim);">— zlib/deflate, menos usado atualmente</span></div>
+              <div><span style="font-family:monospace;color:var(--yellow);font-weight:700;">br</span> <span style="color:var(--text-dim);">— Brotli, desenvolvido pelo Google, melhor compressão</span></div>
+              <div><span style="font-family:monospace;color:var(--yellow);font-weight:700;">zstd</span> <span style="color:var(--text-dim);">— Zstandard, altíssima velocidade (HTTP/2+)</span></div>
+            </div>
+          </div>
+          <div style="flex:1;padding:14px 16px;">
+            <div style="font-weight:700;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;font-size:0.68rem;margin-bottom:8px;">O que é comprimido?</div>
+            <div style="display:flex;flex-direction:column;gap:6px;color:var(--text-dim);">
+              <div>✅ <strong style="color:var(--green);">Body</strong> — JSON, HTML, CSS, JS: comprimir reduz até <strong style="color:var(--text)">70–90%</strong> do tamanho</div>
+              <div>❌ <strong style="color:var(--red);">Headers HTTP/1.1</strong> — sempre trafegam em texto puro</div>
+              <div>✅ <strong style="color:var(--green);">Headers HTTP/2</strong> — comprimidos com <strong style="color:var(--text)">HPACK</strong></div>
+              <div>✅ <strong style="color:var(--green);">Headers HTTP/3</strong> — comprimidos com <strong style="color:var(--text)">QPACK</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     TAB 2 — SIMULATOR
+════════════════════════════════ -->
+<div id="tab-simulator" class="tab-content">
+  <div class="container">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:28px;">
+      <p style="color:var(--text-dim);font-size:0.88rem;line-height:1.7;text-align:center;max-width:600px;">
+        Monte uma requisição HTTP e veja como ela seria formatada. A simulação mostra a mensagem raw exatamente como trafega pelo protocolo.
+      </p>
+      <button class="send-btn" style="width:260px;" onclick="sendRequest()">▶ Simular Envio</button>
+    </div>
+    <div class="sim-layout">
+      <!-- Form -->
+      <div>
+        <div class="card" style="margin-bottom:16px;">
+          <div class="section-title" style="margin-bottom:16px;">Método</div>
+          <div class="method-select" id="method-select">
+            <button class="method-btn active-GET" onclick="setMethod('GET')">GET</button>
+            <button class="method-btn" onclick="setMethod('POST')">POST</button>
+            <button class="method-btn" onclick="setMethod('PUT')">PUT</button>
+            <button class="method-btn" onclick="setMethod('DELETE')">DELETE</button>
+            <button class="method-btn" onclick="setMethod('PATCH')">PATCH</button>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="section-title" style="margin-bottom:16px;">URL</div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Host</label>
+            <input type="text" id="inp-host" value="api.exemplo.com" oninput="updateSim()" />
+          </div>
+          <div class="form-group" style="margin-bottom:0;margin-top:10px;">
+            <label>Caminho (Path)</label>
+            <input type="text" id="inp-path" value="/api/books" oninput="updateSim()" />
+          </div>
+          <div class="form-group" style="margin-bottom:0;margin-top:10px;">
+            <label>Versão HTTP</label>
+            <select id="inp-version" onchange="updateSim()">
+              <option value="HTTP/1.1" selected>HTTP/1.1</option>
+              <option value="HTTP/1.0">HTTP/1.0</option>
+              <option value="HTTP/2.0">HTTP/2.0 (representação simplificada)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom:16px;">
+          <div class="section-title" style="margin-bottom:12px;">Headers</div>
+          <div class="headers-list" id="headers-list"></div>
+          <button class="add-header-btn" onclick="addHeader()">+ Adicionar Header</button>
+        </div>
+
+        <div class="card" style="margin-bottom:16px;" id="body-section">
+          <div class="section-title" style="margin-bottom:12px;">Corpo (Body)</div>
+          <div class="form-group" style="margin-bottom:8px;">
+            <label>Content-Type</label>
+            <select id="inp-content-type" onchange="onContentTypeChange()">
+              <option value="application/json">application/json</option>
+              <option value="application/x-www-form-urlencoded">application/x-www-form-urlencoded</option>
+              <option value="text/plain">text/plain</option>
+              <option value="multipart/form-data">multipart/form-data</option>
+            </select>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label>Conteúdo</label>
+            <textarea id="inp-body" rows="5" oninput="updateSim()"></textarea>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Visualization -->
+      <div class="viz-area">
+        <!-- Network diagram -->
+        <div class="network-diagram" id="network-diagram">
+          <div class="nd-client" id="nd-client">
+            <span class="nd-icon">💻</span>
+            <span class="nd-label">Cliente</span>
+          </div>
+          <div class="nd-line"></div>
+          <div class="packet req-packet" id="req-packet">REQ</div>
+          <div class="packet res-packet" id="res-packet">RES</div>
+          <div class="nd-server" id="nd-server">
+            <span class="nd-icon">🖥️</span>
+            <span class="nd-label">Servidor</span>
+          </div>
+        </div>
+
+        <!-- Raw messages -->
+        <div class="messages-grid">
+          <div class="msg-panel">
+            <div class="msg-panel-header req">
+              <span>→ Requisição</span>
+              <span id="req-method-badge" style="font-size:0.75rem;color:#4f8ef7;">GET</span>
+            </div>
+            <div class="msg-body" id="req-preview">
+              <span class="placeholder">Configure e clique em Simular Envio...</span>
+            </div>
+          </div>
+          <div class="msg-panel">
+            <div class="msg-panel-header res">
+              <span>← Resposta</span>
+              <span id="res-status-badge"></span>
+            </div>
+            <div class="msg-body" id="res-preview">
+              <span class="placeholder">Aguardando envio...</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Info cards -->
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;" id="info-cards">
+          <div class="card" style="text-align:center;">
+            <div style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Método</div>
+            <div id="info-method" style="font-size:1.4rem;font-weight:800;font-family:monospace;color:var(--method-get);">GET</div>
+          </div>
+          <div class="card" style="text-align:center;">
+            <div style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Status</div>
+            <div id="info-status" style="font-size:1.4rem;font-weight:800;font-family:monospace;color:var(--text-dim);">—</div>
+          </div>
+          <div class="card" style="text-align:center;">
+            <div style="font-size:0.72rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;">Tamanho req.</div>
+            <div id="info-size" style="font-size:1.4rem;font-weight:800;font-family:monospace;color:var(--text-dim);">— B</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     TAB 3 — STATUS CODES
+════════════════════════════════ -->
+<div id="tab-statuscodes" class="tab-content">
+  <div class="container">
+    <div class="status-filter">
+      <button class="filter-btn active" onclick="filterStatus('all', this)">Todos</button>
+      <button class="filter-btn" onclick="filterStatus('1', this)">1xx Informacional</button>
+      <button class="filter-btn" onclick="filterStatus('2', this)">2xx Sucesso</button>
+      <button class="filter-btn" onclick="filterStatus('3', this)">3xx Redirecionamento</button>
+      <button class="filter-btn" onclick="filterStatus('4', this)">4xx Erro do Cliente</button>
+      <button class="filter-btn" onclick="filterStatus('5', this)">5xx Erro do Servidor</button>
+    </div>
+    <div class="status-grid" id="status-grid"></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     TAB 4 — METHODS
+════════════════════════════════ -->
+<div id="tab-methods" class="tab-content">
+  <div class="container">
+    <div class="methods-grid" id="methods-grid"></div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     TAB 5 — SAIBA MAIS
+════════════════════════════════ -->
+<div id="tab-saibamais" class="tab-content">
+  <div class="container">
+
+    <div class="sm-hero">
+      <h2>Aprofunde seu conhecimento em HTTP</h2>
+      <p>Seleção de documentações oficiais, ferramentas, vídeos e livros para você ir além do protocolo e entender como a web realmente funciona.</p>
+    </div>
+
+    <!-- Documentação oficial -->
+    <div class="sm-section-title">Documentação Oficial &amp; RFCs</div>
+    <div class="sm-grid">
+      <a class="sm-card" href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP" target="_blank" rel="noopener">
+        <div class="sm-card-icon">📖</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">MDN Web Docs — HTTP <span class="sm-tag tag-free">Grátis</span><span class="sm-tag tag-ptbr">PT-BR</span></div>
+          <div class="sm-card-sub">A referência mais completa e acessível sobre HTTP. Cobre métodos, headers, status codes, CORS, cookies e cache com exemplos práticos.</div>
+        </div>
+      </a>
+      <a class="sm-card" href="https://www.rfc-editor.org/rfc/rfc9110" target="_blank" rel="noopener">
+        <div class="sm-card-icon">📜</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">RFC 9110 — HTTP Semantics <span class="sm-tag tag-rfc">RFC</span><span class="sm-tag tag-free">Grátis</span></div>
+          <div class="sm-card-sub">A especificação oficial do protocolo HTTP (2022). Define os métodos, status codes e headers que todo servidor e cliente devem seguir.</div>
+        </div>
+      </a>
+      <a class="sm-card" href="https://www.rfc-editor.org/rfc/rfc9112" target="_blank" rel="noopener">
+        <div class="sm-card-icon">📜</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">RFC 9112 — HTTP/1.1 <span class="sm-tag tag-rfc">RFC</span><span class="sm-tag tag-free">Grátis</span></div>
+          <div class="sm-card-sub">Especificação do formato de mensagem HTTP/1.1 — a sintaxe exata da request line, headers e body que você viu neste simulador.</div>
+        </div>
+      </a>
+      <a class="sm-card" href="https://http.dev" target="_blank" rel="noopener">
+        <div class="sm-card-icon">🌐</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">http.dev <span class="sm-tag tag-doc">Doc</span><span class="sm-tag tag-free">Grátis</span></div>
+          <div class="sm-card-sub">Guia visual e interativo do protocolo HTTP. Explica status codes, headers e versões com exemplos claros e bem formatados.</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Ferramentas -->
+    <div class="sm-section-title">Ferramentas para Praticar</div>
+    <div class="sm-grid">
+      <a class="sm-card" href="https://hoppscotch.io" target="_blank" rel="noopener">
+        <div class="sm-card-icon">🚀</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">Hoppscotch <span class="sm-tag tag-tool">Ferramenta</span><span class="sm-tag tag-free">Grátis</span></div>
+          <div class="sm-card-sub">Cliente HTTP open-source no browser. Faça requisições reais, inspecione respostas e explore APIs REST sem instalar nada.</div>
+        </div>
+      </a>
+      <a class="sm-card" href="https://www.postman.com" target="_blank" rel="noopener">
+        <div class="sm-card-icon">📮</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">Postman <span class="sm-tag tag-tool">Ferramenta</span><span class="sm-tag tag-free">Grátis</span></div>
+          <div class="sm-card-sub">A ferramenta mais usada pela indústria para testar APIs HTTP. Permite salvar coleções de requisições, criar ambientes e automatizar testes.</div>
+        </div>
+      </a>
+      <a class="sm-card" href="https://httpie.io" target="_blank" rel="noopener">
+        <div class="sm-card-icon">⚡</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">HTTPie <span class="sm-tag tag-tool">Ferramenta</span><span class="sm-tag tag-free">Grátis</span></div>
+          <div class="sm-card-sub">Cliente HTTP de linha de comando com saída colorida e sintaxe simples. Ótimo para entender exatamente o que trafega na rede.</div>
+        </div>
+      </a>
+      <a class="sm-card" href="https://reqbin.com" target="_blank" rel="noopener">
+        <div class="sm-card-icon">🔬</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">ReqBin <span class="sm-tag tag-tool">Ferramenta</span><span class="sm-tag tag-free">Grátis</span></div>
+          <div class="sm-card-sub">Execute requisições HTTP diretamente no browser e veja os headers e body raw da resposta. Ideal para explorar APIs públicas rapidamente.</div>
+        </div>
+      </a>
+      <a class="sm-card" href="https://www.wireshark.org" target="_blank" rel="noopener">
+        <div class="sm-card-icon">🦈</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">Wireshark <span class="sm-tag tag-tool">Ferramenta</span><span class="sm-tag tag-free">Grátis</span></div>
+          <div class="sm-card-sub">Analisador de pacotes de rede. Capture e inspecione o tráfego HTTP real byte a byte — a forma mais profunda de entender o protocolo.</div>
+        </div>
+      </a>
+      <a class="sm-card" href="https://httpbin.org" target="_blank" rel="noopener">
+        <div class="sm-card-icon">🪞</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">httpbin.org <span class="sm-tag tag-tool">API</span><span class="sm-tag tag-free">Grátis</span></div>
+          <div class="sm-card-sub">API pública que ecoa de volta a sua requisição. Perfeito para testar headers, métodos e autenticação — o servidor te mostra exatamente o que recebeu.</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Cursos e vídeos -->
+    <div class="sm-section-title">Vídeos &amp; Cursos</div>
+    <div class="sm-grid">
+      <a class="sm-card" href="https://www.youtube.com/watch?v=iYM2zFP3Zn0" target="_blank" rel="noopener">
+        <div class="sm-card-icon">▶️</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">HTTP Crash Course — Traversy Media <span class="sm-tag tag-video">Vídeo</span><span class="sm-tag tag-free">Grátis</span></div>
+          <div class="sm-card-sub">Visão geral do protocolo HTTP em ~60 min. Cobre métodos, status codes, headers, REST e o ciclo request/response na prática.</div>
+        </div>
+      </a>
+      <a class="sm-card" href="https://www.youtube.com/watch?v=AlkDbnbv7dk" target="_blank" rel="noopener">
+        <div class="sm-card-icon">▶️</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">HTTP/1 vs HTTP/2 vs HTTP/3 — Hussain Nasser <span class="sm-tag tag-video">Vídeo</span><span class="sm-tag tag-free">Grátis</span></div>
+          <div class="sm-card-sub">Comparação aprofundada das três versões do protocolo — multiplexing, HPACK, QUIC e por que cada versão foi criada para resolver o que a anterior não resolvia.</div>
+        </div>
+      </a>
+      <a class="sm-card" href="https://cs50.harvard.edu/web" target="_blank" rel="noopener">
+        <div class="sm-card-icon">🎓</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">CS50W — Harvard Web Programming <span class="sm-tag tag-video">Curso</span><span class="sm-tag tag-free">Grátis</span></div>
+          <div class="sm-card-sub">Curso completo de desenvolvimento web de Harvard. Inclui aulas dedicadas a HTTP, APIs, segurança e como a web funciona sob o ponto de vista de engenharia.</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Livros -->
+    <div class="sm-section-title">Livros</div>
+    <div class="sm-grid">
+      <a class="sm-card" href="https://www.oreilly.com/library/view/http-the-definitive/1565925092/" target="_blank" rel="noopener">
+        <div class="sm-card-icon">📕</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">HTTP: The Definitive Guide <span class="sm-tag tag-book">Livro</span></div>
+          <div class="sm-card-sub">O livro de referência clássico sobre HTTP, pela O'Reilly. Cobre desde o formato das mensagens até proxies, cache, autenticação e HTTPS em profundidade.</div>
+        </div>
+      </a>
+      <a class="sm-card" href="https://www.manning.com/books/http2-in-action" target="_blank" rel="noopener">
+        <div class="sm-card-icon">📗</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">HTTP/2 in Action <span class="sm-tag tag-book">Livro</span></div>
+          <div class="sm-card-sub">Guia prático do HTTP/2 pela Manning. Explica multiplexing, server push, HPACK e como migrar aplicações para tirar proveito da nova versão.</div>
+        </div>
+      </a>
+      <a class="sm-card" href="https://developer.mozilla.org/pt-BR/docs/Web/HTTP/Overview" target="_blank" rel="noopener">
+        <div class="sm-card-icon">📘</div>
+        <div class="sm-card-body">
+          <div class="sm-card-title">Visão Geral do HTTP — MDN <span class="sm-tag tag-doc">Doc</span><span class="sm-tag tag-free">Grátis</span><span class="sm-tag tag-ptbr">PT-BR</span></div>
+          <div class="sm-card-sub">Leitura obrigatória em português. Apresenta o modelo cliente-servidor, conexões, o que pode ser controlado por HTTP e a evolução das versões.</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Roteiro de estudo -->
+    <div class="sm-section-title">Roteiro de Estudo Sugerido</div>
+    <div class="sm-roadmap">
+      <div class="sm-roadmap-steps">
+        <div class="sm-step">
+          <div class="sm-step-left">
+            <div class="sm-step-num" style="background:rgba(79,142,247,0.2);color:var(--accent);">1</div>
+            <div class="sm-step-line"></div>
+          </div>
+          <div class="sm-step-content">
+            <div class="sm-step-title" style="color:var(--accent);">Entenda a estrutura das mensagens</div>
+            <div class="sm-step-desc">Explore a aba <strong>Anatomia</strong> deste simulador. Compreenda request line, status line, headers e body. Leia a visão geral do MDN em PT-BR.</div>
+          </div>
+        </div>
+        <div class="sm-step">
+          <div class="sm-step-left">
+            <div class="sm-step-num" style="background:rgba(46,204,113,0.2);color:var(--green);">2</div>
+            <div class="sm-step-line"></div>
+          </div>
+          <div class="sm-step-content">
+            <div class="sm-step-title" style="color:var(--green);">Domine os métodos e status codes</div>
+            <div class="sm-step-desc">Use as abas <strong>Métodos</strong> e <strong>Códigos de Status</strong>. Entenda a diferença entre seguro/idempotente e decore os grupos 2xx, 3xx, 4xx, 5xx.</div>
+          </div>
+        </div>
+        <div class="sm-step">
+          <div class="sm-step-left">
+            <div class="sm-step-num" style="background:rgba(243,156,18,0.2);color:var(--yellow);">3</div>
+            <div class="sm-step-line"></div>
+          </div>
+          <div class="sm-step-content">
+            <div class="sm-step-title" style="color:var(--yellow);">Pratique com ferramentas reais</div>
+            <div class="sm-step-desc">Instale o Hoppscotch ou Postman. Faça requisições GET, POST e DELETE contra o <code style="background:var(--surface2);padding:1px 5px;border-radius:3px;">httpbin.org</code> e observe os headers reais na resposta.</div>
+          </div>
+        </div>
+        <div class="sm-step">
+          <div class="sm-step-left">
+            <div class="sm-step-num" style="background:rgba(0,188,212,0.2);color:var(--cyan);">4</div>
+            <div class="sm-step-line"></div>
+          </div>
+          <div class="sm-step-content">
+            <div class="sm-step-title" style="color:var(--cyan);">Inspecione o tráfego real</div>
+            <div class="sm-step-desc">Abra o DevTools do browser (F12 → aba Network). Navegue em qualquer site e observe as requisições reais: headers enviados, status codes e tempo de resposta.</div>
+          </div>
+        </div>
+        <div class="sm-step">
+          <div class="sm-step-left">
+            <div class="sm-step-num" style="background:rgba(155,89,182,0.2);color:#9b59b6;">5</div>
+            <div class="sm-step-line"></div>
+          </div>
+          <div class="sm-step-content">
+            <div class="sm-step-title" style="color:#9b59b6;">Aprofunde em HTTP/2, HTTPS e segurança</div>
+            <div class="sm-step-desc">Assista ao vídeo HTTP/1 vs /2 vs /3. Estude CORS, autenticação com JWT, e como o TLS/SSL protege as mensagens no HTTPS. Leia o livro HTTP: The Definitive Guide.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Header Picker Modal -->
+<div class="hpicker-overlay" id="hpicker-overlay" onclick="closeHeaderPicker(event)">
+  <div class="hpicker-modal" onclick="event.stopPropagation()">
+    <div class="hpicker-head">
+      <h3>Escolher Header de Requisição</h3>
+      <button class="hpicker-close" onclick="closeHeaderPicker()">×</button>
+    </div>
+    <div class="hpicker-search">
+      <input type="text" id="hpicker-search" placeholder="Filtrar headers..." oninput="filterHeaderPicker(this.value)" />
+    </div>
+    <div class="hpicker-list" id="hpicker-list"></div>
+    <div class="hpicker-custom">
+      <input type="text" id="hpicker-custom-key" placeholder="Header personalizado" />
+      <input type="text" id="hpicker-custom-val" placeholder="valor" />
+      <button onclick="addCustomHeaderFromPicker()">+ Adicionar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── TABS ──────────────────────────────────────────────────────────────
+function showTab(name) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  event.target.classList.add('active');
+}
+
+// ── ANATOMY TOOLTIPS ──────────────────────────────────────────────────
+document.querySelectorAll('.annotated').forEach(el => {
+  el.addEventListener('mouseenter', function() {
+    const title = this.dataset.title;
+    const desc  = this.dataset.desc;
+    if (!title) return;
+    // find closest tooltip
+    const panel = this.closest('.http-block');
+    if (!panel) return;
+    const tip = panel.querySelector('.tooltip-area');
+    if (!tip) return;
+    tip.innerHTML = `<div class="tip-title">${title}</div><div>${desc}</div>`;
+  });
+});
+
+// ── SIMULATOR ─────────────────────────────────────────────────────────
+let currentMethod = 'GET';
+let customHeaders = [
+  { key: 'Accept', val: 'application/json' },
+  { key: 'Authorization', val: 'Bearer <token>' }
+];
+
+const methodColors = {
+  GET: 'var(--method-get)',
+  POST: 'var(--method-post)',
+  PUT: 'var(--method-put)',
+  DELETE: 'var(--method-delete)',
+  PATCH: 'var(--method-patch)'
+};
+
+const methodResponses = {
+  GET:    { status: 200, msg: 'OK',         body: '{\n  "id": 1,\n  "titulo": "Dom Casmurro",\n  "autor": "Machado de Assis",\n  "isbn": "978-8535902778",\n  "ano": 1899,\n  "disponivel": true\n}' },
+  POST:   { status: 201, msg: 'Created',    body: '{\n  "id": 42,\n  "titulo": "O Senhor dos Anéis",\n  "autor": "J.R.R. Tolkien",\n  "isbn": "978-8533613379",\n  "ano": 1954,\n  "disponivel": true,\n  "criadoEm": "2026-03-26T12:00:00Z"\n}' },
+  PUT:    { status: 200, msg: 'OK',         body: '{\n  "id": 42,\n  "titulo": "O Senhor dos Anéis",\n  "autor": "J.R.R. Tolkien",\n  "isbn": "978-8533613379",\n  "ano": 1954,\n  "disponivel": false\n}' },
+  DELETE: { status: 204, msg: 'No Content', body: '' },
+  PATCH:  { status: 200, msg: 'OK',         body: '{\n  "id": 42,\n  "disponivel": false\n}' }
+};
+
+function setMethod(m) {
+  currentMethod = m;
+  document.querySelectorAll('.method-btn').forEach(b => {
+    b.className = 'method-btn';
+    if (b.textContent === m) b.classList.add('active-' + m);
+  });
+  const bodySection = document.getElementById('body-section');
+  bodySection.style.display = (m === 'GET' || m === 'DELETE') ? 'none' : 'block';
+  document.getElementById('info-method').textContent = m;
+  document.getElementById('info-method').style.color = methodColors[m];
+  document.getElementById('req-method-badge').textContent = m;
+  document.getElementById('req-method-badge').style.color = methodColors[m];
+  updateSim();
+}
+
+const knownHeaders = [
+  { key: 'Accept',              val: 'application/json',                  desc: 'Informa ao servidor quais formatos de resposta o cliente aceita (JSON, XML, HTML, etc.).' },
+  { key: 'Accept-Encoding',     val: 'gzip, deflate, br',                 desc: 'Algoritmos de compressão que o cliente suporta. O servidor pode comprimir a resposta para economizar banda.' },
+  { key: 'Accept-Language',     val: 'pt-BR, pt;q=0.9, en;q=0.8',        desc: 'Idiomas preferidos para a resposta. O servidor pode adaptar o conteúdo ao idioma do usuário.' },
+  { key: 'Authorization',       val: 'Bearer <token>',                    desc: 'Credenciais de autenticação. Bearer é usado com JWT; outros esquemas: Basic, Digest, OAuth.' },
+  { key: 'Cache-Control',       val: 'no-cache',                          desc: 'Diretivas de cache para a requisição. "no-cache" força revalidação; "no-store" proíbe qualquer cache.' },
+  { key: 'Content-Type',        val: 'application/json',                  desc: 'Tipo MIME do corpo enviado. Obrigatório em POST/PUT. Diz ao servidor como interpretar os dados.' },
+  { key: 'Cookie',              val: 'session=abc123; tema=escuro',        desc: 'Cookies armazenados no cliente enviados automaticamente ao servidor correspondente.' },
+  { key: 'If-None-Match',       val: '"abc123def456"',                    desc: 'Envia o ETag salvo em cache; o servidor responde 304 Not Modified se o recurso não mudou.' },
+  { key: 'If-Modified-Since',   val: 'Thu, 01 Jan 2026 00:00:00 GMT',     desc: 'Solicita o recurso apenas se modificado após esta data. Evita baixar conteúdo que já está em cache.' },
+  { key: 'Origin',              val: 'https://app.exemplo.com',           desc: 'Indica a origem da requisição. Fundamental para CORS — o servidor decide se permite a origem.' },
+  { key: 'Referer',             val: 'https://app.exemplo.com/livros',    desc: 'URL da página que originou a requisição. Útil para analytics e controle de acesso por referência.' },
+  { key: 'User-Agent',          val: 'Mozilla/5.0 (Chrome/120)',          desc: 'Identifica o cliente: browser, app mobile, crawler, CLI. O servidor pode adaptar a resposta.' },
+  { key: 'X-Request-Id',        val: crypto.randomUUID ? crypto.randomUUID() : 'uuid-aqui', desc: 'Header customizado para rastreabilidade. Cada requisição recebe um ID único para correlacionar logs distribuídos.' },
+  { key: 'X-Forwarded-For',     val: '203.0.113.42',                      desc: 'IP real do cliente quando a requisição passa por proxies ou load balancers.' },
+  { key: 'X-Api-Key',           val: 'sua-chave-aqui',                    desc: 'Header customizado para autenticação via chave de API. Alternativa simples ao Bearer token.' },
+];
+
+function addHeader() {
+  openHeaderPicker();
+}
+
+function openHeaderPicker() {
+  document.getElementById('hpicker-search').value = '';
+  document.getElementById('hpicker-custom-key').value = '';
+  document.getElementById('hpicker-custom-val').value = '';
+  renderHeaderPickerList('');
+  document.getElementById('hpicker-overlay').classList.add('open');
+  setTimeout(() => document.getElementById('hpicker-search').focus(), 50);
+}
+
+function closeHeaderPicker(e) {
+  if (!e || e.target === document.getElementById('hpicker-overlay')) {
+    document.getElementById('hpicker-overlay').classList.remove('open');
+  }
+}
+
+function renderHeaderPickerList(filter) {
+  const list = document.getElementById('hpicker-list');
+  const fl = filter.toLowerCase();
+  const items = knownHeaders.filter(h =>
+    h.key.toLowerCase().includes(fl) || h.desc.toLowerCase().includes(fl)
+  );
+  list.innerHTML = items.map(h => `
+    <div class="hpicker-item" onclick="pickHeader(${JSON.stringify(h.key)}, ${JSON.stringify(h.val)})">
+      <div class="hpicker-name">${h.key}</div>
+      <div class="hpicker-info">
+        <div class="hpicker-example">${h.val}</div>
+        <div class="hpicker-desc">${h.desc}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterHeaderPicker(val) {
+  renderHeaderPickerList(val);
+}
+
+function pickHeader(key, val) {
+  customHeaders.push({ key, val });
+  renderHeaders();
+  document.getElementById('hpicker-overlay').classList.remove('open');
+}
+
+function addCustomHeaderFromPicker() {
+  const key = document.getElementById('hpicker-custom-key').value.trim();
+  const val = document.getElementById('hpicker-custom-val').value.trim();
+  if (!key) return;
+  customHeaders.push({ key, val });
+  renderHeaders();
+  document.getElementById('hpicker-overlay').classList.remove('open');
+}
+
+function removeHeader(i) {
+  customHeaders.splice(i, 1);
+  renderHeaders();
+}
+
+const bodyExamples = {
+  'application/json': '{\n  "titulo": "O Senhor dos Anéis",\n  "autor": "J.R.R. Tolkien",\n  "isbn": "978-8533613379",\n  "ano": 1954\n}',
+  'application/x-www-form-urlencoded': 'titulo=O+Senhor+dos+An%C3%A9is&autor=J.R.R.+Tolkien&isbn=978-8533613379&ano=1954',
+  'text/plain': 'Titulo: O Senhor dos Anéis\nAutor: J.R.R. Tolkien\nISBN: 978-8533613379\nAno: 1954',
+  'multipart/form-data': '--boundary123\r\nContent-Disposition: form-data; name="titulo"\r\n\r\nO Senhor dos Anéis\r\n--boundary123\r\nContent-Disposition: form-data; name="autor"\r\n\r\nJ.R.R. Tolkien\r\n--boundary123--',
+};
+
+function onContentTypeChange() {
+  const ct = document.getElementById('inp-content-type').value;
+  document.getElementById('inp-body').value = bodyExamples[ct] || '';
+  updateSim();
+}
+
+function renderHeaders() {
+  const list = document.getElementById('headers-list');
+  list.innerHTML = '';
+  customHeaders.forEach((h, i) => {
+    const row = document.createElement('div');
+    row.className = 'header-row';
+    row.innerHTML = `
+      <input type="text" placeholder="Header-Name" value="${h.key}" oninput="customHeaders[${i}].key=this.value;updateSim()">
+      <input type="text" placeholder="valor" value="${h.val}" oninput="customHeaders[${i}].val=this.value;updateSim()">
+      <button class="remove-btn" onclick="removeHeader(${i})">×</button>
+    `;
+    list.appendChild(row);
+  });
+  updateSim();
+}
+
+function buildRequestRaw() {
+  const method  = currentMethod;
+  const path    = document.getElementById('inp-path').value || '/';
+  const version = document.getElementById('inp-version').value;
+  const host    = document.getElementById('inp-host').value;
+  const body    = (method !== 'GET' && method !== 'DELETE') ? document.getElementById('inp-body').value : '';
+  const ct      = document.getElementById('inp-content-type').value;
+
+  let lines = [];
+  lines.push({ type: 'method', text: `${method} ${path} ${version}` });
+  lines.push({ type: 'header', key: 'Host', val: host });
+
+  customHeaders.forEach(h => {
+    if (h.key) lines.push({ type: 'header', key: h.key, val: h.val });
+  });
+
+  if (body) {
+    const enc = new TextEncoder();
+    lines.push({ type: 'header', key: 'Content-Type', val: ct });
+    lines.push({ type: 'header', key: 'Content-Length', val: enc.encode(body).length });
+  }
+
+  lines.push({ type: 'sep', text: '' });
+  if (body) lines.push({ type: 'body', text: body });
+
+  return lines;
+}
+
+function renderRequestPreview(lines) {
+  return lines.map(l => {
+    if (l.type === 'method')  return `<span class="line-method">${esc(l.text)}</span>`;
+    if (l.type === 'header')  return `<span class="line-key">${esc(l.key)}:</span> <span class="line-val">${esc(l.val)}</span>`;
+    if (l.type === 'sep')     return `<span class="line-empty">​</span>`;
+    if (l.type === 'body')    return `<span class="line-body">${esc(l.text)}</span>`;
+    return '';
+  }).join('\n');
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function updateSim() {
+  const lines = buildRequestRaw();
+  document.getElementById('req-preview').innerHTML = renderRequestPreview(lines);
+  // size
+  const raw = lines.map(l => {
+    if (l.type === 'method') return l.text;
+    if (l.type === 'header') return `${l.key}: ${l.val}`;
+    if (l.type === 'body')   return l.text;
+    return '';
+  }).join('\r\n');
+  const size = new TextEncoder().encode(raw).length;
+  document.getElementById('info-size').textContent = size + ' B';
+}
+
+function sendRequest() {
+  const diagram    = document.getElementById('network-diagram');
+  const clientNode = document.getElementById('nd-client');
+  const serverNode = document.getElementById('nd-server');
+  const reqPacket  = document.getElementById('req-packet');
+  const resPacket  = document.getElementById('res-packet');
+  const resp = methodResponses[currentMethod];
+
+  // Measure positions relative to the diagram container
+  const diagRect   = diagram.getBoundingClientRect();
+  const clientRect = clientNode.getBoundingClientRect();
+  const serverRect = serverNode.getBoundingClientRect();
+  const packetW = 44;
+
+  const clientCX = clientRect.left + clientRect.width  / 2 - diagRect.left;
+  const serverCX = serverRect.left + serverRect.width  / 2 - diagRect.left;
+  const startX   = clientCX - packetW / 2;
+  const endX     = serverCX - packetW / 2;
+
+  const TRAVEL = 2400; // ms
+  const FADE   = 300;  // ms
+
+  // Reset — disable transition so the initial placement is instant
+  [reqPacket, resPacket].forEach(p => {
+    p.style.transition = 'none';
+    p.style.opacity = '0';
+  });
+  reqPacket.style.left = startX + 'px';
+  resPacket.style.left = endX   + 'px';
+
+  void reqPacket.offsetWidth; // force reflow
+
+  // ① REQ travels client → server
+  setTimeout(() => {
+    reqPacket.style.transition = `left ${TRAVEL}ms cubic-bezier(0.4, 0, 0.2, 1), opacity ${FADE}ms ease`;
+    reqPacket.style.opacity = '1';
+    reqPacket.style.left = endX + 'px';
+  }, 50);
+
+  // ② After REQ arrives: fade out req, start RES server → client
+  setTimeout(() => {
+    reqPacket.style.transition = `opacity ${FADE}ms ease`;
+    reqPacket.style.opacity = '0';
+
+    resPacket.style.transition = `left ${TRAVEL}ms cubic-bezier(0.4, 0, 0.2, 1), opacity ${FADE}ms ease`;
+    resPacket.style.opacity = '1';
+    resPacket.style.left = startX + 'px';
+
+    // Build and show response
+    const resEl = document.getElementById('res-preview');
+    const badge = document.getElementById('res-status-badge');
+    const statusEl = document.getElementById('info-status');
+
+    const statusClass = resp.status >= 500 ? 'status-5xx'
+                      : resp.status >= 400 ? 'status-4xx'
+                      : resp.status >= 300 ? 'status-3xx'
+                      : 'status-2xx';
+
+    badge.innerHTML = `<span class="status-badge ${statusClass}">${resp.status}</span>`;
+    statusEl.textContent = resp.status + ' ' + resp.msg;
+    statusEl.style.color = resp.status < 400 ? 'var(--green)' : 'var(--red)';
+
+    let resHtml = `<span class="line-status">HTTP/1.1 ${resp.status} ${resp.msg}</span>\n`;
+    resHtml += `<span class="line-key">Content-Type:</span> <span class="line-val">application/json; charset=utf-8</span>\n`;
+    if (resp.body) {
+      const size = new TextEncoder().encode(resp.body).length;
+      resHtml += `<span class="line-key">Content-Length:</span> <span class="line-val">${size}</span>\n`;
+    }
+    resHtml += `<span class="line-key">Date:</span> <span class="line-val">${new Date().toUTCString()}</span>\n`;
+    resHtml += `<span class="line-key">X-Request-Id:</span> <span class="line-val">${uuid()}</span>\n`;
+    resHtml += `<span class="line-empty"> </span>\n`;
+    if (resp.body) resHtml += `<span class="line-body">${esc(resp.body)}</span>`;
+
+    resEl.innerHTML = resHtml;
+  }, 50 + TRAVEL + 200);
+
+  // ③ Fade out RES after it arrives
+  setTimeout(() => {
+    resPacket.style.transition = `opacity ${FADE}ms ease`;
+    resPacket.style.opacity = '0';
+  }, 50 + TRAVEL + 200 + TRAVEL);
+}
+
+function uuid() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
+    const r = Math.random() * 16 | 0;
+    return (c === 'x' ? r : (r & 0x3 | 0x8)).toString(16);
+  });
+}
+
+// ── STATUS CODES ──────────────────────────────────────────────────────
+const statusCodes = [
+  { code: 100, name: 'Continue',              cls: 's1xx', desc: 'O servidor recebeu a requisição inicial e o cliente pode continuar enviando.' },
+  { code: 101, name: 'Switching Protocols',   cls: 's1xx', desc: 'O servidor aceita a troca de protocolo solicitada (ex: HTTP → WebSocket).' },
+  { code: 200, name: 'OK',                    cls: 's2xx', desc: 'Requisição bem-sucedida. A resposta contém o recurso solicitado.' },
+  { code: 201, name: 'Created',               cls: 's2xx', desc: 'Recurso criado com sucesso. Retornado após POST ou PUT bem-sucedidos.' },
+  { code: 204, name: 'No Content',            cls: 's2xx', desc: 'Sucesso, mas sem corpo na resposta. Comum em DELETE e algumas operações PUT.' },
+  { code: 206, name: 'Partial Content',       cls: 's2xx', desc: 'Resposta parcial ao campo Range da requisição. Usado em downloads por partes.' },
+  { code: 301, name: 'Moved Permanently',     cls: 's3xx', desc: 'O recurso foi movido para outra URL definitivamente. Browsers e crawlers devem atualizar.' },
+  { code: 302, name: 'Found',                 cls: 's3xx', desc: 'Redirecionamento temporário. O cliente deve continuar usando a URL original.' },
+  { code: 304, name: 'Not Modified',          cls: 's3xx', desc: 'O recurso não mudou desde a última vez. O cliente pode usar sua cópia em cache.' },
+  { code: 307, name: 'Temporary Redirect',    cls: 's3xx', desc: 'Redirecionamento temporário mantendo o método HTTP original da requisição.' },
+  { code: 308, name: 'Permanent Redirect',    cls: 's3xx', desc: 'Redirecionamento permanente mantendo o método HTTP original da requisição.' },
+  { code: 400, name: 'Bad Request',           cls: 's4xx', desc: 'Requisição malformada. O servidor não conseguiu entender a sintaxe.' },
+  { code: 401, name: 'Unauthorized',          cls: 's4xx', desc: 'Autenticação necessária. O cliente deve se identificar (apesar do nome, é sobre autenticação).' },
+  { code: 403, name: 'Forbidden',             cls: 's4xx', desc: 'O cliente está autenticado mas não tem permissão para acessar o recurso.' },
+  { code: 404, name: 'Not Found',             cls: 's4xx', desc: 'O recurso solicitado não existe neste servidor.' },
+  { code: 405, name: 'Method Not Allowed',    cls: 's4xx', desc: 'O método HTTP usado não é suportado para este endpoint.' },
+  { code: 409, name: 'Conflict',              cls: 's4xx', desc: 'Conflito com o estado atual do recurso (ex: tentar criar algo já existente).' },
+  { code: 422, name: 'Unprocessable Entity',  cls: 's4xx', desc: 'Sintaxe correta, mas dados semanticamente inválidos (validação falhou).' },
+  { code: 429, name: 'Too Many Requests',     cls: 's4xx', desc: 'O cliente enviou requisições demais em pouco tempo (rate limiting).' },
+  { code: 500, name: 'Internal Server Error', cls: 's5xx', desc: 'Erro genérico no servidor. Algo deu errado no lado do servidor.' },
+  { code: 502, name: 'Bad Gateway',           cls: 's5xx', desc: 'Um gateway ou proxy recebeu uma resposta inválida do servidor upstream.' },
+  { code: 503, name: 'Service Unavailable',   cls: 's5xx', desc: 'Servidor temporariamente fora do ar (sobrecarga ou manutenção).' },
+  { code: 504, name: 'Gateway Timeout',       cls: 's5xx', desc: 'Um gateway ou proxy não recebeu resposta a tempo do servidor upstream.' },
+];
+
+function renderStatusCodes(filter) {
+  const grid = document.getElementById('status-grid');
+  const filtered = filter === 'all' ? statusCodes : statusCodes.filter(s => String(s.code).startsWith(filter));
+  grid.innerHTML = filtered.map(s => `
+    <div class="status-card" data-code="${s.code}">
+      <div class="status-num ${s.cls}">${s.code}</div>
+      <div class="status-info">
+        <div class="status-name">${s.name}</div>
+        <div class="status-desc">${s.desc}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function filterStatus(f, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderStatusCodes(f);
+}
+
+// ── HTTP METHODS ──────────────────────────────────────────────────────
+const httpMethods = [
+  {
+    name: 'GET',
+    color: 'var(--method-get)',
+    bg: '#0d2a1d',
+    desc: 'Solicita um recurso do servidor. É a operação mais comum na web. GET é seguro (não modifica dados) e idempotente (chamar várias vezes tem o mesmo efeito).',
+    safe: true, idempotent: true, hasBody: false, cacheable: true,
+    example: 'GET /api/produtos?categoria=eletronicos HTTP/1.1\nHost: loja.com\nAccept: application/json'
+  },
+  {
+    name: 'POST',
+    color: 'var(--method-post)',
+    bg: '#0d1a3a',
+    desc: 'Envia dados para criar um novo recurso. Não é idempotente — chamar POST duas vezes geralmente cria dois recursos. Usado em formulários e criação de dados.',
+    safe: false, idempotent: false, hasBody: true, cacheable: false,
+    example: 'POST /api/produtos HTTP/1.1\nHost: loja.com\nContent-Type: application/json\n\n{"nome": "Notebook", "preco": 3500}'
+  },
+  {
+    name: 'PUT',
+    color: 'var(--method-put)',
+    bg: '#2a1d0d',
+    desc: 'Substitui completamente um recurso existente (ou cria se não existir). É idempotente — aplicar várias vezes tem o mesmo efeito.',
+    safe: false, idempotent: true, hasBody: true, cacheable: false,
+    example: 'PUT /api/produtos/42 HTTP/1.1\nHost: loja.com\nContent-Type: application/json\n\n{"nome": "Notebook Pro", "preco": 4200}'
+  },
+  {
+    name: 'PATCH',
+    color: 'var(--method-patch)',
+    bg: '#1a0d2a',
+    desc: 'Aplica modificações parciais a um recurso. Diferente do PUT, não precisa enviar o recurso completo — apenas os campos que mudam.',
+    safe: false, idempotent: false, hasBody: true, cacheable: false,
+    example: 'PATCH /api/produtos/42 HTTP/1.1\nHost: loja.com\nContent-Type: application/json\n\n{"preco": 3800}'
+  },
+  {
+    name: 'DELETE',
+    color: 'var(--method-delete)',
+    bg: '#2a0d0d',
+    desc: 'Remove um recurso do servidor. É idempotente — deletar um recurso já removido retorna 404 mas o estado final é o mesmo.',
+    safe: false, idempotent: true, hasBody: false, cacheable: false,
+    example: 'DELETE /api/produtos/42 HTTP/1.1\nHost: loja.com\nAuthorization: Bearer eyJ...'
+  },
+  {
+    name: 'HEAD',
+    color: '#8892aa',
+    bg: '#1a1d27',
+    desc: 'Igual ao GET, mas o servidor retorna apenas os headers, sem o corpo. Útil para verificar se um recurso existe ou obter metadados sem baixar o conteúdo.',
+    safe: true, idempotent: true, hasBody: false, cacheable: true,
+    example: 'HEAD /api/arquivos/video.mp4 HTTP/1.1\nHost: cdn.exemplo.com'
+  },
+  {
+    name: 'OPTIONS',
+    color: '#00bcd4',
+    bg: '#0d2a2a',
+    desc: 'Descreve as opções de comunicação para o recurso. Usado pelo browser no "preflight" de CORS para saber quais métodos e headers o servidor aceita.',
+    safe: true, idempotent: true, hasBody: false, cacheable: false,
+    example: 'OPTIONS /api/books HTTP/1.1\nHost: api.exemplo.com\nOrigin: https://app.exemplo.com\nAccess-Control-Request-Method: POST'
+  },
+  {
+    name: 'CONNECT',
+    color: '#f39c12',
+    bg: '#2a1d0d',
+    desc: 'Estabelece um túnel TCP com o servidor identificado pelo recurso alvo. Principalmente usado para HTTPS através de proxies HTTP.',
+    safe: false, idempotent: false, hasBody: false, cacheable: false,
+    example: 'CONNECT api.exemplo.com:443 HTTP/1.1\nHost: api.exemplo.com:443'
+  },
+];
+
+function renderMethods() {
+  const grid = document.getElementById('methods-grid');
+  grid.innerHTML = httpMethods.map(m => `
+    <div class="method-card" style="border-color:${m.bg};">
+      <div class="method-card-header" style="background:${m.bg};border-bottom:1px solid ${m.bg};">
+        <div class="method-name-big" style="color:${m.color}">${m.name}</div>
+      </div>
+      <div class="method-card-body" style="padding-top:16px;">
+        <p class="method-desc">${m.desc}</p>
+        <div class="method-props">
+          <span class="prop-tag ${m.safe ? 'prop-yes' : 'prop-no'}">${m.safe ? '✓' : '✗'} Seguro</span>
+          <span class="prop-tag ${m.idempotent ? 'prop-yes' : 'prop-no'}">${m.idempotent ? '✓' : '✗'} Idempotente</span>
+          <span class="prop-tag ${m.hasBody ? 'prop-yes' : 'prop-no'}">${m.hasBody ? '✓' : '✗'} Tem Body</span>
+          <span class="prop-tag ${m.cacheable ? 'prop-yes' : 'prop-no'}">${m.cacheable ? '✓' : '✗'} Cacheável</span>
+        </div>
+        <div class="method-example"><span class="hl-method" style="color:${m.color}">${m.example.split(' ')[0]}</span>${esc(m.example.substring(m.name.length))}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+// ── INIT ──────────────────────────────────────────────────────────────
+renderHeaders();
+onContentTypeChange();
+renderStatusCodes('all');
+renderMethods();
+setMethod('GET');
+</script>
+</body>
+</html>
