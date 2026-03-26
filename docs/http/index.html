@@ -721,6 +721,164 @@
     ::-webkit-scrollbar-thumb:hover { background: #3e4460; }
 
     /* ────────────────────────────────
+       Tipos MIME
+    ──────────────────────────────── */
+    .mime-intro {
+      background: linear-gradient(135deg, #12152a 0%, #1a1d27 50%, #12152a 100%);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 36px;
+      margin-bottom: 28px;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: center;
+    }
+    .mime-intro h2 {
+      font-size: 1.3rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .mime-intro p { color: var(--text-dim); font-size: 0.86rem; line-height: 1.75; max-width: 620px; }
+    .mime-syntax-box {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 22px;
+      font-family: monospace;
+      font-size: 0.88rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+    .mime-syntax-box .ms-type  { color: var(--accent); font-weight: 700; }
+    .mime-syntax-box .ms-slash { color: var(--text-dim); }
+    .mime-syntax-box .ms-sub   { color: var(--green); font-weight: 700; }
+    .mime-syntax-box .ms-semi  { color: var(--text-dim); }
+    .mime-syntax-box .ms-param { color: var(--yellow); }
+    .mime-syntax-box .ms-label { display: flex; justify-content: space-around; font-size: 0.65rem; color: var(--text-dim); margin-top: 6px; letter-spacing: 0.5px; text-transform: uppercase; }
+
+    .mime-filter-bar {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .mime-search {
+      flex: 1;
+      min-width: 200px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 0.85rem;
+      padding: 8px 14px;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .mime-search:focus { border-color: var(--accent); }
+    .mime-search::placeholder { color: var(--text-dim); }
+
+    .mime-cat-btn {
+      padding: 7px 16px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-dim);
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .mime-cat-btn:hover { color: var(--text); }
+    .mime-cat-btn.active { border-color: currentColor; }
+
+    .mime-table-wrap {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 28px;
+    }
+    .mime-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    .mime-table thead tr {
+      background: var(--surface2);
+      border-bottom: 1px solid var(--border);
+    }
+    .mime-table th {
+      padding: 11px 18px;
+      text-align: left;
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-dim);
+    }
+    .mime-table td {
+      padding: 11px 18px;
+      font-size: 0.82rem;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+    .mime-table tr:last-child td { border-bottom: none; }
+    .mime-table tbody tr {
+      transition: background 0.15s;
+      cursor: default;
+    }
+    .mime-table tbody tr:hover { background: var(--surface2); }
+    .mime-table tr.hidden-row { display: none; }
+
+    .mime-type-pill {
+      font-family: 'Fira Code', monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 6px;
+      display: inline-block;
+    }
+    .mime-desc { color: var(--text-dim); line-height: 1.5; }
+    .mime-ext {
+      font-family: monospace;
+      font-size: 0.75rem;
+      color: var(--text-dim);
+    }
+    .mime-ext span {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      padding: 1px 5px;
+      border-radius: 4px;
+      margin-right: 3px;
+      display: inline-block;
+      margin-bottom: 2px;
+    }
+    .mime-header-usage {
+      font-size: 0.75rem;
+      color: var(--text-dim);
+      font-family: monospace;
+    }
+    .mime-cat-icon { font-size: 0.9rem; }
+
+    .mime-note-box {
+      background: rgba(79,142,247,0.07);
+      border: 1px solid rgba(79,142,247,0.25);
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 16px;
+    }
+    .mime-note-box .mn-icon { font-size: 1.2rem; flex-shrink: 0; }
+    .mime-note-box p { font-size: 0.82rem; color: var(--text-dim); line-height: 1.65; }
+    .mime-note-box strong { color: var(--text); }
+
+    /* ────────────────────────────────
        Saiba Mais
     ──────────────────────────────── */
     .sm-hero {
@@ -887,6 +1045,7 @@
   <button class="tab-btn" onclick="showTab('simulator')">Simulador</button>
   <button class="tab-btn" onclick="showTab('statuscodes')">Códigos de Status</button>
   <button class="tab-btn" onclick="showTab('methods')">Métodos HTTP</button>
+  <button class="tab-btn" onclick="showTab('mime')">Tipos MIME</button>
   <button class="tab-btn" onclick="showTab('saibamais')">✦ Saiba Mais</button>
 </div>
 
@@ -1239,8 +1398,134 @@
 </div>
 
 <!-- ════════════════════════════════
-     TAB 5 — SAIBA MAIS
+     TAB 5 — TIPOS MIME
 ════════════════════════════════ -->
+<div id="tab-mime" class="tab-content">
+  <div class="container">
+
+    <!-- Intro / sintaxe -->
+    <div class="mime-intro">
+      <div>
+        <h2>O que são Tipos MIME?</h2>
+        <p>
+          <strong style="color:var(--text)">MIME (Multipurpose Internet Mail Extensions)</strong> é o padrão que diz ao receptor
+          <em>como interpretar</em> o conteúdo de uma mensagem. No HTTP, o header
+          <code style="background:var(--surface2);padding:1px 6px;border-radius:4px;color:var(--cyan)">Content-Type</code>
+          carrega o tipo MIME da requisição ou resposta. Sem ele, o browser ou servidor precisaria
+          "adivinhar" o formato — o que leva a erros de renderização, falhas de segurança e comportamentos imprevisíveis.
+        </p>
+        <p style="margin-top:10px;">
+          Cada tipo MIME segue a estrutura <code style="background:var(--surface2);padding:1px 6px;border-radius:4px;color:var(--accent)">tipo/subtipo</code>,
+          com parâmetros opcionais como <code style="background:var(--surface2);padding:1px 6px;border-radius:4px;color:var(--yellow)">charset</code>.
+          Existe também o tipo especial <code style="background:var(--surface2);padding:1px 6px;border-radius:4px;color:var(--green)">*/*</code> (wildcard),
+          usado no header <code style="background:var(--surface2);padding:1px 6px;border-radius:4px;color:var(--cyan)">Accept</code> para indicar que qualquer formato é aceito.
+        </p>
+      </div>
+      <div class="mime-syntax-box">
+        <div>
+          <span class="ms-type">text</span><span class="ms-slash">/</span><span class="ms-sub">html</span><span class="ms-semi">;</span> <span class="ms-param">charset=utf-8</span>
+        </div>
+        <div class="ms-label">
+          <span>tipo</span>
+          <span>subtipo</span>
+          <span>parâmetro</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Notas importantes -->
+    <div class="mime-note-box">
+      <span class="mn-icon">💡</span>
+      <p>
+        O header <strong>Content-Type</strong> é usado tanto na <strong>requisição</strong> (para dizer ao servidor como interpretar o body enviado)
+        quanto na <strong>resposta</strong> (para dizer ao cliente como interpretar o body recebido).
+        Já o header <strong>Accept</strong>, enviado pelo cliente, lista os tipos MIME que ele consegue processar —
+        o servidor usa isso para fazer <em>content negotiation</em> e escolher o melhor formato de resposta.
+      </p>
+    </div>
+
+    <!-- Filtros -->
+    <div class="mime-filter-bar">
+      <input class="mime-search" type="text" id="mime-search" placeholder="🔍 Filtrar por tipo, extensão ou descrição..." oninput="filterMime()">
+      <button class="mime-cat-btn active" style="color:var(--text)" onclick="filterMimeCat('all',this)">Todos</button>
+      <button class="mime-cat-btn" style="color:#4f8ef7" onclick="filterMimeCat('text',this)"><span class="mime-cat-icon">📝</span> Texto</button>
+      <button class="mime-cat-btn" style="color:#2ecc71" onclick="filterMimeCat('application',this)"><span class="mime-cat-icon">⚙️</span> Application</button>
+      <button class="mime-cat-btn" style="color:#e74c3c" onclick="filterMimeCat('image',this)"><span class="mime-cat-icon">🖼️</span> Imagem</button>
+      <button class="mime-cat-btn" style="color:#f39c12" onclick="filterMimeCat('audio',this)"><span class="mime-cat-icon">🎵</span> Áudio</button>
+      <button class="mime-cat-btn" style="color:#9b59b6" onclick="filterMimeCat('video',this)"><span class="mime-cat-icon">🎬</span> Vídeo</button>
+      <button class="mime-cat-btn" style="color:#00bcd4" onclick="filterMimeCat('multipart',this)"><span class="mime-cat-icon">📦</span> Multipart</button>
+      <button class="mime-cat-btn" style="color:#8892aa" onclick="filterMimeCat('font',this)"><span class="mime-cat-icon">🔤</span> Fonte</button>
+    </div>
+
+    <!-- Tabela -->
+    <div class="mime-table-wrap">
+      <table class="mime-table" id="mime-table">
+        <thead>
+          <tr>
+            <th>Tipo MIME</th>
+            <th>Extensões</th>
+            <th>Descrição &amp; Uso</th>
+            <th>Onde aparece</th>
+          </tr>
+        </thead>
+        <tbody id="mime-tbody"></tbody>
+      </table>
+    </div>
+
+    <!-- Explicação content negotiation -->
+    <div class="sm-section-title" style="margin-top:4px;">Content Negotiation — Como Funciona na Prática</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:28px;">
+      <div class="card">
+        <div style="font-size:0.78rem;font-weight:700;color:var(--accent);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Cliente envia no header Accept:</div>
+        <div style="font-family:monospace;font-size:0.8rem;line-height:1.9;color:var(--text-dim);">
+          <span style="color:var(--cyan)">Accept:</span> <span style="color:var(--text)">text/html,</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--text)">application/xhtml+xml,</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--text)">application/xml;q=0.9,</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--text)">image/webp,</span><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color:var(--text)">*/*;q=0.8</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--text-dim);margin-top:10px;line-height:1.6;">
+          O parâmetro <code style="background:var(--surface2);padding:1px 4px;border-radius:3px">q=</code> é o <strong style="color:var(--text)">fator de qualidade</strong> (0 a 1).
+          O servidor prioriza os tipos com maior q-value — <code style="background:var(--surface2);padding:1px 4px;border-radius:3px">text/html</code>
+          tem prioridade máxima (q=1 implícito), <code style="background:var(--surface2);padding:1px 4px;border-radius:3px">*/*</code> é o fallback.
+        </div>
+      </div>
+      <div class="card">
+        <div style="font-size:0.78rem;font-weight:700;color:var(--green);margin-bottom:10px;text-transform:uppercase;letter-spacing:1px;">Servidor responde com Content-Type:</div>
+        <div style="font-family:monospace;font-size:0.8rem;line-height:1.9;color:var(--text-dim);">
+          <span style="color:var(--cyan)">HTTP/1.1 200 OK</span><br>
+          <span style="color:var(--cyan)">Content-Type:</span> <span style="color:var(--green)">text/html; charset=utf-8</span><br>
+          <span style="color:var(--cyan)">Vary:</span> <span style="color:var(--text)">Accept</span><br><br>
+          <span style="color:var(--yellow)">&lt;!DOCTYPE html&gt;</span><br>
+          <span style="color:var(--yellow)">&lt;html&gt;...&lt;/html&gt;</span>
+        </div>
+        <div style="font-size:0.75rem;color:var(--text-dim);margin-top:10px;line-height:1.6;">
+          O header <code style="background:var(--surface2);padding:1px 4px;border-radius:3px">Vary: Accept</code> indica que a resposta
+          varia conforme o Accept do cliente — importante para caches não entregarem o tipo errado.
+        </div>
+      </div>
+    </div>
+
+    <!-- Aviso sniffing -->
+    <div class="mime-note-box" style="border-color:rgba(231,76,60,0.3);background:rgba(231,76,60,0.07);">
+      <span class="mn-icon">⚠️</span>
+      <p>
+        <strong>MIME Sniffing e Segurança:</strong> Quando o servidor omite o <code style="background:var(--surface2);padding:1px 6px;border-radius:4px">Content-Type</code>,
+        browsers tentam "adivinhar" o tipo pelo conteúdo — isso se chama <strong>MIME sniffing</strong>.
+        Isso é perigoso: um arquivo malicioso enviado como <code style="background:var(--surface2);padding:1px 4px;border-radius:3px">text/plain</code>
+        pode ser executado como HTML/JS. O header
+        <code style="background:var(--surface2);padding:1px 4px;border-radius:3px;color:var(--cyan)">X-Content-Type-Options: nosniff</code>
+        instrui o browser a nunca sobrescrever o Content-Type declarado.
+      </p>
+    </div>
+
+  </div>
+</div>
+
+<!-- ════════════════════════════════
+     TAB 6 — SAIBA MAIS
+════════════════════════════════ -->
+
 <div id="tab-saibamais" class="tab-content">
   <div class="container">
 
@@ -1911,11 +2196,111 @@ function renderMethods() {
   `).join('');
 }
 
+// ── MIME TYPES ────────────────────────────────────────────────────────
+const mimeTypes = [
+  // TEXT
+  { cat:'text', type:'text/html',               exts:['html','htm'],       where:'Req/Res', desc:'Documento HTML. Tipo padrão das páginas web. O browser renderiza o markup como interface visual.', color:'#4f8ef7' },
+  { cat:'text', type:'text/css',                exts:['css'],              where:'Res',     desc:'Folha de estilos CSS. Enviado pelo servidor para estilizar páginas HTML.', color:'#4f8ef7' },
+  { cat:'text', type:'text/javascript',         exts:['js','mjs'],         where:'Res',     desc:'Código JavaScript. O browser executa scripts com esse tipo. Antes era application/javascript.', color:'#4f8ef7' },
+  { cat:'text', type:'text/plain',              exts:['txt','log'],        where:'Req/Res', desc:'Texto puro sem formatação. Usado em logs, mensagens simples e respostas de debug.', color:'#4f8ef7' },
+  { cat:'text', type:'text/csv',                exts:['csv'],              where:'Req/Res', desc:'Dados tabulares separados por vírgula. Muito usado em exportações e importações de dados.', color:'#4f8ef7' },
+  { cat:'text', type:'text/xml',                exts:['xml'],              where:'Req/Res', desc:'XML como texto puro. Use application/xml quando o XML é para consumo de máquina.', color:'#4f8ef7' },
+  { cat:'text', type:'text/markdown',           exts:['md','markdown'],    where:'Req/Res', desc:'Texto em formato Markdown. Ainda não padronizado oficialmente pelo IANA, mas amplamente usado.', color:'#4f8ef7' },
+
+  // APPLICATION
+  { cat:'application', type:'application/json',                 exts:['json'],        where:'Req/Res', desc:'Dados em formato JSON. O tipo mais usado em APIs REST modernas para troca de dados estruturados.', color:'#2ecc71' },
+  { cat:'application', type:'application/xml',                  exts:['xml'],         where:'Req/Res', desc:'Dados em formato XML para consumo por máquina. Usado em serviços SOAP e integrações legadas.', color:'#2ecc71' },
+  { cat:'application', type:'application/x-www-form-urlencoded',exts:[],              where:'Req',     desc:'Dados de formulário HTML codificados na URL (chave=valor&chave2=valor2). Padrão do submit de forms.', color:'#2ecc71' },
+  { cat:'application', type:'application/octet-stream',         exts:['bin','exe','dmg'], where:'Res', desc:'Dados binários genéricos / desconhecidos. O browser normalmente força o download do arquivo.', color:'#2ecc71' },
+  { cat:'application', type:'application/pdf',                  exts:['pdf'],         where:'Req/Res', desc:'Documento PDF. O browser pode exibi-lo inline ou fazer download dependendo do Content-Disposition.', color:'#2ecc71' },
+  { cat:'application', type:'application/zip',                  exts:['zip'],         where:'Req/Res', desc:'Arquivo comprimido ZIP. Muito usado para envio de múltiplos arquivos em uma única requisição.', color:'#2ecc71' },
+  { cat:'application', type:'application/gzip',                 exts:['gz'],          where:'Req/Res', desc:'Arquivo comprimido com gzip. Também usado pelo header Content-Encoding para comprimir respostas HTTP.', color:'#2ecc71' },
+  { cat:'application', type:'application/ld+json',              exts:['jsonld'],      where:'Req/Res', desc:'JSON-LD — JSON para Linked Data e SEO estruturado. Usado pelo Google para rich snippets.', color:'#2ecc71' },
+  { cat:'application', type:'application/javascript',           exts:['js'],          where:'Res',     desc:'Código JavaScript (forma antiga). A especificação atual recomenda text/javascript.', color:'#2ecc71' },
+  { cat:'application', type:'application/wasm',                 exts:['wasm'],        where:'Res',     desc:'WebAssembly — binário compilado que roda no browser com performance próxima ao nativo.', color:'#2ecc71' },
+  { cat:'application', type:'application/jwt',                  exts:[],              where:'Req',     desc:'Token JWT (JSON Web Token). Às vezes enviado como body, mas o mais comum é no header Authorization: Bearer.', color:'#2ecc71' },
+
+  // IMAGE
+  { cat:'image', type:'image/jpeg',             exts:['jpg','jpeg'],       where:'Req/Res', desc:'Imagem JPEG. Compressão com perda, ideal para fotos. Não suporta transparência.', color:'#e74c3c' },
+  { cat:'image', type:'image/png',              exts:['png'],              where:'Req/Res', desc:'Imagem PNG. Compressão sem perda com suporte a canal alfa (transparência).', color:'#e74c3c' },
+  { cat:'image', type:'image/gif',              exts:['gif'],              where:'Req/Res', desc:'Imagem GIF. Suporta animações simples. Paleta limitada a 256 cores.', color:'#e74c3c' },
+  { cat:'image', type:'image/webp',             exts:['webp'],             where:'Req/Res', desc:'Formato moderno do Google. Melhor compressão que JPEG/PNG, suporta animação e transparência.', color:'#e74c3c' },
+  { cat:'image', type:'image/svg+xml',          exts:['svg'],              where:'Req/Res', desc:'Gráfico vetorial SVG (XML). Escalável sem perda de qualidade — ideal para ícones e logotipos.', color:'#e74c3c' },
+  { cat:'image', type:'image/avif',             exts:['avif'],             where:'Req/Res', desc:'Formato de imagem mais moderno baseado em AV1. Compressão superior ao WebP, suporte crescente.', color:'#e74c3c' },
+  { cat:'image', type:'image/x-icon',           exts:['ico'],              where:'Res',     desc:'Ícone de favoritos (favicon). Exibido na aba do browser e nos bookmarks.', color:'#e74c3c' },
+
+  // AUDIO
+  { cat:'audio', type:'audio/mpeg',             exts:['mp3'],              where:'Res',     desc:'Áudio MP3. O formato de áudio comprimido mais popular para streaming e download.', color:'#f39c12' },
+  { cat:'audio', type:'audio/ogg',              exts:['ogg','oga'],        where:'Res',     desc:'Áudio OGG Vorbis. Formato livre e aberto, boa qualidade com tamanho reduzido.', color:'#f39c12' },
+  { cat:'audio', type:'audio/wav',              exts:['wav'],              where:'Res',     desc:'Áudio WAV sem compressão. Alta qualidade, arquivos grandes. Usado em produção de áudio.', color:'#f39c12' },
+  { cat:'audio', type:'audio/webm',             exts:['weba'],             where:'Res',     desc:'Áudio WebM. Formato do Google otimizado para streaming no browser.', color:'#f39c12' },
+  { cat:'audio', type:'audio/aac',              exts:['aac','m4a'],        where:'Res',     desc:'Áudio AAC — melhor qualidade que MP3 no mesmo bitrate. Padrão em dispositivos Apple.', color:'#f39c12' },
+
+  // VIDEO
+  { cat:'video', type:'video/mp4',              exts:['mp4','m4v'],        where:'Res',     desc:'Vídeo MP4 (H.264/H.265). O formato mais compatível com browsers e dispositivos modernos.', color:'#9b59b6' },
+  { cat:'video', type:'video/webm',             exts:['webm'],             where:'Res',     desc:'Vídeo WebM (VP8/VP9/AV1). Formato aberto do Google, muito usado no YouTube e streaming web.', color:'#9b59b6' },
+  { cat:'video', type:'video/ogg',              exts:['ogv'],              where:'Res',     desc:'Vídeo OGG Theora. Alternativa aberta e livre para streaming de vídeo.', color:'#9b59b6' },
+  { cat:'video', type:'video/quicktime',        exts:['mov'],              where:'Res',     desc:'Vídeo QuickTime da Apple. Formato nativo do macOS e iOS, alta qualidade.', color:'#9b59b6' },
+
+  // MULTIPART
+  { cat:'multipart', type:'multipart/form-data',       exts:[],           where:'Req',     desc:'Upload de arquivos via formulário HTML (enctype="multipart/form-data"). Cada campo é uma "parte" separada da mensagem.', color:'#00bcd4' },
+  { cat:'multipart', type:'multipart/mixed',           exts:[],           where:'Req/Res', desc:'Corpo com partes de tipos diferentes. Usado em APIs que retornam metadados JSON junto com um arquivo binário.', color:'#00bcd4' },
+  { cat:'multipart', type:'multipart/byteranges',      exts:[],           where:'Res',     desc:'Resposta 206 com múltiplos intervalos de bytes. Usado quando o cliente solicitou vários Range simultâneos.', color:'#00bcd4' },
+
+  // FONT
+  { cat:'font', type:'font/woff',               exts:['woff'],            where:'Res',     desc:'Web Open Font Format 1.0. Fonte comprimida para web, suportada por todos os browsers modernos.', color:'#8892aa' },
+  { cat:'font', type:'font/woff2',              exts:['woff2'],           where:'Res',     desc:'WOFF2 — compressão ainda melhor que WOFF. O formato preferido para carregar fontes na web.', color:'#8892aa' },
+  { cat:'font', type:'font/ttf',                exts:['ttf'],             where:'Res',     desc:'TrueType Font. Formato de fonte mais antigo mas ainda amplamente suportado.', color:'#8892aa' },
+  { cat:'font', type:'font/otf',                exts:['otf'],             where:'Res',     desc:'OpenType Font. Suporta recursos tipográficos avançados como ligaturas e conjuntos estilísticos.', color:'#8892aa' },
+];
+
+let currentMimeCat = 'all';
+
+function renderMimeTable(data) {
+  const tbody = document.getElementById('mime-tbody');
+  if (!data.length) {
+    tbody.innerHTML = `<tr><td colspan="4" style="text-align:center;color:var(--text-dim);padding:32px;">Nenhum tipo MIME encontrado para esse filtro.</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = data.map(m => `
+    <tr data-cat="${m.cat}">
+      <td>
+        <span class="mime-type-pill" style="background:${m.color}22;color:${m.color};border:1px solid ${m.color}44;">
+          ${m.type}
+        </span>
+      </td>
+      <td class="mime-ext">
+        ${m.exts.length ? m.exts.map(e => `<span>.${e}</span>`).join('') : '<span style="color:var(--border)">—</span>'}
+      </td>
+      <td class="mime-desc">${m.desc}</td>
+      <td class="mime-header-usage" style="white-space:nowrap;">${m.where}</td>
+    </tr>
+  `).join('');
+}
+
+function filterMime() {
+  const q = document.getElementById('mime-search').value.toLowerCase();
+  const data = mimeTypes.filter(m => {
+    const matchCat = currentMimeCat === 'all' || m.cat === currentMimeCat;
+    const matchQ   = !q || m.type.includes(q) || m.desc.toLowerCase().includes(q) || m.exts.some(e => e.includes(q));
+    return matchCat && matchQ;
+  });
+  renderMimeTable(data);
+}
+
+function filterMimeCat(cat, btn) {
+  currentMimeCat = cat;
+  document.querySelectorAll('.mime-cat-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  filterMime();
+}
+
 // ── INIT ──────────────────────────────────────────────────────────────
 renderHeaders();
 onContentTypeChange();
 renderStatusCodes('all');
 renderMethods();
+renderMimeTable(mimeTypes);
 setMethod('GET');
 </script>
 </body>
