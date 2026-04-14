@@ -1,11 +1,11 @@
 ---
 layout: default
-title:  Simulado 2a Parte
+title:  Simulados: Segunda Parte
 parent: Simulados
 nav_order: 42
 ---
 
-# Simulado da Segunda Parte
+# Simulados: Segunda Parte
 
 ## Questões Práticas
 
@@ -18,14 +18,14 @@ de sucesso e, em caso de falha, retornar um erro tratado ou uma mensagem
 descritiva adequada.
 {: .fs-3 }
 
-3. Crie um trecho de código em Vue chamado “ControleDeCliques” que tenha uma
-propriedade chamada “valorInicial”, contendo um número inteiro. O componente
+2. Crie um trecho de código em Vue chamado "ControleDeCliques" que tenha uma
+propriedade chamada "valorInicial", contendo um número inteiro. O componente
 deve exibir no template o total de cliques registrados e possuir um botão que,
 ao ser pressionado, aumente esse total em 1 cada vez.
 {: .fs-3 }
 
-2. Crie uma função chamada simularRequisicao(valor) que retorne uma Promise. Essa
-Promise deve ser resolvida com sucesse se o valor for true, ou rejeitada se o
+3. Crie uma função chamada simularRequisicao(valor) que retorne uma Promise. Essa
+Promise deve ser resolvida com sucesso se o valor for true, ou rejeitada se o
 valor for false.
 Nota: [https://www.w3schools.com/js/js_promise.asp](https://www.w3schools.com/js/js_promise.asp)
 {: .fs-3 }
@@ -34,23 +34,24 @@ Nota: [https://www.w3schools.com/js/js_promise.asp](https://www.w3schools.com/js
 
 1. O que é uma *Promise* em JavaScript?
 * A) Um tipo de loop para executar código repetidamente.
-* B) Um objeto que representa o resultado de uma operação assíncrona.**
+* B) Um objeto que representa o resultado de uma operação assíncrona.
 * C) Uma estrutura para declarar variáveis constantes.
 * D) Um método para manipular o DOM.
 {: .fs-3 }
 
 2. Quais são os possíveis estados de uma Promise?
-* A) “running”, “stopped” e “paused”
-* B) “open”, “closed” e “pending”
-* C) “pending”, “resolved” e “rejected”
-* D) “started”, “inProgress” e “done”
+* A) "running", "stopped" e "paused"
+* B) "open", "closed" e "pending"
+* C) "pending", "resolved" e "rejected"
+* D) "started", "inProgress" e "done"
 {: .fs-3 }
 
-3. Como você pode “pegar” o resultado de uma Promise bem-sucedida?
+3. Como você pode "pegar" o resultado de uma Promise bem-sucedida?
 * A) Usando `then(...)`
 * B) Usando `for`
 * C) Usando `while`
 * D) Usando `switch`
+{: .fs-3 }
 
 4. E como você pode tratar um erro (rejeição) de uma Promise?
 * A) Com `then(...)`
@@ -61,8 +62,8 @@ Nota: [https://www.w3schools.com/js/js_promise.asp](https://www.w3schools.com/js
 
 5. Qual é a utilidade das palavras-chave `async` e `await` no contexto de Promises?
 * A) Para acelerar as Promises para que sejam síncronas.
-* B) Para simplificar o uso das Promises, permitindo “esperar” a resolução de uma Promise dentro de uma função assíncrona.**
-* C) Para criar Promises “mais seguras”.
+* B) Para simplificar o uso das Promises, permitindo "esperar" a resolução de uma Promise dentro de uma função assíncrona.
+* C) Para criar Promises "mais seguras".
 * D) Para cancelar Promises automaticamente.
 {: .fs-3 }
 
@@ -73,11 +74,11 @@ Nota: [https://www.w3schools.com/js/js_promise.asp](https://www.w3schools.com/js
 * D) Vincular dinamicamente atributos HTML ou props a expressões reativas.
 {: .fs-3 }
 
-7. O que é encadeamento de Promises (“promise chaining”)?
+7. O que é encadeamento de Promises ("promise chaining")?
 * A) Usar várias Promises em paralelo sem depender umas das outras.
-* B) Retornar outra Promise dentro de `then(...)`, para executar operações assíncronas em sequência.**
+* B) Retornar outra Promise dentro de `then(...)`, para executar operações assíncronas em sequência.
 * C) Fechar uma Promise com `finally` imediatamente.
-* D) Usar `Promise.resolve()` várias vezes para “ligar” Promises.
+* D) Usar `Promise.resolve()` várias vezes para "ligar" Promises.
 {: .fs-3 }
 
 8. Qual é a principal função de slots em componentes do Vue.js?
@@ -94,7 +95,7 @@ Nota: [https://www.w3schools.com/js/js_promise.asp](https://www.w3schools.com/js
 * D) Tornar o slot acessível apenas se o componente estiver usando v-model
 {: .fs-3 }
 
-10.  Qual é o principal objetivo do formato JSON (JavaScript Object Notation)?
+10. Qual é o principal objetivo do formato JSON (JavaScript Object Notation)?
 * A) Um protocolo de rede para estabelecer e gerenciar conexões de internet.
 * B) Um formato leve para troca de dados entre sistemas e plataformas.
 * C) Usado para estilizar a apresentação visual de páginas web (CSS).
@@ -135,7 +136,7 @@ os diferentes pares chave-valor?
 * A) Substituir o HTML tradicional pela sintaxe JSX para renderização de templates.
 * B) Reduzir o tempo de compilação do código JavaScript e CSS.
 * C) Centralizar todo o estado reativo da aplicação em um único arquivo raiz.
-* D) Permitir a criação de unidades de interface de usuário (UI) reusáveis, isoladas e com lógica própria .
+* D) Permitir a criação de unidades de interface de usuário (UI) reusáveis, isoladas e com lógica própria.
 {: .fs-3 }
 
 16. Em um Componente Filho (Child Component) do Vue.js, qual método é o padrão e mais recomendado para notificar o Componente Pai sobre uma mudança ou evento que ocorreu no filho?
@@ -144,7 +145,3 @@ os diferentes pares chave-valor?
 * C) Acessando o componente pai via $parent e chamando um de seus métodos diretamente.
 * D) Modificando diretamente o valor de uma prop recebida do pai.
 {: .fs-3 }
-
-
-
-

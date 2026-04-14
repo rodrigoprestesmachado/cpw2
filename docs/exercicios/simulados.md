@@ -1,11 +1,11 @@
 ---
 layout: default
-title:  Simulado: JavaScript — Primeira Parte
+title:  Simulados: Primeira Parte
 parent: Simulados
 nav_order: 41
 ---
 
-# Simulado da Primeira Parte (JavaScript)
+# Simulados: Primeira Parte
 
 ## Questões práticas — Variáveis
 
