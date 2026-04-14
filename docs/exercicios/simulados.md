@@ -1,8 +1,9 @@
 ---
 layout: default
-title:  Simulados: Primeira Parte
+title:  Simulado 1a Parte
 parent: Simulados
 nav_order: 41
+has_toc: false
 ---
 
 ## Questões práticas — Variáveis

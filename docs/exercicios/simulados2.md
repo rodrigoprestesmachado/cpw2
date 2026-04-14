@@ -1,8 +1,9 @@
 ---
 layout: default
-title:  Simulados: Segunda Parte
+title:  Simulado 2a Parte
 parent: Simulados
 nav_order: 42
+has_toc: false
 ---
 
 ## Questões Práticas
