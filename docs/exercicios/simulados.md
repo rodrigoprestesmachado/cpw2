@@ -5,8 +5,6 @@ parent: Simulados
 nav_order: 41
 ---
 
-# Simulados: Primeira Parte
-
 ## Questões práticas — Variáveis
 
 1. Em JavaScript, declare:

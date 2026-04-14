@@ -5,8 +5,6 @@ parent: Simulados
 nav_order: 42
 ---
 
-# Simulados: Segunda Parte
-
 ## Questões Práticas
 
 1. Implemente um método chamado buscarUsuarios() que utilize fetch() para
