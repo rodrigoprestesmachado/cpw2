@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Document Object Model
-parent: JavaScript
+parent: JavaScript Básico
 nav_order: 31
 ---
 

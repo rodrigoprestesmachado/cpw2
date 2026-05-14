@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Exercícios
-parent: Vue.js
+parent: Frameworks
 nav_order: 25
 ---
 

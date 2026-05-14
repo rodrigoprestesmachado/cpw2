@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Funções
-parent: JavaScript
+parent: JavaScript Básico
 nav_order: 16
 ---
 

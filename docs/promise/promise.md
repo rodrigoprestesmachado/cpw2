@@ -1,8 +1,8 @@
 ---
 layout: default
 title: Promise
-parent: Vue.js
-nav_order: 24
+parent: Frameworks
+nav_order: 20
 ---
 
 # Promise

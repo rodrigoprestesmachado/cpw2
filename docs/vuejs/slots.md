@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Slots
-parent: Vue.js
+parent: Frameworks
 nav_order: 23
 ---
 

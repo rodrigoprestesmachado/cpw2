@@ -1,6 +1,6 @@
 ---
 layout: default
-title:  Vue.js
+title:  Frameworks
 nav_order: 20
 has_children: true
 ---

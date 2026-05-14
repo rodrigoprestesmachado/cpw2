@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Vue
-parent: Vue.js
+parent: Frameworks
 nav_order: 21
 ---
 

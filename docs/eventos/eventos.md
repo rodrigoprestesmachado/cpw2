@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Eventos
+title: JavaScript Básico
 parent: JavaScript
 nav_order: 17
 ---
