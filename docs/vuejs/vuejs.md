@@ -13,24 +13,52 @@ nav_order: 21
     </iframe>
 </center>
 
-Vue.js é um _framework_ JavaScript para a construção de interfaces de usuário. Ele
-é projetado para ser adotado de forma incremental e pode ser facilmente
-integrado a outros projetos e bibliotecas JavaScript. Vue.js é uma ferramenta
-poderosa para a criação de aplicações web interativas e dinâmicas.
+Vue.js é um _framework_ JavaScript para a construção de interfaces de usuário.
+Diferente de outras ferramentas que exigem que você reescreva todo o seu
+projeto para adotá-las, o Vue.js foi projetado para ser **utilzado de forma
+incremental**: você pode começar usando-o em apenas uma parte de uma página
+existente e, aos poucos, expandir seu uso conforme a necessidade.
+  
+Para entender a proposta do Vue, pense em uma analogia com a construção civil:
+se o HTML é a estrutura (paredes e fundação) e o CSS é o acabamento (pintura
+e revestimentos), o JavaScript tradicional seria como instalar manualmente cada
+interruptor e tomada. O Vue.js, por sua vez, funciona como um sistema de
+automação residencial: você declara o que quer que aconteça ("quando essa luz
+acender, abra a cortina") e ele cuida de manter tudo sincronizado
+automaticamente. Esse mecanismo se chama **reatividade** e é o coração do Vue.
 
 ## Principais Diretivas 📜
 
-Vue.js fornece um conjunto de diretivas que podem ser usadas para manipular o
-DOM de forma declarativa. Aqui estão algumas das principais diretivas do Vue.js:
+Diretivas são instruções especiais que o Vue.js adiciona aos elementos HTML.
+Elas sempre começam com `v-` e funcionam como "comandos" que dizem ao Vue
+como aquele elemento deve se comportar. Pense nelas como **anotações mágicas**
+no HTML que o Vue lê e interpreta.
 
-* `v-bind`: associa um atributo HTML ao valor de uma expressão Vue.
-* `v-model`: vincula um elemento de formulário a uma variável Vue.
-* `v-if` e `v-else`: exibe ou oculta um elemento com base em uma condição.
+Aqui estão as principais diretivas do Vue.js:
+
+* `v-bind`: associa um atributo HTML ao valor de uma expressão Vue. Por exemplo,
+  `v-bind:src="urlDaImagem"` faz com que o atributo `src` de uma `<img>` use
+  o valor da variável `urlDaImagem`. É como dizer: "ei, esse atributo não é
+  fixo, ele vem dos meus dados".
+* `v-model`: vincula um elemento de formulário (como `<input>`) a uma variável
+  Vue, criando uma **ligação de mão dupla**. Se o usuário digita algo, a
+  variável se atualiza; se o código altera a variável, o campo se atualiza.
+  É como ter um espelho entre o campo de texto e o dado armazenado.
+* `v-if` e `v-else`: exibem ou ocultam um elemento com base em uma condição.
+  Funcionam exatamente como um `if/else` da programação, mas aplicado
+  diretamente ao HTML.
 * `v-for`: renderiza uma lista de elementos com base em uma matriz de dados.
-* `v-on`: associa um evento do DOM a um método no Vue.
-
+  É a maneira do Vue dizer: "para cada item dessa lista, crie um elemento
+  HTML".
+* `v-on`: associa um evento do DOM (como clique, teclado, mouse) a um método
+  do Vue. Por exemplo, `v-on:click="salvar"` chama o método `salvar` quando
+  o usuário clica no elemento. Existe um atalho muito usado para essa
+  diretiva: `@click="salvar"`.
 
 ## Hello World 🌍
+
+Vamos ao tradicional primeiro exemplo. O objetivo é exibir a mensagem
+"Hello Vue in CPW2!" na tela usando Vue.js:
 
 ```html
 <!DOCTYPE html>
@@ -61,49 +89,90 @@ DOM de forma declarativa. Aqui estão algumas das principais diretivas do Vue.js
 </html>
 ```
 
-Neste exemplo, criamos uma instância Vue chamada `app` e a associamos a um
-elemento HTML com o ID `app`. O objeto `data` contém uma propriedade `message`
-que é exibida na página usando a sintaxe de interpolação `{{ message }}`.
+Vamos destrinchar esse exemplo passo a passo:
 
-O interessante neste exemplo é que o Vue.js é importado diretamente do CDN
-(Content Delivery Network) do Vue.js. Isso significa que você pode começar a
-usar o Vue.js em um projeto sem precisar instalar nada localmente.
+1. **Importação via CDN**: A tag `<script src="https://cdn.jsdelivr.net/...">`
+   carrega o Vue.js diretamente da internet. Isso é ótimo para aprender ou
+   prototipar, pois não exige nenhuma instalação. É como pedir um livro
+   emprestado em vez de comprá-lo.
 
-Além disso, o Vue.js é uma biblioteca progressiva, o que significa que você pode
-adotar o Vue.js de forma incremental em um projeto existente, sem a necessidade
-de reescrever todo o código.
+2. **O "container" da aplicação**: A `<div id="app">` é o território onde o
+   Vue vai atuar. Tudo que estiver fora dessa `div` continua sendo HTML
+   comum; tudo que estiver dentro pode usar a "mágica" do Vue.
 
-Outra característica importante do Vue.js é a sua reatividade. Quando os dados
-associados a uma instância Vue são alterados, a interface do usuário é
-automaticamente atualizada para refletir essas alterações. Isso torna o Vue.js
-uma ferramenta poderosa para a criação de interfaces de usuário dinâmicas.
+3. **A sintaxe `{{ message }}`**: As chaves duplas são chamadas de
+   **interpolação de texto** (ou "bigodes", do inglês _mustache_). Elas dizem
+   ao Vue: "substitua isso aqui pelo valor da variável `message`". Se a
+   variável mudar, o texto na tela muda sozinho.
+
+4. **`Vue.createApp(...)`**: Cria uma nova aplicação Vue. Dentro dela, a
+   função `data()` retorna um objeto com todas as variáveis reativas da
+   aplicação. Por que `data` é uma função e não um objeto direto? Para
+   garantir que cada instância do Vue tenha sua **própria cópia** dos dados
+   (importante quando temos componentes reutilizáveis).
+
+5. **`app.mount('#app')`**: Conecta a aplicação Vue ao elemento HTML com
+   `id="app"`. É como plugar um aparelho na tomada: até esse momento, o Vue
+   existe na memória, mas não está controlando nada na página.
+
+O grande poder demonstrado aqui é a **reatividade**: se você abrir o console
+do navegador e digitar `app._instance.data.message = 'Outra mensagem'`,
+verá o texto na tela mudar imediatamente, sem precisar atualizar a página
+ou manipular o DOM manualmente. Compare isso com o JavaScript puro, onde
+você precisaria fazer algo como
+`document.getElementById('app').innerText = 'Outra mensagem'` toda vez.
 
 ## Nuxt.js 🚀
 
-O Nuxt.js é um framework Vue.js para a criação de aplicações Web universais. Ele
-fornece uma estrutura robusta para o desenvolvimento de aplicações em cima
-do Vue.js. O Nuxt.js simplifica a criação de aplicações Vue.js, fornecendo
-recursos como roteamento, geração de páginas estáticas, pré-renderização e
-muito mais.
+À medida que uma aplicação Vue cresce, surgem necessidades comuns: como
+organizar várias páginas? Como otimizar o carregamento? Como gerar HTML
+no servidor para melhorar o SEO? Resolver tudo isso manualmente é trabalhoso
+e repetitivo.
 
-Para criar uma aplicação com o Nuxt.js, você pode usar o comando
+É aí que entra o **Nuxt.js**: um _framework_ construído **em cima** do Vue.js
+que já vem com essas funcionalidades prontas. Uma boa analogia: se o Vue é
+o motor de um carro, o Nuxt é o carro completo, com chassi, freios,
+direção e ar-condicionado já montados.
+
+O Nuxt.js oferece:
+
+* **Roteamento automático** baseado na estrutura de arquivos;
+* **Renderização no servidor (SSR)** para melhor SEO e performance;
+* **Geração de sites estáticos** para sites de alta performance;
+* **Auto-importação** de componentes e bibliotecas;
+* **Sistema de módulos** para adicionar funcionalidades rapidamente.
+
+Para criar uma aplicação com o Nuxt.js, use o comando
 `npx nuxi@latest init`. Por exemplo:
 
 ```bash
 npx nuxi@latest init <project-name>
 ```
 
-Nota: Substitua `<project-name>` pelo nome do seu projeto. O `npx` é um pacote
-incluso no Node.js que permite executar comandos de pacotes diretamente.
+> 📝 **Nota:** Substitua `<project-name>` pelo nome do seu projeto. O `npx` é
+> um utilitário incluso no Node.js que permite executar comandos de pacotes
+> diretamente, sem precisar instalá-los globalmente no seu computador.
 
 ### Roteamento 🛣️
 
-Para fazer o roteamento de páginas em uma aplicação Nuxt.js, você pode criar
-arquivos `.vue` dentro do diretório `pages`. Cada arquivo `.vue` representa uma
-página da aplicação. O Nuxt.js gera automaticamente o roteamento com base nos
-arquivos presentes no diretório `pages`.
+Em aplicações Web tradicionais, para criar páginas diferentes (`/home`,
+`/contato`, `/produtos`) você precisa configurar manualmente cada rota.
+No Nuxt.js, o roteamento é **automático e baseado em arquivos**: cada
+arquivo `.vue` dentro do diretório `pages` vira automaticamente uma rota
+da aplicação.
 
-Para fazer isso, você deve colocar no arquivo `app.vue` o seguinte código:
+A correspondência funciona assim:
+
+| Arquivo                       | URL gerada       |
+|-------------------------------|------------------|
+| `pages/index.vue`             | `/`              |
+| `pages/sobre.vue`             | `/sobre`         |
+| `pages/livros/index.vue`      | `/livros`        |
+| `pages/livros/cadastro.vue`   | `/livros/cadastro` |
+
+Para ativar esse sistema, o arquivo `app.vue` (que é o "esqueleto" da
+aplicação) deve conter o componente `<NuxtPage />`, que funciona como uma
+"janela" onde a página atual será exibida:
 
 ```html
 <template>
@@ -111,15 +180,23 @@ Para fazer isso, você deve colocar no arquivo `app.vue` o seguinte código:
 </template>
 ```
 
-Logo, crie o diretório `pages` e adicione um arquivo `.vue` para cada página da
-aplicação. Por exemplo, para criar uma página `/`, crie o arquivo
-`pages/index.vue`.
+Pense no `<NuxtPage />` como o palco de um teatro: ele fica fixo, mas o
+"ator" (a página atual) muda conforme a URL acessada pelo usuário.
 
 ### Execução 🚀
 
-Para visualizar a aplicação Nuxt.js, você deve usar o comando
-`npm run dev`. A configuração desse comando é feita no arquivo `package.json`,
-observe o trecho a seguir:
+Para visualizar a aplicação Nuxt.js em modo de desenvolvimento, use o
+comando:
+
+```bash
+npm run dev
+```
+
+Esse comando inicia um servidor local (geralmente em `http://localhost:3000`)
+com **hot reload**: qualquer alteração no código é refletida automaticamente
+no navegador, sem precisar atualizar a página manualmente.
+
+A configuração desse comando está no arquivo `package.json`:
 
 ```json
 "scripts": {
@@ -127,14 +204,30 @@ observe o trecho a seguir:
 }
 ```
 
+A seção `scripts` do `package.json` funciona como um conjunto de atalhos:
+em vez de digitar `nuxt dev`, você digita `npm run dev`. Outros comandos
+comuns no Nuxt são `npm run build` (para gerar a versão de produção) e
+`npm run preview` (para visualizar a versão de produção localmente).
+
 ## Componentes 🧩
 
-Os componentes são uma maneira eficaz de organizar e reutilizar o código em uma
-aplicação Vue.js. No Nuxt, os componentes são armazenados no diretório
-`components` e podem ser usados em qualquer parte da aplicação. Entretanto, para
-que os componentes tenham o mesmo nome que foram criados, é necessário adicionar
-a opção `pathPrefix` como `false` no arquivo `nuxt.config.js`. Veja o exemplo a
-seguir:
+Os componentes são, sem dúvida, o conceito mais importante do Vue.js. Eles
+permitem **dividir uma interface complexa em pedaços menores, independentes
+e reutilizáveis** — como peças de LEGO que se encaixam para formar uma
+construção maior.
+
+Considere uma página de loja online: ela pode ser composta por um cabeçalho,
+um menu lateral, uma lista de produtos (onde cada produto é um componente)
+e um rodapé. Cada um desses pedaços pode ser desenvolvido, testado e
+mantido de forma isolada, e ainda ser reutilizado em outras páginas da
+aplicação.
+
+No Nuxt, os componentes ficam no diretório `components` e podem ser usados
+em qualquer parte da aplicação **sem precisar importá-los manualmente** —
+o Nuxt faz isso automaticamente. Porém, por padrão, o Nuxt adiciona um
+prefixo no nome do componente baseado em sua localização. Para manter o
+nome original do componente, é necessário adicionar a opção `pathPrefix`
+como `false` no arquivo `nuxt.config.js`:
 
 ```json
 components: [
@@ -145,10 +238,13 @@ components: [
 ],
 ```
 
-Imagine que você queira criar um formulário de cadastro de livros. Você pode
-criar um componente chamado `~/components/BookForm.vue` e usá-lo em várias
-páginas da aplicação. Aqui está um exemplo de como você pode criar um componente
-de formulário para cadastro de um livro:
+### Criando um Componente 🎨
+
+Vamos criar um componente para um cenário prático: um **formulário de
+cadastro de livros**. Esse componente poderá ser reutilizado em diferentes
+páginas (cadastro inicial, edição, etc.).
+
+O arquivo `~/components/BookForm.vue` ficaria assim:
 
 ```html
 <template>
@@ -182,17 +278,46 @@ export default {
   },
 };
 </script>
-````
+```
 
-Neste exemplo, o componente `BookForm.vue` contém campos de entrada para o
-título, autor e ano de lançamento de um livro, juntamente com um botão para
-salvar o livro. Quando o botão é clicado, o método `salvar` é chamado, que
-emite um event (`this.$emit`) `bookSubmitted` com os dados do livro. Esse evento
-pode ser capturado por um elemento pai para processar os dados do livro.
+Vamos analisar cada parte desse componente:
 
-Uma vez criado, o componente pode ser usado em qualquer página da aplicação
-Nuxt.js. Por exemplo, para usar o componente `BookForm.vue` em uma página
-`pages/index.vue`, você pode fazer o seguinte:
+**A seção `<template>`** define a estrutura HTML do componente. Note o uso
+da diretiva `v-model` em cada `<input>`: ela cria uma ligação de mão dupla
+entre o campo de texto e a variável correspondente em `data()`. Quando o
+usuário digita "Dom Casmurro" no primeiro campo, a variável `title`
+recebe esse valor automaticamente — não é preciso escrever código para
+capturar o evento de digitação.
+
+**A seção `<script>`** define o comportamento do componente:
+
+* `data()` retorna o **estado inicial** do componente. As três variáveis
+  começam como strings vazias e serão preenchidas conforme o usuário digita.
+* `methods` é um objeto que agrupa as funções do componente. Aqui temos
+  apenas o método `salvar`.
+
+**O método `salvar`** faz duas coisas importantes:
+
+1. Imprime "Salvando livro" no console (útil para depuração);
+2. Executa `this.$emit("bookSubmitted", { ... })`.
+
+Esse `$emit` merece atenção especial: ele **emite um evento personalizado**
+chamado `bookSubmitted`, carregando como "carga" um objeto com os dados do
+livro. Pense nisso como o componente filho gritando "ei, alguém terminou
+de preencher o formulário, aqui estão os dados!". Quem precisa fazer algo
+com esses dados (o componente pai) pode "ouvir" esse grito.
+
+> 💡 **Por que usar eventos em vez de manipular dados diretamente?**
+> Um princípio fundamental do Vue é o **fluxo de dados unidirecional**:
+> dados descem (do pai para o filho via propriedades) e eventos sobem
+> (do filho para o pai via `$emit`). Isso torna a aplicação mais previsível
+> e fácil de depurar, já que um componente filho nunca altera diretamente
+> os dados do pai.
+
+### Usando o Componente 📥
+
+Uma vez criado, o componente pode ser usado em qualquer página da aplicação.
+Veja como utilizá-lo na página `pages/index.vue`:
 
 ```html
 <template>
@@ -213,29 +338,59 @@ export default {
   },
 };
 </script>
-````
+```
 
-Neste exemplo, o componente `BookForm.vue` é importado e exibido na página
-`pages/index.vue`. Quando o formulário for preenchido e o
-botão "Salvar" for acionado, o evento `bookSubmitted` é capturado e um método
-`bookSubmitted` é chamado para processar os dados do livro.
+Observe a linha `<BookForm @bookSubmitted="execute" />`. Ela faz duas coisas:
+
+1. **Renderiza o componente** `BookForm` na página (lembre-se: graças à
+   auto-importação do Nuxt, não precisamos de `import`);
+2. **Escuta o evento `bookSubmitted`** com a sintaxe `@bookSubmitted="execute"`.
+   Quando o componente filho emite esse evento, o método `execute` da página
+   pai é chamado, recebendo como parâmetro o objeto com os dados do livro.
+
+O fluxo completo é o seguinte:
+
+```
+[Usuário preenche o formulário no BookForm]
+            ↓
+[Usuário clica em "Salvar"]
+            ↓
+[BookForm chama o método salvar()]
+            ↓
+[salvar() emite o evento "bookSubmitted" com os dados]
+            ↓
+[A página index.vue escuta esse evento]
+            ↓
+[O método execute(data) é chamado com os dados do livro]
+            ↓
+[Os dados são impressos no console]
+```
+
+Em uma aplicação real, em vez de apenas imprimir no console, o método
+`execute` poderia salvar os dados em um banco de dados via API, atualizar
+uma lista de livros na tela, etc.
 
 ### Bulma.io 🎨
 
-Bulma é um _framework_ CSS que facilita a criação de interfaces de usuário
-atraentes e responsivas. Ele fornece uma variedade de componentes e estilos
-prontos para uso, permitindo que você crie rapidamente interfaces de usuário
-profissionais e visualmente atraentes.
+Por padrão, os elementos HTML têm aparência simples e pouco atraente.
+Estilizar tudo manualmente com CSS é trabalhoso, especialmente se você
+precisa que sua aplicação seja responsiva (se adapte a celulares, tablets
+e desktops).
 
-Para usar o Bulma em uma aplicação Nuxt.js, você pode adicionar o Bulma ao
-projeto via npm. Por exemplo:
+Frameworks CSS resolvem esse problema fornecendo **classes prontas** que
+você apenas aplica aos seus elementos. O **Bulma** é um desses frameworks
+e se destaca por ser leve, moderno e baseado em **Flexbox** (uma
+tecnologia CSS para layouts flexíveis). Ele é uma alternativa mais simples
+ao Bootstrap, sem dependência de JavaScript.
+
+Para usar o Bulma em uma aplicação Nuxt.js, instale-o via npm:
 
 ```bash
 npm install bulma
 ```
 
-Depois de instalar o Bulma, você pode importá-lo em um arquivo `.css`
-no arquivo `nuxt.config.js`. Veja o exemplo a seguir:
+Depois, importe-o no arquivo `nuxt.config.js` para que esteja disponível
+em toda a aplicação:
 
 ```javascript
 css: [
@@ -243,25 +398,27 @@ css: [
 ],
 ```
 
-Uma vez instalado, o Bulma estará disponível em toda a aplicação Nuxt.js,
-permitindo que você use seus estilos e componentes em qualquer lugar.
+A partir daí, você pode usar as classes do Bulma diretamente nos seus
+componentes. Por exemplo, para criar um botão estilizado, basta usar
+`<button class="button is-primary">Salvar</button>` em vez do botão
+simples. Não é preciso escrever uma linha de CSS personalizado.
 
 ### Font Awesome 🎨
 
-Font Awesome é uma biblioteca com uma ampla variedade de ícones vetoriais
-gratuitos que podem ser usados em aplicações Web. Os ícones do Font Awesome
-são escaláveis e fáceis de usar, tornando-os uma escolha popular para adicionar
-ícones a interfaces de usuário.
+Ícones são essenciais para uma boa experiência de usuário: eles tornam a
+interface mais intuitiva e visualmente agradável. Em vez de criar ou
+encontrar ícones individuais (e se preocupar com tamanho, cor, formato),
+podemos usar uma biblioteca pronta de ícones vetoriais. O **Font Awesome**
+é a mais popular delas e oferece milhares de ícones gratuitos que se
+adaptam a qualquer tamanho sem perder qualidade (pois são vetoriais).
 
-Para usar o Font Awesome em uma aplicação Nuxt.js, você pode adicionar o Font
-Awesome ao projeto via npm. Por exemplo:
+Para usar o Font Awesome em uma aplicação Nuxt.js, instale-o via npm:
 
 ```bash
 npm install @fortawesome/fontawesome-free
 ```
 
-Logo, você pode importá-lo em um arquivo `.css` no arquivo `nuxt.config.js`
-para usar os ícones do Font Awesome em toda a aplicação Nuxt.js. Veja o exemplo:
+Em seguida, importe-o no arquivo `nuxt.config.js`:
 
 ```javascript
 css: [
@@ -269,16 +426,31 @@ css: [
 ],
 ```
 
-Uma vez instalado, o Font Awesome estará disponível em toda a aplicação Nuxt.js,
-permitindo que você use seus ícones em qualquer lugar.
+Pronto! Agora, para usar um ícone, basta inserir um `<i>` com a classe
+correspondente. Por exemplo, `<i class="fas fa-book"></i>` exibe um ícone
+de livro. Você pode consultar todos os ícones disponíveis em
+[fontawesome.com/icons](https://fontawesome.com/icons).
 
-Um exemplo completo de uma aplicação Nuxt.js com Bulma e Font Awesome pode ser
-visto no repositório:
+### Exemplo Completo 📦
+
+Para ver uma aplicação Nuxt.js completa integrando tudo o que vimos
+(componentes, Bulma e Font Awesome), clone o repositório de exemplo:
 
 ```bash
 git clone -b dev https://github.com/rodrigoprestesmachado/cpw2
 cd cpw2/exemplos/vue/nuxt/books
 ```
+
+Depois, dentro do diretório do projeto, execute:
+
+```bash
+npm install
+npm run dev
+```
+
+Explore o código e tente fazer pequenas modificações: alterar cores,
+adicionar campos no formulário, criar novas páginas. A melhor forma de
+aprender Vue.js é praticando.
 
 ## Referências 📚
 
@@ -286,6 +458,12 @@ cd cpw2/exemplos/vue/nuxt/books
 <!-- .element: style="margin-bottom:40px; font-size: 25px; color:white; font-family: arial;" -->
 
 * [Vue.js](https://vuejs.org) - The Progressive JavaScript Framework
+<!-- .element: style="margin-bottom:40px; font-size: 25px; color:white; font-family: arial;" -->
+
+* [Nuxt.js](https://nuxt.com) - The Intuitive Vue Framework
+<!-- .element: style="margin-bottom:40px; font-size: 25px; color:white; font-family: arial;" -->
+
+* [Bulma](https://bulma.io) - Modern CSS framework based on Flexbox
 <!-- .element: style="margin-bottom:40px; font-size: 25px; color:white; font-family: arial;" -->
 
 <center>
