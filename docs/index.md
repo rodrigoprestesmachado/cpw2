@@ -4,7 +4,7 @@ title: Home
 nav_order: 1
 ---
 
-# Construção de Páginas Web II (2026/1)
+# Construção de Páginas Web II
 
 [![Static Badge](https://img.shields.io/badge/Discord%20-%20%23cpw2%20-%20%237792C8)](https://discord.gg/4meCsgkgpp)
 
