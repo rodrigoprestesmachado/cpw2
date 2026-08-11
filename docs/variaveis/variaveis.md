@@ -14,79 +14,89 @@ nav_order: 12
     </iframe>
 </center>
 
-Em JavaScript, as variáveis são elementos fundamentais para armazenar e
-manipular dados dentro de um programa. Elas servem como contêineres nomeados
-para armazenar valores, como números, _strings_, objetos e muito mais. As
-variáveis fornecem flexibilidade e dinamismo ao código, permitindo que os
-desenvolvedores aloquem memória e atribuam valores a nomes específicos.
-
-### Declaração de Variáveis
-
-Em JavaScript, as variáveis podem ser declaradas usando as palavras-chave
-`var`, `let` ou `const`.
-
-- `var`: Constitui a forma tradicional de declarar variáveis em JavaScript, mas
-foi suplantada pelo `let` e `const`. Variáveis declaradas com `var` têm escopo
-de função ou escopo global, o que pode levar a comportamentos inesperados.
-
-- `let`: Introduzido no ECMAScript 6 (ES6), o `let` permite que as variáveis
-tenham escopo de bloco, o que significa que elas só são acessíveis dentro do
-bloco em que são declaradas.
-
-- `const`: Também introduzido no ES6, o `const` declara uma variável com um
-valor constante, que não pode ser reatribuído. No entanto, para objetos e
-arrays, o `const` não impede a modificação de suas propriedades ou elementos.
-
-### Exemplos de Uso
+Uma variável é um nome que guarda um valor no programa. Em vez de repetir o
+mesmo número ou texto em vários lugares, você dá um nome a esse valor e o
+reutiliza.
 
 ```javascript
-// Declarando variáveis usando var
-var idade = 30;
-
-// Declarando variáveis usando let
-let nome = "João";
-
-// Declarando constantes usando const
-const PI = 3.14159;
+let idade = 20;
+idade = 21; // reatribuir: o nome idade passa a guardar 21
 ```
 
-Uma curiosidade sobre variáveis em JavaScript é que a palavra-chave `var` tem um
- comportamento peculiar em relação ao escopo. Ao contrário de `let` e `const`,
- que têm escopo de bloco, as variáveis declaradas com `var` têm escopo de função
-  ou escopo global, o que pode levar a alguns comportamentos inesperados.
+Declarar cria o nome. Atribuir coloca (ou troca) o valor. Se você declara sem
+atribuir, o valor fica `undefined`:
 
-Por exemplo, ao declarar uma variável com `var` dentro de um bloco condicional
-(`if`, `for`, `while`, etc.), a variável é visível em todo o escopo da função
-mais próxima, em vez de estar restrita ao bloco em que foi declarada. Isso pode
-causar confusão e _bugs_ difíceis de rastrear, especialmente em programas
-grandes e complexos.
+```javascript
+let cidade;
+console.log(cidade); // undefined
+cidade = "Porto Alegre";
+```
+
+### Regras de nome
+
+JavaScript é *case-sensitive*: `idade` e `Idade` são variáveis diferentes. O
+nome precisa começar com uma letra ou com `_` (underscore). Prefira nomes
+descritivos, como `totalItens` em vez de `x`.
+
+### let
+
+Use `let` quando o valor puder mudar. Variáveis com `let` têm escopo de bloco:
+só existem dentro das chaves `{ }` em que foram declaradas (por exemplo, um
+`if` ou um `for`).
+
+```javascript
+if (true) {
+  let x = 10;
+  console.log(x); // 10
+}
+// console.log(x); // erro: x não existe fora do bloco
+```
+
+### const
+
+Use `const` quando o nome não deve apontar para outro valor. Com `const` você
+precisa atribuir na declaração, e não pode reatribuir:
+
+```javascript
+const PI = 3.14159;
+// PI = 3; // erro: não é permitido reatribuir
+```
+
+`const` também tem escopo de bloco, como `let`. Atenção: em objetos e arrays,
+`const` impede trocar a referência, mas **não** impede mudar propriedades ou
+elementos:
+
+```javascript
+const pessoa = { nome: "Ana" };
+pessoa.nome = "Bia"; // permitido
+// pessoa = {}; // erro: reatribuir a variável não é permitido
+```
+
+### var (legado)
+
+`var` é a forma antiga de declarar variáveis. Evite em código novo. Diferente
+de `let` e `const`, `var` **não** respeita escopo de bloco: a variável “vaza”
+para a função (ou para o escopo global):
 
 ```javascript
 function exemplo() {
   if (true) {
     var x = 10;
   }
-  // Isso vai imprimir 10, mesmo que x tenha sido declarado dentro do bloco if
-  console.log(x);
+  console.log(x); // 10 (x ainda existe fora do if)
 }
 exemplo();
 ```
 
-Essa peculiaridade do `var` levou muitos desenvolvedores a preferir o uso de
-`let` e `const`, que têm um escopo mais previsível e geralmente são mais seguros
- de usar. No entanto, é importante estar ciente desse comportamento do `var` ao
- trabalhar com código legado ou ao encontrar exemplos mais antigos de JavaScript.
+Você ainda encontra `var` em código legado e em exemplos antigos. Na prática
+moderna, prefira `const` e `let`.
 
-### Boas Práticas
+### Boas práticas
 
-- Escolha nomes descritivos para suas variáveis que reflitam seu propósito e
-conteúdo.
-- Prefira `let` e `const` em vez de `var`, pois eles oferecem um escopo mais
-previsível.
-- Use `const` para valores que não devem ser modificados e `let` para valores
-que precisam ser reatribuídos.
-- Evite poluir o escopo global com muitas variáveis, pois isso pode levar a
-conflitos e bugs difíceis de depurar.
+- Prefira `const` por padrão.
+- Use `let` somente quando precisar reatribuir.
+- Evite `var`.
+- Escolha nomes claros e evite poluir o escopo global com muitas variáveis.
 
 ## Exercícios do Freecodecamp
 
