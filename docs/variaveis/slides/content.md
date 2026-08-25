@@ -11,90 +11,170 @@ Pressione 'F' para tela cheia
 
 <!-- .slide: data-background="#4AA791" data-transition="convex"  -->
 ## O que é uma variável? 🗃️
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 * Um nome que guarda um valor no programa
-<!-- .element: style="margin-bottom:40px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
 
-* Declarar cria o nome; atribuir coloca (ou troca) o valor
-<!-- .element: style="margin-bottom:40px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
+* Em vez de repetir o mesmo número ou texto, você dá um nome e reutiliza
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
 
 ```js
 let idade = 20;
-idade = 21;
+idade = 21; // o nome idade passa a guardar 21
 ```
-<!-- .element: style="margin-bottom:40px; font-size: 18px; font-family: arial; color:black; background-color: #F2FAF3;" -->
+<!-- .element: style="margin-bottom:30px; font-size: 18px; font-family: arial; color:black; background-color: #F2FAF3;" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+## Declarar e atribuir
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+* Declarar cria o nome
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
+
+* Atribuir coloca (ou troca) o valor
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
+
+* Sem atribuir, o valor fica `undefined`
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
+
+```js
+let cidade;
+console.log(cidade); // undefined
+cidade = "Porto Alegre";
+```
+<!-- .element: style="margin-bottom:30px; font-size: 18px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
 <!-- .slide: data-background="#4AA791" data-transition="convex"  -->
 ## Regras de nome
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
-* JS é *case-sensitive* (`idade` e `Idade` são variáveis diferentes)
-<!-- .element: style="margin-bottom:60px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
+* JavaScript é *case-sensitive*: `idade` e `Idade` são diferentes
+<!-- .element: style="margin-bottom:50px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
 
-* O nome precisa começar com uma letra ou com `_`
-<!-- .element: style="margin-bottom:60px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
+* O nome precisa começar com uma letra ou com `_` (underscore)
+<!-- .element: style="margin-bottom:50px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
 
-* Prefira nomes descritivos (`totalItens` em vez de `x`)
-<!-- .element: style="margin-bottom:60px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
+* Prefira nomes descritivos: `totalItens` em vez de `x`
+<!-- .element: style="margin-bottom:50px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
 
 
 <!-- .slide: data-background="#4AA791" data-transition="concave"  -->
 ## let
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
-A partir do [ECMAScript 2015 (ES6)](https://www.w3schools.com/js/js_es6.asp), variáveis com `let` respeitam o escopo de bloco e podem ser reatribuídas
-<!-- .element: style="margin-bottom:50px; font-size: 25px; font-family: arial; color:#F5F5F5" -->
+* Use `let` quando o valor puder mudar
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
 
-<iframe width="100%" height="300" src="//jsfiddle.net/prestesmachado/ywbjf7gm/9/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+* Escopo de bloco: só existe dentro das chaves `{ }` em que foi declarada
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
+
+```js
+if (true) {
+  let x = 10;
+  console.log(x); // 10
+}
+// console.log(x); // erro: x não existe fora do bloco
+```
+<!-- .element: style="margin-bottom:30px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="concave"  -->
+## let na prática
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+Demo: escopo de bloco com `let` ([ES6](https://www.w3schools.com/js/js_es6.asp))
+<!-- .element: style="margin-bottom:30px; font-size: 24px; font-family: arial; color:#F5F5F5" -->
+
+<iframe width="100%" height="320" src="//jsfiddle.net/prestesmachado/ywbjf7gm/9/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
 
 <!-- .slide: data-background="#4AA791" data-transition="concave"  -->
 ## const
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
-* Também tem escopo de bloco; precisa receber valor na declaração e não pode ser reatribuída
-<!-- .element: style="margin-bottom:40px; font-size: 24px; font-family: arial; color:#F5F5F5" -->
+* Use `const` quando o nome não deve apontar para outro valor
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
+
+* Precisa atribuir na declaração e não pode reatribuir
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
+
+* Também tem escopo de bloco, como `let`
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
 
 ```js
-const PI = 3.141592653589793;
-// PI = 3; // erro
+const PI = 3.14159;
+// PI = 3; // erro: não é permitido reatribuir
 ```
 <!-- .element: style="margin-bottom:30px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
-* Em objetos e arrays, propriedades e elementos ainda podem mudar
-<!-- .element: style="margin-bottom:30px; font-size: 24px; font-family: arial; color:#F5F5F5" -->
+
+<!-- .slide: data-background="#4AA791" data-transition="concave"  -->
+## const e objetos
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+* `const` impede trocar a referência
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
+
+* Não impede mudar propriedades ou elementos de objetos e arrays
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
 
 ```js
 const pessoa = { nome: "Ana" };
 pessoa.nome = "Bia"; // permitido
+// pessoa = {}; // erro: reatribuir não é permitido
 ```
 <!-- .element: style="margin-bottom:30px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
 <!-- .slide: data-background="#4AA791" data-transition="concave"  -->
 ## var (legado)
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
-Evite em código novo: `var` não respeita escopo de bloco e “vaza” para a função
-<!-- .element: style="margin-bottom:50px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
+* Forma antiga: evite em código novo
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
 
-<iframe width="100%" height="300" src="//jsfiddle.net/prestesmachado/z9egunav/28/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
+* Não respeita escopo de bloco: “vaza” para a função (ou para o global)
+<!-- .element: style="margin-bottom:30px; font-size: 26px; font-family: arial; color:#F5F5F5" -->
+
+```js
+function exemplo() {
+  if (true) {
+    var x = 10;
+  }
+  console.log(x); // 10 (ainda existe fora do if)
+}
+```
+<!-- .element: style="margin-bottom:30px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="concave"  -->
+## var na prática
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+Demo: `var` sem escopo de bloco
+<!-- .element: style="margin-bottom:30px; font-size: 24px; font-family: arial; color:#F5F5F5" -->
+
+<iframe width="100%" height="320" src="//jsfiddle.net/prestesmachado/z9egunav/28/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 
 
 <!-- .slide: data-background="#4AA791" data-transition="convex"  -->
 ## Boas práticas
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 * Prefira `const` por padrão
-<!-- .element: style="margin-bottom:50px; font-size: 30px; font-family: arial; color:#F5F5F5" -->
+<!-- .element: style="margin-bottom:40px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
 
 * Use `let` somente quando precisar reatribuir
-<!-- .element: style="margin-bottom:50px; font-size: 30px; font-family: arial; color:#F5F5F5" -->
+<!-- .element: style="margin-bottom:40px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
 
-* Evite `var` e não polua o escopo global
-<!-- .element: style="margin-bottom:50px; font-size: 30px; font-family: arial; color:#F5F5F5" -->
+* Evite `var`
+<!-- .element: style="margin-bottom:40px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
+
+* Nomes claros; evite poluir o escopo global
+<!-- .element: style="margin-bottom:40px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
 
 
 <!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->

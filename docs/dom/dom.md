@@ -15,108 +15,95 @@ nav_order: 31
 </center>
 
 O Document Object Model (DOM) é uma interface de programação que representa a
-estrutura de um documento HTML ou XML como uma árvore de objetos. Essa estrutura
-hierárquica permite que os programas acessem e manipulem dinamicamente o
-conteúdo, a estrutura e o estilo de uma página Web ou de um documento XML.
-{: .fs-3 }
+estrutura de um documento HTML ou XML como uma árvore de objetos. Cada
+elemento, atributo e texto do documento vira um nó dessa árvore, e é isso que
+permite que o JavaScript acesse e modifique o conteúdo, a estrutura e o
+estilo de uma página dinamicamente.
 
----
-**Nota:** XML, ou _Extensible Markup Language_ (Linguagem de Marcação Extensível),
-trata-se de uma linguagem de marcação utilizada para representar dados de forma
-estruturada. O XML é projetado para ser autoexplicativa e flexível, permitindo
-a definição de diferentes tipos de documentos e dados.
-{: .fs-3 }
+**Nota:** XML, ou _Extensible Markup Language_ (Linguagem de Marcação
+Extensível), é uma linguagem de marcação usada para representar dados de
+forma estruturada. Ela foi projetada para ser autoexplicativa e flexível,
+permitindo a definição de diferentes tipos de documentos e dados.
 
---
+Para visualizar melhor, veja como o HTML abaixo é convertido em uma árvore de
+nós:
 
-Em termos simples, o DOM converte a estrutura do documento em um conjunto de
-objetos que os programas podem interagir. Cada elemento, atributo e texto no
-documento é representado por um nó na árvore DOM, o que facilita a
-manipulação desses elementos por meio de JavaScript.
-{: .fs-3 }
+```html
+<html>
+  <body>
+    <h1>Título</h1>
+    <p>Um parágrafo.</p>
+  </body>
+</html>
+```
 
-Principais características e funcionalidades do DOM incluem:
-{: .fs-3 }
+```text
+html
+└── body
+    ├── h1  ("Título")
+    └── p   ("Um parágrafo.")
+```
 
-1. **Representação Hierárquica:** Os elementos HTML/XML são organizados em uma
-estrutura de árvore, onde cada elemento é representado por um nó.
-{: .fs-3 }
+O elemento `<html>` é a raiz da árvore. Ele tem um único filho, `<body>`, que
+por sua vez tem dois filhos: `<h1>` e `<p>`. O texto dentro de cada tag
+também é representado como um nó (um "text node").
 
-2. **Acesso aos Elementos:** O DOM permite que os programas acessem elementos
-individuais do documento, seja pelo seu ID, classe, tipo ou outros atributos.
-{: .fs-3 }
+Com essa estrutura em mente, o DOM oferece um conjunto de funcionalidades
+para trabalhar com o documento:
 
-3. **Manipulação Dinâmica:** É possível adicionar, remover e modificar elementos
-e conteúdo da página usando métodos do DOM.
-{: .fs-3 }
+1. **Representação hierárquica:** os elementos HTML/XML são organizados em
+uma árvore, onde cada elemento é um nó.
 
-4. **Manipulação de Estilo:** O DOM também permite modificar o estilo dos
-elementos, alterando propriedades como cor, tamanho, posicionamento, etc.
-{: .fs-3 }
+2. **Acesso aos elementos:** é possível localizar elementos pelo ID, pela
+classe, pela tag ou por outros atributos.
 
-5. **Eventos e Interação:** O DOM suporta a vinculação de eventos a elementos,
-como cliques, _mouseovers_, teclas pressionadas, entre outros, permitindo
-interações dinâmicas com a página.
-{: .fs-3 }
+3. **Manipulação dinâmica:** é possível adicionar, remover e modificar
+elementos e conteúdo da página usando métodos do DOM.
 
-Assim, o DOM é uma representação programática da estrutura de um documento
-HTML/XML, permitindo que os desenvolvedores manipulem e interajam dinamicamente
-com os elementos da página Web ou do documento XML.
-{: .fs-3 }
+4. **Manipulação de estilo:** também é possível alterar o estilo dos
+elementos, como cor, tamanho e posicionamento.
+
+5. **Eventos e interação:** o DOM permite vincular eventos a elementos, como
+cliques, passar o mouse ou pressionar teclas, tornando a página interativa.
+
+Nas próximas seções, vamos ver na prática como selecionar elementos e como
+manipular a estrutura e o estilo de uma página usando essas funcionalidades.
 
 ## Métodos de seleção
 
-Os métodos de seleção de elementos do DOM permitem que os desenvolvedores
-selecionem elementos específicos de um documento HTML com base em diferentes
-critérios, como ID, classe, tag, etc. Alguns dos métodos de seleção mais
-comuns incluem:
-{: .fs-3 }
+Antes de manipular um elemento, é preciso selecioná-lo. O DOM oferece
+diferentes métodos para isso:
 
 1. **[getElementById()](https://www.w3schools.com/jsref/met_document_getelementbyid.asp):**
-Seleciona um elemento pelo seu ID único.
-{: .fs-3 }
+seleciona um elemento pelo seu ID único.
 
 2. **[getElementsByClassName()](https://www.w3schools.com/jsref/met_document_getelementsbyclassname.asp):**
-Seleciona elementos por sua classe.
-{: .fs-3 }
+seleciona todos os elementos que possuem determinada classe.
 
 3. **[getElementsByTagName()](https://www.w3schools.com/jsref/met_document_getelementsbytagname.asp):**
-Seleciona elementos por sua tag.
-{: .fs-3 }
+seleciona todos os elementos de uma determinada tag.
 
 4. **[querySelector()](https://www.w3schools.com/jsref/met_document_queryselector.asp):**
-Seleciona o primeiro elemento que corresponde a um seletor CSS.
-{: .fs-3 }
+seleciona o primeiro elemento que corresponde a um seletor CSS.
 
-Sobre o método `querySelector()`, ele permite selecionar elementos com base em
-qualquer seletor CSS, como ID, classe, tag, atributo, etc. Por exemplo, para
-selecionar um elemento com um ID específico, você pode usar o seletor `#id`,
-enquanto para selecionar um elemento com uma classe específica, você pode usar
-o seletor `.classe`. Observe alguns exemplos:
-{: .fs-3 }
+O método `querySelector()` é o mais flexível, pois aceita qualquer seletor
+CSS: ID, classe, tag, atributo, entre outros. Veja alguns exemplos:
 
 ```javascript
-// Seleciona o elemento com o ID "titulo"
+// por ID (usa #)
 var titulo = document.querySelector("#titulo");
 
-// Seleciona o primeiro elemento com a classe "paragrafo"
+// por classe (usa .)
 var paragrafo = document.querySelector(".paragrafo");
 
-// Seleciona o primeiro elemento <p> dentro de um elemento com a classe "conteudo"
-var paragrafo = document.querySelector(".conteudo p");
-
-// Seleciona o primeiro elemento com o atributo "data-id" igual a "123"
+// por atributo
 var elemento = document.querySelector("[data-id='123']");
 ```
-{: .fs-3 }
 
-## Manipulação da Estrutura do HTML
+## Manipulação da estrutura do HTML
 
-Abaixo estão alguns exemplos de como manipular a estrutura de um documento HTML
-usando JavaScript e o DOM.
-{: .fs-3 }
-
-### Adicionar Elemento ao Documento HTML:
+Depois de selecionar um elemento, podemos criar, remover ou atualizar
+conteúdo. O HTML abaixo será usado como base para os três exemplos a seguir:
 
 ```html
 <!DOCTYPE html>
@@ -126,99 +113,54 @@ usando JavaScript e o DOM.
 </head>
 <body>
     <h1 id="titulo">Manipulação do DOM</h1>
+    <p id="paragrafo">Este é um parágrafo de exemplo.</p>
+
     <button onclick="adicionarParagrafo()">Adicionar Parágrafo</button>
-
-    <script>
-        function adicionarParagrafo() {
-            // Cria um novo elemento <p>
-            var novoParagrafo = document.createElement("p");
-
-            // Adiciona texto ao parágrafo
-            novoParagrafo.textContent = "Este é um novo parágrafo adicionado dinamicamente.";
-
-            // Adiciona o parágrafo ao final do corpo da página
-            document.body.appendChild(novoParagrafo);
-        }
-    </script>
-</body>
-</html>
-```
-{: .fs-3 }
-
-Neste exemplo, quando o botão "Adicionar Parágrafo" é clicado, um novo parágrafo
-é adicionado ao final do corpo da página.
-{: .fs-3 }
-
-### Remover Elemento do Documento HTML:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Manipulação do DOM</title>
-</head>
-<body>
-    <h1 id="titulo">Manipulação do DOM</h1>
     <button onclick="removerParagrafo()">Remover Parágrafo</button>
-    <p id="paragrafo">Este é um parágrafo que pode ser removido.</p>
-
-    <script>
-        function removerParagrafo() {
-            // Seleciona o parágrafo a ser removido pelo seu ID
-            var paragrafo = document.getElementById("paragrafo");
-
-            // Remove o parágrafo do documento
-            paragrafo.remove();
-        }
-    </script>
-</body>
-</html>
-```
-{: .fs-3 }
-
-Neste exemplo, quando o botão "Remover Parágrafo" é clicado, o parágrafo com o
-ID "paragrafo" é removido do documento. O método
-`[remove()]`(https://www.w3schools.com/jsref/met_element_remove.asp) elimina
-um elemento (ou nó) do documento.
-{: .fs-3 }
-
-### Atualizar Conteúdo de um Elemento do Documento HTML:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Manipulação do DOM</title>
-</head>
-<body>
-    <h1 id="titulo">Manipulação do DOM</h1>
     <button onclick="atualizarTitulo()">Atualizar Título</button>
 
     <script>
-        function atualizarTitulo() {
-            // Seleciona o elemento do título pelo seu ID
-            var titulo = document.getElementById("titulo");
+        function adicionarParagrafo() {
+            // cria um novo elemento <p>
+            var novoParagrafo = document.createElement("p");
+            novoParagrafo.textContent = "Novo parágrafo adicionado dinamicamente.";
 
-            // Atualiza o texto do título
+            // adiciona o parágrafo ao final do corpo da página
+            document.body.appendChild(novoParagrafo);
+        }
+
+        function removerParagrafo() {
+            var paragrafo = document.getElementById("paragrafo");
+            paragrafo.remove();
+        }
+
+        function atualizarTitulo() {
+            var titulo = document.getElementById("titulo");
             titulo.textContent = "Novo Título Atualizado";
         }
     </script>
 </body>
 </html>
 ```
-{: .fs-3 }
 
-Neste exemplo, quando o botão "Atualizar Título" é clicado, o texto do elemento 
-de título é atualizado dinamicamente para "Novo Título Atualizado".
-{: .fs-3 }
+Cada função ilustra uma operação diferente sobre o mesmo documento:
 
-## Manipulação do Estilo do HTML
+* `adicionarParagrafo()` cria um novo elemento com
+[createElement()](https://www.w3schools.com/jsref/met_document_createelement.asp)
+e o insere no final do `<body>` com
+[appendChild()](https://www.w3schools.com/jsref/met_node_appendchild.asp).
 
-Abaixo estão alguns exemplos de como manipular o estilo de um documento HTML
-usando JavaScript e o DOM.
-{: .fs-3 }
+* `removerParagrafo()` localiza o parágrafo pelo ID e o remove do documento
+com [remove()](https://www.w3schools.com/jsref/met_element_remove.asp).
 
-### Alterar Cor de Fundo de um Elemento:
+* `atualizarTitulo()` localiza o título pelo ID e substitui seu texto usando
+a propriedade `textContent`.
+
+## Manipulação do estilo do HTML
+
+Além do conteúdo, o DOM também permite alterar o estilo visual de um
+elemento por meio da propriedade `style`. O exemplo a seguir mostra como
+mudar a cor de fundo e o tamanho da fonte de um mesmo elemento:
 
 ```html
 <!DOCTYPE html>
@@ -226,75 +168,41 @@ usando JavaScript e o DOM.
 <head>
     <title>Alteração de Estilo</title>
     <style>
-        /* Estilo inicial do elemento */
         .elemento {
             width: 200px;
             height: 100px;
             background-color: yellow;
             border: 1px solid black;
+            font-size: 16px;
         }
     </style>
 </head>
 <body>
     <div class="elemento">Elemento com estilo inicial</div>
+
     <button onclick="alterarCorFundo()">Alterar Cor de Fundo</button>
-
-    <script>
-        function alterarCorFundo() {
-            // Seleciona o elemento pelo seletor de classe
-            var elemento = document.querySelector(".elemento");
-
-            // Altera a cor de fundo do elemento
-            elemento.style.backgroundColor = "blue";
-        }
-    </script>
-</body>
-</html>
-```
-{: .fs-3 }
-
-Neste exemplo, quando o botão "Alterar Cor de Fundo" é clicado, a cor de fundo
-do elemento com a classe "elemento" é alterada para azul. Note que o estilo
-de um elemento pode ser acessado e modificado por meio do atributo
-`[style](https://www.w3schools.com/TAGS/att_style.asp)`.
-{: .fs-3 }
-
-### Alterar Tamanho de Fonte de um Elemento:
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Alteração de Estilo</title>
-    <style>
-        /* Estilo inicial do elemento */
-        .elemento {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-    </style>
-</head>
-<body>
-    <div class="elemento">Texto com estilo inicial</div>
     <button onclick="alterarTamanhoFonte()">Alterar Tamanho da Fonte</button>
 
     <script>
-        function alterarTamanhoFonte() {
-            // Seleciona o elemento pelo seletor de classe
+        function alterarCorFundo() {
             var elemento = document.querySelector(".elemento");
+            elemento.style.backgroundColor = "blue";
+        }
 
-            // Altera o tamanho da fonte do elemento
-            elemento.style.fontSize = "20px";
+        function alterarTamanhoFonte() {
+            var elemento = document.querySelector(".elemento");
+            elemento.style.fontSize = "24px";
         }
     </script>
 </body>
 </html>
 ```
-{: .fs-3 }
 
-Neste exemplo, quando o botão "Alterar Tamanho da Fonte" é clicado, o tamanho da
-fonte do elemento com a classe "elemento" é alterado para 20px.
-{: .fs-3 }
+Ao clicar em "Alterar Cor de Fundo", a cor do elemento muda para azul. Ao
+clicar em "Alterar Tamanho da Fonte", o texto passa a ser exibido em 24px.
+Note que o estilo é acessado e modificado por meio do atributo
+[style](https://www.w3schools.com/TAGS/att_style.asp), da mesma forma como
+fizemos com o conteúdo na seção anterior.
 
 ## Referências
 
@@ -305,3 +213,4 @@ fonte do elemento com a classe "elemento" é alterado para 20px.
 <center>
 <a href="https://rpmhub.dev" target="blanck"><img src="../imgs/logo.png" alt="Rodrigo Prestes Machado" width="3%" height="3%" border=0 style="border:0; text-decoration:none; outline:none"></a><br/>
 <a rel="license" href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0 DEED</a>
+</center>

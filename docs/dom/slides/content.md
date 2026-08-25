@@ -13,25 +13,25 @@ Pressione 'F' para tela cheia
 # Document Object Model
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* O Document Object Model (DOM) é um padrão W3C (World Wide Web Consortium)
+* O Document Object Model (DOM) é um padrão do W3C (World Wide Web Consortium)
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* O DOM define um padrão para o acesso a documentos como HTML e XML
+* Ele define como programas podem acessar e atualizar documentos como HTML e XML
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* O DOM é uma especificação livre de linguagem. Permite que programas acessem e atualizem dinamicamente o conteúdo, estrutura e estilo de um documento
+* É uma especificação livre de linguagem: permite atualizar dinamicamente conteúdo, estrutura e estilo de um documento
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* O DOM é separado em 3 partes distintas / níveis:
+* O DOM é dividido em 3 partes (níveis):
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * Core - modelo padrão para qualquer documento estruturado
+  * Core: modelo padrão para qualquer documento estruturado
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * XML DOM - modelo padrão para documentos XML
+  * XML DOM: modelo padrão para documentos XML
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * HTML DOM - modelo padrão para documentos HTML
+  * HTML DOM: modelo padrão para documentos HTML
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
@@ -48,13 +48,13 @@ Pressione 'F' para tela cheia
   * Uma interface de programação padrão para HTML
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * Plataforma independente de linguagem
+  * Uma plataforma independente de linguagem
   <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* O HTML DOM define os objetos e as propriedades de todos os elementos HTML, e os métodos (interface) para acessá-los.
+* Ele define os objetos e as propriedades de todos os elementos HTML, além dos métodos (interface) para acessá-los
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* Em outras palavras: O HTML DOM é uma norma para saber como obter, alterar, adicionar ou excluir elementos HTML
+* Em outras palavras: o HTML DOM é uma norma para saber como obter, alterar, adicionar ou excluir elementos HTML
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
@@ -62,26 +62,26 @@ Pressione 'F' para tela cheia
 # HTML DOM Nodes
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* No DOM, tudo em um documento HTML é um node
+* No DOM, tudo em um documento HTML é um node (nó)
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 * A especificação do DOM define:
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * Todo o documento é um node
+  * O documento inteiro é um node
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
   * Cada elemento HTML é um node
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
-  * O texto nos elementos HTML são text nodes
+  * O texto dentro dos elementos HTML forma text nodes (nós de texto)
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
-  * Cada atributo é um attribute node
+  * Cada atributo é um attribute node (nó de atributo)
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
-  * Comentários em HTML são nodes
+  * Comentários em HTML também são nodes
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
 <!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
-# Node Exemplo
+# Node: Exemplo
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
 ```html
@@ -99,10 +99,10 @@ Pressione 'F' para tela cheia
 
 
 <!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
-# Node Exemplo
+# Node: Exemplo
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* A raiz do documento no HTML é `<html>`. Todos os outros nós do documento estão contidos dentro de `<html>`.
+* A raiz do documento HTML é `<html>`. Todos os outros nós ficam dentro dele
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 * O node `<html>` tem dois filhos: `<head>` e `<body>`
@@ -111,7 +111,7 @@ Pressione 'F' para tela cheia
 * O node `<head>` contém apenas um filho: `<title>`
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* Enquanto o `<body>` contém: `<h1>` e `<p>`
+* Já o `<body>` contém dois filhos: `<h1>` e `<p>`
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
@@ -119,16 +119,13 @@ Pressione 'F' para tela cheia
 # Text Nodes
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* O texto sempre é armazenado em text nodes (nós de texto)
+* O texto de um elemento sempre é armazenado em um text node (nó de texto), separado do próprio elemento
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* No trecho de código: `<title>` DOM Tutorial `</title>`
+* No trecho `<title>DOM Tutorial</title>`, o node `<title>` possui um text node filho com o valor "DOM Tutorial"
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* O node `<title>`, possui um text node com o valor "DOM Tutorial"
-<!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
-
-* Atenção: “DOM Tutorial” não é o valor de `<title>`
+* Atenção: "DOM Tutorial" não é o valor de `<title>`, e sim o valor do text node contido nele
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
@@ -145,13 +142,13 @@ Pressione 'F' para tela cheia
 # HTML Node Tree
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* Um documento em HTML possui uma estrutura no formato de uma árvore. Esta estrutura é chamada de node-tree
+* Um documento HTML tem uma estrutura em formato de árvore, chamada de node-tree (árvore de nós)
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* Assim, todos os nós podem ser acessados através da árvore
+* Todos os nós podem ser acessados percorrendo essa árvore
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* Consequentemente, seu conteúdo pode ser modificado ou excluído, e novos elementos podem ser criados
+* Por isso, seu conteúdo pode ser modificado, excluído, e novos elementos podem ser criados dinamicamente
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
@@ -159,13 +156,13 @@ Pressione 'F' para tela cheia
 # Parents, Children e Siblings
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* Os nós na árvore possuem uma relação hierárquica
+* Os nós na árvore possuem uma relação hierárquica entre si
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* Os termos parent (pai), child (filho) e sibling (irmão) são usados para descrever as relações
+* Os termos parent (pai), child (filho) e sibling (irmão) descrevem essas relações
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* Desta forma os nós pais possuem filhos. Bem como nós no mesmo nível são chamados de irmãos
+* Um nó pai possui filhos, e nós que compartilham o mesmo pai são chamados de irmãos
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
@@ -180,7 +177,7 @@ Pressione 'F' para tela cheia
 # HTML Node Tree
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* Numa árvore, o nó superior é chamado de root (raiz)
+* Numa árvore, o nó do topo é chamado de root (raiz)
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 * Cada nó, exceto a raiz, possui exatamente um pai
@@ -189,7 +186,7 @@ Pressione 'F' para tela cheia
 * Um nó pode ter vários filhos
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* Irmãos são nós com o mesmo pai
+* Irmãos (siblings) são nós que possuem o mesmo pai
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 * Uma folha é um nó sem filhos
@@ -200,13 +197,13 @@ Pressione 'F' para tela cheia
 # Interface de Programação
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* A interface de programação do DOM é definida pelas propriedades e métodos
+* A interface de programação do DOM é definida por propriedades e métodos
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* As propriedades são os valores (dados) internos de um nó (nome, pai, filho, etc.)
+* Propriedades são os valores (dados) internos de um nó, como nome, pai e filhos
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* Os métodos são as ações que você pode realizar com um nó (procurar, inserir, remover, etc.)
+* Métodos são as ações que podemos realizar em um nó, como procurar, inserir e remover
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
@@ -214,25 +211,25 @@ Pressione 'F' para tela cheia
 # Exemplos de Propriedades
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* Dado que x é um nó da árvore:
+* Considerando que `x` é um nó da árvore:
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-    * x.innerHTML - o valor de texto de x
+    * `x.innerHTML`: retorna ou define o conteúdo (texto/HTML) de x
     <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-    * x.nodeName - o nome x
+    * `x.nodeName`: retorna o nome de x
     <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-    * x.nodeValue - o valor de x
+    * `x.nodeValue`: retorna o valor de x
     <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-    * x.parentNode - o nó pai de x
+    * `x.parentNode`: retorna o nó pai de x
     <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-    * x.childNodes - os nós filho de x
+    * `x.childNodes`: retorna os nós filhos de x
     <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-    * x.attributes - os atributos dos nodos x
+    * `x.attributes`: retorna os atributos de x
     <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
@@ -240,19 +237,19 @@ Pressione 'F' para tela cheia
 # Métodos
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* Dado que x é um nó da árvore:
+* Considerando que `x` é um nó da árvore:
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * x.getElementById("id") - obtém o elemento com um id específico
+  * `x.getElementById("id")`: obtém o elemento com o id especificado
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * x.getElementsByTagName("name") - obter todos os elementos de uma determinada tag
+  * `x.getElementsByTagName("name")`: obtém todos os elementos de uma determinada tag
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * x.appendChild(node) - inserir um filho para x
+  * `x.appendChild(node)`: insere um novo filho em x
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * x.removeChild(node) - remove um filho de x
+  * `x.removeChild(node)`: remove um filho de x
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
@@ -260,13 +257,13 @@ Pressione 'F' para tela cheia
 # A propriedade innerHTML
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* A maneira mais fácil de obter ou modificar o conteúdo de um elemento é usando a propriedade innerHTML
+* A forma mais simples de ler ou alterar o conteúdo de um elemento é usando a propriedade innerHTML
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* Esta propriedade não é uma parte da especificação do DOM do W3C. No entanto, é suportada por todos os principais navegadores
+* Ela não faz parte da especificação oficial do DOM do W3C, mas é suportada por todos os navegadores modernos
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-* A propriedade innerHTML é útil para a devolução ou substituição do conteúdo nos elementos HTML
+* A propriedade innerHTML é útil tanto para obter quanto para substituir o conteúdo de elementos HTML
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
@@ -293,7 +290,7 @@ Pressione 'F' para tela cheia
 # childNodes e nodeValue
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* Podemos também recuperar o valor do parágrafo por meio das propriedades childNodes e nodeValue
+* Também é possível obter o valor do parágrafo combinando as propriedades childNodes e nodeValue
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 ```html
@@ -302,8 +299,8 @@ Pressione 'F' para tela cheia
         <p id="intro">Hello World!</p>
 
         <script type="text/javascript">
-            var txt=document.getElementById("intro").childNodes[0].nodeValue;
-            document.write("<p>O texto do parágrafo é:" + txt + "</p>");
+            var txt = document.getElementById("intro").childNodes[0].nodeValue;
+            document.write("<p>O texto do parágrafo é: " + txt + "</p>");
         </script>
     </body>
 </html>
@@ -315,16 +312,16 @@ Pressione 'F' para tela cheia
 # HTML DOM Access Nodes
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* Você pode acessar um nó de três maneiras:
+* É possível acessar um nó de três formas diferentes:
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
   * Usando o método getElementById()
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * Utilizando o método getElementsByTagName()
+  * Usando o método getElementsByTagName()
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
-  * Navegando na árvore
+  * Navegando pela árvore de nós
   <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 
@@ -332,7 +329,7 @@ Pressione 'F' para tela cheia
 # O Método getElementById()
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* O método getElementById() retorna o elemento com o ID especificado
+* O método getElementById() retorna o elemento com o id especificado
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 ```html
@@ -355,7 +352,7 @@ Pressione 'F' para tela cheia
 # O Método getElementsByTagName()
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* O método getElementsByTagName() retorna todas as tags de mesmo nome (node-list)
+* O método getElementsByTagName() retorna todos os elementos com a mesma tag, em uma node-list (lista de nós)
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 ```html
@@ -365,8 +362,8 @@ Pressione 'F' para tela cheia
         <p>World!</p>
 
         <script type="text/javascript">
-            x=document.getElementsByTagName("p");
-            // Atenção: x é um node list
+            var x = document.getElementsByTagName("p");
+            // atenção: x é uma node-list, não um array comum
             document.write("Texto do segundo parágrafo: " + x[1].innerHTML);
         </script>
     </body>
@@ -379,7 +376,7 @@ Pressione 'F' para tela cheia
 # Navegando na Árvore
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
-* As propriedades; parentNode, firstChild e lastChild, permitem viagens de curta distância em um documento
+* As propriedades parentNode, firstChild e lastChild permitem navegar entre nós vizinhos de um documento
 <!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
 
 ```html
@@ -388,7 +385,7 @@ Pressione 'F' para tela cheia
         <p id="intro">Hello World!</p>
 
         <script type="text/javascript">
-            x = document.getElementById("intro");
+            var x = document.getElementById("intro");
             document.write(x.firstChild.nodeValue);
         </script>
     </body>
