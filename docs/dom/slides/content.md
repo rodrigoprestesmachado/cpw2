@@ -254,6 +254,43 @@ Pressione 'F' para tela cheia
 
 
 <!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+# Navegando por Parentesco
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
+
+* Considerando que `x` é um nó da árvore:
+<!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
+
+  * `x.parentNode`: o elemento pai de x
+  <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
+
+  * `x.children`: os elementos filhos de x
+  <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
+
+  * `x.firstElementChild`: o primeiro filho de x
+  <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
+
+  * `x.nextElementSibling`: o próximo elemento no mesmo nível de x
+  <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+# Criando e Inserindo Texto
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
+
+* Além de textContent, é possível criar um text node isolado e inseri-lo em uma posição específica da árvore
+<!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
+
+```javascript
+var novoTexto = document.createTextNode("Texto inserido antes do título.");
+var titulo = document.getElementById("titulo");
+
+// insere novoTexto antes de titulo, no mesmo pai
+titulo.parentNode.insertBefore(novoTexto, titulo);
+```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
 # A propriedade innerHTML
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
@@ -390,6 +427,51 @@ Pressione 'F' para tela cheia
         </script>
     </body>
 </html>
+```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+# Trabalhando com Classes (classList)
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
+
+* Em vez de alterar `style` propriedade por propriedade, é mais organizado usar classes CSS e alternar essas classes com classList
+<!-- .element: style="margin-bottom:50px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
+
+```javascript
+var elemento = document.querySelector(".elemento");
+
+elemento.classList.add("destaque");    // adiciona a classe
+elemento.classList.remove("destaque"); // remove a classe
+elemento.classList.toggle("destaque"); // alterna a classe
+```
+<!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+# Eventos
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
+
+* Até aqui usamos o atributo onclick direto no HTML, o que funciona mas mistura HTML e JavaScript
+<!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
+
+* O método addEventListener() permite vincular um evento a um elemento a partir do próprio JavaScript
+<!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
+
+* Isso mantém o HTML mais limpo e facilita a manutenção do código
+<!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#EDEEEC" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="zoom" color:#EDEEEC" -->
+# addEventListener()
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
+
+```javascript
+var botao = document.querySelector("#meuBotao");
+
+botao.addEventListener("click", function () {
+    console.log("O botão foi clicado!");
+});
 ```
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 

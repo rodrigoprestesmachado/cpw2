@@ -100,6 +100,24 @@ var paragrafo = document.querySelector(".paragrafo");
 var elemento = document.querySelector("[data-id='123']");
 ```
 
+## Navegação entre nós relacionados
+
+Depois de selecionar um elemento, é comum precisar acessar quem está ao seu
+redor na árvore: o pai, os filhos ou os irmãos. O DOM oferece propriedades
+para isso:
+
+```javascript
+var paragrafo = document.querySelector("#paragrafo");
+
+paragrafo.parentNode;         // o elemento pai de paragrafo
+paragrafo.children;           // os elementos filhos de paragrafo
+paragrafo.firstElementChild;  // o primeiro filho de paragrafo
+paragrafo.nextElementSibling; // o próximo elemento no mesmo nível
+```
+
+Essas propriedades evitam ter que selecionar cada elemento pelo ID: a partir
+de um único nó, é possível "caminhar" pela árvore em qualquer direção.
+
 ## Manipulação da estrutura do HTML
 
 Depois de selecionar um elemento, podemos criar, remover ou atualizar
@@ -156,6 +174,25 @@ com [remove()](https://www.w3schools.com/jsref/met_element_remove.asp).
 * `atualizarTitulo()` localiza o título pelo ID e substitui seu texto usando
 a propriedade `textContent`.
 
+### Criando e inserindo texto manualmente
+
+O exemplo anterior usou `textContent` para definir o texto de um elemento
+inteiro de uma vez. Também é possível criar um nó de texto separado com
+[createTextNode()](https://www.w3schools.com/jsref/met_document_createtextnode.asp)
+e inserir esse nó em uma posição específica com
+[insertBefore()](https://www.w3schools.com/jsref/met_node_insertbefore.asp):
+
+```javascript
+var novoTexto = document.createTextNode("Texto inserido antes do título.");
+var titulo = document.getElementById("titulo");
+
+// insere novoTexto antes do elemento titulo, no mesmo pai
+titulo.parentNode.insertBefore(novoTexto, titulo);
+```
+
+Essa abordagem é mais detalhada, mas dá mais controle sobre onde exatamente
+o novo conteúdo entra na árvore, ao invés de sempre adicionar no final.
+
 ## Manipulação do estilo do HTML
 
 Além do conteúdo, o DOM também permite alterar o estilo visual de um
@@ -203,6 +240,67 @@ clicar em "Alterar Tamanho da Fonte", o texto passa a ser exibido em 24px.
 Note que o estilo é acessado e modificado por meio do atributo
 [style](https://www.w3schools.com/TAGS/att_style.asp), da mesma forma como
 fizemos com o conteúdo na seção anterior.
+
+## Trabalhando com classes (classList)
+
+Alterar propriedades de `style` uma a uma funciona, mas em geral é mais
+organizado definir os estilos em uma classe CSS e apenas adicionar ou
+remover essa classe via JavaScript. Para isso, o DOM oferece a propriedade
+[classList](https://www.w3schools.com/jsref/prop_element_classlist.asp):
+
+```css
+.destaque {
+    background-color: yellow;
+    font-weight: bold;
+}
+```
+
+```javascript
+var elemento = document.querySelector(".elemento");
+
+elemento.classList.add("destaque");    // adiciona a classe "destaque"
+elemento.classList.remove("destaque"); // remove a classe "destaque"
+elemento.classList.toggle("destaque"); // alterna: adiciona se não tiver, remove se tiver
+```
+
+O método `toggle()` é muito usado em botões de "ativar/desativar", já que
+alterna o estado da classe a cada clique, sem precisar verificar se ela já
+está presente.
+
+## Eventos
+
+Nos exemplos anteriores, usamos o atributo `onclick` diretamente no HTML
+para simplificar. Na prática, o mais comum é usar
+[addEventListener()](https://www.w3schools.com/jsref/met_document_addeventlistener.asp)
+para vincular um evento a um elemento a partir do JavaScript, sem misturar
+HTML e código:
+
+```javascript
+var botao = document.querySelector("#meuBotao");
+
+botao.addEventListener("click", function () {
+    console.log("O botão foi clicado!");
+});
+```
+
+O mesmo padrão funciona para outros eventos, como digitar em um campo de
+texto:
+
+```javascript
+var campo = document.querySelector("#meuCampo");
+
+campo.addEventListener("input", function () {
+    console.log("Valor atual: " + campo.value);
+});
+```
+
+Separar o JavaScript do HTML dessa forma facilita a manutenção do código,
+principalmente quando há muitos elementos e eventos na página.
+
+Juntando tudo o que vimos, manipular o DOM se resume a quatro frentes:
+mudar a **estrutura** do documento (criar, mover e remover nós), mudar o
+**estilo** (via `style` ou `classList`), reagir a **eventos** do usuário e,
+por trás de tudo isso, **navegar** pela árvore para encontrar os nós certos.
 
 ## Referências
 
