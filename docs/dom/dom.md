@@ -302,6 +302,47 @@ mudar a **estrutura** do documento (criar, mover e remover nós), mudar o
 **estilo** (via `style` ou `classList`), reagir a **eventos** do usuário e,
 por trás de tudo isso, **navegar** pela árvore para encontrar os nós certos.
 
+## Exercícios de Fixação
+
+1. **Selecionando elementos**
+
+    Crie uma página com um `<h1 id="titulo">` e um `<p class="texto">`.
+    Escreva um script que selecione os dois elementos (um com
+    `getElementById()` e outro com `querySelector()`) e imprima o
+    `textContent` de cada um no console.
+
+2. **Adicionando um item a uma lista**
+
+    Crie uma `<ul id="lista">` vazia e um botão. Ao clicar no botão, use
+    `createElement()`, defina o texto com `textContent` e adicione o novo
+    `<li>` à lista com `appendChild()`. Cada clique deve adicionar um novo
+    item.
+
+3. **Removendo o último item**
+
+    Na mesma lista do exercício anterior, adicione um segundo botão que
+    remova o último `<li>` da lista, usando `lastElementChild` e
+    `remove()`.
+
+4. **Alternando uma classe**
+
+    Crie uma `<div>` com uma classe CSS `.destaque` (por exemplo, com fundo
+    amarelo). Adicione um botão que use `classList.toggle("destaque")` para
+    ativar e desativar o estilo a cada clique.
+
+5. **Contando cliques com addEventListener**
+
+    Crie um botão e um `<span id="contador">0</span>`. Use
+    `addEventListener("click", ...)` para incrementar o número exibido no
+    `<span>` a cada clique no botão.
+
+6. **Navegando pela árvore**
+
+    Crie uma lista `<ul>` com 3 itens `<li>`. Selecione o item do meio com
+    `querySelector()` e, a partir dele, acesse e imprima no console o texto
+    do irmão anterior e do irmão seguinte usando `previousElementSibling` e
+    `nextElementSibling`.
+
 ## Referências
 
 * [DOM Tutorial](https://www.w3schools.com/js/js_htmldom.asp)
