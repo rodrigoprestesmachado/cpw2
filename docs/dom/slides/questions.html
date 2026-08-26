@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+	src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+	</script>
+	<script>quizdown.init();</script>
+    <title>Questões sobre o DOM</title>
+</head>
+<body>
+    <div class="quizdown">
+        # O que é o Document Object Model (DOM)?
+        - [ ] Uma linguagem de programação para criar páginas web
+        - [X] Uma interface de programação que representa um documento HTML/XML como uma árvore de objetos
+        - [ ] Um banco de dados para armazenar páginas web
+        - [ ] Um framework de front-end, como Vue ou React
+
+        > Dica: slide 2
+
+        # No DOM, o que é considerado um "node" (nó)?
+        - [ ] Apenas os elementos HTML, como `<p>` e `<div>`
+        - [ ] Apenas os atributos dos elementos HTML
+        - [X] Tudo em um documento HTML: elementos, atributos, textos e até comentários
+        - [ ] Somente o documento como um todo
+
+        > Dica: slide 4
+
+        # Sobre a estrutura em árvore do DOM:
+        - [ ] Todos os nós podem ter mais de um pai
+        - [X] O nó do topo é chamado de root (raiz) e cada nó, exceto a raiz, possui exatamente um pai
+        - [ ] Uma folha é um nó que sempre possui filhos
+        - [ ] Nós que compartilham o mesmo pai são chamados de root
+
+        > Dica: slide 12
+
+        # No trecho `<title>DOM Tutorial</title>`, como o texto "DOM Tutorial" é representado no DOM?
+        - [ ] Como um atributo do elemento `<title>`
+        - [X] Como um text node (nó de texto), filho do elemento `<title>`
+        - [ ] Como o próprio valor do elemento `<title>`, sem um nó separado
+        - [ ] Como um comentário dentro do elemento `<title>`
+
+        > Dica: slide 7
+
+        # Qual é a diferença entre `getElementById()` e `getElementsByTagName()`?
+        - [X] `getElementById()` retorna um único elemento pelo id; `getElementsByTagName()` retorna uma lista de elementos com a mesma tag
+        - [ ] Ambos retornam sempre um único elemento
+        - [ ] `getElementById()` retorna uma lista; `getElementsByTagName()` retorna um único elemento
+        - [ ] Não há diferença, são sinônimos
+
+        > Dica: slide 21
+
+        # Qual é o método mais flexível para selecionar elementos, pois aceita qualquer seletor CSS (ID, classe, tag, atributo)?
+        - [ ] `getElementById()`
+        - [ ] `getElementsByClassName()`
+        - [X] `querySelector()`
+        - [ ] `createElement()`
+
+        # Sobre a propriedade `innerHTML`:
+        - [ ] Faz parte da especificação oficial do DOM do W3C
+        - [X] Não é parte da especificação oficial do DOM, mas é suportada por todos os navegadores modernos e permite ler/alterar o conteúdo de um elemento
+        - [ ] Serve apenas para ler o conteúdo, nunca para alterá-lo
+        - [ ] Só funciona em elementos sem filhos
+
+        > Dica: slide 18
+
+        # Como criar um novo elemento e adicioná-lo ao final do `<body>`?
+        - [ ] Usando `document.getElementById()` seguido de `remove()`
+        - [X] Usando `document.createElement()` para criar o elemento e `appendChild()` para inseri-lo
+        - [ ] Usando apenas a propriedade `innerHTML` do documento
+        - [ ] Usando `document.write()` no final do script
+
+        # Qual é a função do método `insertBefore()` combinado com `createTextNode()`?
+        - [ ] Substituir todo o conteúdo de um elemento de uma só vez
+        - [X] Criar um nó de texto separado e inseri-lo em uma posição específica da árvore, antes de outro nó
+        - [ ] Remover um nó de texto de um elemento
+        - [ ] Alterar o estilo CSS de um elemento
+
+        # Sobre a propriedade `classList`:
+        - [ ] Permite apenas adicionar classes, nunca remover
+        - [X] Permite adicionar, remover e alternar (`toggle`) classes CSS de um elemento
+        - [ ] É usada para alterar diretamente o `style` de um elemento, sem usar CSS
+        - [ ] Só pode ser usada em elementos `<div>`
+
+        > Dica: slide 25
+
+        # Qual é a vantagem de usar `addEventListener()` em vez do atributo `onclick` direto no HTML?
+        - [X] Permite vincular eventos a partir do JavaScript, separando o HTML do código, o que facilita a manutenção
+        - [ ] É a única forma de vincular eventos a botões
+        - [ ] Torna o código mais lento
+        - [ ] Não permite vincular mais de um evento ao mesmo elemento
+
+        > Dica: slide 26
+
+        # Considerando as propriedades de navegação entre nós, o que retorna `x.nextElementSibling`?
+        - [ ] O elemento pai de x
+        - [ ] O primeiro filho de x
+        - [X] O próximo elemento no mesmo nível (irmão seguinte) de x
+        - [ ] Todos os elementos filhos de x
+
+        > Dica: slide 16
+
+    </div>
+</body>
+</html>

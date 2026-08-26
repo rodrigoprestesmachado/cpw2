@@ -177,6 +177,15 @@ Demo: `var` sem escopo de bloco
 <!-- .element: style="margin-bottom:40px; font-size: 28px; font-family: arial; color:#F5F5F5" -->
 
 
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# Questões 📚
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+<center>
+<iframe src="https://cpw2.rpmhub.dev/variaveis/slides/questions.html" title="Variáveis" width="90%" height="500" style="border:none;"></iframe>
+</center>
+
+
 <!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Referências 📚
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#F5F5F5" -->

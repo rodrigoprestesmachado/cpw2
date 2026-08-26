@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+	src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+	</script>
+	<script>quizdown.init();</script>
+    <title>Questões sobre Variáveis</title>
+</head>
+<body>
+    <div class="quizdown">
+        # O que é uma variável em JavaScript?
+        - [ ] Uma função que executa um bloco de código
+        - [X] Um nome que guarda um valor no programa
+        - [ ] Um tipo de laço de repetição
+        - [ ] Um comentário no código
+
+        > Dica: slide 2
+
+        # Qual é a diferença entre declarar e atribuir uma variável?
+        - [X] Declarar cria o nome; atribuir coloca (ou troca) o valor
+        - [ ] Declarar e atribuir são a mesma coisa
+        - [ ] Atribuir cria o nome; declarar coloca o valor
+        - [ ] Só é possível atribuir depois de usar a variável
+
+        > Dica: slide 3
+
+        # Qual é o valor de uma variável declarada mas não atribuída?
+        - [ ] `null`
+        - [ ] `0`
+        - [X] `undefined`
+        - [ ] Uma string vazia
+
+        > Dica: slide 3
+
+        # Sobre os nomes de variáveis em JavaScript:
+        - [ ] `idade` e `Idade` são a mesma variável
+        - [X] JavaScript é case-sensitive: `idade` e `Idade` são variáveis diferentes
+        - [ ] Nomes de variáveis podem começar com qualquer caractere
+        - [ ] Nomes de variáveis não podem conter letras maiúsculas
+
+        > Dica: slide 4
+
+        # Quando devemos usar `let` para declarar uma variável?
+        - [ ] Quando o valor nunca deve mudar
+        - [X] Quando o valor da variável pode mudar
+        - [ ] Somente dentro de funções
+        - [ ] Somente para declarar constantes matemáticas
+
+        > Dica: slide 5
+
+        # Qual é o escopo de uma variável declarada com `let` dentro de um bloco `if`?
+        - [ ] Escopo global, acessível em qualquer lugar do programa
+        - [ ] Escopo de função, acessível em toda a função
+        - [X] Escopo de bloco, só existe dentro das chaves `{ }` do `if`
+        - [ ] Não possui escopo, é sempre `undefined` fora do `if`
+
+        > Dica: slide 5
+
+        # Sobre a declaração com `const`:
+        - [X] É obrigatório atribuir um valor na própria declaração
+        - [ ] É possível declarar sem atribuir valor
+        - [ ] Permite reatribuir um novo valor posteriormente
+        - [ ] Não possui escopo de bloco
+
+        > Dica: slide 7
+
+        # Considere: `const pessoa = { nome: "Ana" }; pessoa.nome = "Bia";`. O que ocorre?
+        - [ ] Gera erro, pois `const` impede qualquer alteração no objeto
+        - [X] É permitido, pois `const` impede apenas a troca da referência, não das propriedades
+        - [ ] O valor de `pessoa` é reatribuído para `{ nome: "Bia" }`
+        - [ ] `pessoa` deixa de ser uma constante após a alteração
+
+        > Dica: slide 8
+
+        # Qual é a principal diferença entre `var` e `let`/`const` em relação ao escopo?
+        - [ ] `var` possui escopo de bloco, assim como `let` e `const`
+        - [X] `var` não respeita escopo de bloco; a variável "vaza" para a função ou escopo global
+        - [ ] `let` e `const` não possuem escopo, apenas `var` possui
+        - [ ] Não há diferença de escopo entre eles
+
+        > Dica: slide 9
+
+        # Qual é a boa prática recomendada ao declarar variáveis em JavaScript?
+        - [ ] Usar `var` por padrão, pois é mais compatível
+        - [ ] Usar `let` para todo tipo de variável, mesmo sem necessidade de reatribuição
+        - [X] Preferir `const` por padrão e usar `let` somente quando precisar reatribuir
+        - [ ] Evitar `const` e `let`, usando apenas `var`
+
+        > Dica: slide 11
+
+    </div>
+</body>
+</html>

@@ -476,6 +476,15 @@ botao.addEventListener("click", function () {
 <!-- .element: style="margin-bottom:50px; font-size: 16px; font-family: arial; color:black; background-color: #F2FAF3;" -->
 
 
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# Questões 📚
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
+
+<center>
+<iframe src="https://cpw2.rpmhub.dev/dom/slides/questions.html" title="Document Object Model" width="90%" height="500" style="border:none;"></iframe>
+</center>
+
+
 <!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
 # Referências 📚
 <!-- .element: style="margin-bottom:50px; font-size: 45px; font-family: Marker Felt;" -->
