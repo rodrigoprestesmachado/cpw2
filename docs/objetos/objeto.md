@@ -694,43 +694,39 @@ necessário, pode ser transformado de volta em uma instância de `User` com o
 auxílio de `JSON.parse()` e do método `fromJSON`.
 {: .fs-3 }
 
-## Exercícios de Fixação sobre JSON 🎯
+## Exercícios de Fixação Práticos sobre JSON 🎯
 
-### Teóricos
+1. Crie um objeto literal `livro` com as propriedades `titulo`, `autor` e
+   `ano`. Converta esse objeto em uma string JSON usando `JSON.stringify()` e
+   exiba o resultado no console.
 
-1. Explique, com suas próprias palavras, a diferença entre um objeto
-   JavaScript e um documento JSON.
+2. Crie a string `'{"nome": "Ana", "idade": 28}'` e use `JSON.parse()` para
+   transformá-la em um objeto JavaScript. Depois, exiba no console apenas o
+   valor da propriedade `nome`.
 
-2. Por que `JSON.stringify(user)` retorna `"{}"` quando `user` é uma instância
-   de uma classe cujos atributos são todos privados (usam o símbolo `#`)?
-   Relacione sua resposta com o conceito de encapsulamento.
+3. Crie um array com três objetos literais representando produtos (cada um
+   com `nome` e `preco`). Converta o array inteiro em JSON com
+   `JSON.stringify()`, usando o terceiro parâmetro (`null, 2`) para deixar o
+   resultado indentado e mais legível.
 
-3. Cite três tipos de valores que são válidos em JSON e dois valores comuns em
-   JavaScript que não podem ser representados diretamente em JSON.
+4. Pegue o JSON gerado no exercício anterior e use `JSON.parse()` para
+   reconstruir o array de produtos. Em seguida, percorra o array reconstruído
+   com um `for` ou `forEach` e exiba no console o nome de cada produto.
 
-4. Qual é a função do método `toJSON()` em uma classe JavaScript e em que
-   momento ele é chamado automaticamente?
+5. Utilizando o [Node](https://nodejs.org/en/) e o módulo `fs`, salve em um
+   arquivo chamado `dados.json` o JSON de um objeto literal simples (por
+   exemplo, `{ nome: "Turma", ano: 2026 }`) usando `fs.writeFileSync`. Depois,
+   escreva outro script que leia esse arquivo com `fs.readFileSync`, converta
+   o conteúdo com `JSON.parse` e exiba o objeto resultante no console.
 
-### Práticos
+## Exercício de Fixação Teórico sobre JSON 📚
 
-5. Implemente o método `toJSON()` na classe `Message` apresentada nesta
-   página, caso ainda não o tenha feito, e teste-o convertendo uma única
-   mensagem em JSON com `JSON.stringify()`.
-
-6. Crie um `User`, associe a ele pelo menos três objetos `Message` e gere o
-   JSON completo desse usuário usando `JSON.stringify(user, null, 2)`. Exiba o
-   resultado no console.
-
-7. Implemente o método estático `fromJSON` na classe `User`, de forma que seja
-   possível executar `let user2 = User.fromJSON(JSON.parse(json))` e obter uma
-   nova instância de `User` com todas as suas mensagens reconstruídas como
-   instâncias de `Message`.
-
-8. Utilizando o [Node](https://nodejs.org/en/) e o módulo `fs`, salve o JSON
-   gerado no exercício 6 em um arquivo chamado `user.json` com
-   `fs.writeFileSync`. Em seguida, escreva outro script que leia esse arquivo
-   com `fs.readFileSync`, converta o conteúdo com `JSON.parse` e reconstrua o
-   `User` usando o `fromJSON` do exercício anterior.
+<center>
+    <iframe src="https://cpw2.rpmhub.dev/objetos/slides/questions.html"
+        title="Exercício de Fixação Teórico - JSON" width="90%" height="500"
+        style="border:none;">
+    </iframe>
+</center>
 
 ## Referências
 

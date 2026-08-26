@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+	src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+	</script>
+	<script>quizdown.init();</script>
+    <title>Questões sobre Web Storage</title>
+</head>
+<body>
+    <div class="quizdown">
+        # O que é a API Web Storage?
+        - [ ] Uma linguagem de programação para criar páginas web
+        - [X] Uma API que fornece mecanismos para os navegadores armazenarem pares de chave/valor
+        - [ ] Um banco de dados remoto acessado via HTTP
+        - [ ] Um framework de front-end, como Vue ou React
+
+        > Dica: slide 2
+
+        # Qual é o tipo de dado das chaves e valores armazenados na Web Storage?
+        - [ ] Podem ser de qualquer tipo, inclusive objetos e funções
+        - [X] Sempre strings
+        - [ ] Sempre números
+        - [ ] Sempre booleanos
+
+        > Dica: slide 2
+
+        # Qual é a principal diferença entre `sessionStorage` e `localStorage`?
+        - [ ] `sessionStorage` persiste após fechar o navegador; `localStorage` não
+        - [X] `localStorage` persiste após fechar e reabrir o navegador; `sessionStorage` dura apenas enquanto a aba está aberta
+        - [ ] Não há diferença, são sinônimos
+        - [ ] `sessionStorage` é compartilhado entre abas diferentes; `localStorage` não
+
+        > Dica: slide 3
+
+        # Através de quais propriedades acessamos os mecanismos de Web Storage?
+        - [ ] `Document.sessionStorage` e `Document.localStorage`
+        - [X] `Window.sessionStorage` e `Window.localStorage`
+        - [ ] `Navigator.sessionStorage` e `Navigator.localStorage`
+        - [ ] `Storage.session` e `Storage.local`
+
+        > Dica: slide 4
+
+        # O que é retornado ao chamar `sessionStorage` ou `localStorage` pela primeira vez em um documento?
+        - [ ] Um array de strings
+        - [X] Um objeto `Storage`
+        - [ ] Um objeto JSON
+        - [ ] `undefined`
+
+        > Dica: slide 4
+
+        # Os dados armazenados no `localStorage` de um site ficam disponíveis para outro site (outra origem)?
+        - [ ] Sim, sempre
+        - [X] Não, cada origem possui sua própria área de armazenamento isolada
+        - [ ] Apenas se os dois sites usarem o mesmo navegador
+        - [ ] Apenas se o usuário permitir explicitamente
+
+        > Dica: slide 3
+
+        # Qual método é usado para adicionar ou atualizar um par chave/valor no `localStorage`?
+        - [ ] `Storage.addItem()`
+        - [X] `Storage.setItem()`
+        - [ ] `Storage.putItem()`
+        - [ ] `Storage.saveItem()`
+
+        > Dica: slide 5
+
+        # O que o método `Storage.getItem()` retorna quando a chave informada não existe?
+        - [ ] Uma string vazia
+        - [X] `null`
+        - [ ] `undefined`
+        - [ ] Lança um erro (exception)
+
+        # Qual é a diferença entre `removeItem()` e `clear()` no objeto `Storage`?
+        - [ ] São sinônimos, fazem exatamente a mesma coisa
+        - [X] `removeItem()` remove apenas uma chave específica; `clear()` remove todos os pares armazenados
+        - [ ] `removeItem()` remove tudo; `clear()` remove apenas uma chave
+        - [ ] Nenhum dos dois remove dados, apenas os oculta
+
+        # No exemplo apresentado, por que a função que restaura a cor de fundo é associada ao evento `onload` do `<body>`?
+        - [ ] Porque `onload` é obrigatório em toda página HTML
+        - [X] Para que a cor salva seja recuperada e aplicada assim que a página termina de carregar
+        - [ ] Porque `localStorage` só funciona dentro do evento `onload`
+        - [ ] Para impedir que o usuário altere a cor depois
+
+        > Dica: slide 5
+
+    </div>
+</body>
+</html>

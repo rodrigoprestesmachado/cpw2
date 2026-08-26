@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+	src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+	</script>
+	<script>quizdown.init();</script>
+    <title>Questões sobre JSON</title>
+</head>
+<body>
+    <div class="quizdown">
+        # O que é JSON (JavaScript Object Notation)?
+        - [ ] Um objeto JavaScript propriamente dito
+        - [X] Um formato de dados textual, leve, inspirado na sintaxe de objetos JavaScript
+        - [ ] Uma classe nativa do JavaScript
+        - [ ] Uma linguagem de programação
+
+        # Qual é a diferença fundamental entre um objeto JavaScript e um documento JSON?
+        - [ ] Não existe diferença, são a mesma coisa
+        - [X] JSON é apenas texto seguindo regras específicas; um objeto JavaScript é uma estrutura de dados em memória, que pode ter métodos e funções
+        - [ ] JSON só pode representar números
+        - [ ] Um objeto JavaScript só pode ser criado a partir de um JSON
+
+        # Quais destes valores NÃO são válidos em JSON?
+        - [ ] String, número e booleano
+        - [ ] Objeto e array
+        - [X] Função e `undefined`
+        - [ ] `null`
+
+        # O que o método `JSON.stringify()` faz?
+        - [X] Converte um objeto JavaScript em uma string no formato JSON
+        - [ ] Converte uma string JSON em um objeto JavaScript
+        - [ ] Remove propriedades privadas de um objeto
+        - [ ] Cria uma nova instância de uma classe
+
+        # O que o método `JSON.parse()` faz?
+        - [ ] Converte um objeto JavaScript em uma string JSON
+        - [X] Converte uma string no formato JSON em um objeto JavaScript
+        - [ ] Valida se um objeto é uma instância de uma classe
+        - [ ] Formata um JSON com indentação
+
+        # Por que `JSON.stringify(user)` retorna `"{}"` quando `user` é uma instância de uma classe com todos os atributos privados (símbolo `#`)?
+        - [ ] Porque `JSON.stringify()` não existe para objetos de classes
+        - [X] Porque `JSON.stringify()` só enxerga propriedades públicas e enumeráveis, e atributos privados não são visíveis por fora da classe (encapsulamento)
+        - [ ] Porque é necessário chamar `JSON.parse()` antes
+        - [ ] Porque a classe precisa herdar de `Object` explicitamente
+
+        # Qual é a função do método `toJSON()` em uma classe JavaScript?
+        - [X] Definir como o objeto deve ser representado quando convertido para JSON, sendo chamado automaticamente por `JSON.stringify()`
+        - [ ] Converter uma string JSON em um objeto da classe
+        - [ ] Validar se os atributos da classe são privados
+        - [ ] Remover atributos indesejados de um objeto antes de salvá-lo em disco
+
+        # Ao converter uma instância de `User` (com o método `toJSON()` implementado) que contém um array de `Message`, o que acontece com cada `Message` do array durante a serialização?
+        - [ ] Somente o primeiro elemento do array é serializado
+        - [X] Cada `Message` também é convertida usando o seu próprio método `toJSON()`
+        - [ ] O array inteiro é ignorado
+        - [ ] É necessário chamar `JSON.stringify()` manualmente para cada mensagem
+
+        # Ao aplicar `JSON.parse()` sobre um JSON gerado a partir de um `User`, o que se obtém como resultado?
+        - [ ] Uma nova instância da classe `User`, com todos os métodos disponíveis
+        - [X] Um objeto comum (literal), sem os métodos da classe `User`
+        - [ ] Um erro, pois `JSON.parse()` não funciona com JSON gerado por `toJSON()`
+        - [ ] Uma string idêntica ao JSON original
+
+        # Qual é o objetivo de implementar um método estático `fromJSON` em uma classe?
+        - [X] Ler um objeto simples produzido por `JSON.parse()` e usá-lo para reconstruir uma verdadeira instância da classe
+        - [ ] Substituir o método `toJSON()`
+        - [ ] Impedir que a classe seja serializada em JSON
+        - [ ] Validar se uma string é um JSON válido antes de convertê-la
+
+        # No exemplo apresentado, o que os dois primeiros parâmetros de `fs.writeFileSync` e `fs.readFileSync` representam?
+        - [ ] O nome do módulo e a versão do Node
+        - [X] O caminho do arquivo e, respectivamente, o conteúdo a ser gravado ou a codificação usada na leitura
+        - [ ] O objeto `User` e o objeto `Message`
+        - [ ] O tipo de dado JSON e o tipo de dado JavaScript
+
+    </div>
+</body>
+</html>
