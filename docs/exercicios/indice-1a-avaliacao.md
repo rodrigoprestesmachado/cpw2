@@ -1,11 +1,11 @@
 ---
 layout: default
-title:  Índice de Exercícios - 1a Avaliação
+title:  Exercícios
 parent: Simulado 1a Parte
 nav_order: 1
 ---
 
-# Índice de Exercícios da 1ª Avaliação
+# Exercícios - 1a Avaliação
 
 Esta página reúne, em um único lugar, os links para todos os exercícios de
 fixação (teóricos e práticos) dos tópicos que fazem parte da primeira parte
