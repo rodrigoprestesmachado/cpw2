@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+	src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+	</script>
+	<script>quizdown.init();</script>
+    <title>Questões sobre AJaX</title>
+</head>
+<body>
+    <div class="quizdown">
+        # O que significa AJaX?
+        - [ ] Asynchronous Java and XML
+        - [X] Asynchronous JavaScript and XML
+        - [ ] Advanced JavaScript and XML
+        - [ ] Automatic JavaScript XML
+
+        > Dica: slide 1
+
+        # Qual é a principal vantagem de uma requisição Ajax em relação a um recarregamento normal de página?
+        - [ ] Ela sempre é mais rápida para carregar o CSS
+        - [X] Permite atualizar partes específicas da página sem recarregar o documento inteiro
+        - [ ] Impede que o usuário interaja com a página
+        - [ ] Substitui totalmente o HTML por XML
+
+        > Dica: slide 3
+
+        # Em uma requisição assíncrona, o que acontece enquanto se espera a resposta do servidor?
+        - [ ] O navegador trava até a resposta chegar
+        - [X] O programa continua executando outras tarefas, incluindo interagir com o usuário
+        - [ ] A página é recarregada automaticamente
+        - [ ] O JavaScript é desativado temporariamente
+
+        > Dica: slide 4
+
+        # Qual método do objeto `XMLHttpRequest` é usado para configurar a requisição (método HTTP, URL e se é assíncrona)?
+        - [ ] `send()`
+        - [X] `open()`
+        - [ ] `onload()`
+        - [ ] `fetch()`
+
+        > Dica: slide 7
+
+        # Sobre a propriedade `readyState` do `XMLHttpRequest`, qual valor indica que a requisição foi concluída e a resposta está pronta?
+        - [ ] 0
+        - [ ] 1
+        - [ ] 2
+        - [X] 4
+
+        > Dica: slide 11
+
+        # Qual código de status HTTP indica que uma requisição foi bem-sucedida?
+        - [ ] 404
+        - [X] 200
+        - [ ] 500
+        - [ ] 100
+
+        > Dica: slide 11
+
+        # Qual propriedade do objeto `XMLHttpRequest` contém o corpo textual "cru" da resposta do servidor?
+        - [ ] `xhr.status`
+        - [X] `xhr.responseText`
+        - [ ] `xhr.readyState`
+        - [ ] `xhr.body`
+
+        > Dica: slide 12
+
+        # Para converter uma string no formato JSON em um objeto JavaScript utilizável no código, qual função deve ser usada?
+        - [ ] `JSON.stringify()`
+        - [X] `JSON.parse()`
+        - [ ] `Object.parse()`
+        - [ ] `String.toJSON()`
+
+        # O que a função `fetch()` retorna?
+        - [ ] O texto da resposta diretamente
+        - [X] Uma Promise que resolve para um objeto `Response`
+        - [ ] Um objeto `XMLHttpRequest`
+        - [ ] Um valor booleano indicando sucesso ou falha
+
+        # Em uma cadeia com `fetch()`, qual método é usado para converter a resposta em um objeto JavaScript, assumindo que o corpo seja JSON?
+        - [ ] `.text()`
+        - [X] `.json()`
+        - [ ] `.parse()`
+        - [ ] `.body()`
+
+        # Comparando `XMLHttpRequest` e `fetch()`, qual afirmação está correta?
+        - [ ] `fetch()` é baseado em callbacks, enquanto `XMLHttpRequest` é baseado em Promises
+        - [X] `fetch()` é baseado em Promises, o que costuma tornar o código mais simples e conciso que o `XMLHttpRequest`
+        - [ ] Os dois são exatamente a mesma API, apenas com nomes diferentes
+        - [ ] `XMLHttpRequest` não pode fazer requisições GET
+
+        > Dica: slide 18
+    </div>
+</body>
+</html>

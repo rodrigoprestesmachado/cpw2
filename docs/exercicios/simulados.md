@@ -4,6 +4,7 @@ title:  Simulado 1a Parte
 parent: Simulados
 nav_order: 41
 has_toc: false
+has_children: true
 ---
 
 ## Questões práticas — Variáveis

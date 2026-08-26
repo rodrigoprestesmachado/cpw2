@@ -24,6 +24,23 @@ Pressione 'F' para tela cheia
 
 
 <!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# Uma Analogia 🍽️
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+* Pense em um garçom em um restaurante
+<!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+* Ele anota o pedido, leva até a cozinha e **continua atendendo outras mesas** enquanto a comida é preparada
+<!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+* Quando o prato fica pronto, ele volta e entrega na mesa
+<!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+* É assim que uma requisição Ajax funciona: o navegador "pede" dados e continua livre até a resposta chegar
+<!-- .element: style="margin-bottom:50px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
 # Como o AJaX Funciona? &#129300;
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
 
@@ -238,6 +255,13 @@ document.getElementById("myDiv").innerHTML=xmlhttp.responseText;
 <center>
 <iframe width="100%" height="300" src="//jsfiddle.net/prestesmachado/9tp7dxe0/34/embedded/js,html,result/dark/" allowfullscreen="allowfullscreen" allowpaymentrequest frameborder="0"></iframe>
 </center>
+
+
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# Exercício de Fixação Teórico 📚
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt;" -->
+
+<iframe src="questions.html" width="100%" height="500" style="border:none;"></iframe>
 
 
 <!-- .slide:  data-background-opacity="0.1" data-background-image="https://miro.medium.com/max/1800/1*6ahbWjp_g9hqhaTDSJOL1Q.png" data-transition="convex"  -->
