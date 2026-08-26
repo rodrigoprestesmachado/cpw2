@@ -121,7 +121,7 @@ valores podem ser de qualquer tipo de dado, incluindo outros objetos.
 São objetos que incluem um bloco de código executável e podem ser invocados.
 
 
-## Exercícios do Freecodecamp 🎯
+## Exercícios de Fixação do Freecodecamp 🎯
 
 * [Crie números decimais com JavaScript](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/create-decimal-numbers-with-javascript)
 
@@ -139,7 +139,7 @@ São objetos que incluem um bloco de código executável e podem ser invocados.
 
 * [Entenda valores booleanos](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/understanding-boolean-values)
 
-## Exercícios Práticos 🛠
+## Exercícios de Fixação Práticos 🛠
 
 1. [Trabalhando com Arrays](https://jsfiddle.net/prestesmachado/8Lkbcjre/)
     Escreva uma função em JavaScript que receba um array de números como entrada

@@ -94,7 +94,7 @@ podem ser acessadas dentro da própria função.
 - Variáveis declaradas fora de uma função têm escopo global e podem ser
 acessadas de qualquer lugar do código.
 
-## Exercícios do Freecodecamp
+## Exercícios de Fixação do Freecodecamp
 
 * [Atribuindo valores para uma função](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/passing-values-to-functions-with-arguments)
 

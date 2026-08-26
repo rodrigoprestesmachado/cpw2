@@ -98,7 +98,7 @@ moderna, prefira `const` e `let`.
 - Evite `var`.
 - Escolha nomes claros e evite poluir o escopo global com muitas variáveis.
 
-## Exercícios do Freecodecamp
+## Exercícios de Fixação do Freecodecamp
 
 * [Declarando variáveis](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/declare-javascript-variables)
 
@@ -114,7 +114,7 @@ moderna, prefira `const` e `let`.
 
 * [Explore as diferenças entre var e let](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/explore-differences-between-the-var-and-let-keywords)
 
-## Exercícios Práticos
+## Exercícios de Fixação Práticos
 
 1. [Troca de Valores](https://jsfiddle.net/prestesmachado/9nspe3u1/7/)
 

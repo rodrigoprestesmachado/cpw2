@@ -67,7 +67,7 @@ verdadeiro.
 - **Incremento (++)**: Adiciona 1 ao valor da variável.
 - **Decremento (--)**: Subtrai 1 do valor da variável.
 
-## Exercícios do Freecodecamp 🎯
+## Exercícios de Fixação do Freecodecamp 🎯
 
 * [Multiplicação de decimais](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/multiply-two-decimals-with-javascript)
 

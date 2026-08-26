@@ -173,7 +173,7 @@ a função dividir com argumentos que resultariam em divisão por zero. Como
 resultado, uma exceção é lançada e capturada no bloco `catch`, onde podemos
 lidar com o erro e exibir uma mensagem personalizada.
 
-## Exercícios do Freecodecamp 🎯
+## Exercícios de Fixação do Freecodecamp 🎯
 
 * [While](https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/iterate-with-javascript-while-loops)
 
