@@ -302,7 +302,7 @@ mudar a **estrutura** do documento (criar, mover e remover nós), mudar o
 **estilo** (via `style` ou `classList`), reagir a **eventos** do usuário e,
 por trás de tudo isso, **navegar** pela árvore para encontrar os nós certos.
 
-## Exercícios de Fixação
+## Exercícios de Fixação Práticos
 
 1. **Selecionando elementos**
 
@@ -342,6 +342,15 @@ por trás de tudo isso, **navegar** pela árvore para encontrar os nós certos.
     `querySelector()` e, a partir dele, acesse e imprima no console o texto
     do irmão anterior e do irmão seguinte usando `previousElementSibling` e
     `nextElementSibling`.
+
+## Exercício de Fixação Teórico 📚
+
+<center>
+    <iframe src="https://cpw2.rpmhub.dev/dom/slides/questions.html"
+        title="Exercício de Fixação Teórico - DOM" width="90%" height="500"
+        style="border:none;">
+    </iframe>
+</center>
 
 ## Referências
 

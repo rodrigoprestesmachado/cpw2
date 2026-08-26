@@ -178,7 +178,7 @@ Demo: `var` sem escopo de bloco
 
 
 <!-- .slide: data-background="#4AA791" data-transition="convex"  -->
-# Questões 📚
+# Exercício de Fixação Teórico 📚
 <!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 <center>

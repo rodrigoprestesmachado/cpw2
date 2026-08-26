@@ -126,6 +126,15 @@ moderna, prefira `const` e `let`.
     Crie um programa que concatene duas strings e retorne uma única frase na
     função _main_.
 
+## Exercício de Fixação Teórico 📚
+
+<center>
+    <iframe src="https://cpw2.rpmhub.dev/variaveis/slides/questions.html"
+        title="Exercício de Fixação Teórico - Variáveis" width="90%" height="500"
+        style="border:none;">
+    </iframe>
+</center>
+
 ## Referências 📚
 
 * Comunidade [Discord](https://discord.com/invite/C29cqvm): canal `#cpw2`
