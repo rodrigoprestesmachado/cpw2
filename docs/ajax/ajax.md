@@ -259,13 +259,27 @@ para usar como resposta do servidor.
     agora use `JSON.parse(xhr.responseText)` para converter a resposta em
     objeto e exiba apenas o valor de `nome` no `<p id="resultado">`.
 
-3. **O mesmo exercício, agora com `fetch()`**
+3. **Listando itens de um JSON com `XMLHttpRequest`**
 
-    Refaça o exercício 1 (ler `dados.txt` e exibir o texto), mas usando
-    `fetch()` no lugar de `XMLHttpRequest`. Compare as duas versões: qual
-    ficou com menos código?
+    Crie um arquivo `produtos.json` contendo uma lista (array) de objetos,
+    por exemplo:
+    `[{ "nome": "Caneta", "preco": 2.5 }, { "nome": "Caderno", "preco": 12 }]`.
+    Usando apenas `XMLHttpRequest`, faça a requisição,
+    converta a resposta com `JSON.parse(xhr.responseText)`, percorra o
+    array recebido com `forEach()` (ou um `for`) e crie dinamicamente um
+    `<li>` para cada produto dentro de uma `<ul id="lista-produtos">`,
+    exibindo o nome e o preço de cada item.
 
-4. **Mostrando "Carregando..." enquanto espera**
+4. **Tratando erros com `XMLHttpRequest`**
+
+    Repita o exercício 1, mas agora informe de propósito uma URL que não
+    existe (por exemplo, `naoexiste.txt`). Verifique o `xhr.status` dentro
+    de `onload` (valores fora da faixa 200-299 indicam erro) e exiba a
+    mensagem `"Erro ao carregar dados"` dentro do `<p id="resultado">`
+    quando a requisição falhar. Teste também com a URL correta para
+    garantir que o caminho de sucesso continua funcionando.
+
+5. **Mostrando "Carregando..." enquanto espera**
 
     Crie um botão com o texto "Buscar dados". Ao clicar, exiba
     imediatamente a mensagem `"Carregando..."` dentro de um `<p id="status">`
@@ -274,6 +288,15 @@ para usar como resposta do servidor.
     o texto de `<p id="status">` pelos dados recebidos. Isso ajuda a
     perceber, na prática, que a requisição não bloqueia o restante da
     página.
+
+6. **`fetch()`**
+
+    Refaça o exercício 1 (ler `dados.txt` e exibir o texto), mas usando
+    `fetch()` no lugar de `XMLHttpRequest`. Compare as duas versões: qual
+    ficou com menos código?
+
+
+
 
 ## Exercício de Fixação Teórico 📚
 
