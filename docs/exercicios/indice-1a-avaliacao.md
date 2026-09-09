@@ -48,7 +48,7 @@ da disciplina. Use-a para revisar antes da avaliação.
 
 ## JSON
 
-* [Exercício de Fixação Teórico (em DOM)](https://cpw2.rpmhub.dev/dom/dom.html#exercício-de-fixação-teórico-)
+* [Exercícios de Fixação Práticos sobre JSON (em Objetos)](https://cpw2.rpmhub.dev/objetos/objeto.html#exercícios-de-fixação-práticos-sobre-json-)
 * [Exercício de Fixação Teórico sobre JSON (em Objetos)](https://cpw2.rpmhub.dev/objetos/objeto.html#exercício-de-fixação-teórico-sobre-json-)
 {: .fs-3 }
 
