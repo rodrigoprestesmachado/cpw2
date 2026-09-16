@@ -7,3 +7,7 @@ aux_links:
     - "https://github.com/rodrigoprestesmachado/cpw2"
 
 footer_content: "Copyright &copy; 2026 <a href='https://rpmhub.dev'>RPM Hub</a>. Distributed by CC-BY-4.0 license."
+
+# Enable Mermaid diagrams (```mermaid code blocks) via the just-the-docs theme
+mermaid:
+  version: "9.4.3"

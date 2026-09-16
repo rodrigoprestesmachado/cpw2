@@ -291,11 +291,7 @@ para usar como resposta do servidor.
 
 6. **`fetch()`**
 
-    Refaça o exercício 1 (ler `dados.txt` e exibir o texto), mas usando
-    `fetch()` no lugar de `XMLHttpRequest`. Compare as duas versões: qual
-    ficou com menos código?
-
-
+    Refaça o exercício 2 (ler `dados.json` e exibir o texto), mas usando `fetch()` no lugar de `XMLHttpRequest`. Compare as duas versões: qual ficou com menos código?
 
 
 ## Exercício de Fixação Teórico 📚
