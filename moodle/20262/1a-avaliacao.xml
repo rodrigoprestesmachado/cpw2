@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <!-- Q01 - Variáveis -->
+  <question type="multichoice">
+    <name>
+      <text>Q01 - Variáveis (var, let e const)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere o código JavaScript abaixo:</p>
+<pre><code>let a = 1;
+const b = 2;
+var c = 3;
+
+a = 10;
+c = 30;
+b = 20;
+
+console.log(a, b, c);</code></pre>
+<p>O que acontece ao executar esse código?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Variáveis declaradas com <code>let</code> e <code>var</code> podem ser reatribuídas. Já um identificador declarado com <code>const</code> não pode receber um novo valor: a linha <code>b = 20;</code> lança <code>TypeError: Assignment to constant variable</code> e a execução é interrompida antes do <code>console.log</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Ocorre um erro (<code>TypeError</code>) na linha <code>b = 20;</code> e nada é exibido pelo <code>console.log</code>.]]></text>
+      <feedback format="html"><text><![CDATA[<code>let</code> e <code>var</code> aceitam reatribuição, mas <code>const</code> não: <code>b = 20;</code> lança <code>TypeError</code> e interrompe o script antes do <code>console.log</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[É exibido <code>10 20 30</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>b</code> foi declarado com <code>const</code> e não pode ser reatribuído.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[É exibido <code>10 2 30</code>, pois a reatribuição de <code>b</code> é ignorada silenciosamente.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A reatribuição de uma constante não é ignorada: ela gera um erro.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[É exibido <code>1 2 3</code>, pois variáveis não podem mudar de valor após a declaração.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Variáveis declaradas com <code>let</code> e <code>var</code> podem ser reatribuídas.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>variaveis</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q02 - Array e Loop -->
+  <question type="multichoice">
+    <name>
+      <text>Q02 - Array e laço de repetição</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Qual é a saída exibida no console ao executar o código abaixo?</p>
+<pre><code>const frutas = ["maçã", "uva", "pera"];
+let saida = "";
+
+frutas.forEach(function (fruta, i) {
+  saida += i + ":" + fruta + " ";
+});
+
+console.log(saida);</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>O <code>forEach</code> chama a função uma vez para cada elemento, passando o elemento e o seu índice. Os índices de um array começam em <code>0</code>, então a saída é <code>0:maçã 1:uva 2:pera </code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>0:maçã 1:uva 2:pera </code>]]></text>
+      <feedback format="html"><text><![CDATA[O <code>forEach</code> passa cada elemento e seu índice (começando em 0), e o <code>+=</code> vai acumulando o texto a cada volta.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>1:maçã 2:uva 3:pera </code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Os índices de arrays em JavaScript começam em 0.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>maçã uva pera </code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O índice <code>i</code> também é concatenado à string.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>2:pera </code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O operador <code>+=</code> acumula o texto; ele não substitui o valor anterior.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>array</text></tag>
+      <tag><text>loop</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q03 - Funções -->
+  <question type="multichoice">
+    <name>
+      <text>Q03 - Funções (parâmetros, retorno e escopo)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Qual é a saída exibida no console ao executar o código abaixo?</p>
+<pre><code>let x = 10;
+
+function dobrar(x) {
+  x = x * 2;
+  return x;
+}
+
+function somar(a, b) {
+  let resultado = a + b;
+}
+
+const r1 = dobrar(5);
+const r2 = somar(2, 3);
+
+console.log(x, r1, r2);</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<ul>
+<li>O parâmetro <code>x</code> de <code>dobrar</code> é uma variável local que <strong>sombreia</strong> o <code>x</code> global; alterá-lo não modifica o <code>x</code> de fora, que continua valendo <code>10</code>.</li>
+<li><code>dobrar(5)</code> retorna <code>10</code>.</li>
+<li><code>somar</code> calcula o valor, mas não possui <code>return</code>; toda função sem <code>return</code> devolve <code>undefined</code>.</li>
+</ul>
+<p>Saída: <code>10 10 undefined</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>10 10 undefined</code>]]></text>
+      <feedback format="html"><text><![CDATA[O parâmetro <code>x</code> é local e não altera o <code>x</code> global (10); <code>dobrar(5)</code> retorna 10; <code>somar</code> não tem <code>return</code>, então devolve <code>undefined</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>20 10 5</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O parâmetro <code>x</code> é local à função e <code>somar</code> não retorna valor.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>10 10 5</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>somar</code> não tem <code>return</code>, portanto devolve <code>undefined</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>20 20 undefined</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A função foi chamada com <code>5</code>, não com o <code>x</code> global, e o <code>x</code> global não é alterado.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>media</text></tag>
+      <tag><text>funcoes</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q04 - Eventos -->
+  <question type="multichoice">
+    <name>
+      <text>Q04 - Eventos (addEventListener e ordem de execução)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere a página abaixo:</p>
+<pre><code>&lt;button id="btn"&gt;Clique&lt;/button&gt;
+&lt;script&gt;
+  let contador = 0;
+  const btn = document.getElementById("btn");
+
+  function tratar() {
+    contador++;
+    console.log("clique " + contador);
+    if (contador === 2) {
+      btn.removeEventListener("click", tratar);
+    }
+  }
+
+  console.log("inicio");
+  btn.addEventListener("click", tratar);
+  btn.addEventListener("click", function () {
+    console.log("extra");
+  });
+  console.log("fim");
+&lt;/script&gt;</code></pre>
+<p>Após a página carregar, o usuário clica no botão <strong>3 vezes</strong>. Qual é a sequência completa de mensagens exibidas no console?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<ul>
+<li>O script é executado primeiro, de forma síncrona: exibe <code>inicio</code> e <code>fim</code>. O <code>addEventListener</code> apenas <strong>registra</strong> as funções; elas só rodam quando o evento ocorrer.</li>
+<li>Em cada clique, os ouvintes são executados na ordem em que foram registrados: primeiro <code>tratar</code>, depois a função anônima.</li>
+<li>No 2º clique, <code>tratar</code> se remove com <code>removeEventListener</code>. No 3º clique, apenas o ouvinte anônimo continua registrado.</li>
+</ul>
+<p>Saída: <code>inicio, fim, clique 1, extra, clique 2, extra, extra</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>inicio</code>, <code>fim</code>, <code>clique 1</code>, <code>extra</code>, <code>clique 2</code>, <code>extra</code>, <code>extra</code>]]></text>
+      <feedback format="html"><text><![CDATA[O script roda antes dos cliques (<code>inicio</code>, <code>fim</code>); em cada clique os ouvintes executam na ordem de registro; no 2º clique <code>tratar</code> se remove, e no 3º só o ouvinte "extra" executa.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>inicio</code>, <code>fim</code>, <code>clique 1</code>, <code>extra</code>, <code>clique 2</code>, <code>extra</code>, <code>clique 3</code>, <code>extra</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. No 2º clique, <code>tratar</code> é removida e não executa no 3º clique.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>inicio</code>, <code>clique 1</code>, <code>extra</code>, <code>clique 2</code>, <code>extra</code>, <code>extra</code>, <code>fim</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O <code>console.log("fim")</code> executa logo durante o carregamento do script, antes de qualquer clique.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>inicio</code>, <code>fim</code>, <code>extra</code>, <code>clique 1</code>, <code>extra</code>, <code>clique 2</code>, <code>extra</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Os ouvintes executam na ordem de registro: <code>tratar</code> foi registrada antes da função anônima.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>dificil</text></tag>
+      <tag><text>eventos</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q05 - DOM -->
+  <question type="multichoice">
+    <name>
+      <text>Q05 - DOM (seleção e alteração de texto/atributo)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere o HTML e o script abaixo:</p>
+<pre><code>&lt;p id="msg"&gt;Olá&lt;/p&gt;
+&lt;a href="a.html"&gt;Link&lt;/a&gt;
+
+&lt;script&gt;
+  const p = document.getElementById("msg");
+  p.textContent = "Bem-vindo";
+
+  const link = document.querySelector("a");
+  link.setAttribute("href", "b.html");
+
+  console.log(p.textContent, link.getAttribute("href"));
+&lt;/script&gt;</code></pre>
+<p>O que será exibido no console?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><code>getElementById("msg")</code> seleciona o parágrafo e <code>textContent</code> substitui o seu texto. <code>querySelector("a")</code> seleciona o primeiro link, e <code>setAttribute</code> altera o valor de <code>href</code>. Saída: <code>Bem-vindo b.html</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>Bem-vindo b.html</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>textContent</code> substituiu o texto do parágrafo e <code>setAttribute</code> trocou o <code>href</code> do link antes do <code>console.log</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Olá a.html</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O texto e o atributo foram alterados antes do <code>console.log</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Bem-vindo a.html</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>setAttribute</code> alterou o <code>href</code> para <code>b.html</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>null null</code>, pois <code>querySelector</code> exige um seletor de <code>id</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>querySelector</code> aceita qualquer seletor CSS, inclusive um nome de tag.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>dom</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q06 - AJAX -->
+  <question type="multichoice">
+    <name>
+      <text>Q06 - AJAX (XMLHttpRequest assíncrono)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Suponha que o arquivo <code>dados.txt</code> exista no mesmo servidor da página e contenha o texto <code>Olá AJAX</code>. Considere o script abaixo:</p>
+<pre><code>const xhr = new XMLHttpRequest();
+xhr.open("GET", "dados.txt", true);
+
+xhr.onload = function () {
+  if (xhr.status === 200) {
+    console.log("2: " + xhr.responseText);
+  }
+};
+
+xhr.send();
+console.log("1: requisição enviada");</code></pre>
+<p>Qual é a saída exibida no console, na ordem?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Como a requisição é assíncrona (terceiro parâmetro de <code>open</code> igual a <code>true</code>), <code>send()</code> não bloqueia o script: a linha seguinte executa imediatamente. A função <code>onload</code> só roda depois, quando a resposta chega com <code>status</code> 200.</p>
+<p>Saída: <code>1: requisição enviada</code> e depois <code>2: Olá AJAX</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>1: requisição enviada</code> e depois <code>2: Olá AJAX</code>]]></text>
+      <feedback format="html"><text><![CDATA[Como a requisição é assíncrona, <code>send()</code> não bloqueia: a linha seguinte executa primeiro, e o <code>onload</code> só roda quando a resposta chega.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>2: Olá AJAX</code> e depois <code>1: requisição enviada</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A requisição é assíncrona: o script não espera a resposta para continuar.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Apenas <code>1: requisição enviada</code>, pois <code>onload</code> nunca é executado.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>onload</code> é executado quando a resposta chega, mesmo que o restante do script já tenha terminado.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>1: requisição enviada</code> e depois <code>2: undefined</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Dentro de <code>onload</code>, a resposta já chegou e <code>responseText</code> contém o texto do arquivo.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>ajax</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q07 - DOM -->
+  <question type="multichoice">
+    <name>
+      <text>Q07 - DOM (criação, remoção e movimentação de elementos)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere o HTML e o script abaixo (a lista não possui espaços nem quebras de linha entre os itens):</p>
+<pre><code>&lt;ul id="lista"&gt;&lt;li&gt;A&lt;/li&gt;&lt;li&gt;B&lt;/li&gt;&lt;li&gt;C&lt;/li&gt;&lt;/ul&gt;
+
+&lt;script&gt;
+  const lista = document.getElementById("lista");
+  const novos = ["D", "E"];
+
+  novos.forEach(function (texto) {
+    const li = document.createElement("li");
+    li.textContent = texto;
+    lista.appendChild(li);
+  });
+
+  lista.removeChild(lista.firstElementChild);
+
+  const primeiro = lista.querySelector("li");
+  lista.appendChild(primeiro);
+
+  const itens = lista.querySelectorAll("li");
+  console.log(itens.length + " - " + lista.textContent);
+&lt;/script&gt;</code></pre>
+<p>O que será exibido no console?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<ol>
+<li>Após o <code>forEach</code>: <code>A B C D E</code>.</li>
+<li><code>removeChild(lista.firstElementChild)</code> remove <code>A</code>: <code>B C D E</code>.</li>
+<li><code>querySelector("li")</code> retorna o primeiro item (<code>B</code>). Como esse nó <strong>já está no documento</strong>, <code>appendChild</code> o <strong>move</strong> para o final, em vez de copiá-lo: <code>C D E B</code>.</li>
+</ol>
+<p>Saída: <code>4 - CDEB</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>4 - CDEB</code>]]></text>
+      <feedback format="html"><text><![CDATA[Após adicionar D e E e remover A, a lista fica B C D E; como <code>B</code> já está no DOM, <code>appendChild</code> o move para o final: C D E B (4 itens).]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>5 - BCDEB</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>appendChild</code> não duplica um nó que já está no DOM; ele o move de lugar.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>4 - BCDE</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O item <code>B</code> foi movido para o final da lista.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>5 - ABCDE</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O primeiro item (<code>A</code>) foi removido com <code>removeChild</code>.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>dificil</text></tag>
+      <tag><text>dom</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q08 - XMLHttpRequest -->
+  <question type="multichoice">
+    <name>
+      <text>Q08 - XMLHttpRequest (open, send e status)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Sobre o objeto <code>XMLHttpRequest</code> em JavaScript, assinale a alternativa <strong>correta</strong>:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><code>XMLHttpRequest</code> é uma API do navegador para trocar dados com o servidor via HTTP sem recarregar a página, o que é a base do AJAX. <code>open(método, url, assíncrono)</code> configura a requisição, <code>send()</code> a envia e <code>status</code> guarda o código HTTP da resposta (por exemplo, 200 para sucesso e 404 para recurso não encontrado). O corpo da resposta fica em <code>responseText</code>, e a resposta pode estar em qualquer formato de texto (JSON, HTML, texto puro), não apenas XML.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[É um objeto do navegador que permite fazer requisições HTTP ao servidor sem recarregar a página; <code>open()</code> configura o método e a URL, <code>send()</code> envia a requisição e <code>status</code> contém o código HTTP da resposta (por exemplo, 200).]]></text>
+      <feedback format="html"><text><![CDATA[<code>open()</code> configura, <code>send()</code> envia, <code>status</code> traz o código HTTP e o corpo da resposta fica em <code>responseText</code>, tudo sem recarregar a página.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>open()</code> envia a requisição ao servidor e <code>send()</code> apenas define o método HTTP e a URL que serão usados.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Os papéis estão invertidos: <code>open()</code> configura e <code>send()</code> envia.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[A propriedade <code>status</code> contém o corpo (conteúdo) da resposta enviada pelo servidor.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>status</code> contém o código HTTP; o corpo fica em <code>responseText</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Como o nome sugere, <code>XMLHttpRequest</code> só consegue receber respostas no formato XML e sempre recarrega a página ao final da requisição.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Ele recebe qualquer formato de texto (JSON, HTML, TXT) e não recarrega a página.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>conceitual</text></tag>
+      <tag><text>ajax</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q09 - Tipos -->
+  <question type="multichoice">
+    <name>
+      <text>Q09 - Tipos em JavaScript (primitivos e tipagem dinâmica)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Sobre os tipos de dados em JavaScript, assinale a alternativa <strong>correta</strong>:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>JavaScript possui tipagem <strong>dinâmica</strong>: o tipo está associado ao valor, não à variável, e é verificado em tempo de execução. Por isso, uma mesma variável declarada com <code>let</code> pode receber um <code>number</code> e depois uma <code>string</code>. Os tipos primitivos são <code>string</code>, <code>number</code>, <code>boolean</code>, <code>undefined</code>, <code>null</code>, <code>bigint</code> e <code>symbol</code>. Arrays são objetos (<code>typeof []</code> retorna <code>"object"</code>).</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[JavaScript tem tipagem dinâmica: uma mesma variável pode receber valores de tipos diferentes durante a execução; <code>string</code>, <code>number</code> e <code>boolean</code> são exemplos de tipos primitivos.]]></text>
+      <feedback format="html"><text><![CDATA[Em JavaScript o tipo pertence ao valor, não à variável, e é verificado em tempo de execução; por isso não se declara tipo e a variável pode mudar de tipo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[É obrigatório declarar o tipo da variável, como em <code>let int idade = 20;</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Em JavaScript não se declara o tipo da variável; isso é uma característica de linguagens com tipagem estática.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Depois que uma variável recebe um <code>number</code>, atribuir a ela uma <code>string</code> gera um erro de tipo.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Com tipagem dinâmica, a variável pode receber valores de outros tipos sem erro.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>array</code> é um tipo primitivo, e por isso <code>typeof [1, 2, 3]</code> retorna <code>"array"</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Arrays são objetos: <code>typeof [1, 2, 3]</code> retorna <code>"object"</code>.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>conceitual</text></tag>
+      <tag><text>tipos</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q10 - Estrutura de Controle -->
+  <question type="multichoice">
+    <name>
+      <text>Q10 - Estrutura de controle (if/else)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Qual é a saída exibida no console ao executar o código abaixo?</p>
+<pre><code>function classificar(nota, frequencia) {
+  if (frequencia &lt; 75) {
+    return "Reprovado por falta";
+  } else if (nota &gt;= 7) {
+    return "Aprovado";
+  } else if (nota &gt;= 5) {
+    return "Exame";
+  } else {
+    return "Reprovado";
+  }
+}
+
+console.log(classificar(8, 70));
+console.log(classificar(6, 90));
+console.log(classificar("7", 80));</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<ul>
+<li><code>classificar(8, 70)</code>: a primeira condição (<code>70 &lt; 75</code>) já é verdadeira, então retorna <code>"Reprovado por falta"</code>, e a nota nem é avaliada.</li>
+<li><code>classificar(6, 90)</code>: a frequência é suficiente; <code>6 &gt;= 7</code> é falso e <code>6 &gt;= 5</code> é verdadeiro, então retorna <code>"Exame"</code>.</li>
+<li><code>classificar("7", 80)</code>: o operador <code>&gt;=</code> converte a string <code>"7"</code> para número, então <code>"7" &gt;= 7</code> é verdadeiro e retorna <code>"Aprovado"</code>.</li>
+</ul>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>Reprovado por falta</code>, <code>Exame</code>, <code>Aprovado</code>]]></text>
+      <feedback format="html"><text><![CDATA[Frequência 70 cai no primeiro <code>if</code>; nota 6 cai no <code>else if (nota &gt;= 5)</code>; e <code>"7" &gt;= 7</code> é verdadeiro porque a string é convertida para número.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Aprovado</code>, <code>Exame</code>, <code>Aprovado</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A frequência é testada primeiro; com 70, o primeiro <code>if</code> já retorna "Reprovado por falta".]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Reprovado por falta</code>, <code>Exame</code>, <code>Reprovado</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Na comparação <code>"7" &gt;= 7</code>, a string é convertida para número e o resultado é verdadeiro.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Reprovado por falta</code>, <code>Aprovado</code>, <code>Aprovado</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Com nota 6, a condição <code>nota &gt;= 7</code> é falsa, e o fluxo segue para o <code>else if (nota &gt;= 5)</code>.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>media</text></tag>
+      <tag><text>controle</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q11 - DOM (conceito) -->
+  <question type="multichoice">
+    <name>
+      <text>Q11 - DOM (conceito)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O DOM (<em>Document Object Model</em>) de uma página carregada no navegador é, em linhas gerais:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Ao carregar uma página, o navegador monta o DOM: uma representação em árvore do documento, na qual cada elemento, atributo e texto é um nó. O JavaScript usa essa árvore para percorrer e modificar a página, por exemplo com <code>getElementById</code>, <code>querySelector</code>, <code>createElement</code> e <code>appendChild</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[uma representação em árvore dos elementos que o script pode percorrer e modificar]]></text>
+      <feedback format="html"><text><![CDATA[O navegador transforma o HTML em uma árvore de nós, e o JavaScript usa essa árvore para encontrar e alterar elementos (por exemplo, com <code>querySelector</code> e <code>appendChild</code>).]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[apenas o arquivo <code>.css</code> vinculado]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O CSS define a aparência; o DOM representa a estrutura do documento HTML.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[o banco de dados do site]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O DOM existe no navegador e representa a página carregada, não os dados guardados no servidor.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[a lista de extensões instaladas no navegador]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O DOM representa o documento da página, não configurações do navegador.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>conceitual</text></tag>
+      <tag><text>dom</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q12 - AJAX (requisição assíncrona) -->
+  <question type="multichoice">
+    <name>
+      <text>Q12 - AJAX (requisição assíncrona)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Uma requisição HTTP feita com <code>XMLHttpRequest</code> de forma assíncrona é assim chamada porque:</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>Em uma requisição assíncrona, <code>send()</code> não bloqueia o script: o código seguinte continua executando enquanto o navegador aguarda o servidor. Quando a resposta chega, o resultado é tratado em uma função de callback, como <code>onload</code> ou <code>onreadystatechange</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[o navegador encerra a página imediatamente]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A página continua aberta e funcionando enquanto a requisição é processada.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[o programa não precisa “travar” esperando a resposta na mesma linha: o resultado é tratado depois, em callbacks]]></text>
+      <feedback format="html"><text><![CDATA[O script continua executando enquanto o navegador espera o servidor; quando a resposta chega, ela é tratada em um callback como <code>onload</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[não usa rede]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A requisição é feita pela rede, via HTTP; assíncrono se refere a não bloquear a execução do script.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[só pode ser feita em servidores FTP]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>XMLHttpRequest</code> faz requisições HTTP/HTTPS a servidores web.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>conceitual</text></tag>
+      <tag><text>ajax</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q13 - AJAX (JSON.parse) -->
+  <question type="multichoice">
+    <name>
+      <text>Q13 - AJAX (conversão de JSON com JSON.parse)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Considere o trecho abaixo, executado quando uma requisição <code>XMLHttpRequest</code> termina com sucesso. O servidor devolveu o texto <code>{"nome": "Ana", "idade": 20}</code>:</p>
+<pre><code>xhr.onload = function () {
+  const dados = ______(xhr.responseText);
+  console.log(dados.nome);
+};</code></pre>
+<p>Qual função deve preencher a lacuna para que o console exiba <code>Ana</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><code>xhr.responseText</code> é sempre uma <strong>string</strong>. Para acessar <code>dados.nome</code>, é preciso primeiro converter o texto JSON em um objeto JavaScript com <code>JSON.parse</code>. A função <code>JSON.stringify</code> faz o caminho inverso: transforma um objeto em texto JSON.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>JSON.parse</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>responseText</code> é uma string; <code>JSON.parse</code> a converte em objeto, permitindo acessar <code>dados.nome</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>JSON.stringify</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>JSON.stringify</code> converte um objeto em texto; aqui é preciso o contrário.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Object.keys</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>Object.keys</code> lista as chaves de um objeto que já existe; ele não converte texto JSON.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>String</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>responseText</code> já é uma string; o que falta é convertê-la em objeto.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>ajax</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q14 - Operadores (!=, !==, || e !) -->
+  <question type="multichoice">
+    <name>
+      <text>Q14 - Operadores (!=, !==, || e !)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Qual é a saída exibida no console ao executar o código abaixo?</p>
+<pre><code>let x = 10;
+let y = "10";
+
+console.log(x != y);
+console.log(x !== y);
+console.log(!(x == y) || y === 10);</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><code>!=</code> é a negação de <code>==</code> e compara com conversão de tipo; <code>!==</code> é a negação de <code>===</code> e compara valor e tipo, sem conversão. O <code>||</code> resulta em <code>true</code> se pelo menos uma condição for verdadeira, e o <code>!</code> inverte um valor booleano.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>false</code>, <code>true</code>, <code>false</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>!=</code> converte <code>"10"</code> para número e, como os valores são iguais, dá <code>false</code>; <code>!==</code> compara valor e tipo (number × string) e dá <code>true</code>; <code>!(x == y)</code> é <code>!true</code> (<code>false</code>) e <code>y === 10</code> é <code>false</code> (<code>y</code> é string), então o <code>||</code> resulta em <code>false</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>true</code>, <code>true</code>, <code>false</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>!=</code> converte tipos antes de comparar: <code>10 != "10"</code> é <code>false</code>, pois os valores são iguais.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>false</code>, <code>false</code>, <code>false</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>!==</code> não converte tipos: number e string são diferentes, então <code>x !== y</code> é <code>true</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>false</code>, <code>true</code>, <code>true</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>y === 10</code> é <code>false</code> porque <code>y</code> é a string <code>"10"</code>, e <code>!(x == y)</code> também é <code>false</code>; logo, o <code>||</code> resulta em <code>false</code>.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>media</text></tag>
+      <tag><text>operadores</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q15 - Laço for (continue e break) -->
+  <question type="multichoice">
+    <name>
+      <text>Q15 - Laço for (continue e break)</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Qual é a saída exibida no console ao executar o código abaixo?</p>
+<pre><code>let resultado = "";
+
+for (let i = 1; i &lt;= 6; i++) {
+  if (i % 2 === 0) {
+    continue;
+  }
+  if (i &gt; 4) {
+    break;
+  }
+  resultado += i + " ";
+}
+
+console.log(resultado);</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p><code>continue</code> pula para a próxima volta do laço, sem executar o restante do bloco; <code>break</code> encerra o laço imediatamente. O operador <code>%</code> devolve o resto da divisão, então <code>i % 2 === 0</code> é verdadeiro para números pares.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>1 3 </code>]]></text>
+      <feedback format="html"><text><![CDATA[Os pares (2 e 4) são pulados pelo <code>continue</code>; os ímpares 1 e 3 são adicionados; quando <code>i</code> vale 5, <code>i &gt; 4</code> é verdadeiro e o <code>break</code> encerra o laço antes de adicionar o 5.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>1 3 5 </code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Quando <code>i</code> é 5, o <code>break</code> encerra o laço antes de o 5 ser adicionado.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>2 4 </code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>i % 2 === 0</code> identifica os pares, e para eles o <code>continue</code> pula o restante da volta; eles não são adicionados.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>1 2 3 4 </code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O <code>continue</code> faz os números pares serem pulados.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>media</text></tag>
+      <tag><text>loop</text></tag>
+      <tag><text>controle</text></tag>
+    </tags>
+  </question>
+
+</quiz>

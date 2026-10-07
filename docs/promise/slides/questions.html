@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script
+	src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
+	</script>
+	<script>quizdown.init();</script>
+    <title>Questões sobre Promise</title>
+</head>
+<body>
+    <div class="quizdown">
+        # Na analogia da encomenda, o que a Promise representa?
+        - [ ] O livro que já está na mão de quem comprou
+        - [X] O recibo: a garantia de um resultado que ainda vai chegar
+        - [ ] A página inteira, que fica travada até o pacote chegar
+        - [ ] O servidor que envia o livro
+
+        > Dica: slide 2
+
+        # O que uma Promise representa no JavaScript?
+        - [ ] Um valor que já está disponível no momento em que o código é lido
+        - [X] O resultado futuro de uma operação assíncrona
+        - [ ] Uma função que só pode ser chamada uma vez
+        - [ ] Um laço que repete uma tarefa a cada segundo
+
+        > Dica: slide 3
+
+        # Qual é o estado inicial de uma Promise recém-criada?
+        - [ ] fulfilled
+        - [ ] rejected
+        - [X] pending
+        - [ ] settled
+
+        > Dica: slide 4
+
+        # Qual estado indica que a operação terminou com sucesso e a Promise carrega um valor?
+        - [ ] pending
+        - [X] fulfilled
+        - [ ] rejected
+        - [ ] waiting
+
+        > Dica: slide 4
+
+        # O que a chamada `resolve(valor)` faz?
+        - [ ] Cancela a operação e entrega o motivo da falha
+        - [X] Conclui a Promise com sucesso e a leva ao estado fulfilled
+        - [ ] Cria uma segunda Promise encadeada
+        - [ ] Pausa a página inteira até o valor existir
+
+        > Dica: slide 5
+
+        # O que a chamada `reject(motivo)` faz?
+        - [ ] Entrega o valor de sucesso para o próximo `.then()`
+        - [X] Conclui a Promise com falha e a leva ao estado rejected
+        - [ ] Apaga a Promise e recomeça em pending
+        - [ ] Converte a função em `async`
+
+        > Dica: slide 5
+
+        # Quando o método `.then()` é executado?
+        - [ ] Assim que a Promise é criada, ainda em pending
+        - [X] Quando a Promise é cumprida e há um valor de sucesso
+        - [ ] Sempre que a Promise é rejeitada
+        - [ ] Uma vez por segundo, enquanto a operação espera
+
+        > Dica: slide 7
+
+        # Para que serve o método `.catch()`?
+        - [ ] Para criar a Promise e iniciar o `setTimeout`
+        - [X] Para tratar o motivo quando a Promise é rejeitada
+        - [ ] Para devolver o valor de uma Promise cumprida
+        - [ ] Para marcar uma função com `async`
+
+        > Dica: slide 7
+
+        # No encadeamento, o que acontece com o valor devolvido por um `.then()`?
+        - [ ] Ele é descartado e a cadeia recomeça do zero
+        - [X] Ele entra como entrada do `.then()` seguinte
+        - [ ] Ele só pode ser lido dentro de um `.catch()`
+        - [ ] Ele volta a Promise para o estado pending
+
+        > Dica: slide 8
+
+        # O que a palavra-chave `await` faz dentro de uma função `async`?
+        - [ ] Cancela a Promise e segue para a próxima linha na mesma hora
+        - [X] Pausa só essa função até a Promise ser cumprida e entrega o valor
+        - [ ] Trava o navegador inteiro até o servidor responder
+        - [ ] Transforma um `.catch()` em `.then()`
+
+        > Dica: slide 9
+
+        # Uma função declarada com `async` devolve o quê?
+        - [ ] Um valor já calculado, sem Promise
+        - [X] Uma Promise
+        - [ ] Apenas `undefined`, mesmo quando há `return`
+        - [ ] O motivo passado para `reject`
+
+        > Dica: slide 9
+
+        # Com `async`/`await`, o que ocupa o lugar do `.catch()` quando uma etapa falha?
+        - [ ] Um segundo `await` logo abaixo
+        - [X] O bloco `try`/`catch`
+        - [ ] A palavra `pending` antes da chamada
+        - [ ] O método `.then()` sem argumentos
+
+        > Dica: slide 10
+    </div>
+</body>
+</html>

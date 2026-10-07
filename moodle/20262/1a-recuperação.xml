@@ -1,0 +1,490 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <!-- Q01 - Troca de valores -->
+  <question type="multichoice">
+    <name>
+      <text>Q01 - Troca de valores com variável auxiliar</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Qual é a saída exibida no console ao executar o código abaixo?</p>
+<pre><code>let a = 10;
+let b = 3;
+let temp = a;
+a = b;
+b = temp;
+
+console.log(a, b, temp);</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A questão pede o resultado de uma troca de valores entre <code>a</code> e <code>b</code> feita com uma variável auxiliar. <code>temp</code> recebe primeiro o valor original de <code>a</code>, que é <code>10</code>. Em seguida <code>a</code> recebe o valor de <code>b</code>, que é <code>3</code>, e <code>b</code> recebe o valor guardado em <code>temp</code>, que continua <code>10</code>. A variável auxiliar não é atualizada depois disso. O <code>console.log(a, b, temp)</code> exibe esses três valores na ordem final: <code>3 10 10</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>3 10 10</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>temp</code> guarda o <code>10</code> original; depois <code>a</code> fica <code>3</code> e <code>b</code> fica <code>10</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>10 3 10</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Essa é a ordem inicial de <code>a</code> e <code>b</code>; a troca inverte esses dois valores.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>3 10 3</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>temp</code> permanece com o valor original de <code>a</code>, que é <code>10</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>10 3 3</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Ao final <code>a</code> vale <code>3</code>, <code>b</code> vale <code>10</code> e <code>temp</code> continua <code>10</code>.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>variaveis</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q02 - let e const -->
+  <question type="multichoice">
+    <name>
+      <text>Q02 - Variáveis let e const</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O que acontece ao executar o código abaixo?</p>
+<pre><code>let pontos = 0;
+pontos = pontos + 1;
+pontos++;
+
+const CURSO = "CPW2";
+CURSO = "WEB";
+
+console.log(pontos, CURSO);</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A questão observa o que o JavaScript faz quando um <code>let</code> é atualizado e, em seguida, um <code>const</code> recebe outro valor. <code>pontos</code> começa em <code>0</code>, a atribuição <code>pontos = pontos + 1</code> leva esse valor a <code>1</code> e <code>pontos++</code> leva a <code>2</code>. <code>CURSO</code> é declarado com <code>const</code> e fica ligado à string <code>"CPW2"</code>. A linha <code>CURSO = "WEB"</code> tenta fazer esse identificador apontar para outro valor. JavaScript recusa essa reatribuição e lança <code>TypeError: Assignment to constant variable</code>. O erro interrompe o script naquela linha, então o <code>console.log</code> não chega a ser executado.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Ocorre um <code>TypeError</code> na linha <code>CURSO = "WEB"</code> e o <code>console.log</code> não é executado.]]></text>
+      <feedback format="html"><text><![CDATA[<code>const</code> não permite reatribuir o identificador. O <code>TypeError</code> interrompe o script antes do <code>console.log</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[É exibido <code>2 WEB</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>CURSO</code> foi declarado com <code>const</code> e a linha <code>CURSO = "WEB"</code> gera um erro.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[É exibido <code>2 CPW2</code>, porque a reatribuição de uma constante é ignorada.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A reatribuição de uma constante não é ignorada: ela lança <code>TypeError</code> e interrompe o script.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[É exibido <code>1 CPW2</code>, porque <code>pontos++</code> não altera o valor.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>pontos++</code> altera o valor, mas o <code>console.log</code> não executa por causa do <code>TypeError</code>.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>variaveis</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q03 - const -->
+  <question type="multichoice">
+    <name>
+      <text>Q03 - Declaração com const</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Qual afirmativa descreve corretamente o uso de <code>const</code> em JavaScript?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A questão pede a regra de uma declaração com <code>const</code>. O identificador fica ligado ao valor da inicialização e não pode passar a referir outro valor; uma tentativa de reatribuição gera <code>TypeError</code>. Essa restrição vale para o identificador, não para o interior do valor. Se o valor for um objeto ou um array, as propriedades ou os itens ainda podem ser alterados.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Um identificador declarado com <code>const</code> pode receber outro valor depois, desde que o novo valor seja do mesmo tipo.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>const</code> não permite reatribuir o identificador, mesmo quando o novo valor é do mesmo tipo.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>const</code> impede qualquer alteração, inclusive mudar as propriedades de um objeto já atribuído a esse identificador.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. As propriedades de um objeto atribuído a <code>const</code> ainda podem ser alteradas.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Não é possível reatribuir o identificador declarado com <code>const</code>. Se o valor for um objeto, as propriedades desse objeto ainda podem ser alteradas.]]></text>
+      <feedback format="html"><text><![CDATA[<code>const</code> impede a reatribuição do identificador. O conteúdo de um objeto atribuído a ele continua mutável.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>const</code> só pode ser usado para números e strings, nunca para objetos ou arrays.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>const</code> aceita qualquer valor, inclusive objetos e arrays.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>conceitual</text></tag>
+      <tag><text>variaveis</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q04 - if/else -->
+  <question type="multichoice">
+    <name>
+      <text>Q04 - Estrutura condicional if/else</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Qual é a saída exibida no console ao executar o código abaixo?</p>
+<pre><code>let idade = 17;
+
+if (idade &gt;= 18) {
+  console.log("maior");
+} else {
+  console.log("menor");
+}
+
+console.log("fim");</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A questão pede a saída de um <code>if/else</code> seguido de um <code>console.log</code> que está fora da estrutura. A condição <code>idade &gt;= 18</code> compara <code>17</code> com <code>18</code> e é falsa, então o JavaScript executa o ramo <code>else</code> e exibe <code>menor</code>. O <code>console.log("fim")</code> vem depois do bloco, no fluxo normal do script, e também é executado. A saída é <code>menor</code> e, em seguida, <code>fim</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>menor</code> e, em seguida, <code>fim</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>17 &gt;= 18</code> é falso, então o <code>else</code> exibe <code>menor</code>. O <code>console.log("fim")</code> está fora do <code>if</code> e também executa.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[apenas <code>menor</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O <code>console.log("fim")</code> está fora do <code>if</code> e também é executado.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>maior</code> e, em seguida, <code>fim</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>17 &gt;= 18</code> é falso, então o ramo executado é o <code>else</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[apenas <code>fim</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O <code>else</code> exibe <code>menor</code> antes de <code>fim</code>.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>controle</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q05 - Eventos -->
+  <question type="multichoice">
+    <name>
+      <text>Q05 - Eventos no navegador</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Em uma página, um botão é declarado assim:</p>
+<pre><code>&lt;button onclick="mostrar()"&gt;Enviar&lt;/button&gt;</code></pre>
+<p>O que essa declaração estabelece?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A questão pede o significado do atributo <code>onclick</code> em <code>&lt;button onclick="mostrar()"&gt;Enviar&lt;/button&gt;</code>. Esse atributo associa a função <code>mostrar</code> ao evento de clique daquele botão. A função permanece registrada até a ação acontecer: quando o usuário clica no botão, o navegador chama <code>mostrar</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[A função <code>mostrar</code> é executada assim que o navegador lê a tag do botão, durante o carregamento da página.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>onclick</code> não chama a função na leitura da tag; a chamada ocorre no clique.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[A função <code>mostrar</code> deve ser chamada quando o usuário clicar naquele botão.]]></text>
+      <feedback format="html"><text><![CDATA[<code>onclick</code> associa <code>mostrar</code> ao clique daquele botão.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[O botão deixa de ser clicável e o clique passa a ser ignorado.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O atributo registra o que fazer no clique; o botão continua clicável.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[O texto do botão é substituído pelo resultado de <code>mostrar</code> no momento em que a página abre.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O texto do botão continua <code>Enviar</code>. <code>onclick</code> define a função chamada no clique.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>facil</text></tag>
+      <tag><text>conceitual</text></tag>
+      <tag><text>eventos</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q06 - for...in e DOM -->
+  <question type="multichoice">
+    <name>
+      <text>Q06 - Lista criada a partir de um array</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A página contém uma lista vazia <code>&lt;ul id="lista"&gt;&lt;/ul&gt;</code>. Qual é a saída exibida no console ao executar o script abaixo?</p>
+<pre><code>const itens = ["Maçã", "Banana", "Laranja"];
+const lista = document.getElementById("lista");
+
+for (const i in itens) {
+  const li = document.createElement("li");
+  li.textContent = (i + 1) + ") " + itens[i];
+  lista.appendChild(li);
+}
+
+console.log(lista.children.length);
+console.log(lista.firstElementChild.textContent);</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A questão acompanha a criação de uma <code>&lt;ul&gt;</code> a partir do array <code>["Maçã", "Banana", "Laranja"]</code> com <code>for...in</code>. Esse laço percorre as chaves do array, que são os índices na forma de texto: <code>"0"</code>, <code>"1"</code> e <code>"2"</code>. Em cada volta, <code>itens[i]</code> é a fruta correspondente e <code>appendChild</code> insere um <code>&lt;li&gt;</code>, então a lista fica com 3 filhos. Como <code>i</code> é string, a expressão <code>i + 1</code> concatena em vez de somar: <code>"0" + 1</code> produz <code>"01"</code>. O texto do primeiro item é <code>01) Maçã</code>. <code>lista.children.length</code> vale <code>3</code> e <code>lista.firstElementChild.textContent</code> é <code>01) Maçã</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>3</code> e <code>01) Maçã</code>]]></text>
+      <feedback format="html"><text><![CDATA[O <code>for...in</code> entrega o índice como texto. <code>"0" + 1</code> produz <code>"01"</code>, e a lista fica com 3 itens. O primeiro é <code>01) Maçã</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>3</code> e <code>1) Maçã</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>i</code> é a string <code>"0"</code>, então <code>i + 1</code> concatena e produz <code>"01"</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>3</code> e <code>0) Maçã</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O texto é montado com <code>i + 1</code>. Como <code>i</code> é <code>"0"</code>, o resultado é <code>"01"</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>3</code> e <code>11) Banana</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A primeira chave é <code>"0"</code> e <code>itens["0"]</code> é <code>"Maçã"</code>.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>media</text></tag>
+      <tag><text>dom</text></tag>
+      <tag><text>array</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q07 - Funções -->
+  <question type="multichoice">
+    <name>
+      <text>Q07 - Funções, parâmetros e retorno</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Qual é a saída exibida no console ao executar o código abaixo?</p>
+<pre><code>function aplicar(valor, operacao) {
+  return operacao(valor);
+}
+
+const dobrar = function (n) {
+  return n * 2;
+};
+
+function somarUm(n) {
+  return n + 1;
+}
+
+console.log(aplicar(5, dobrar), aplicar(5, somarUm));</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A questão pede o que <code>aplicar</code> devolve ao receber duas funções diferentes. <code>aplicar</code> chama a função recebida no parâmetro <code>operacao</code> e retorna o resultado dessa chamada. <code>dobrar</code> é uma função anônima guardada em uma variável; <code>dobrar(5)</code> executa <code>return n * 2</code> e devolve <code>10</code>. <code>somarUm(5)</code> executa <code>return n + 1</code> e devolve <code>6</code>. O <code>console.log</code> exibe esses dois retornos: <code>10 6</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>10 6</code>]]></text>
+      <feedback format="html"><text><![CDATA[<code>dobrar(5)</code> devolve <code>10</code> e <code>somarUm(5)</code> devolve <code>6</code>. <code>aplicar</code> retorna esses dois resultados.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>10 5</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>somarUm</code> executa <code>return n + 1</code> e devolve <code>6</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>5 6</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>dobrar</code> executa <code>return n * 2</code> e devolve <code>10</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>10 1</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>somarUm</code> devolve <code>n + 1</code>, que vale <code>6</code>.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>media</text></tag>
+      <tag><text>funcoes</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q08 - textContent -->
+  <question type="multichoice">
+    <name>
+      <text>Q08 - Propriedade textContent</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>Qual alternativa descreve corretamente a atribuição <code>elemento.textContent = "Olá"</code>?</p>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A questão pede o efeito de atribuir uma string à propriedade <code>textContent</code> de um elemento que já está na página. Essa atribuição substitui o texto daquele elemento: o que estava visível deixa de ser exibido e o elemento passa a mostrar <code>Olá</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[O texto exibido pelo elemento passa a ser <code>Olá</code>, no lugar do texto que ele mostrava antes.]]></text>
+      <feedback format="html"><text><![CDATA[Atribuir <code>textContent</code> substitui o texto visível do elemento por <code>Olá</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[A palavra <code>Olá</code> é acrescentada ao final do texto que o elemento já tinha.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A atribuição substitui o texto anterior; ela não acrescenta a string ao final.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[O atributo <code>id</code> do elemento passa a ser <code>Olá</code>, e o texto visível não muda.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>textContent</code> altera o texto visível, não o atributo <code>id</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[O elemento é apagado da página e outro é criado com a tag <code>Olá</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O elemento permanece na página e passa a exibir o texto <code>Olá</code>.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>media</text></tag>
+      <tag><text>conceitual</text></tag>
+      <tag><text>dom</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q09 - AJAX -->
+  <question type="multichoice">
+    <name>
+      <text>Q09 - Requisição assíncrona e JSON</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>O arquivo <code>notas.json</code> existe no mesmo servidor. A resposta chega com status HTTP 200 e com o corpo <code>{"notas":[8, 5, 7, 4]}</code>. Qual é a sequência exibida no console ao chamar <code>mostrarNotas("notas.json")</code>?</p>
+<pre><code>function mostrarNotas(url) {
+  const xhr = new XMLHttpRequest();
+  xhr.open("GET", url, true);
+
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState !== 4) {
+      return;
+    }
+    if (xhr.status !== 200) {
+      console.log("erro", xhr.status);
+      return;
+    }
+    const dados = JSON.parse(xhr.responseText);
+    let soma = 0;
+    for (const n of dados.notas) {
+      if (n &gt;= 7) {
+        soma = soma + n;
+      }
+    }
+    console.log("ok", soma, dados.notas.length);
+  };
+
+  console.log("inicio");
+  xhr.send();
+  console.log("fim");
+}</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A questão pede a ordem das mensagens de um GET assíncrono e o cálculo feito quando o JSON chega. Em <code>xhr.open("GET", url, true)</code>, o terceiro argumento deixa a requisição assíncrona: <code>xhr.send()</code> dispara o pedido e o script continua. Por isso o console exibe primeiro <code>inicio</code> e depois <code>fim</code>, ainda sem a resposta. Quando a resposta está completa, <code>readyState</code> vale <code>4</code>. O status informado é <code>200</code>, então o ramo <code>xhr.status !== 200</code> não é usado. <code>JSON.parse</code> converte o corpo <code>{"notas":[8, 5, 7, 4]}</code> no objeto com a propriedade <code>notas</code>. O <code>for...of</code> soma somente os valores maiores ou iguais a <code>7</code>, isto é <code>8 + 7 = 15</code>. O array continua com os quatro números, então <code>dados.notas.length</code> vale <code>4</code>. A mensagem do callback é <code>ok 15 4</code>. A sequência completa é <code>inicio</code>, <code>fim</code>, <code>ok 15 4</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>inicio</code>, <code>fim</code>, <code>ok 15 4</code>]]></text>
+      <feedback format="html"><text><![CDATA[A requisição é assíncrona, então <code>inicio</code> e <code>fim</code> aparecem antes da resposta. A soma das notas <code>&gt;= 7</code> é <code>15</code>, e o array continua com 4 itens.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>inicio</code>, <code>ok 15 4</code>, <code>fim</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Como a requisição é assíncrona, <code>send()</code> não espera a resposta: <code>fim</code> aparece antes de <code>ok 15 4</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>inicio</code>, <code>fim</code>, <code>ok 24 4</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O laço soma só as notas maiores ou iguais a 7: <code>8 + 7 = 15</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>inicio</code>, <code>fim</code>, <code>erro 200</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Com status 200 o script segue para o <code>JSON.parse</code> e para o cálculo da soma.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>dificil</text></tag>
+      <tag><text>ajax</text></tag>
+    </tags>
+  </question>
+
+  <!-- Q10 - DOM -->
+  <question type="multichoice">
+    <name>
+      <text>Q10 - Criação e reorganização de elementos no DOM</text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[<p>A página contém apenas <code>&lt;ul id="lista"&gt;&lt;/ul&gt;</code>, sem espaços nem quebras de linha entre os itens que o script criar. O que será exibido no console?</p>
+<pre><code>const itens = ["Maçã", "Banana", "Laranja"];
+const lista = document.getElementById("lista");
+
+for (const item of itens) {
+  const li = document.createElement("li");
+  li.textContent = item;
+  lista.appendChild(li);
+}
+
+lista.lastElementChild.textContent = "Uva";
+lista.removeChild(lista.firstElementChild);
+
+const movido = lista.querySelector("li");
+lista.appendChild(movido);
+
+console.log(lista.children.length + " - " + lista.textContent);</code></pre>]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[<p>A questão pede o texto final da lista depois de criar os itens, alterar o último, remover o primeiro e reposicionar um nó que já está no DOM. O <code>for...of</code> cria três <code>&lt;li&gt;</code> e a lista fica <code>Maçã</code>, <code>Banana</code>, <code>Laranja</code>. <code>lastElementChild.textContent = "Uva"</code> muda o último item, e a lista passa a ser <code>Maçã</code>, <code>Banana</code>, <code>Uva</code>. <code>removeChild(lista.firstElementChild)</code> remove <code>Maçã</code>, restando <code>Banana</code> e <code>Uva</code>. <code>querySelector("li")</code> devolve o primeiro item que ainda está na lista, <code>Banana</code>. Como esse nó já pertence à <code>&lt;ul&gt;</code>, <code>appendChild</code> o move para o final em vez de criar uma cópia. A ordem final é <code>Uva</code>, <code>Banana</code>. A lista tem 2 filhos, e <code>textContent</code> junta o texto deles sem separador, produzindo <code>UvaBanana</code>. O <code>console.log</code> exibe <code>2 - UvaBanana</code>.</p>]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.0000000</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>2 - UvaBanana</code>]]></text>
+      <feedback format="html"><text><![CDATA[Depois de remover <code>Maçã</code>, <code>appendChild</code> move <code>Banana</code> para o final. A lista fica <code>Uva</code>, <code>Banana</code>, e <code>textContent</code> junta os textos: <code>2 - UvaBanana</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>2 - BananaUva</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>appendChild</code> move <code>Banana</code> para o final, então a ordem fica <code>Uva</code>, <code>Banana</code>.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>3 - BananaUvaBanana</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>appendChild</code> não copia um nó que já está na lista; ele o move. A lista fica com 2 itens.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>3 - MaçãBananaUva</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. <code>Maçã</code> foi removida com <code>removeChild</code>, e <code>Banana</code> foi movida para o final.]]></text></feedback>
+    </answer>
+    <tags>
+      <tag><text>dificil</text></tag>
+      <tag><text>dom</text></tag>
+    </tags>
+  </question>
+
+</quiz>
