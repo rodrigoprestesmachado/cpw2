@@ -184,6 +184,49 @@ async function acompanharEntrega() {
 
 
 <!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# fetch por dentro
+<!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+* O `fetch` devolve uma Promise. Por baixo, a requisição ainda é um `XMLHttpRequest`
+<!-- .element: style="margin-bottom:30px; font-size: 22px; font-family: arial; color:#F5F5F5" -->
+
+* A função devolve o recibo na hora. `resolve` e `reject` rodam quando a resposta chega
+<!-- .element: style="margin-bottom:30px; font-size: 22px; font-family: arial; color:#F5F5F5" -->
+
+* Status 200–299 cumpre a Promise. Outro status, ou falha de rede, rejeita
+<!-- .element: style="margin-bottom:30px; font-size: 22px; font-family: arial; color:#F5F5F5" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# fetch por dentro
+<!-- .element: style="margin-bottom:20px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+```javascript
+function buscar(url) {
+  return new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4) {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          resolve(xhr.responseText);
+        } else {
+          reject(new Error("Erro HTTP: " + xhr.status));
+        }
+      }
+    };
+    xhr.onerror = () => reject(new Error("Falha de rede"));
+    xhr.send();
+  });
+}
+```
+<!-- .element: style="margin-bottom:16px; font-size: 15px; font-family: arial; color:black; background-color: #F2FAF3;" -->
+
+No `fetch` real, status 404 ainda cumpre a Promise: confira `response.ok` no `.then()`.
+<!-- .element: style="font-size: 18px; font-family: arial; color:#F5F5F5" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
 # Referências
 <!-- .element: style="margin-bottom:50px; font-size: 50px; font-family: Marker Felt; color:#2B2625" -->
 

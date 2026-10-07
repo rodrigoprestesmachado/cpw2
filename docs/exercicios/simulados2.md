@@ -4,6 +4,7 @@ title: Simulado 2ª Parte
 parent: Simulados
 nav_order: 42
 has_toc: false
+has_children: true
 ---
 
 ## Questões práticas

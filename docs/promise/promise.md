@@ -207,11 +207,90 @@ lugar do `.catch()`: se alguma das Promises for rejeitada, a execução salta
 para o `catch` com o motivo da falha.
 {: .fs-3 }
 
-## Exemplo AJaX com Promise
+## O fetch por dentro: XMLHttpRequest e Promise
 
 O `fetch()` do navegador já devolve uma Promise. Pedir dados a um servidor é a
 mesma espera da encomenda: a requisição sai na hora, a resposta chega depois, e
 `.then()` (ou `await`) trata o que veio.
+{: .fs-3 }
+
+Por baixo, o navegador continua usando o `XMLHttpRequest` que você já viu em
+Ajax. Dá para escrever uma versão mínima do `fetch` e ver a Promise nascer em
+volta dessa requisição. A função abaixo devolve o recibo na hora. O
+`XMLHttpRequest` faz o trabalho e, quando a resposta chega, chama `resolve` ou
+`reject`.
+{: .fs-3 }
+
+```javascript
+function buscar(url) {
+  return new Promise((resolve, reject) => {
+    let xhr = new XMLHttpRequest();
+    xhr.open("GET", url, true);
+
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState === 4) {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          resolve(xhr.responseText);
+        } else {
+          reject(new Error("Erro HTTP: " + xhr.status));
+        }
+      }
+    };
+
+    xhr.onerror = () => {
+      reject(new Error("Falha de rede"));
+    };
+
+    xhr.send();
+  });
+}
+
+buscar("pedido.json")
+  .then((texto) => {
+    let pedido = JSON.parse(texto);
+    console.log(pedido.produto);
+  })
+  .catch((motivo) => {
+    console.error(motivo);
+  });
+```
+{: .fs-3 }
+
+A chamada `buscar("pedido.json")` devolve a Promise ainda pendente, e o
+`xhr.send()` dispara a requisição sem travar a página. Quando `readyState`
+chega a 4, a operação terminou. Um status entre 200 e 299 cumpre a Promise com
+o texto da resposta. Qualquer outro status, ou uma falha de rede, rejeita a
+Promise e cai no `.catch()`.
+{: .fs-3 }
+
+O `fetch` do navegador faz esse embrulho para você e cumpre a Promise com um
+objeto `Response`, em vez do texto cru. `response.json()` lê esse corpo e
+devolve outra Promise, já convertida em objeto. Por isso uma busca com `fetch`
+costuma ter dois `.then()`: o primeiro confirma a resposta e devolve o JSON; o
+segundo usa o objeto.
+{: .fs-3 }
+
+```javascript
+fetch("pedido.json")
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Erro HTTP: " + response.status);
+    }
+    return response.json();
+  })
+  .then((pedido) => {
+    console.log(pedido.produto);
+  })
+  .catch((motivo) => {
+    console.error(motivo);
+  });
+```
+{: .fs-3 }
+
+No `fetch`, um status 404 ou 500 ainda cumpre a Promise. O objeto `Response`
+chega no primeiro `.then()` com `response.ok` valendo `false`. A verificação
+do status fica ali: o `throw` desvia a cadeia para o `.catch()`, do mesmo modo
+que o `reject` faz na função `buscar`.
 {: .fs-3 }
 
 Neste diretório de exemplos há um Ajax escrito com Promise e versões menores
@@ -293,6 +372,16 @@ da página, quando o enunciado pedir).
     seguinte, mostre apenas o `produto` dentro de um `<p id="resultado">`.
     Trate falha de rede com `.catch()`. Sirva a pasta com um servidor local
     para o `fetch` conseguir ler o arquivo.
+
+7. **Um `fetch` mínimo com `XMLHttpRequest`**
+
+    Escreva uma função `buscar(url)` que devolva uma Promise. Dentro dela, use
+    `XMLHttpRequest` para fazer um GET assíncrono a essa URL. Quando
+    `readyState` for 4 e o `status` estiver entre 200 e 299, chame `resolve`
+    com `xhr.responseText`. Se o status estiver fora dessa faixa, ou se ocorrer
+    um erro de rede (`xhr.onerror`), chame `reject`. Use o `pedido.json` do
+    exercício anterior: no `.then()`, converta o texto com `JSON.parse` e
+    mostre o `produto` dentro de `<p id="resultado">`.
 
 ## Exercício de Fixação Teórico
 
