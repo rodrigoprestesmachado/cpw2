@@ -21,8 +21,9 @@ antes da avaliação.
 
 ## Vue
 
-* [Exercícios sobre Vue.js](https://cpw2.rpmhub.dev/exercicios/vue.html)
-* [Exercício de Fixação Teórico](https://cpw2.rpmhub.dev/vuejs/slides/questions.html)
+* [Exercícios de Fixação Práticos](https://cpw2.rpmhub.dev/vuejs/vuejs.html#exercícios-de-fixação-práticos)
+* [Exercício de Fixação Teórico](https://cpw2.rpmhub.dev/vuejs/vuejs.html#exercício-de-fixação-teórico)
+* [Exercícios de projeto sobre Vue.js](https://cpw2.rpmhub.dev/exercicios/vue.html)
 {: .fs-3 }
 
 ## JSON

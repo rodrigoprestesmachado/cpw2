@@ -8,40 +8,161 @@
 	src="https://cdn.jsdelivr.net/npm/quizdown@latest/public/build/quizdown.js">
 	</script>
 	<script>quizdown.init();</script>
-    <title>Questões sobe Vue.js</title>
+    <title>Questões sobre Vue.js</title>
 </head>
 <body>
     <div class="quizdown">
         # O que é o Vue.js?
-        - [ ] Uma linguagem de programação
-        - [X] Um framework de front-end JavaScript
-        - [ ] Um banco de dados relacional
-        - [ ] Um sistema operacional
+        - [ ] Uma linguagem de programação que substitui o JavaScript
+        - [X] Um framework JavaScript para construir interfaces de usuário
+        - [ ] Um banco de dados para aplicações web
+        - [ ] Um servidor HTTP
 
-        # Qual é o objetivo principal do Vue.js?
-        - [ ] Gerenciar bancos de dados
-        - [ ] Manipular o servidor
-        - [X] Criar interfaces de usuário interativas
-        - [ ] Fazer chamadas de API
+        > Dica: slide 2
 
-        # Qual das seguintes declarações é verdadeira sobre o Vue.js?
-        - [ ] É exclusivamente voltado para desenvolvimento de aplicativos móveis
-        - [ ] É baseado na sintaxe do Python
-        - [X] É uma biblioteca leve e fácil de aprender
-        - [ ] É uma alternativa ao HTML
+        # O que significa dizer que o Vue pode ser adotado de forma incremental?
+        - [ ] Que ele só funciona em projetos criados do zero
+        - [X] Que é possível começar usando o Vue em apenas uma parte de uma página existente
+        - [ ] Que cada versão nova exige reescrever o projeto inteiro
+        - [ ] Que ele precisa ser instalado aos poucos pelo npm
+
+        > Dica: slide 2
+
+        # O que é a reatividade no Vue?
+        - [ ] A capacidade de o Vue responder mais rápido que o servidor
+        - [X] Quando um dado muda, a tela que depende dele é atualizada automaticamente
+        - [ ] A necessidade de chamar `document.getElementById` a cada mudança
+        - [ ] O recarregamento da página inteira a cada clique
+
+        > Dica: slide 4
 
         # O que é uma diretiva no Vue.js?
-        - [ ] Uma maneira de estilizar elementos HTML
-        - [ ] Um objeto para armazenar dados de aplicativos
-        - [X] Uma instrução especial que pode ser adicionada a um elemento HTML
-        - [ ] Uma instrução especial que pode ser adicionada a um componente Vue.js
+        - [ ] Um arquivo CSS que estiliza os componentes
+        - [ ] Uma função que devolve os dados da aplicação
+        - [X] Um atributo especial, iniciado por `v-`, que diz ao Vue como o elemento deve se comportar
+        - [ ] Uma biblioteca externa para requisições HTTP
 
-        # Qual é a sintaxe correta para criar uma propriedade personalizada em um componente Vue.js?
-        - [ ] data: {}
-        - [ ] methods: {}
-        - [ ] computed: {}
-        - [X] props: {}
+        > Dica: slide 5
 
+        # No Hello Vue, qual é o papel de `app.mount('#app')`?
+        - [ ] Criar os dados reativos da aplicação
+        - [ ] Carregar o Vue pela CDN
+        - [X] Ligar a aplicação ao elemento com `id="app"`, que passa a ser controlado pelo Vue
+        - [ ] Apagar todo o HTML que estiver dentro da `div`
+
+        > Dica: slide 7
+
+        # O que a interpolação `{{ message }}` faz?
+        - [ ] Cria um comentário que não aparece na tela
+        - [X] Exibe na tela o valor atual da variável `message`
+        - [ ] Liga um atributo HTML à variável `message`
+        - [ ] Chama um método chamado `message`
+
+        > Dica: slide 7
+
+        # Por que `data` é escrito como uma função que devolve um objeto?
+        - [ ] Porque o Vue não aceita objetos em JavaScript
+        - [X] Para que cada instância ou componente receba a sua própria cópia dos dados
+        - [ ] Para que os dados sejam lidos do servidor
+        - [ ] Para que os dados não possam ser alterados
+
+        > Dica: slide 7
+
+        # Qual diretiva cria uma ligação de mão dupla entre um campo de formulário e uma variável?
+        - [ ] `v-bind`
+        - [ ] `v-for`
+        - [X] `v-model`
+        - [ ] `v-on`
+
+        > Dica: slide 8
+
+        # Em `<li v-for="x in task">{{ x.text }}</li>`, quantos `<li>` aparecem se `task` tiver três objetos?
+        - [ ] Um, com os três textos juntos
+        - [X] Três, um para cada item do array
+        - [ ] Nenhum, porque falta um laço `for` no script
+        - [ ] Quatro, contando o elemento original
+
+        > Dica: slide 11
+
+        # Qual é a diferença entre `v-if` e `v-show`?
+        - [ ] Não há diferença, são apenas nomes diferentes
+        - [X] `v-if` remove o elemento do DOM, enquanto `v-show` apenas o esconde com CSS
+        - [ ] `v-show` remove o elemento do DOM, enquanto `v-if` apenas o esconde com CSS
+        - [ ] `v-if` só funciona dentro de `<template>`
+
+        > Dica: slide 13
+
+        # Para que serve `<template v-if="...">`?
+        - [ ] Para criar um novo componente
+        - [ ] Para repetir um grupo de elementos
+        - [X] Para aplicar a condição a um grupo de elementos sem criar um elemento extra na página
+        - [ ] Para carregar um arquivo HTML externo
+
+        > Dica: slide 13
+
+        # Qual é o atalho de `v-on:click="salvar"`?
+        - [ ] `:click="salvar"`
+        - [X] `@click="salvar"`
+        - [ ] `#click="salvar"`
+        - [ ] `v-click="salvar"`
+
+        > Dica: slide 14
+
+        # Onde ficam as funções chamadas pelos eventos em uma aplicação Vue?
+        - [ ] Em `data`
+        - [X] Em `methods`
+        - [ ] Em `mount`
+        - [ ] Dentro da interpolação `{{ }}`
+
+        > Dica: slide 15
+
+        # Qual é o atalho de `v-bind:src="foto"`?
+        - [X] `:src="foto"`
+        - [ ] `@src="foto"`
+        - [ ] `{{ src }}="foto"`
+        - [ ] `v-src="foto"`
+
+        > Dica: slide 16
+
+        # Qual gancho do ciclo de vida é chamado quando o componente já está visível no DOM?
+        - [ ] `beforeCreate`
+        - [ ] `created`
+        - [X] `mounted`
+        - [ ] `unmounted`
+
+        > Dica: slide 21
+
+        # No gancho `created`, o que já está disponível?
+        - [ ] Nada: dados e métodos ainda não existem
+        - [X] Os dados e métodos, mas o componente ainda não foi inserido no DOM
+        - [ ] Somente os elementos do DOM
+        - [ ] Apenas o resultado das requisições HTTP
+
+        > Dica: slide 20
+
+        # Em qual gancho devemos parar timers com `clearInterval` para evitar vazamento de memória?
+        - [ ] `created`
+        - [ ] `mounted`
+        - [ ] `updated`
+        - [X] `unmounted`
+
+        > Dica: slide 23
+
+        # O que `axios.get("data.json")` devolve?
+        - [ ] O conteúdo do arquivo já convertido, de forma imediata
+        - [X] Uma Promise, tratada com `.then()` ou `await` quando a resposta chega
+        - [ ] Um elemento HTML pronto para ser exibido
+        - [ ] Uma nova aplicação Vue
+
+        > Dica: slide 25
+
+        # No exemplo com Axios, por que a lista aparece na tela depois que `this.tasks` recebe os dados?
+        - [ ] Porque o Axios escreve o HTML da lista
+        - [ ] Porque a página é recarregada automaticamente
+        - [X] Porque `tasks` é reativo e o `v-for` acompanha a mudança
+        - [ ] Porque o botão chama `app.mount` de novo
+
+        > Dica: slide 25
     </div>
 </body>
 </html>
