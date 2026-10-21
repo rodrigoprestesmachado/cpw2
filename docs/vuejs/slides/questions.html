@@ -36,21 +36,13 @@
 
         > Dica: slide 4
 
-        # O que é uma diretiva no Vue.js?
-        - [ ] Um arquivo CSS que estiliza os componentes
-        - [ ] Uma função que devolve os dados da aplicação
-        - [X] Um atributo especial, iniciado por `v-`, que diz ao Vue como o elemento deve se comportar
-        - [ ] Uma biblioteca externa para requisições HTTP
-
-        > Dica: slide 5
-
         # No Hello Vue, qual é o papel de `app.mount('#app')`?
         - [ ] Criar os dados reativos da aplicação
         - [ ] Carregar o Vue pela CDN
         - [X] Ligar a aplicação ao elemento com id app, que passa a ser controlado pelo Vue
         - [ ] Apagar todo o HTML que estiver dentro da div
 
-        > Dica: slide 7
+        > Dica: slide 6
 
         # O que a interpolação com chaves duplas faz, por exemplo com a variável message?
         - [ ] Cria um comentário que não aparece na tela
@@ -58,13 +50,21 @@
         - [ ] Liga um atributo HTML à variável message
         - [ ] Chama um método chamado message
 
-        > Dica: slide 7
+        > Dica: slide 6
 
         # Por que `data` é escrito como uma função que devolve um objeto?
         - [ ] Porque o Vue não aceita objetos em JavaScript
         - [X] Para que cada instância ou componente receba a sua própria cópia dos dados
         - [ ] Para que os dados sejam lidos do servidor
         - [ ] Para que os dados não possam ser alterados
+
+        > Dica: slide 6
+
+        # O que é uma diretiva no Vue.js?
+        - [ ] Um arquivo CSS que estiliza os componentes
+        - [ ] Uma função que devolve os dados da aplicação
+        - [X] Um atributo especial, iniciado por `v-`, que diz ao Vue como o elemento deve se comportar
+        - [ ] Uma biblioteca externa para requisições HTTP
 
         > Dica: slide 7
 
@@ -148,7 +148,7 @@
 
         > Dica: slide 23
 
-        # O que `axios.get("data.json")` devolve?
+        # O que `fetch("data.json")` devolve?
         - [ ] O conteúdo do arquivo já convertido, de forma imediata
         - [X] Uma Promise, tratada com `.then()` ou `await` quando a resposta chega
         - [ ] Um elemento HTML pronto para ser exibido
@@ -156,8 +156,8 @@
 
         > Dica: slide 25
 
-        # No exemplo com Axios, por que a lista aparece na tela depois que `this.tasks` recebe os dados?
-        - [ ] Porque o Axios escreve o HTML da lista
+        # No exemplo com Fetch, por que a lista aparece na tela depois que `this.tasks` recebe os dados?
+        - [ ] Porque o `fetch` escreve o HTML da lista
         - [ ] Porque a página é recarregada automaticamente
         - [X] Porque `tasks` é reativo e o `v-for` acompanha a mudança
         - [ ] Porque o botão chama `app.mount` de novo

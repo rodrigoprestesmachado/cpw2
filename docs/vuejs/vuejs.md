@@ -15,14 +15,11 @@ nav_order: 21
     </iframe>
 </center>
 
-Esta página acompanha os slides acima, na mesma ordem. Cada seção indica o
-slide correspondente, para você poder alternar entre a explicação detalhada e
-o resumo visual.
+Esta página acompanha os slides acima, na mesma ordem, para você poder
+alternar entre a explicação detalhada e o resumo visual.
 {: .fs-3 }
 
 ## O que é Vue.js
-
-> Slides 2, 3 e 4
 
 Vue.js é um _framework_ JavaScript de código aberto para construir interfaces
 de usuário interativas. Ele cuida da camada de visualização, a parte da
@@ -86,28 +83,7 @@ Os dados ficam em `data()`. O template (o HTML) mostra esses dados. Quando o
 usuário clica ou digita, um método altera os dados, e a tela acompanha.
 {: .fs-3 }
 
-## Diretivas
-
-> Slide 5
-
-Diretivas são atributos especiais que o Vue acrescenta ao HTML. Todas começam
-com `v-` e dizem ao Vue como aquele elemento deve se comportar. As principais
-são:
-{: .fs-3 }
-
-* `v-bind`: liga um atributo HTML a um dado.
-* `v-model`: liga um campo de formulário a um dado nos dois sentidos.
-* `v-if` e `v-else`: mostram ou removem um elemento conforme uma condição.
-* `v-for`: repete um elemento para cada item de uma lista.
-* `v-on`: executa um método quando acontece um evento, como um clique.
-{: .fs-3 }
-
-As próximas seções mostram cada uma delas em um exemplo pequeno e completo.
-{: .fs-3 }
-
 ## Hello Vue
-
-> Slides 6 e 7
 
 O primeiro exemplo exibe a mensagem "Hello Vue in CPW2!" na tela:
 {: .fs-3 }
@@ -158,9 +134,24 @@ Vamos ler o exemplo por partes:
    existe na memória, mas ainda não controla nada na página.
 {: .fs-3 }
 
-## v-model: ligação de mão dupla
+## Diretivas
 
-> Slides 8 e 9
+Diretivas são atributos especiais que o Vue acrescenta ao HTML. Todas começam
+com `v-` e dizem ao Vue como aquele elemento deve se comportar. As principais
+são:
+{: .fs-3 }
+
+* `v-bind`: liga um atributo HTML a um dado.
+* `v-model`: liga um campo de formulário a um dado nos dois sentidos.
+* `v-if` e `v-else`: mostram ou removem um elemento conforme uma condição.
+* `v-for`: repete um elemento para cada item de uma lista.
+* `v-on`: executa um método quando acontece um evento, como um clique.
+{: .fs-3 }
+
+As próximas seções mostram cada uma delas em um exemplo pequeno e completo.
+{: .fs-3 }
+
+## v-model: ligação de mão dupla
 
 A diretiva `v-model` conecta um campo de formulário a uma variável. A ligação
 vale nos dois sentidos: o que o usuário digita vai para a variável, e o que o
@@ -190,8 +181,6 @@ de evento foi escrito. Em JavaScript puro, seria preciso ouvir o evento
 {: .fs-3 }
 
 ## v-for: listas
-
-> Slides 10 e 11
 
 A diretiva `v-for` cria um elemento para cada item de um array. É um laço de
 repetição escrito direto no HTML.
@@ -229,8 +218,6 @@ acrescentado ou removido do array, a lista se atualiza sozinha.
 {: .fs-3 }
 
 ## v-if e v-else: renderização condicional
-
-> Slides 12 e 13
 
 A diretiva `v-if` mostra um elemento apenas quando a condição é verdadeira. O
 `v-else`, colocado logo depois, mostra a alternativa. É um `if/else` aplicado
@@ -271,8 +258,6 @@ barato quando algo aparece e some muitas vezes.
 {: .fs-3 }
 
 ## v-on: eventos
-
-> Slides 14 e 15
 
 A diretiva `v-on` faz o Vue reagir a eventos do usuário: cliques, teclas,
 movimentos do mouse. A forma `v-on:click` tem um atalho muito usado, `@click`.
@@ -333,8 +318,6 @@ evento altera o estado da aplicação:
 
 ## v-bind: atributos dinâmicos
 
-> Slides 5 e 16
-
 A interpolação `{{ }}` funciona apenas no conteúdo dos elementos, não dentro
 de atributos. Para que um atributo receba um valor vindo dos dados, use
 `v-bind`. O atalho é o sinal de dois pontos: `:src` é o mesmo que
@@ -369,8 +352,6 @@ habilita o botão.
 
 ## Resumo das diretivas
 
-> Slide 16
-
 | Diretiva | Função | Atalho |
 |----------|--------|--------|
 | `v-bind` | Liga um atributo HTML a um dado | `:` |
@@ -381,8 +362,6 @@ habilita o botão.
 {: .fs-3 }
 
 ## Ciclo de vida
-
-> Slides 17 a 23
 
 Todo componente Vue passa por fases, da criação até a remoção da página, assim
 como um ser vivo nasce, cresce e morre. Em cada fase o Vue chama funções
@@ -434,21 +413,18 @@ Quando a aplicação aparece na tela, `mounted` inicia um cronômetro. Se ela fo
 removida, `unmounted` para o cronômetro.
 {: .fs-3 }
 
-## Integração com Axios
+## Integração com a Fetch API
 
-> Slides 24 e 25
-
-O [Axios](https://axios-http.com/docs/intro) é uma biblioteca para fazer
-requisições HTTP. Ele funciona como um carteiro: leva o pedido ao servidor e
-traz a resposta de volta. Assim como o `fetch`, cada chamada do Axios devolve
-uma **Promise**, o mesmo conceito estudado na aula de
+A [Fetch API](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API) já
+vem no navegador: não precisa de biblioteca extra. Ela funciona como um
+carteiro: leva o pedido ao servidor e traz a resposta de volta. Cada chamada
+de `fetch` devolve uma **Promise**, o mesmo conceito estudado na aula de
 [Promise](https://cpw2.rpmhub.dev/promise/promise.html).
 {: .fs-3 }
 
 ```html
 <head>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <div id="app">
@@ -467,8 +443,9 @@ uma **Promise**, o mesmo conceito estudado na aula de
             },
             methods: {
                 getData() {
-                    axios.get("data.json")
-                        .then(response => (this.tasks = response.data))
+                    fetch("data.json")
+                        .then(response => response.json())
+                        .then(data => (this.tasks = data))
                 }
             }
         })
@@ -482,10 +459,11 @@ O fluxo, passo a passo:
 {: .fs-3 }
 
 1. O usuário clica em "Load data", e o `v-on:click` chama `getData`.
-2. `axios.get("data.json")` faz a requisição e devolve uma Promise.
-3. Quando a resposta chega, o `.then()` coloca os dados em `this.tasks`. O
-   Axios já converte o JSON em objeto, disponível em `response.data`.
-4. Como `tasks` é reativo, o `v-for` desenha a lista na tela.
+2. `fetch("data.json")` faz a requisição e devolve uma Promise.
+3. O primeiro `.then()` recebe o objeto `Response`. `response.json()` lê o
+   corpo e devolve outra Promise, já convertida em objeto.
+4. O segundo `.then()` coloca esses dados em `this.tasks`. Como `tasks` é
+   reativo, o `v-for` desenha a lista na tela.
 {: .fs-3 }
 
 O mesmo método pode ser escrito com `async`/`await`, que você já conhece:
@@ -495,8 +473,8 @@ O mesmo método pode ser escrito com `async`/`await`, que você já conhece:
 methods: {
     async getData() {
         try {
-            let response = await axios.get("data.json")
-            this.tasks = response.data
+            let response = await fetch("data.json")
+            this.tasks = await response.json()
         } catch (erro) {
             console.error(erro)
         }
@@ -505,208 +483,19 @@ methods: {
 ```
 {: .fs-3 }
 
-Para o `axios.get` conseguir ler o `data.json`, abra a página por um servidor
+Para o `fetch` conseguir ler o `data.json`, abra a página por um servidor
 local (por exemplo, a extensão Live Server do VS Code), e não pelo arquivo
 direto no navegador.
 {: .fs-3 }
 
-## Próximos passos: Nuxt.js
+## Próximos passos
 
-> Slide 26
-
-Quando a aplicação cresce, surgem necessidades comuns: várias páginas,
-carregamento otimizado, HTML gerado no servidor para melhorar o SEO. O
-**Nuxt.js** é um _framework_ construído sobre o Vue que já traz essas soluções
-prontas. Se o Vue é o motor, o Nuxt é o carro completo, com chassi, freios e
-direção já montados.
+Quando a aplicação cresce, o próximo passo é organizar a interface em
+[componentes](https://cpw2.rpmhub.dev/vuejs/components.html), inclusive em
+arquivos `.vue`. Em projetos maiores, o
+[Nuxt.js](https://cpw2.rpmhub.dev/vuejs/nuxt.html) entra com roteamento,
+páginas e estrutura de projeto.
 {: .fs-3 }
-
-O Nuxt oferece:
-{: .fs-3 }
-
-* **Roteamento automático** baseado na estrutura de arquivos;
-* **Renderização no servidor (SSR)** para melhor SEO e desempenho;
-* **Geração de sites estáticos**;
-* **Importação automática** de componentes;
-* **Sistema de módulos** para acrescentar funcionalidades.
-{: .fs-3 }
-
-Para criar um projeto:
-{: .fs-3 }
-
-```bash
-npx nuxi@latest init <nome-do-projeto>
-```
-
-O `npx` vem junto com o Node.js e executa um pacote sem instalá-lo de forma
-global no computador.
-{: .fs-3 }
-
-### Roteamento
-
-No Nuxt, cada arquivo `.vue` dentro do diretório `pages` vira uma rota:
-{: .fs-3 }
-
-| Arquivo | URL gerada |
-|---------|------------|
-| `pages/index.vue` | `/` |
-| `pages/sobre.vue` | `/sobre` |
-| `pages/livros/index.vue` | `/livros` |
-| `pages/livros/cadastro.vue` | `/livros/cadastro` |
-{: .fs-3 }
-
-O arquivo `app.vue` é o esqueleto da aplicação e precisa conter o componente
-`<NuxtPage />`. Pense nele como o palco de um teatro: o palco fica fixo e o
-ator (a página atual) muda conforme a URL.
-{: .fs-3 }
-
-```html
-<template>
-  <NuxtPage />
-</template>
-```
-
-### Execução
-
-```bash
-npm run dev
-```
-
-Esse comando sobe um servidor local, normalmente em `http://localhost:3000`,
-com recarga automática: cada alteração no código aparece no navegador sem
-atualizar a página. O atalho está na seção `scripts` do `package.json`:
-{: .fs-3 }
-
-```json
-"scripts": {
-  "dev": "nuxt dev"
-}
-```
-
-Outros comandos comuns são `npm run build` (gera a versão de produção) e
-`npm run preview` (visualiza essa versão localmente).
-{: .fs-3 }
-
-### Componentes em arquivos .vue
-
-Componentes dividem a interface em peças menores, independentes e
-reutilizáveis. Em um projeto Nuxt, cada componente fica em um arquivo `.vue`
-dentro do diretório `components`, reunindo `<template>`, `<script>` e
-`<style>`. O Nuxt importa esses componentes automaticamente. Para manter o nome
-original do arquivo, sem prefixo de pasta, configure o `nuxt.config.js`:
-{: .fs-3 }
-
-```javascript
-components: [
-    {
-        path: '~/components',
-        pathPrefix: false,
-    },
-],
-```
-{: .fs-3 }
-
-O componente `~/components/BookForm.vue` abaixo é um formulário de cadastro de
-livros:
-{: .fs-3 }
-
-```html
-<template>
-  <div>
-    <h1>Cadastro de Livros:</h1>
-    <input type="text" placeholder="Título do livro" v-model="title" />
-    <input type="text" placeholder="Autor do livro" v-model="author" />
-    <input type="text" placeholder="Ano de lançamento" v-model="year" />
-    <button @click="salvar()">Salvar</button>
-  </div>
-</template>
-
-<script>
-export default {
-  data() {
-    return {
-      title: "",
-      author: "",
-      year: "",
-    };
-  },
-  methods: {
-    salvar() {
-      this.$emit("bookSubmitted", {
-        title: this.title,
-        author: this.author,
-        year: this.year,
-      });
-    },
-  },
-};
-</script>
-```
-{: .fs-3 }
-
-Repare que tudo o que você viu antes continua aqui: `data()`, `methods`,
-`v-model` e `@click`. A novidade é o `this.$emit`, que dispara um **evento
-personalizado** chamado `bookSubmitted` levando os dados do livro. Quem usa o
-componente pode ouvir esse evento:
-{: .fs-3 }
-
-```html
-<template>
-  <BookForm @bookSubmitted="execute" />
-</template>
-
-<script>
-export default {
-  methods: {
-    execute(data) {
-      console.log(data);
-    },
-  },
-};
-</script>
-```
-{: .fs-3 }
-
-Esse é o **fluxo de dados unidirecional** do Vue: dados descem do pai para o
-filho (por propriedades) e eventos sobem do filho para o pai (por `$emit`). O
-filho nunca altera diretamente os dados do pai, o que deixa a aplicação mais
-previsível. As páginas [Componentes](https://cpw2.rpmhub.dev/vuejs/components.html)
-e [Slots](https://cpw2.rpmhub.dev/vuejs/slots.html) aprofundam esse assunto.
-{: .fs-3 }
-
-### Bulma e Font Awesome
-
-O [Bulma](https://bulma.io) é um _framework_ CSS leve, baseado em Flexbox, que
-oferece classes prontas. O Font Awesome oferece milhares de ícones vetoriais.
-Para usá-los no Nuxt:
-{: .fs-3 }
-
-```bash
-npm install bulma @fortawesome/fontawesome-free
-```
-
-```javascript
-css: [
-    'bulma/css/bulma.css',
-    '@fortawesome/fontawesome-free/css/all.css',
-],
-```
-{: .fs-3 }
-
-A partir daí, `<button class="button is-primary">Salvar</button>` gera um
-botão estilizado, e `<i class="fas fa-book"></i>` exibe um ícone de livro. A
-lista completa de ícones está em
-[fontawesome.com/icons](https://fontawesome.com/icons).
-{: .fs-3 }
-
-### Exemplo completo
-
-```bash
-git clone -b dev https://github.com/rodrigoprestesmachado/cpw2
-cd cpw2/exemplos/vue/nuxt/books
-npm install
-npm run dev
-```
 
 ## Exercícios de Fixação Práticos
 
@@ -763,14 +552,14 @@ seção indicada entre parênteses.
     mensagem "Nenhuma tarefa cadastrada". Como desafio extra, ignore textos
     vazios e acrescente um botão "Remover" em cada `<li>` usando `splice`.
 
-8. **Tarefas vindas de um JSON** (Axios)
+8. **Tarefas vindas de um JSON** (Fetch API)
 
     Crie um arquivo `tarefas.json` na mesma pasta da página, por exemplo
-    `[{ "texto": "Estudar Vue" }, { "texto": "Fazer os exercícios" }]`. Carregue
-    o Axios por CDN e crie um botão "Carregar" que chama um método com
-    `axios.get("tarefas.json")`. No `.then()`, guarde `response.data` em
-    `tarefas` e mostre a lista com `v-for`. Abra a página por um servidor
-    local.
+    `[{ "texto": "Estudar Vue" }, { "texto": "Fazer os exercícios" }]`. Crie um
+    botão "Carregar" que chama um método com `fetch("tarefas.json")`. No
+    primeiro `.then()`, converta a resposta com `response.json()`. No segundo,
+    guarde os dados em `tarefas` e mostre a lista com `v-for`. Abra a página
+    por um servidor local.
 
 9. **Carregar sem clicar** (ciclo de vida e async/await)
 
@@ -799,11 +588,7 @@ que constroem um CRUD completo com componentes e uma API.
 
 * [Vue.js](https://vuejs.org): The Progressive JavaScript Framework
 
-* [Axios](https://axios-http.com/docs/intro): Promise based HTTP client
-
-* [Nuxt.js](https://nuxt.com): The Intuitive Vue Framework
-
-* [Bulma](https://bulma.io): Modern CSS framework based on Flexbox
+* [Fetch API](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API): requisições HTTP nativas do navegador
 
 {% endraw %}
 

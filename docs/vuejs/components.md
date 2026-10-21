@@ -183,6 +183,83 @@ Assim, quando a imagem é clicada, o evento `image-clicked` é emitido pelo
 componente filho, e o método `showDescription` no componente pai é chamado,
 exibindo um alerta com a descrição da imagem.
 
+## Arquivos .vue
+
+Em um projeto Vue, cada componente costuma ficar em um arquivo `.vue`, reunindo
+`<template>`, `<script>` e `<style>`. É o mesmo componente visto acima, só que
+organizado num único arquivo em vez de um objeto JavaScript com `template` em
+string.
+{: .fs-3 }
+
+O componente `BookForm.vue` abaixo é um formulário de cadastro de livros:
+{: .fs-3 }
+
+```html
+<template>
+  <div>
+    <h1>Cadastro de Livros:</h1>
+    <input type="text" placeholder="Título do livro" v-model="title" />
+    <input type="text" placeholder="Autor do livro" v-model="author" />
+    <input type="text" placeholder="Ano de lançamento" v-model="year" />
+    <button @click="salvar()">Salvar</button>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      title: "",
+      author: "",
+      year: "",
+    };
+  },
+  methods: {
+    salvar() {
+      this.$emit("bookSubmitted", {
+        title: this.title,
+        author: this.author,
+        year: this.year,
+      });
+    },
+  },
+};
+</script>
+```
+{: .fs-3 }
+
+Repare que tudo o que você viu na aula de
+[Vue.js](https://cpw2.rpmhub.dev/vuejs/vuejs.html) continua aqui: `data()`,
+`methods`, `v-model` e `@click`. A novidade é o `this.$emit`, que dispara um
+**evento personalizado** chamado `bookSubmitted` levando os dados do livro. Quem
+usa o componente pode ouvir esse evento:
+{: .fs-3 }
+
+```html
+<template>
+  <BookForm @bookSubmitted="execute" />
+</template>
+
+<script>
+export default {
+  methods: {
+    execute(data) {
+      console.log(data);
+    },
+  },
+};
+</script>
+```
+{: .fs-3 }
+
+Esse é o **fluxo de dados unidirecional** do Vue: dados descem do pai para o
+filho (por propriedades) e eventos sobem do filho para o pai (por `$emit`). O
+filho nunca altera diretamente os dados do pai, o que deixa a aplicação mais
+previsível. A página [Slots](https://cpw2.rpmhub.dev/vuejs/slots.html) aprofunda
+a composição da interface. Em um projeto Nuxt, esses arquivos são importados
+automaticamente; veja a aula de [Nuxt](https://cpw2.rpmhub.dev/vuejs/nuxt.html).
+{: .fs-3 }
+
 ## Exemplo
 
 Para obter um exemplo funcional acesse o endereço:

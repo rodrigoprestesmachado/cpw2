@@ -52,20 +52,6 @@ Pressione 'F' para tela cheia
 
 
 <!-- .slide: data-background="#4AA791" data-transition="convex"  -->
-# Diretivas 🤓
-<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
-
-* [Vue.js](https://vuejs.org) permite estender o HTML com atributos especiais chamados **diretivas**.
-<!-- .element: style="margin-bottom:40px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
-
-* Diretivas são "anotações mágicas" no HTML que dizem ao Vue como aquele elemento deve se comportar. Todas começam com `v-`.
-<!-- .element: style="margin-bottom:40px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
-
-* Principais diretivas: `v-bind`, `v-model`, `v-if`/`v-else`, `v-for`, `v-on` (ou simplesmente `@`).
-<!-- .element: style="margin-bottom:40px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
-
-
-<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
 # Hello Vue 🌍
 <!-- .element: style="margin-bottom:30px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
@@ -108,6 +94,20 @@ Pressione 'F' para tela cheia
 
 * `Vue.createApp({...})` cria a aplicação; `app.mount('#app')` a "pluga" na `div`.
 <!-- .element: style="margin-bottom:30px; font-size: 20px; font-family: arial; color:#F5F5F5" -->
+
+
+<!-- .slide: data-background="#4AA791" data-transition="convex"  -->
+# Diretivas 🤓
+<!-- .element: style="margin-bottom:50px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
+
+* [Vue.js](https://vuejs.org) permite estender o HTML com atributos especiais chamados **diretivas**.
+<!-- .element: style="margin-bottom:40px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+* Diretivas são "anotações mágicas" no HTML que dizem ao Vue como aquele elemento deve se comportar. Todas começam com `v-`.
+<!-- .element: style="margin-bottom:40px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
+
+* Principais diretivas: `v-bind`, `v-model`, `v-if`/`v-else`, `v-for`, `v-on` (ou simplesmente `@`).
+<!-- .element: style="margin-bottom:40px; font-size: 23px; font-family: arial; color:#F5F5F5" -->
 
 
 <!-- .slide: data-background="#4AA791" data-transition="convex"  -->
@@ -453,13 +453,13 @@ Pressione 'F' para tela cheia
 
 
 <!-- .slide: data-background="#4AA791" data-transition="convex"  -->
-# Integração com Axios 🌐
+# Integração com Fetch 🌐
 <!-- .element: style="margin-bottom:30px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
-* **Axios** é uma biblioteca para fazer requisições HTTP (buscar dados de APIs).
+* A **Fetch API** já vem no navegador: faz requisições HTTP sem biblioteca extra.
 <!-- .element: style="margin-bottom:20px; font-size: 22px; font-family: arial; color:#F5F5F5" -->
 
-* Funciona como um "carteiro": entrega o pedido ao servidor e traz a resposta de volta.
+* Funciona como um "carteiro": entrega o pedido ao servidor e traz a resposta de volta. Devolve uma **Promise**.
 <!-- .element: style="margin-bottom:20px; font-size: 22px; font-family: arial; color:#F5F5F5" -->
 
 ```html
@@ -467,8 +467,7 @@ Pressione 'F' para tela cheia
 <html lang="en">
 <head>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <title>Axios</title>
+    <title>Fetch</title>
 </head>
 <body>
     <div id="app">
@@ -487,8 +486,9 @@ Pressione 'F' para tela cheia
             },
             methods: {
                 getData() {
-                    axios.get("data.json")
-                        .then(response => (this.tasks = response.data))
+                    fetch("data.json")
+                        .then(response => response.json())
+                        .then(data => (this.tasks = data))
                 }
             }
         })
@@ -501,16 +501,16 @@ Pressione 'F' para tela cheia
 
 
 <!-- .slide: data-background="#4AA791" data-transition="convex"  -->
-# Axios: o fluxo passo a passo 🔍
+# Fetch: o fluxo passo a passo 🔍
 <!-- .element: style="margin-bottom:30px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
 1. Usuário clica em **"Load data"** → dispara o método `getData`.
 <!-- .element: style="margin-bottom:25px; font-size: 21px; font-family: arial; color:#F5F5F5" -->
 
-2. `axios.get("data.json")` faz a requisição HTTP — retorna uma **Promise** (uma promessa de resposta futura).
+2. `fetch("data.json")` faz a requisição HTTP — retorna uma **Promise**.
 <!-- .element: style="margin-bottom:25px; font-size: 21px; font-family: arial; color:#F5F5F5" -->
 
-3. `.then(response => ...)` é executado **quando a resposta chega**, e atribui os dados a `this.tasks`.
+3. `response.json()` converte o corpo em objeto; o segundo `.then()` atribui os dados a `this.tasks`.
 <!-- .element: style="margin-bottom:25px; font-size: 21px; font-family: arial; color:#F5F5F5" -->
 
 4. Como `tasks` é reativo, a lista `<ul>` é atualizada automaticamente. Reatividade + dados externos = aplicação completa! 🎉
@@ -521,10 +521,10 @@ Pressione 'F' para tela cheia
 # Próximos passos 🚀
 <!-- .element: style="margin-bottom:40px; font-size: 40px; font-family: Marker Felt; color:#2B2625" -->
 
-* **Nuxt.js**: framework construído sobre o Vue com roteamento automático, SSR e muito mais.
+* **Componentes**: arquivos `.vue` com `<template>`, `<script>` e `<style>` — continue na [aula de Componentes](https://cpw2.rpmhub.dev/vuejs/components.html).
 <!-- .element: style="margin-bottom:30px; font-size: 22px; font-family: arial; color:#F5F5F5" -->
 
-* **Componentes em arquivos `.vue`**: cada componente em seu próprio arquivo, com `<template>`, `<script>` e `<style>` juntos.
+* **Nuxt.js**: framework sobre o Vue, com roteamento e SSR — continue na [aula de Nuxt](https://cpw2.rpmhub.dev/vuejs/nuxt.html).
 <!-- .element: style="margin-bottom:30px; font-size: 22px; font-family: arial; color:#F5F5F5" -->
 
 * **Composition API**: forma moderna de organizar a lógica dos componentes (alternativa ao `data`/`methods`/`computed`).
@@ -550,10 +550,7 @@ Pressione 'F' para tela cheia
 * [Vue.js](https://vuejs.org) - The Progressive JavaScript Framework
 <!-- .element: style="margin-bottom:40px; font-size: 25px; color:white; font-family: arial;" -->
 
-* [Axios](https://axios-http.com/docs/intro) - Promise based HTTP client for the browser and node.js
-<!-- .element: style="margin-bottom:40px; font-size: 25px; color:white; font-family: arial;" -->
-
-* [Nuxt.js](https://nuxt.com) - The Intuitive Vue Framework
+* [Fetch API](https://developer.mozilla.org/pt-BR/docs/Web/API/Fetch_API) - requisições HTTP nativas do navegador
 <!-- .element: style="margin-bottom:40px; font-size: 25px; color:white; font-family: arial;" -->
 
 <center>
