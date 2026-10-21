@@ -47,16 +47,16 @@
         # No Hello Vue, qual é o papel de `app.mount('#app')`?
         - [ ] Criar os dados reativos da aplicação
         - [ ] Carregar o Vue pela CDN
-        - [X] Ligar a aplicação ao elemento com `id="app"`, que passa a ser controlado pelo Vue
-        - [ ] Apagar todo o HTML que estiver dentro da `div`
+        - [X] Ligar a aplicação ao elemento com id app, que passa a ser controlado pelo Vue
+        - [ ] Apagar todo o HTML que estiver dentro da div
 
         > Dica: slide 7
 
-        # O que a interpolação `{{ message }}` faz?
+        # O que a interpolação com chaves duplas faz, por exemplo com a variável message?
         - [ ] Cria um comentário que não aparece na tela
-        - [X] Exibe na tela o valor atual da variável `message`
-        - [ ] Liga um atributo HTML à variável `message`
-        - [ ] Chama um método chamado `message`
+        - [X] Exibe na tela o valor atual da variável message
+        - [ ] Liga um atributo HTML à variável message
+        - [ ] Chama um método chamado message
 
         > Dica: slide 7
 
@@ -76,7 +76,7 @@
 
         > Dica: slide 8
 
-        # Em `<li v-for="x in task">{{ x.text }}</li>`, quantos `<li>` aparecem se `task` tiver três objetos?
+        # Em um `v-for="x in task"`, quantos itens aparecem se `task` tiver três objetos?
         - [ ] Um, com os três textos juntos
         - [X] Três, um para cada item do array
         - [ ] Nenhum, porque falta um laço `for` no script
@@ -88,11 +88,11 @@
         - [ ] Não há diferença, são apenas nomes diferentes
         - [X] `v-if` remove o elemento do DOM, enquanto `v-show` apenas o esconde com CSS
         - [ ] `v-show` remove o elemento do DOM, enquanto `v-if` apenas o esconde com CSS
-        - [ ] `v-if` só funciona dentro de `<template>`
+        - [ ] `v-if` só funciona dentro de um template
 
         > Dica: slide 13
 
-        # Para que serve `<template v-if="...">`?
+        # Para que serve um template com `v-if`?
         - [ ] Para criar um novo componente
         - [ ] Para repetir um grupo de elementos
         - [X] Para aplicar a condição a um grupo de elementos sem criar um elemento extra na página
@@ -112,14 +112,14 @@
         - [ ] Em `data`
         - [X] Em `methods`
         - [ ] Em `mount`
-        - [ ] Dentro da interpolação `{{ }}`
+        - [ ] Dentro da interpolação com chaves duplas
 
         > Dica: slide 15
 
         # Qual é o atalho de `v-bind:src="foto"`?
         - [X] `:src="foto"`
         - [ ] `@src="foto"`
-        - [ ] `{{ src }}="foto"`
+        - [ ] chaves duplas em volta de src
         - [ ] `v-src="foto"`
 
         > Dica: slide 16
